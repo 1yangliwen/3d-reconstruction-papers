@@ -64,12 +64,14 @@
 
 - **DROID-W**（2026-04-30）— 基于动态不确定性感知可微 BA 的 RGB SLAM，无需类别先验即可鲁棒处理真实动态场景，ETH Zürich + 微软 · [CVPR 2026](https://arxiv.org/abs/2603.19076)
 - **SLAM3R**（2026-05-14）— 端到端实时稠密重建，无需显式位姿估计，滑动窗口 + 全局配准网络，20+ FPS 达 SOTA，CVPR 2025 Highlight · [CVPR 2025 Highlight](https://arxiv.org/abs/2412.09401)
+- **MASt3R-SLAM**（2026-05-20）— 首个以 MASt3R 三维重建先验为基础的实时单目稠密 SLAM，无需相机标定，15 FPS 实时性能，多基准 SOTA · [CVPR 2025](https://arxiv.org/abs/2412.12392)
 
 ### 🎨 八、三维生成（3D Generation）
 
 研究从文本、图像等条件生成高质量三维资产的方法，涵盖原生三维表示学习、扩散/流匹配生成模型、PBR 材质建模等核心技术。
 
 - **TRELLIS.2**（2026-05-01）— 原生紧凑结构化隐空间 + 40亿参数流匹配模型，数秒内生成高分辨率 PBR 材质三维资产，微软研究院 · [CVPR 2026 Oral](https://arxiv.org/abs/2512.14692)
+- **CraftsMan3D**（2026-05-22）— 原生三维扩散 + 法线增强几何细化两阶段生成，30 秒内生成工业级高保真网格，支持交互式编辑，CVPR 2025 满分 · [CVPR 2025](https://arxiv.org/abs/2405.14979)
 
 ### 🪟 九、3DGS 透明表面建模（Transparent Surface Modeling）
 
@@ -88,6 +90,7 @@
 研究基于神经辐射场的场景表示与逆向渲染方法，联合估计场景几何、材质与光照，实现物理一致的新视角合成与重光照。
 
 - **PBR-NeRF**（2026-05-11）— 基于物理渲染理论的 NeRF 逆向渲染，两个新颖物理先验约束材质估计，ETH Zürich · [CVPR 2025](https://arxiv.org/abs/2412.09680)
+- **DiffusionRenderer**（2026-05-18）— 视频扩散模型驱动的神经逆向与正向渲染统一框架，G-buffer 估计 + 重光照，NVIDIA Research · [CVPR 2025 Oral](https://arxiv.org/abs/2501.18590)
 
 ---
 
@@ -357,4 +360,37 @@
 
 ---
 
-*最后更新：2026-05-15 | 维护：CatDesk 自动化任务*
+### 2026-05-18 · DiffusionRenderer
+
+**DiffusionRenderer: Neural Inverse and Forward Rendering with Video Diffusion Models**
+
+- **来源**：CVPR 2025 Oral（NVIDIA Research × 多伦多大学 × 矢量研究所 × 伊利诺伊大学香槟分校）
+- **链接**：https://arxiv.org/abs/2501.18590
+
+首次将神经逆向渲染与正向渲染统一在单一框架中。逆向渲染模块利用视频扩散模型先验，从真实世界视频中准确估计 G-buffer（法线、深度、漫反射反照率、粗糙度、金属度等材质属性）；正向渲染模块则无需显式光线传输模拟，直接基于 G-buffer 和指定光照条件生成逼真图像。两个模块相互促进，形成自洽闭环。实验表明在逆向渲染和正向渲染两个任务上均超越当前最先进方法，并从单段视频输入实现重新打光（relighting）、材质编辑和真实感物体插入等实用应用。
+
+---
+
+### 2026-05-20 · MASt3R-SLAM
+
+**MASt3R-SLAM: Real-Time Dense SLAM with 3D Reconstruction Priors**
+
+- **来源**：CVPR 2025（Imperial College London）
+- **链接**：https://arxiv.org/abs/2412.12392
+
+首个以双视图三维重建先验（MASt3R）为基础自底向上构建的实时单目稠密 SLAM 系统。将 MASt3R 强大的三维重建先验深度集成到 SLAM 的跟踪、建图、回环检测和全局优化各个核心模块中，通过点图匹配实现大规模并行相机跟踪，利用光线角度误差最小化进行局部融合，并通过二阶全局优化获得全局一致的位姿和稠密几何。系统除唯一相机中心外不对相机模型做任何假设，在标准 GPU 上可达 15 FPS 实时性能，在 EuRoC、TUM-RGBD、ScanNet 等主流 SLAM 基准上达到最先进性能。
+
+---
+
+### 2026-05-22 · CraftsMan3D
+
+**CraftsMan3D: High-fidelity Mesh Generation with 3D Native Generation and Interactive Geometry Refiner**
+
+- **来源**：CVPR 2025（香港科技大学 × Adobe Research × 光影焕像）
+- **链接**：https://arxiv.org/abs/2405.14979
+
+借鉴传统艺术家建模工作流，将三维生成分为两个阶段：第一阶段由原生三维扩散模型直接在三维空间中生成具有平滑几何形状的粗糙网格（约 5 秒），无需依赖多视图图像的中间表示；第二阶段通过法线增强的几何细化器对粗糙网格进行高频细节补全（约 20 秒），利用 2D 法线扩散模型生成多视图法线图并将其转化为精细几何细节。整个流程仅需约 30 秒，生成的网格具有规则拓扑结构，可直接用于游戏、影视等工业级三维内容创作场景。在 CVPR 2025 获得三位评审一致满分评价，已被 Roblox、腾讯混元 Hunyuan3D-2 等头部平台采用。
+
+---
+
+*最后更新：2026-05-22 | 维护：CatDesk 自动化任务*
