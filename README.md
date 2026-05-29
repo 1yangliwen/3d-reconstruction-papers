@@ -50,6 +50,7 @@
 - **MoRE**（2026-05-07）— MoE 架构驱动的稠密三维视觉基础模型，动态路由特征至任务专家，置信度深度精炼 + 语义融合，多基准 SOTA · [CVPR 2026](https://arxiv.org/abs/2510.27234)
 - **Fast3R**（2026-05-13）— DUSt3R 多视图扩展，单次前向传播并行处理 1000+ 张无序无位姿图像，推理速度较 DUSt3R 提升 320 倍 · [CVPR 2025](https://arxiv.org/abs/2501.13928)
 - **MUSt3R**（2026-05-12）— DUSt3R 架构对称化扩展至多视图，多层工作记忆机制将复杂度从 O(N²) 降至 O(N)，支持千帧级实时重建与在线 SLAM · [CVPR 2025](https://arxiv.org/abs/2503.01661)
+- **CUT3R**（2026-05-28）— 具有持久状态记忆的循环 Transformer，在线流式逐帧处理生成度量尺度点云，支持静态与动态场景统一感知，UC Berkeley · [CVPR 2025](https://arxiv.org/abs/2501.12387)
 
 ### 🎬 六、4D 动态场景重建（4D Dynamic Scene Reconstruction）
 
@@ -65,6 +66,7 @@
 - **DROID-W**（2026-04-30）— 基于动态不确定性感知可微 BA 的 RGB SLAM，无需类别先验即可鲁棒处理真实动态场景，ETH Zürich + 微软 · [CVPR 2026](https://arxiv.org/abs/2603.19076)
 - **SLAM3R**（2026-05-14）— 端到端实时稠密重建，无需显式位姿估计，滑动窗口 + 全局配准网络，20+ FPS 达 SOTA，CVPR 2025 Highlight · [CVPR 2025 Highlight](https://arxiv.org/abs/2412.09401)
 - **MASt3R-SLAM**（2026-05-20）— 首个以 MASt3R 三维重建先验为基础的实时单目稠密 SLAM，无需相机标定，15 FPS 实时性能，多基准 SOTA · [CVPR 2025](https://arxiv.org/abs/2412.12392)
+- **WildGS-SLAM**（2026-05-29）— 首个基于 3DGS 的动态环境单目 SLAM，DINOv2 驱动不确定性预测去除动态干扰，室内外场景均超越 SOTA，斯坦福 × ETH Zürich · [CVPR 2025](https://arxiv.org/abs/2504.03886)
 
 ### 🎨 八、三维生成（3D Generation）
 
@@ -84,6 +86,7 @@
 研究从多张图像建立稠密、一致的像素级对应关系，为 SfM 和三维重建提供高精度轨迹，突破成对匹配范式，追求全局几何一致性。
 
 - **MV-RoMa**（2026-05-05）— 首个多视图稠密匹配模型，Track-Guided 多视图编码器 + 像素对齐精炼器，SfM 全面超越稀疏/稠密匹配基线 · [CVPR 2026](https://arxiv.org/abs/2603.27542)
+- **MVSAnywhere**（2026-05-27）— 首个零样本通用 MVS 模型，成本体积块化 + 单/多目线索自适应融合，任意场景任意深度范围跨域 SOTA，Niantic Labs · [CVPR 2025](https://arxiv.org/abs/2503.22430)
 
 ### 🌐 十一、NeRF / 逆向渲染（NeRF / Inverse Rendering）
 
@@ -91,6 +94,7 @@
 
 - **PBR-NeRF**（2026-05-11）— 基于物理渲染理论的 NeRF 逆向渲染，两个新颖物理先验约束材质估计，ETH Zürich · [CVPR 2025](https://arxiv.org/abs/2412.09680)
 - **DiffusionRenderer**（2026-05-18）— 视频扩散模型驱动的神经逆向与正向渲染统一框架，G-buffer 估计 + 重光照，NVIDIA Research · [CVPR 2025 Oral](https://arxiv.org/abs/2501.18590)
+- **Neural Inverse Rendering from Propagating Light**（2026-05-26）— 首个物理驱动的瞬态神经逆向渲染，时间分辨辐射缓存建模多次弹射间接光，CVPR 2025 最佳学生论文，多伦多大学 × CMU · [CVPR 2025 Best Student Paper](https://arxiv.org/abs/2506.05347)
 
 ---
 
@@ -393,4 +397,48 @@
 
 ---
 
-*最后更新：2026-05-22 | 维护：CatDesk 自动化任务*
+### 2026-05-26 · Neural Inverse Rendering from Propagating Light
+
+**Neural Inverse Rendering from Propagating Light**
+
+- **来源**：CVPR 2025 最佳学生论文（Best Student Paper Award）（多伦多大学 × 卡内基梅隆大学）
+- **链接**：https://arxiv.org/abs/2506.05347
+
+首个基于物理模型的神经逆向渲染系统，能够从多视点、时间分辨的闪光激光雷达（Flash LiDAR）测量数据中重建场景几何与材质，并生成新视角下的光传播视频。核心创新是"时间分辨辐射缓存"（Time-Resolved Radiance Cache）：将场景划分为哈希编码体素网格，预先存储任意位置、任意方向的无限次弹射辐射能量图谱，将直接光（解析计算）与间接光（神经网络预测）分离处理，并通过可微渲染方程对光脉冲的完整传播过程进行建模与优化。在强间接光场景中将几何重建误差降低 72%，计算效率提升 23 倍。荣获 CVPR 2025 最佳学生论文奖，解锁了瞬态重光照、材质分解和非视域成像（精度达 89%）等新能力。
+
+---
+
+### 2026-05-27 · MVSAnywhere
+
+**MVSAnywhere: Zero-Shot Multi-View Stereo**
+
+- **来源**：CVPR 2025（Niantic Labs × 爱丁堡大学 × 萨拉戈萨大学）
+- **链接**：https://arxiv.org/abs/2503.22430
+
+首个能够在任意场景、任意深度范围下工作的零样本通用 MVS 架构。核心创新包括：成本体积块化器（Cost Volume Patchifier）将传统成本体积以 Patch 方式 Token 化，融入单目 ViT 特征；单/多目线索融合模块（Mono/Multi Cue Combiner）自适应结合单目深度线索与多视图立体匹配线索；视角数量无关与尺度无关的自适应成本体积，通过引入几何元数据自动估计场景有效深度范围。在涵盖室内、室外、无人机视角、文化遗产等五个多样化数据集组成的 RMVDB 基准上，以零样本方式超越所有现有 MVS 方法和单目深度基线。
+
+---
+
+### 2026-05-28 · CUT3R
+
+**CUT3R: Continuous 3D Perception Model with Persistent State**
+
+- **来源**：CVPR 2025（UC Berkeley）
+- **链接**：https://arxiv.org/abs/2501.12387
+
+具有持久状态记忆的连续三维感知框架。引入带状态记忆的循环 Transformer 模型，能够以在线流式方式逐帧处理图像序列：每接收一帧新图像，模型就更新其内部状态，并生成当前帧的度量尺度点云（metric-scale pointmaps）——即每像素对应一个具有真实物理尺度的三维点。所有帧的点云共享同一坐标系，可随时间累积为连贯、稠密的场景重建。内部状态不仅记录了已观测区域的几何，还能通过"探针未观测的虚拟视角"来推断未曾看到过的场景区域，体现出强大的场景先验感知能力。在多视角深度估计、相机位姿估计、视频深度估计、4D 动态场景重建等多项任务上达到 SOTA 性能。
+
+---
+
+### 2026-05-29 · WildGS-SLAM
+
+**WildGS-SLAM: Monocular Gaussian Splatting SLAM in Dynamic Environments**
+
+- **来源**：CVPR 2025（Stanford University × ETH Zürich × Microsoft）
+- **链接**：https://arxiv.org/abs/2504.03886
+
+首个面向动态环境的单目 RGB Gaussian Splatting SLAM 系统。核心创新是引入不确定性感知几何建图（uncertainty-aware geometric mapping）机制：利用预训练的 DINOv2 特征训练一个轻量级 MLP，在线预测每个像素的不确定性图，无需任何语义标签或深度传感器即可自动识别动态区域。该不确定性图被无缝嵌入稠密 Bundle Adjustment（BA）优化和 3D Gaussian 地图优化两个核心模块，通过软抑制策略降低动态区域的梯度权重，从而在跟踪和建图过程中自动过滤动态干扰物。以 3D Gaussian Splatting 作为场景表示，支持高质量新视角合成，在多个动态场景数据集上实现无伪影渲染，在室内和室外场景中均超越现有动态 SLAM 方法。
+
+---
+
+*最后更新：2026-05-29 | 维护：CatDesk 自动化任务*
