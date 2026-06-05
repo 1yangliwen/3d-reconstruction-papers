@@ -28,6 +28,7 @@
 - **Proxy-GS**（2026-04-22）— 代理网格引入统一遮挡先验，推理加速 2.5×，获 CVPR 2026 Oral · [CVPR 2026 Oral](https://arxiv.org/abs/2509.24421)
 - **Stochastic Ray Tracing for 3DGS**（2026-05-06）— 首个无排序可微随机光线追踪框架，支持可重光照与非针孔相机 · [CVPR 2026](https://arxiv.org/abs/2603.23637)
 - **FastGS**（2026-05-15）— 基于多视角一致性的稠密化与剪枝策略，100 秒完成单场景训练，相比原始 3DGS 加速 15.45×，通用即插即用加速框架 · [CVPR 2026 Highlight](https://arxiv.org/abs/2511.04283)
+- **SSS（3D Student Splatting and Scooping）**（2026-06-02）— Student's t 分布替代高斯基元 + 负密度"舀取"机制，组件数减少 82% 仍保持可比质量 · [CVPR 2025 Oral](https://arxiv.org/abs/2506.01088)
 
 ### 🌧️ 三、3DGS 场景鲁棒性（恶劣条件重建）
 
@@ -74,6 +75,7 @@
 
 - **TRELLIS.2**（2026-05-01）— 原生紧凑结构化隐空间 + 40亿参数流匹配模型，数秒内生成高分辨率 PBR 材质三维资产，微软研究院 · [CVPR 2026 Oral](https://arxiv.org/abs/2512.14692)
 - **CraftsMan3D**（2026-05-22）— 原生三维扩散 + 法线增强几何细化两阶段生成，30 秒内生成工业级高保真网格，支持交互式编辑，CVPR 2025 满分 · [CVPR 2025](https://arxiv.org/abs/2405.14979)
+- **TRELLIS**（2026-06-01）— 统一结构化隐空间（SLAT）+ 20亿参数整流流 Transformer，支持多格式输出与局部三维编辑，微软亚洲研究院 · [CVPR 2025 Highlight](https://arxiv.org/abs/2412.01506)
 
 ### 🪟 九、3DGS 透明表面建模（Transparent Surface Modeling）
 
@@ -441,4 +443,26 @@
 
 ---
 
-*最后更新：2026-05-29 | 维护：CatDesk 自动化任务*
+### 2026-06-01 · TRELLIS
+
+**TRELLIS: Structured 3D Latents for Scalable and Versatile 3D Generation**
+
+- **来源**：CVPR 2025 Highlight（清华大学 × 中国科学技术大学 × 微软亚洲研究院）
+- **链接**：https://arxiv.org/abs/2412.01506 | 项目页：https://microsoft.github.io/TRELLIS/ | 代码：https://github.com/Microsoft/TRELLIS
+
+提出统一结构化隐空间（SLAT）表示，将稀疏三维网格结构与 DINOv2 提取的稠密多视图视觉特征融合，同时编码几何与纹理，并通过专用解码器灵活输出辐射场、3D 高斯或网格等多种格式。基于 SLAT，设计专为稀疏结构定制的整流流 Transformer（20亿参数），在50万个三维资产上训练，支持文本/图像两种条件输入，约10秒完成生成，质量显著超越现有方法。首次展示对已生成三维资产的局部编辑能力——可通过文本/图像提示修改特定区域，同时保持其余部分不变，为三维内容创作引入了类似 2D 图像编辑的交互式工作流。代码、模型和数据已完全开源。
+
+---
+
+### 2026-06-02 · SSS
+
+**3D Student Splatting and Scooping**
+
+- **来源**：CVPR 2025 Oral（University College London × University of Leeds × Central South University）
+- **链接**：https://arxiv.org/abs/2503.10148 | 项目页：https://drhewang.com/pages/SSS.html | 代码：https://github.com/realcrane/3D-student-splatting-and-scooping
+
+从根本上重新审视 3D Gaussian Splatting 的基本范式：用更灵活的 Student's t 分布替代高斯分布（具有更重的尾部，可通过自由度参数 ν 精准拟合细节纹理和尖锐边界），并引入"舀取"（scooping）机制——允许混合模型中存在负密度分量，正密度分量（splatting）描述实体结构，负密度分量（scooping）精细雕刻边界和消除伪影。在多个数据集的全面评估中，SSS 在相同组件数量下达到更高渲染质量，或在减少多达 82% 组件数量的情况下仍保持可比结果，在参数效率上大幅优于现有方法。
+
+---
+
+*最后更新：2026-06-04 | 维护：CatDesk 自动化任务*
