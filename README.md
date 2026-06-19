@@ -1,10 +1,3 @@
-> ⚠️ **注意（仅供阅读）**：此内容为简化版 Markdown，仅供阅读和总结，
-> **不可直接用于 createDocument --content 或 updateDocumentByXml**。
-> 如需编辑文档，请使用 `getDocumentXml` 获取完整格式后再通过 `updateDocumentByXml` 回传。
-> 直接用此内容编辑会丢失样式宏、合并表格、NodeID 等关键信息，导致文档数据损坏。
-
----
-
 # 三维重建论文收藏
 
 三维重建论文收藏
@@ -32,6 +25,7 @@
 - **Stochastic Ray Tracing for 3DGS**（2026-05-06）— 首个无排序可微随机光线追踪框架，支持可重光照与非针孔相机 · [CVPR 2026](https://arxiv.org/abs/2603.23637)
 - **FastGS**（2026-05-15）— 基于多视角一致性的稠密化与剪枝策略，100 秒完成单场景训练，相比原始 3DGS 加速 15.45×，通用即插即用加速框架 · [CVPR 2026 Highlight](https://arxiv.org/abs/2511.04283)
 - **SSS（3D Student Splatting and Scooping）**（2026-06-02）— Student's t 分布替代高斯基元 + 负密度"舀取"机制，组件数减少 82% 仍保持可比质量 · [CVPR 2025 Oral](https://arxiv.org/abs/2506.01088)
+- **Vol3DGS**（2026-06-18）— 解析体积积分替代 EWA splatting 近似，物理精确 alpha 计算，SSIM/LPIPS 超越 3DGS，天然支持 CT 断层扫描重建 · [CVPR 2025 Highlight](https://arxiv.org/abs/2412.03378)
 
 ### 🌧️ 三、3DGS 场景鲁棒性（恶劣条件重建）
 
@@ -56,6 +50,7 @@
 - **MUSt3R**（2026-05-12）— DUSt3R 架构对称化扩展至多视图，多层工作记忆机制将复杂度从 O(N²) 降至 O(N)，支持千帧级实时重建与在线 SLAM · [CVPR 2025](https://arxiv.org/abs/2503.01661)
 - **CUT3R**（2026-05-28）— 具有持久状态记忆的循环 Transformer，在线流式逐帧处理生成度量尺度点云，支持静态与动态场景统一感知，UC Berkeley · [CVPR 2025](https://arxiv.org/abs/2501.12387)
 - **MVGD**（2026-06-05）— 射线图条件化赋予扩散模型几何感知，零样本多视角 RGB 与深度联合生成，免中间三维表示，Toyota Research Institute · [CVPR 2025](https://arxiv.org/abs/2501.18804)
+- **OmniVGGT**（2026-06-15）— 全模态驱动视觉几何基础模型，GeoAdapter 渐进注入深度/相机几何先验，随机多模态融合训练支持任意辅助输入，港科大 × 南洋理工 · [CVPR 2026 Highlight](https://arxiv.org/abs/2511.10560)
 
 ### 🎬 六、4D 动态场景重建（4D Dynamic Scene Reconstruction）
 
@@ -74,6 +69,7 @@
 - **MASt3R-SLAM**（2026-05-20）— 首个以 MASt3R 三维重建先验为基础的实时单目稠密 SLAM，无需相机标定，15 FPS 实时性能，多基准 SOTA · [CVPR 2025](https://arxiv.org/abs/2412.12392)
 - **WildGS-SLAM**（2026-05-29）— 首个基于 3DGS 的动态环境单目 SLAM，DINOv2 驱动不确定性预测去除动态干扰，室内外场景均超越 SOTA，斯坦福 × ETH Zürich · [CVPR 2025](https://arxiv.org/abs/2504.03886)
 - **MAGiC-SLAM**（2026-06-08）— 首个多智能体 3DGS SLAM 系统，DINOv2 回环检测 + 子地图协同融合，24× 加速，TU Wien × ETH Zürich · [CVPR 2025](https://arxiv.org/abs/2411.16785)
+- **SEGS-SLAM**（2026-06-16）— 结构增强 3DGS SLAM，结构化点云初始化高斯基元 + 运动外观嵌入消除渲染不一致，单目/双目/RGB-D 均达 SOTA，南开大学 · [ICCV 2025](https://arxiv.org/abs/2501.05242)
 
 ### 🎨 八、三维生成（3D Generation）
 
@@ -84,6 +80,7 @@
 - **TRELLIS**（2026-06-01）— 统一结构化隐空间（SLAT）+ 20亿参数整流流 Transformer，支持多格式输出与局部三维编辑，微软亚洲研究院 · [CVPR 2025 Highlight](https://arxiv.org/abs/2412.01506)
 - **Prometheus**（2026-06-04）— 视图条件多平面表示将 LDM 扩展为三维感知生成器，秒级 Text-to-3D，告别 SDS 逐步优化伪影 · [CVPR 2025](https://arxiv.org/abs/2412.21117)
 - **Turbo3D**（2026-06-09）— 双教师蒸馏 + Latent GS-LRM 全潜空间流水线，0.35 秒完成 Text-to-3D，CMU × Adobe × MIT · [CVPR 2025](https://arxiv.org/abs/2412.04470)
+- **WorldGen**（2026-06-17）— 首个从文本生成可漫游交互式三维世界的端到端框架，导航网格约束 + 组合式拆解增强，输出直接兼容游戏引擎，Meta × Oxford · [CVPR 2026](https://arxiv.org/abs/2511.16825)
 
 ### 🪟 九、3DGS 透明表面建模（Transparent Surface Modeling）
 
@@ -107,12 +104,13 @@
 - **DiffusionRenderer**（2026-05-18）— 视频扩散模型驱动的神经逆向与正向渲染统一框架，G-buffer 估计 + 重光照，NVIDIA Research，CVPR 2025 Oral · [CVPR 2025 Oral](https://arxiv.org/abs/2501.18590)
 - **Neural Inverse Rendering from Propagating Light**（2026-05-26）— 首个物理驱动的瞬态神经逆向渲染，时间分辨辐射缓存建模多次弹射间接光，CVPR 2025 最佳学生论文，多伦多大学 × CMU · [CVPR 2025 Best Student Paper](https://arxiv.org/abs/2506.05347)
 - **LIRM**（2026-06-11）— 推理时逆向渲染学习，每场景 20 min 自标定从零恢复几何 + 材质 + HDR 光照，高通 AI Research 阿姆斯特丹 · [CVPR 2025 Oral](https://arxiv.org/abs/2503.11147)
+- **SVG-IR**（2026-06-19）— 空间变化高斯表示允许每高斯拥有变化材质与法线，物理间接光照模型，重光照 PSNR 超 NeRF 2.5 dB，南京大学 · [CVPR 2025](https://arxiv.org/abs/2504.06815)
 
 ### 🏷️ 十二、3DGS 场景理解与语义编码（3DGS Scene Understanding）
 
 研究将语义信息、开放词汇特征嵌入 3D Gaussian 表示，实现开放词汇分割、场景编辑等高层理解任务。
 
-- **Chorus**（2026-06-10）— 利用 CLIP 2D 特征图的绝对空间坐标进行 3D 感知解码，特征聚合 + 空间语义一致性约束，开放词汇分割 SOTA · [CVPR 2025](https://arxiv.org/abs/2503.15358)
+- **Chorus**（2026-06-10）— 首个多教师预训练 3DGS 场景编码器，SigLIP2+DINOv3+PE-Spatial 三教师蒸馏统一语义/实例/空间感知，ETH Zürich · [CVPR 2026 Oral](https://arxiv.org/abs/2512.17817)
 
 ---
 
@@ -925,3 +923,88 @@
 1. **单阶段多视图前馈重建，彻底消除全局优化与误差累积**：DUSt3R/MASt3R 采用双视图逐步融合+全局优化的策略处理多视图，推理耗时长（数十秒至分钟级）且每一步的重建误差会随视图数量增加而累积。MV-DUSt3R+ 首次提出多视图解码器块，在 Transformer 解码器中直接实现任意数量视图间的信息交换，单次前向传播即可输出所有视图的点图，无需任何后处理全局优化。这一设计将多视图重建从"串行融合"范式推进到"并行联合推理"范式，推理速度提升 48–78 倍，同时重建精度因消除了误差累积反而大幅提高，在 ScanNet7、DTU 等基准上 Chamfer Distance 降低 1.6–3.2 倍
 2. **跨参考视图注意力融合，消除重建对参考视图选择的敏感性**：DUSt3R 的双视图重建以一个参考视图为基准，重建结果严重依赖参考视图的选择质量。MV-DUSt3R+ 提出跨参考视图块（Cross-Reference-View Blocks），对多个不同参考视图选择下生成的特征进行注意力融合，使模型不再依赖单一参考视图，任何视图组合都能产生稳定一致的重建结果。这一设计对于实际应用中随机拍摄顺序的场景重建至关重要
 3. **联合 Gaussian Splatting 训练，打通三维重建到新视角合成的完整链路**：MV-DUSt3R+ 不仅输出三维点图（几何重建），还通过联合训练 Gaussian Splatting 头，从点图直接预测 3D 高斯属性（位置、颜色、不透明度、协方差），实现高质量新视角合成。这使得模型在单一前向传播中同时完成几何重建和新视角合成两项任务，无需先重建再优化的两步流程，为 AR/VR 中的实时三维重建和渲染提供了端到端的高效解决方案
+
+### 2026-06-15｜OmniVGGT: Omni-Modality Driven Visual Geometry Grounded Transformer（全模态驱动视觉几何基础模型）
+
+**方向**：视觉几何基础模型（Visual Geometry Foundation Models）　**来源**：CVPR 2026 Highlight　**机构**：港科大（HKUST）× 南洋理工（NTU）× 中山大学（SYSU）
+
+- **作者**：Haosong Peng、Hao Li、Yalun Dai、Yushi Lan、Yihang Luo、Tianyu Qi、Zhengshen Zhang、Yufeng Zhan、Junfei Zhang、Wenchao Xu、Ziwei Liu（HKUST / NTU / SYSU / BIT）
+- **链接**：[https://arxiv.org/abs/2511.10560](https://arxiv.org/abs/2511.10560) | 项目页：[GitHub](https://github.com/Livioni/OmniVGGT-official) | CVF 页面：[CVPR 2026 Highlight](https://openaccess.thecvf.com/content/CVPR2026/html/Peng_OmniVGGT_Omni-Modality_Driven_Visual_Geometry_Grounded_Transformer_CVPR_2026_paper.html)
+
+![OmniVGGT 方法概览图](https://km.sankuai.com/api/file/cdn/2756902383/241836321755?contentType=0&isNewContent=false)
+
+**核心内容**：OmniVGGT 是来自港科大（HKUST）、南洋理工（NTU）和中山大学（SYSU）的 CVPR 2026 Highlight 论文，提出了全模态驱动的视觉几何基础模型，在 VGGT（CVPR 2025 最佳论文）的基础上突破了仅支持 RGB 输入的限制，使模型能够灵活利用任意数量和类型的辅助几何模态（深度图、相机内参、相机位姿）来显著提升三维几何推理质量。现有通用三维基础模型（如 VGGT、DUSt3R）普遍假设仅有 RGB 输入，忽略了实际场景中往往可获取的几何先验信息。OmniVGGT 的核心创新包括：（1）**GeoAdapter**——通过零初始化卷积将深度图和相机参数渐进注入空间基础模型，在不破坏预训练表示空间的前提下融入几何先验，推理速度与原始 VGGT 相当；（2）**随机多模态融合训练策略**——训练时对每个样本随机采样不同模态子集，使模型在推理时能够接受任意数量和组合的辅助输入，而非依赖完整的辅助信息，同时避免模型过度依赖辅助线索而退化为浅层捷径学习。在单目/多视图深度估计、多视图立体重建和相机位姿估计等广泛基准测试中，OmniVGGT 在使用辅助输入时超越所有先前方法，仅使用 RGB 输入时也达到最先进水平。此外，OmniVGGT 被集成到视觉-语言-动作（VLA）模型中，增强后的 VLA 模型不仅在主流机器人操作基准上超越基于点云的基线方法，还能有效利用可获取的辅助输入实现一致的性能提升。
+
+**亮点**：
+
+1. **GeoAdapter 零初始化渐进注入，无损融合几何先验**：现有视觉几何基础模型（VGGT 等）仅接受 RGB 输入，无法利用实际场景中经常可获取的深度图或相机参数等几何先验。OmniVGGT 提出的 GeoAdapter 采用零初始化卷积策略，在训练初期几何信息通道输出接近零，随着训练推进逐渐增大贡献，确保几何先验的注入不会破坏预训练模型的表示空间。这一设计使模型在添加多种辅助输入后推理速度仍与原始 VGGT 相当，额外计算开销可忽略，为现有基础模型的高效增强提供了通用范式
+2. **随机多模态融合训练，灵活应对任意辅助输入组合**：实际应用中，辅助几何信息的可用性因场景而异——某些场景有深度图但无位姿，某些有内参但无深度。OmniVGGT 创新性地提出随机多模态融合训练策略：每个训练样本随机采样不同模态子集作为输入，使模型学会在任意辅助输入组合下都能稳健工作，而非仅在所有辅助信息完整时才表现良好。这种训练策略还自然防止模型过度依赖辅助线索而忽略 RGB 中的几何信息，确保仅 RGB 输入时仍能保持最先进性能
+3. **VLA 集成验证实际应用价值，机器人操作任务一致性提升**：OmniVGGT 不仅是三维几何推理工具，更通过集成到视觉-语言-动作（VLA）模型中展示了其实际应用潜力。增强后的 VLA 模型在主流机器人操作基准上超越基于点云的基线方法，并且能有效利用可获取的辅助输入（如腕部相机深度）实现一致性增益。这验证了全模态几何基础模型从学术基准到具身智能落地的完整链路，为机器人在复杂三维环境中的精准操作提供了新的技术路径
+
+### 2026-06-16｜SEGS-SLAM: Structure-enhanced 3D Gaussian Splatting SLAM with Appearance Embedding（结构增强的三维高斯泼溅 SLAM）
+
+**方向**：SLAM / 实时三维重建　**来源**：ICCV 2025　**机构**：南开大学（Nankai University）
+
+- **作者**：Tianci Wen、Zhiang Liu、Yongchun Fang（南开大学机器人研究所）
+- **链接**：[https://arxiv.org/abs/2501.05242](https://arxiv.org/abs/2501.05242) | 项目页：[segs-slam.github.io](https://segs-slam.github.io/)
+
+![SEGS-SLAM 方法概览图](https://km.sankuai.com/api/file/cdn/2756902383/242075491322?contentType=0&isNewContent=false)
+
+**核心内容**：SEGS-SLAM 是来自南开大学机器人研究所的 ICCV 2025 论文，提出了一种结构增强的三维高斯泼溅 SLAM 系统，旨在解决现有 3DGS-SLAM 方法在建图质量上的两大核心痛点：（1）大多数方法无法充分捕捉场景的潜在几何结构，导致高斯基元初始化不规则、结构不一致；（2）现有方法难以处理相机运动引起的外观突变，造成渲染质量不连贯。SEGS-SLAM 的核心创新包括：**结构增强照片级真实感建图（SEPM）框架**——首次利用高度结构化的点云（如 LiDAR 或深度传感器生成的稠密点云）来初始化结构化 3D 高斯基元，使高斯基元的空间分布与场景几何结构高度对齐，从根本上提升建图的结构一致性和渲染质量；**运动外观嵌入（AfME）**——将外观变化编码到相机位姿空间，使 3D 高斯能够更好地建模不同相机位姿下的图像外观变化，有效消除因相机运动导致的渲染不一致问题。在单目、双目和 RGB-D 多种传感器配置下，SEGS-SLAM 在 TUM RGB-D、Replica、EuRoC 和 ScanNet 等主流基准上均显著超越现有 SOTA 方法，例如在单目 TUM RGB-D 数据集上 PSNR 相比 MonoGS 提升 19.86%。
+
+**亮点**：
+
+1. **结构化点云初始化高斯基元，从根本上解决结构不一致问题**：现有 3DGS-SLAM 方法通常从随机或稀疏点云初始化高斯基元，导致高斯分布与场景几何结构脱节，建图质量受限。SEGS-SLAM 提出的 SEPM 框架首次将高度结构化的稠密点云引入高斯初始化流程，使每个高斯基元的位置、方向和尺度都与真实场景几何高度对齐。这一设计不仅显著提升了渲染质量（PSNR 大幅提升），还增强了建图的几何一致性，为后续的相机跟踪和回环检测提供了更可靠的地图表示。
+2. **运动外观嵌入（AfME）消除相机运动引起的渲染不一致**：在真实 SLAM 场景中，相机的快速运动会导致同一场景在不同帧中呈现出显著不同的外观（如运动模糊、曝光变化、光照变化），这是 3DGS-SLAM 渲染质量下降的重要原因。SEGS-SLAM 创新性地提出将外观变化编码到相机位姿空间的 AfME 机制，使 3D 高斯能够根据当前相机位姿动态调整外观属性，从而在不同运动状态下都能保持高质量渲染。这一机制在 EuRoC 等高动态场景数据集上效果尤为突出。
+3. **多传感器配置全面验证，单目/双目/RGB-D 均达 SOTA**：SEGS-SLAM 在四个主流 SLAM 基准（TUM RGB-D、Replica、EuRoC、ScanNet）上进行了全面评估，覆盖单目、双目和 RGB-D 三种传感器配置，在所有设置下均超越现有最先进方法。这种跨传感器的泛化能力表明 SEGS-SLAM 的结构增强策略具有普适性，不依赖特定传感器类型，为实际机器人和 AR/VR 应用中的高质量实时建图提供了可靠的技术方案。
+
+### 2026-06-17｜WorldGen: From Text to Traversable and Interactive 3D Worlds（从文本到可漫游交互式三维世界）
+
+**方向**：三维生成（3D Generation）/ Text-to-3D Scene　**来源**：CVPR 2026　**机构**：Meta Reality Labs × University of Oxford
+
+- **作者**：Dilin Wang、Hyunyoung Jung、Tom Monnier、Kihyuk Sohn、Chuhang Zou、Xiaoyu Xiang、Yu-Ying Yeh、Di Liu、Zixuan Huang、Thu Nguyen-Phuoc、Yuchen Fan、Sergiu Oprea、Ziyan Wang、Roman Shapovalov、Nikolaos Sarafianos、Thibault Groueix、Antoine Toisoul、Prithviraj Dhar、Xiao Chu、Minghao Chen、Geon Yeong Park、Mahima Gupta、Yassir Azziz、Rakesh Ranjan、Andrea Vedaldi（Meta Reality Labs / University of Oxford）
+- **链接**：[https://arxiv.org/abs/2511.16825](https://arxiv.org/abs/2511.16825) | 项目页：[worldgen.github.io](https://worldgen.github.io/) | CVF 页面：[CVPR 2026](https://openaccess.thecvf.com/content/CVPR2026/html/Wang_WorldGen_From_Text_to_Traversable_and_Interactive_3D_Worlds_CVPR_2026_paper.html)
+
+![WorldGen 生成的三维场景快照](https://km.sankuai.com/api/file/cdn/2756902383/242278044719?contentType=0&isNewContent=false)
+
+**核心内容**：WorldGen 是来自 Meta Reality Labs 和 University of Oxford 的 CVPR 2026 论文，提出了首个从单条文本提示生成完整、大型、可漫游交互式三维场景的端到端框架。现有三维场景生成方法在场景多样性、完整性与几何合理性之间存在取舍，且大多仅能生成单个物体或无法保证场景可正常漫游。WorldGen 通过四阶段流水线系统解决上述问题：（1）**场景规划**——借助 LLM 驱动的程序化生成器搭建场景基础空间结构与可漫游区域（导航网格），再通过深度图约束的图像生成器定义场景主题、风格与细节内容；（2）**场景重建**——基于 VecSet 三维隐空间扩散模型，将导航网格作为结构约束通过交叉注意力机制注入，即使在参考图像遮挡区域也能保证场景结构连贯、可正常漫游，导航网格对齐精度（倒角距离）相比基线降低 40%–50%；（3）**场景拆解**——对加速优化的 AutoPartGen 进行场景级微调，按部件连通度优先提取核心支点部件，将整体网格拆分为具备语义属性的独立物体，推理速度从十分钟缩短至一分钟；（4）**场景增强**——利用 LLM-VLM 保持全局风格一致性，对每个独立物体分别生成高分辨率图像、优化几何形态并生成最终纹理。最终输出的大型场景被拆解为可独立编辑的高质量三维网格模型，可直接部署至主流游戏引擎，支持碰撞检测与角色漫游。
+
+**亮点**：
+
+1. **导航网格约束的整体重建，首次保障三维生成场景的可漫游功能**：现有三维场景生成方法普遍忽视场景的功能性——生成的场景可能视觉上合理但角色无法正常行走或存在穿模问题。WorldGen 创新性地将程序化生成器输出的导航网格作为结构约束，通过编码器（稠密+稀疏点集交叉注意力）注入三维隐空间扩散模型，使生成的场景网格严格贴合可通行区域。实验表明，该约束使导航网格对齐精度提升 40%–50%，且支持通过编辑导航网格实现三维空间层面的场景布局修改，即使导航网格与参考图像存在偏差，场景结构与视觉风格依旧保持统一
+2. **组合式优化框架：整体重建→拆解→逐物体增强，兼顾全局一致性与局部细节**：传统方法要么整体重建（分辨率不足、不可编辑），要么逐物体重建（缺乏上下文、物体间无法合理衔接）。WorldGen 提出先整体后拆解的组合策略：整体三维扩散重建确保物体间的空间关系和遮挡合理性；加速优化的 AutoPartGen 按连通度优先级将整体网格拆解为独立物体；最终对每个物体用 LLM-VLM 引导的高分辨率图像和网格优化器做几何与纹理增强。这一设计既保留了场景全局一致性，又使每个物体达到工程落地标准
+3. **全流程模块化设计，输出直接兼容游戏引擎**：WorldGen 的四阶段流水线完全模块化，支持对布局、规模和风格的细粒度控制。最终输出的每个物体均为带完整纹理的三维网格模型，原生支持碰撞检测与角色漫游交互，可直接导入 Unreal Engine、Unity 等主流游戏引擎进行实时渲染和编辑。这是三维生成从学术演示走向游戏、仿真等实际应用的关键一步，将 Text-to-3D 的能力从单体物体生成推进到完整功能化世界构建
+
+### 2026-06-18｜Volumetrically Consistent 3D Gaussian Rasterization（体积一致性三维高斯光栅化）
+
+**方向**：3D Gaussian Splatting（渲染物理精度）　**来源**：CVPR 2025 Highlight　**机构**：University of California, San Diego（加州大学圣地亚哥分校）
+
+- **作者**：Chinmay Talegaonkar、Yash Belhe、Ravi Ramamoorthi、Nicholas Antipa（加州大学圣地亚哥分校）
+- **链接**：[https://arxiv.org/abs/2412.03378](https://arxiv.org/abs/2412.03378) | 项目页：[chinmay0301.github.io/vol3dgs](https://chinmay0301.github.io/vol3dgs/) | CVF 页面：[CVPR 2025](https://openaccess.thecvf.com/content/CVPR2025/html/Talegaonkar_Volumetrically_Consistent_3D_Gaussian_Rasterization_CVPR_2025_paper.html)
+
+![Vol3DGS 体积一致性 3D 高斯光栅化论文主图](https://km.sankuai.com/api/file/cdn/2756902383/242491281039?contentType=0&isNewContent=false)
+
+**核心内容**：Vol3DGS 是来自加州大学圣地亚哥分校的 CVPR 2025 Highlight 论文，从根本上重新审视了 3D Gaussian Splatting（3DGS）渲染模型的物理准确性问题。原始 3DGS 采用基于 EWA（Elliptical Weighted Average）的 splatting 渲染方式，对体积渲染方程做了两个关键近似：（1）将指数透射率线性化；（2）假设高斯基元之间不存在自遮挡。这两个近似虽然加速了渲染，但导致 alpha 值计算不准确，使得不透明表面的表示精度下降。Vol3DGS 证明了这些近似在光栅化框架内是完全不必要的——通过对 3D 高斯进行直接体积积分，可以解析计算透射率，从而推导出比 3DGS 更物理精确的 alpha 值，且可直接嵌入 3DGS 的渲染框架中使用。该方法在保持光栅化速度优势的同时，更接近体积渲染方程（类似光线追踪的物理精度）。实验表明，Vol3DGS 能以更少的高斯基元更精确地表示不透明表面，在 SSIM 和 LPIPS 指标上超越原始 3DGS。此外，体积一致性还使该方法天然适用于 CT 断层扫描重建（tomography），以更少的点匹配了当前最先进的 3DGS 断层扫描方法。
+
+**亮点**：
+
+1. **从数学根源修正 3DGS 渲染方程，消除两大物理近似**：原始 3DGS 的 splatting 渲染对指数透射率做线性化近似并忽略高斯间自遮挡，这两个近似在高斯基元密集重叠时会导致明显的渲染误差（如表面过度透明、边缘模糊）。Vol3DGS 通过解析积分直接计算每个高斯基元的体积透射率，推导出精确的 alpha 值，从根本上消除了这两个近似。这一修正不改变 3DGS 的整体框架，仅替换 alpha 计算模块，即可无缝集成到现有 3DGS 流水线中，为后续基于 3DGS 的方法提供了更可靠的物理基础。
+2. **更少高斯基元实现更高渲染质量，SSIM 和 LPIPS 双指标超越 3DGS**：由于 alpha 值计算更精确，Vol3DGS 能够用更少的高斯基元精确表示不透明表面，避免了原始 3DGS 为补偿渲染误差而过度密集化高斯基元的问题。在标准新视角合成基准（Tanks and Temples、Deep Blending 等）上，Vol3DGS 在 SSIM 和 LPIPS 两个感知质量指标上均超越原始 3DGS，同时模型更紧凑。这表明物理精确的渲染方程不仅提升了视觉质量，还带来了更高效的场景表示。
+3. **体积一致性天然支持 CT 断层扫描重建，跨领域应用潜力显著**：Vol3DGS 的体积一致性渲染使其不仅适用于视觉新视角合成，还能直接应用于医学 CT 断层扫描重建（tomography）——这是原始 3DGS 无法直接支持的任务。实验表明，Vol3DGS 以更少的高斯基元匹配了当前最先进的 3DGS 断层扫描方法（R2-Gaussian），无需任何针对断层扫描的特殊设计。这一跨领域能力表明，物理精确的体积渲染方程是连接计算机视觉与医学影像的重要桥梁，Vol3DGS 为 3DGS 在科学计算领域的应用开辟了新方向。
+
+### 2026-06-19｜SVG-IR: Spatially-Varying Gaussian Splatting for Inverse Rendering（空间变化高斯泼溅逆向渲染）
+
+**方向**：NeRF / 逆向渲染（3DGS 逆向渲染与重光照）　**来源**：CVPR 2025　**机构**：南京大学（Nanjing University）
+
+- **作者**：Hanxiao Sun、YuPeng Gao、Jin Xie、Jian Yang、Beibei Wang（南京大学）
+- **链接**：[https://arxiv.org/abs/2504.06815](https://arxiv.org/abs/2504.06815) | CVF 页面：[CVPR 2025](https://openaccess.thecvf.com/content/CVPR2025/html/Sun_SVG-IR_Spatially-Varying_Gaussian_Splatting_for_Inverse_Rendering_CVPR_2025_paper.html)
+
+![SVG-IR 论文 teaser 图](https://km.sankuai.com/api/file/cdn/2756902383/242656380510?contentType=0&isNewContent=false)
+
+**核心内容**：SVG-IR 是来自南京大学的 CVPR 2025 论文，针对现有 3D Gaussian Splatting（3DGS）逆向渲染方法的核心缺陷提出了系统性改进。现有 3DGS 逆向渲染方法将每个高斯基元的材质参数（BRDF）和法线视为常量，导致在重光照任务中出现明显伪影和不自然的间接光照效果。SVG-IR 提出了"空间变化高斯"（Spatially-Varying Gaussian，SVG）这一新型表示，允许每个高斯基元拥有空间变化的材质参数和法线，类似于传统图形管线中的顶点/片元着色机制（vertex/fragment shading）。在此基础上，SVG-IR 设计了配套的 SVG splatting 渲染方案，并集成了基于物理的间接光照模型，使重光照结果更加真实。实验表明，SVG-IR 在重光照任务上的 PSNR 比最先进的 NeRF 方法高出 2.5 dB，比现有高斯方法高出 3.5 dB，同时保持实时渲染速度。
+
+**亮点**：
+
+1. **空间变化高斯（SVG）表示突破常量材质限制**：传统 3DGS 逆向渲染将每个高斯基元的 BRDF 参数和法线视为常量，无法捕捉单个高斯覆盖区域内的材质变化，导致重光照时出现块状伪影。SVG-IR 引入空间变化高斯表示，允许每个高斯基元在其覆盖的空间范围内拥有连续变化的材质参数和法线，类比传统图形管线中的片元着色器（fragment shader）。这一设计使高斯基元能够更精细地建模表面材质的空间变化，从根本上提升了逆向渲染的分解精度。
+2. **物理间接光照模型显著改善重光照真实感**：现有 3DGS 逆向渲染方法通常忽略或简化间接光照（如环境光遮蔽、互反射），导致重光照结果缺乏真实感。SVG-IR 集成了基于物理的间接光照模型，能够准确建模光线在场景中的多次弹射效果，使重光照结果在阴影、高光和环境光遮蔽等方面更加自然。这一改进在重光照 PSNR 上带来了显著提升：比 NeRF 方法高 2.5 dB，比现有高斯方法高 3.5 dB。
+3. **兼顾新视角合成与重光照质量，保持实时渲染速度**：SVG-IR 在提升重光照质量的同时，并未牺牲新视角合成（NVS）的渲染质量，在两个任务上均达到 SOTA 水平。更重要的是，SVG splatting 方案继承了 3DGS 的光栅化渲染优势，保持了实时渲染速度，使 SVG-IR 在实际应用（如 AR/VR 场景重光照、数字孪生）中具有直接部署价值，而不仅仅是学术演示。
