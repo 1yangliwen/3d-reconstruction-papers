@@ -1,3 +1,10 @@
+> ⚠️ **注意（仅供阅读）**：此内容为简化版 Markdown，仅供阅读和总结，
+> **不可直接用于 createDocument --content 或 updateDocumentByXml**。
+> 如需编辑文档，请使用 `getDocumentXml` 获取完整格式后再通过 `updateDocumentByXml` 回传。
+> 直接用此内容编辑会丢失样式宏、合并表格、NodeID 等关键信息，导致文档数据损坏。
+
+---
+
 # 三维重建论文收藏
 
 三维重建论文收藏
@@ -24,8 +31,9 @@
 - **Proxy-GS**（2026-04-22）— 代理网格引入统一遮挡先验，推理加速 2.5×，获 CVPR 2026 Oral · [CVPR 2026 Oral](https://arxiv.org/abs/2509.24421)
 - **Stochastic Ray Tracing for 3DGS**（2026-05-06）— 首个无排序可微随机光线追踪框架，支持可重光照与非针孔相机 · [CVPR 2026](https://arxiv.org/abs/2603.23637)
 - **FastGS**（2026-05-15）— 基于多视角一致性的稠密化与剪枝策略，100 秒完成单场景训练，相比原始 3DGS 加速 15.45×，通用即插即用加速框架 · [CVPR 2026 Highlight](https://arxiv.org/abs/2511.04283)
-- **SSS（3D Student Splatting and Scooping）**（2026-06-02）— Student's t 分布替代高斯基元 + 负密度"舀取"机制，组件数减少 82% 仍保持可比质量 · [CVPR 2025 Oral](https://arxiv.org/abs/2506.01088)
+- **SSS（3D Student Splatting and Scooping）**（2026-06-02）— Student's t 分布替代高斯基元 + 负密度"舀取"机制，组件数减少 82% 仍保持可比质量 · [CVPR 2025 Oral](https://arxiv.org/abs/2503.10148)
 - **Vol3DGS**（2026-06-18）— 解析体积积分替代 EWA splatting 近似，物理精确 alpha 计算，SSIM/LPIPS 超越 3DGS，天然支持 CT 断层扫描重建 · [CVPR 2025 Highlight](https://arxiv.org/abs/2412.03378)
+- **3DGS-MCMC**（2026-06-26）— 将3DGS优化重构为MCMC采样，消除启发式增密剪枝，对初始化鲁棒 · [NeurIPS 2024](https://arxiv.org/abs/2404.09591)
 
 ### 🌧️ 三、3DGS 场景鲁棒性（恶劣条件重建）
 
@@ -51,6 +59,7 @@
 - **CUT3R**（2026-05-28）— 具有持久状态记忆的循环 Transformer，在线流式逐帧处理生成度量尺度点云，支持静态与动态场景统一感知，UC Berkeley · [CVPR 2025](https://arxiv.org/abs/2501.12387)
 - **MVGD**（2026-06-05）— 射线图条件化赋予扩散模型几何感知，零样本多视角 RGB 与深度联合生成，免中间三维表示，Toyota Research Institute · [CVPR 2025](https://arxiv.org/abs/2501.18804)
 - **OmniVGGT**（2026-06-15）— 全模态驱动视觉几何基础模型，GeoAdapter 渐进注入深度/相机几何先验，随机多模态融合训练支持任意辅助输入，港科大 × 南洋理工 · [CVPR 2026 Highlight](https://arxiv.org/abs/2511.10560)
+- **FoundationStereo**（2026-06-23）— CVPR 2025 Best Paper Candidate，首个具备强零样本泛化能力的立体深度估计基础模型，百万级合成数据 + 自筛选 + Side-Tuning Adapter 融合单目先验 · [CVPR 2025 Best Paper Candidate](https://arxiv.org/abs/2501.09898)
 
 ### 🎬 六、4D 动态场景重建（4D Dynamic Scene Reconstruction）
 
@@ -81,6 +90,7 @@
 - **Prometheus**（2026-06-04）— 视图条件多平面表示将 LDM 扩展为三维感知生成器，秒级 Text-to-3D，告别 SDS 逐步优化伪影 · [CVPR 2025](https://arxiv.org/abs/2412.21117)
 - **Turbo3D**（2026-06-09）— 双教师蒸馏 + Latent GS-LRM 全潜空间流水线，0.35 秒完成 Text-to-3D，CMU × Adobe × MIT · [CVPR 2025](https://arxiv.org/abs/2412.04470)
 - **WorldGen**（2026-06-17）— 首个从文本生成可漫游交互式三维世界的端到端框架，导航网格约束 + 组合式拆解增强，输出直接兼容游戏引擎，Meta × Oxford · [CVPR 2026](https://arxiv.org/abs/2511.16825)
+- **CAT3D**（2026-06-25）— 多视图扩散模型模拟真实捕捉流程，单张图像一分钟内创建完整三维场景 · [NeurIPS 2024](https://arxiv.org/abs/2405.10314)
 
 ### 🪟 九、3DGS 透明表面建模（Transparent Surface Modeling）
 
@@ -95,6 +105,7 @@
 - **MV-RoMa**（2026-05-05）— 首个多视图稠密匹配模型，Track-Guided 多视图编码器 + 像素对齐精炼器，SfM 全面超越稀疏/稠密匹配基线 · [CVPR 2026](https://arxiv.org/abs/2603.27542)
 - **MVSAnywhere**（2026-05-27）— 首个零样本通用 MVS 模型，成本体积块化 + 单/多目线索自适应融合，任意场景任意深度范围跨域 SOTA，Niantic Labs · [CVPR 2025](https://arxiv.org/abs/2503.22430)
 - **MV-DUSt3R+**（2026-06-12）— 单阶段前馈多视图重建，跨参考视图注意力消除单参考依赖，2 秒完成无需标定，Meta Reality Labs × UIUC · [CVPR 2025 Oral](https://arxiv.org/abs/2412.06974)
+- **Murre**（2026-06-22）— SfM 稀疏点云引导扩散模型单目深度估计，绕过传统多视图匹配，室内/街景/航拍多场景超越 SOTA MVS，浙江大学 · [CVPR 2025](https://arxiv.org/abs/2503.14483)
 
 ### 🌐 十一、NeRF / 逆向渲染（NeRF / Inverse Rendering）
 
@@ -103,7 +114,7 @@
 - **PBR-NeRF**（2026-05-11）— 基于物理渲染理论的 NeRF 逆向渲染，两个新颖物理先验约束材质估计，ETH Zürich · [CVPR 2025](https://arxiv.org/abs/2412.09680)
 - **DiffusionRenderer**（2026-05-18）— 视频扩散模型驱动的神经逆向与正向渲染统一框架，G-buffer 估计 + 重光照，NVIDIA Research，CVPR 2025 Oral · [CVPR 2025 Oral](https://arxiv.org/abs/2501.18590)
 - **Neural Inverse Rendering from Propagating Light**（2026-05-26）— 首个物理驱动的瞬态神经逆向渲染，时间分辨辐射缓存建模多次弹射间接光，CVPR 2025 最佳学生论文，多伦多大学 × CMU · [CVPR 2025 Best Student Paper](https://arxiv.org/abs/2506.05347)
-- **LIRM**（2026-06-11）— 推理时逆向渲染学习，每场景 20 min 自标定从零恢复几何 + 材质 + HDR 光照，高通 AI Research 阿姆斯特丹 · [CVPR 2025 Oral](https://arxiv.org/abs/2503.11147)
+- **LIRM**（2026-06-11）— 推理时逆向渲染学习，每场景 20 min 自标定从零恢复几何 + 材质 + HDR 光照，Meta Reality Labs · [CVPR 2025 Oral](https://arxiv.org/abs/2504.20026)
 - **SVG-IR**（2026-06-19）— 空间变化高斯表示允许每高斯拥有变化材质与法线，物理间接光照模型，重光照 PSNR 超 NeRF 2.5 dB，南京大学 · [CVPR 2025](https://arxiv.org/abs/2504.06815)
 
 ### 🏷️ 十二、3DGS 场景理解与语义编码（3DGS Scene Understanding）
@@ -1008,3 +1019,96 @@
 1. **空间变化高斯（SVG）表示突破常量材质限制**：传统 3DGS 逆向渲染将每个高斯基元的 BRDF 参数和法线视为常量，无法捕捉单个高斯覆盖区域内的材质变化，导致重光照时出现块状伪影。SVG-IR 引入空间变化高斯表示，允许每个高斯基元在其覆盖的空间范围内拥有连续变化的材质参数和法线，类比传统图形管线中的片元着色器（fragment shader）。这一设计使高斯基元能够更精细地建模表面材质的空间变化，从根本上提升了逆向渲染的分解精度。
 2. **物理间接光照模型显著改善重光照真实感**：现有 3DGS 逆向渲染方法通常忽略或简化间接光照（如环境光遮蔽、互反射），导致重光照结果缺乏真实感。SVG-IR 集成了基于物理的间接光照模型，能够准确建模光线在场景中的多次弹射效果，使重光照结果在阴影、高光和环境光遮蔽等方面更加自然。这一改进在重光照 PSNR 上带来了显著提升：比 NeRF 方法高 2.5 dB，比现有高斯方法高 3.5 dB。
 3. **兼顾新视角合成与重光照质量，保持实时渲染速度**：SVG-IR 在提升重光照质量的同时，并未牺牲新视角合成（NVS）的渲染质量，在两个任务上均达到 SOTA 水平。更重要的是，SVG splatting 方案继承了 3DGS 的光栅化渲染优势，保持了实时渲染速度，使 SVG-IR 在实际应用（如 AR/VR 场景重光照、数字孪生）中具有直接部署价值，而不仅仅是学术演示。
+
+### 2026-06-22｜Murre: Multi-view Reconstruction via SfM-guided Monocular Depth Estimation（基于 SfM 引导单目深度估计的多视图重建）
+
+**方向**：多视图立体重建（MVS / 多视图重建）　**来源**：CVPR 2025　**机构**：浙江大学（Zhejiang University）× 北京师范大学
+
+- **作者**：Haoyu Guo、He Zhu、Sida Peng、Haotong Lin、Yunzhi Yan、Tao Xie、Wenguan Wang、Xiaowei Zhou、Hujun Bao（浙江大学 × 北京师范大学）
+- **链接**：[https://arxiv.org/abs/2503.14483](https://arxiv.org/abs/2503.14483) | 项目页：[zju3dv.github.io/murre](https://zju3dv.github.io/murre/) | GitHub：[zju3dv/Murre](https://github.com/zju3dv/Murre) | CVF 页面：[CVPR 2025](https://openaccess.thecvf.com/content/CVPR2025/html/Guo_Multi-view_Reconstruction_via_SfM-guided_Monocular_Depth_Estimation_CVPR_2025_paper.html)
+
+![Murre 论文 teaser 图](https://km.sankuai.com/api/file/cdn/2756902383/242777503352?contentType=0&isNewContent=false)
+
+**核心内容**：Murre 是来自浙江大学 zju3dv 实验室的 CVPR 2025 论文，提出了一种全新的多视图三维重建范式——通过 SfM 引导的单目深度估计替代传统 MVS 的多视图匹配步骤。近年来，大规模视觉模型在单目深度估计任务上展现出卓越的泛化能力，但单目深度估计本质上存在尺度模糊性，估计的深度值精度不足，难以直接用于多视图几何重建。Murre 的核心创新在于将 SfM 恢复的稀疏点云作为强多视图先验注入条件扩散模型，引导深度估计过程：首先对输入多视图图像运行 SfM 获取稀疏点云（捕捉全局场景结构），然后将 SfM 点云作为条件信号注入预训练的单目深度扩散模型，引导其生成具有度量尺度的精确深度图，最后通过 TSDF 融合将多张深度图整合为完整的三维重建结果。这一设计巧妙地绕过了传统 MVS 中计算代价高昂的多视图代价体构建和匹配步骤，同时利用 SfM 的全局几何先验约束单目深度估计的尺度，实现了精度与效率的兼顾。实验表明，Murre 在公开真实数据集上的深度估计质量显著优于此前的单目深度方法，在室内、街景和航拍等多种场景类型下的重建质量超越了当前最先进的 MVS 方法。
+
+**亮点**：
+
+1. **SfM 先验注入扩散模型，突破单目深度尺度模糊瓶颈**：单目深度估计的致命弱点是尺度模糊性——无法从单张图像恢复真实物理尺度，导致多视图深度图无法直接融合。Murre 首次将 SfM 稀疏点云作为几何条件注入深度扩散模型，让模型在生成深度时"看到"全局三维结构，从而输出具有一致度量尺度的深度图。这一设计既保留了单目深度估计的跨场景泛化能力（继承预训练视觉大模型的先验），又通过 SfM 先验弥补了尺度信息的缺失，为"用单目深度做 MVS"这一长期构想提供了可行路径
+2. **绕过传统多视图匹配，重建流程极简且高效**：传统 MVS 需要构建多视图代价体、进行像素级匹配和深度回归，计算量大且对纹理缺失区域敏感。Murre 完全绕过了多视图匹配步骤——每张图像独立进行 SfM 引导的深度估计，再通过 TSDF 融合即可获得完整重建。这种"先估计后融合"的解耦设计大幅降低了 GPU 显存需求，避免了代价体内存的二次增长问题，同时利用预训练扩散模型的强大先验自然处理无纹理区域和重复纹理区域，在多种场景类型上展现出优异的鲁棒性
+3. **多场景泛化超越 SOTA MVS，为 MVS 基础模型化提供新范式**：Murre 在室内（ScanNet、Replica）、街景（KITTI）和航拍（BundleFusion）等差异极大的场景上均超越了当前最先进的 MVS 方法，展现了强大的跨域泛化能力。与 MVSAnywhere 等专用 MVS 模型需要在大规模多域数据上联合训练不同，Murre 借助预训练深度扩散模型的泛化能力，仅需 SfM 提供几何锚点即可适配任意场景。这一"预训练视觉模型 + SfM 几何先验"的范式为 MVS 向基础模型演进提供了新的思路，与传统代价体方法（如 MVSAnywhere 的 Cost Volume Patchifier）形成了互补的技术路线
+
+### 2026-06-23｜FoundationStereo: Zero-Shot Stereo Matching（零样本立体深度估计基础模型）
+
+**FoundationStereo：零样本立体深度估计基础模型**
+
+**方向**：视觉几何基础模型（Visual Geometry Foundation Models）　**来源**：CVPR 2025 Best Paper Candidate　**机构**：NVIDIA
+
+- **作者**：Bowen Wen、Matthew Trepte、Joseph Aribido、Jan Kautz、Orazio Gallo、Stan Birchfield（NVIDIA）
+- **链接**：[https://arxiv.org/abs/2501.09898](https://arxiv.org/abs/2501.09898) | 项目页：[nvlabs.github.io/FoundationStereo](https://nvlabs.github.io/FoundationStereo/) | GitHub：[NVlabs/FoundationStereo](https://github.com/NVlabs/FoundationStereo) | CVF 页面：[CVPR 2025](https://openaccess.thecvf.com/content/CVPR2025/html/Wen_FoundationStereo_Zero-Shot_Stereo_Matching_CVPR_2025_paper.html)
+
+![FoundationStereo 论文 teaser 图](https://km.sankuai.com/api/file/cdn/2756902383/242996178350?contentType=0&isNewContent=false)
+
+**核心内容**：FoundationStereo 是 NVIDIA 提出的 CVPR 2025 Best Paper Candidate 论文（满分评审），首次为立体深度估计领域构建了具备强零样本泛化能力的基础模型。传统立体匹配方法虽然在特定基准数据集上通过逐域微调取得了巨大进展，但跨域零样本泛化能力一直是该领域的核心瓶颈——这与图像分类、目标检测等其他视觉任务中基础模型所展现出的强大泛化能力形成了鲜明对比。FoundationStereo 通过三大关键设计突破这一瓶颈：（1）**大规模高保真合成数据集（FSD）**——利用 NVIDIA Omniverse 构建包含 100 万对立体图像的合成数据集，涵盖结构化室内/室外场景及高多样性随机化场景（飞行物体、复杂光照、多变相机参数），并通过域随机化策略最大化数据多样性；（2）**迭代自筛选（Iterative Self-Curation）**——自动检测并移除模糊样本（如严重纹理重复、 ubiquitous 反射、纯色区域等），通过交替训练与筛选迭代优化数据质量；（3）**Side-Tuning Adapter（STA）**——将 DepthAnythingV2 等视觉基础模型的丰富单目深度先验通过侧调适配器融入立体匹配网络，有效缓解合成到真实域的 gap，同时保留多尺度 CNN 提取的高频细节特征。此外，网络还设计了 Attentive Hybrid Cost Filtering（AHCF）模块，结合 Axial-Planar Convolution 与 Disparity Transformer 实现 4D 混合代价体在空间与视差维度上的长程上下文推理。实验表明，FoundationStereo 在 Middlebury、ETH3D 等排行榜上位列第一，无需任何目标域微调即可在多样化真实场景（室内/室外、无纹理/反光/透明/薄结构物体、复杂光照）上实现鲁棒且精确的立体深度估计。
+
+**亮点**：
+
+1. **百万级合成数据 + 自筛选，首次实现立体匹配的真正零样本泛化**：立体匹配领域长期受困于"在训练域表现优异、跨域即崩溃"的困境，现有方法几乎都需要在目标域上进行微调才能达到可用精度。FoundationStereo 通过 NVIDIA Omniverse 构建的百万级高保真合成数据集（FSD）结合迭代自筛选机制，首次让立体匹配模型具备了类似 CLIP、SAM 等基础模型的零样本跨域泛化能力——在从未见过的真实场景上直接推理即可达到 SOTA 精度，无需任何目标域微调。这一突破为立体匹配从"专用模型"走向"基础模型"奠定了数据与方法论基础
+2. **Side-Tuning Adapter 融合单目基础模型先验，巧妙缓解 sim-to-real gap**：合成数据训练的网络往往在面对真实图像时因域差异而性能骤降。FoundationStereo 创新性地通过 Side-Tuning Adapter 将 DepthAnythingV2 的视觉基础模型特征作为几何先验融入立体匹配流程——不是直接使用具有尺度模糊性的单目深度预测值，而是利用其深层 latent 特征来引导代价体过滤，使网络在纹理缺失、反光、透明等传统立体匹配难以处理的区域也能获得可靠的几何线索。这一设计既保留了立体匹配在度量精度上的优势，又借助单目基础模型的强大泛化能力弥补了合成数据的域 gap
+3. **Attentive Hybrid Cost Filtering 实现长程上下文推理，架构设计兼顾效率与精度**：传统代价体过滤方法（如 3D 卷积）难以有效聚合长程空间与视差维度的上下文信息。FoundationStereo 提出的 AHCF 模块将 Axial-Planar Convolution（沿空间轴与视差平面的可分离卷积）与 Disparity Transformer（在视差维度上执行自注意力）相结合，在保持计算效率的同时实现了 4D 混合代价体的长程特征聚合。配合 GRU 迭代精化机制，网络能够从粗到细地逐步优化视差估计，在 Middlebury 和 ETH3D 等权威排行榜上均取得第一名的成绩，同时推理速度满足实时应用需求
+
+#### 2026-06-24｜SLAM3R: Real-Time Dense Scene Reconstruction from Monocular RGB Videos（单目RGB视频实时密集三维重建）
+
+**SLAM3R：单目RGB视频实时密集三维重建**
+
+**方向**：SLAM / 实时三维重建　**来源**：CVPR 2025 Highlight　**机构**：北京大学（PKU）× 香港大学（HKU）
+
+- **作者**：Yuzheng Liu、Siyan Dong、Shuzhe Wang、Yingda Yin、Yanchao Yang、Qingnan Fan、Baoquan Chen（北京大学 / 香港大学）
+- **链接**：[https://arxiv.org/abs/2412.09401](https://arxiv.org/abs/2412.09401) | GitHub：[PKU-VCL-3DV/SLAM3R](https://github.com/PKU-VCL-3DV/SLAM3R) | CVF 页面：[CVPR 2025 Highlight](https://openaccess.thecvf.com/content/CVPR2025/html/Liu_SLAM3R_Real-Time_Dense_Scene_Reconstruction_from_Monocular_RGB_Videos_CVPR_2025_paper.html)
+
+![SLAM3R 论文 teaser 图：实时密集三维重建系统框架](https://km.sankuai.com/api/file/cdn/2756902383/243182048014?contentType=0&isNewContent=false)
+
+**核心内容**：SLAM3R 是来自北京大学陈宝权团队联合香港大学等机构的 CVPR 2025 Highlight 论文，同时荣获第四届中国三维视觉大会（China3DV 2025）年度最佳论文（TOP1）。SLAM3R 首次实现从单目 RGB 长视频中实时且高质量地重建场景稠密点云，使用消费级显卡（如 RTX 4090D）即可达到 20+ FPS 的重建性能。现有密集三维重建方法普遍依赖离线处理流程，无法满足实时应用需求；而现有实时 SLAM 方法又往往牺牲重建质量。SLAM3R 通过两层级前馈神经网络架构突破这一困境：（1）**Image-to-Points（I2P）网络**——以滑动窗口方式处理连续视频帧，直接从局部视频片段回归三维点图（pointmaps），无需显式估计相机参数；（2）**Local-to-World（L2W）网络**——将 I2P 输出的局部点图渐进式对齐到统一全局坐标系，通过迭代更新机制实现全局一致的稠密重建。整个系统端到端可微，无需任何相机标定或位姿初始化，直接从原始 RGB 视频输出全局一致的稠密点云。在 ScanNet、7-Scenes 等主流基准上，SLAM3R 的重建精度和完整度均达到当前最先进水平，同时实现了实时运行速度，兼顾了效率与质量。
+
+**亮点**：
+
+1. **无需相机参数的端到端前馈重建，彻底摆脱传统 SLAM 的显式位姿估计依赖**：传统 SLAM 系统（如 ORB-SLAM、NICE-SLAM）需要显式估计相机位姿作为中间表示，再基于位姿进行建图，这种两阶段设计导致位姿误差会直接传播到建图质量中。SLAM3R 创新性地完全绕过相机位姿估计——I2P 网络直接从视频帧回归三维点图，L2W 网络直接在点图空间中进行全局对齐，整个流程无需任何相机内参或外参。这一设计不仅简化了系统架构，还消除了位姿估计误差的传播链，使重建质量不再受限于位姿精度，为"无标定实时重建"提供了全新的技术路径
+2. **两层级滑动窗口架构，实现局部精度与全局一致性的统一**：SLAM3R 的 I2P 网络以滑动窗口处理局部视频片段，在窗口内通过跨帧注意力机制精确回归局部三维结构，保证了局部重建的高精度；L2W 网络则通过迭代更新机制将新到来的局部点图渐进式融合到全局坐标系，维护全局一致性。这种"局部精确 + 全局一致"的两层级设计使 SLAM3R 能够处理任意长度的视频序列而不产生漂移，在长序列重建（如 ScanNet 场景）上表现尤为突出，解决了前馈方法在长视频上全局一致性难以保证的核心挑战
+3. **消费级 GPU 实现 20+ FPS 实时重建，CVPR 2025 Highlight + China3DV 年度最佳论文双重认可**：SLAM3R 在 RTX 4090D 等消费级显卡上实现了 20+ FPS 的实时密集重建，重建点云的准确度（Accuracy）和完整度（Completeness）均达到当前最先进水平，在 ScanNet 和 7-Scenes 等主流基准上超越了包括 MonST3R、DROID-SLAM 等在内的现有方法。该工作被 CVPR 2025 评为 Highlight 论文（约占所有接收论文的 10%），并在第四届中国三维视觉大会上荣获年度最佳论文（TOP1），充分体现了其在学术界的高度认可。SLAM3R 的开源代码已在 GitHub 发布，为实时三维重建领域的后续研究提供了强大的基础设施
+
+### 2026-06-25｜CAT3D: Create Anything in 3D with Multi-View Diffusion Models（多视图扩散模型驱动的任意三维内容创建）
+
+**CAT3D：多视图扩散模型驱动的任意三维内容创建**
+
+**方向**：三维生成（3D Generation）/ 多视图扩散生成　**来源**：NeurIPS 2024　**机构**：Google DeepMind
+
+- **作者**：Ruiqi Gao、Aleksander Holynski、Philipp Henzler、Arthur Brussee、Ricardo Martin-Brualla、Pratul Srinivasan、Jonathan T. Barron、Ben Poole（Google DeepMind）
+- **链接**：[https://arxiv.org/abs/2405.10314](https://arxiv.org/abs/2405.10314) | 项目页：[cat3d.github.io](https://cat3d.github.io/) | NeurIPS 页面：[NeurIPS 2024](https://proceedings.neurips.cc/paper_files/paper/2024/hash/89e4433fec4b99f1d859db57af1e0a0f-Abstract-Conference.html)
+
+![CAT3D teaser figure](https://km.sankuai.com/api/file/cdn/2756902383/243371657635?contentType=0&isNewContent=false)
+
+**核心内容**：CAT3D 是 Google DeepMind 发表在 NeurIPS 2024 上的三维生成方法，提出通过多视图扩散模型模拟真实世界的三维捕捉过程，从而实现"Create Anything in 3D"的愿景。现有高质量三维重建需要用户采集数百至数千张图像，耗时且复杂。CAT3D 创新性地将多视图扩散模型与鲁棒三维重建相结合：给定任意数量的输入图像（甚至仅单张图像）和一组目标新视角，多视图扩散模型能够生成高度一致的新视角图像，然后将这些生成的密集新视图作为输入送入稳健的三维重建流水线，最终生成可实时渲染的三维表示（3DGS/NeRF）。整个流程可在短短一分钟内完成从单张图像到完整三维场景的创建，在单图像和稀疏视图三维场景创建任务上显著优于 Zero123、ReconFusion 等现有方法。CAT3D 的独特优势在于其高度灵活性——支持文本提示、单张图像、稀疏多视图等多种输入条件，且生成的视角数量可任意指定，密度越高重建质量越好，推理时可自由权衡速度与质量。
+
+**亮点**：
+
+1. **模拟现实世界捕捉流程的生成式重建范式，单张图像一分钟内创建完整三维场景**：传统三维重建需要人工拍摄大量多视角照片，而传统 Text-to-3D 方法（如 DreamFusion）依赖耗时的 Score Distillation Sampling（SDS）优化，速度慢且容易产生饱和、模糊等伪影。CAT3D 提出了一种全新的思路——无需优化，直接让多视图扩散模型模拟"摄影师围绕物体拍摄"的过程，生成任意数量、高度一致的新视角图像，再通过成熟的 3D 重建技术将其转化为三维表示。这一范式将"三维生成"与"三维重建"两个领域无缝桥接，既利用了扩散模型强大的生成能力，又借助了重建技术的几何精度，在生成质量和效率之间找到了优雅的平衡点。整个流程在 NeRF 和 3DGS 两种表示下均可工作，单场景创建仅需一分钟
+2. **高度灵活的多条件输入与密度可调生成，单图/文本/多图均可用**：CAT3D 不限制输入类型——既可以从单一图像出发，也可以通过文本提示生成参考图像后扩展为三维场景，还可以直接接收多张稀疏视角图像进行补全式重建。更重要的是，用户可自由指定生成的新视角数量（从数十到数百张），生成的视角越多、覆盖越密集，最终三维重建质量越高，实现了"推理算力换重建质量"的灵活权衡。这种高度通用的输入接口使 CAT3D 在单图像三维创建、稀疏视图三维补全、文本到三维等多种任务上均展现出领先性能，显著优于 Zero123、SyncDreamer、ReconFusion 等专用方法
+3. **多视角一致性的联合去噪生成，从"逐视角独立生成"到"全局一致生成"的飞跃**：早期基于扩散模型的三维生成方法（如 Zero123）对每个新视角独立生成，导致多视角之间出现明显的不一致（纹理漂移、几何冲突）。CAT3D 的多视图扩散模型通过联合去噪策略，在所有目标视角之间建立全局一致性约束，确保生成的视角集合在颜色、纹理和几何上高度统一。此外，生成的新视角不仅包括 RGB 图像，还支持深度图估计，进一步增强重建的几何约束。这一多视角一致性生成能力使 CAT3D 在生成质量上建立了新的 SOTA，尤其在需要高度几何一致的场景重建任务中优势突出
+
+### 2026-06-26｜3D Gaussian Splatting as Markov Chain Monte Carlo（将3D高斯泼溅重构为马尔可夫链蒙特卡洛采样）
+
+**3D Gaussian Splatting as Markov Chain Monte Carlo：将3D高斯泼溅重构为马尔可夫链蒙特卡洛采样**
+
+**方向**：3D Gaussian Splatting（3DGS 基础理论与优化）　**来源**：NeurIPS 2024　**机构**：英属哥伦比亚大学（UBC）× Google Research × Google DeepMind × Simon Fraser University × 多伦多大学
+
+- **作者**：Shakiba Kheradmand、Daniel Rebain、Gopal Sharma、Weiwei Sun、Yang-Che Tseng、Hossam Isack、Abhishek Kar、Andrea Tagliasacchi、Kwang Moo Yi（UBC / Google Research / Google DeepMind / Simon Fraser University / University of Toronto）
+- **链接**：[https://arxiv.org/abs/2404.09591](https://arxiv.org/abs/2404.09591) | 项目页：[ubc-vision.github.io/3dgs-mcmc](https://ubc-vision.github.io/3dgs-mcmc/) | NeurIPS 页面：[NeurIPS 2024](https://proceedings.neurips.cc/paper_files/paper/2024/hash/93be245fce00a9bb2333c17ceae4b732-Abstract-Conference.html)
+
+![3DGS-MCMC 论文主结果对比图](https://km.sankuai.com/api/file/cdn/2756902383/243564913447?contentType=0&isNewContent=false)
+
+**核心内容**：3D Gaussian Splatting as Markov Chain Monte Carlo（3DGS-MCMC）是英属哥伦比亚大学联合 Google Research、DeepMind 等机构发表在 NeurIPS 2024 上的重要工作，从概率统计的视角重新诠释了 3DGS 的核心优化机制。现有 3DGS 方法依赖精心设计的克隆（cloning）和分裂（splitting）启发式策略来放置高斯基元，这些策略不仅导致渲染质量不稳定，还对初始化质量高度敏感。本文提出将 3D 高斯集合视为从描述场景物理表示的底层概率分布中抽取的随机样本——即马尔可夫链蒙特卡洛（MCMC）样本。在这一视角下，作者证明了 3D 高斯的参数更新可以通过引入噪声转换为随机梯度朗之万动力学（SGLD）更新。进而，原有的增密（densification）和剪枝（pruning）启发式策略被重写为 MCMC 样本的确定性状态转移，彻底移除了这些手工设计的启发式规则。具体而言，作者将高斯"克隆"操作重新设计为一种"重定位"（relocalization）方案，使其近似保持样本概率不变；同时引入正则化项促进未使用高斯的自动移除。实验表明，该方法在多个标准评估场景上提供了更优的渲染质量，能够轻松控制高斯数量，并对初始化具有更强的鲁棒性。
+
+**亮点**：
+
+1. **从概率统计视角重构3DGS优化框架，将启发式增密剪枝转化为MCMC状态转移**：传统3DGS的克隆、分裂、剪枝等操作是手工设计的启发式规则，缺乏理论保证，且对初始化敏感。本文首次将3D高斯视为从场景概率分布中抽取的MCMC样本，证明参数更新等价于SGLD更新，并将增密和剪枝重写为保持分布不变的确定性状态转移。这一理论重构不仅消除了对精心调参的启发式策略的依赖，还为3DGS的收敛性和稳定性提供了概率框架下的理论支撑，是从"工程经验"走向"理论根基"的关键一步
+2. **重定位方案替代克隆操作，保持样本概率不变，解决分布偏移问题**：现有3DGS的克隆操作会显著改变选中高斯的空间覆盖范围，导致MCMC采样中的分布不变性被严重破坏。作者提出了一种重定位（relocalization）方案，通过将高斯参数重新分配到新的空间位置来近似保持样本概率，避免了传统克隆操作对分布的扭曲。这一设计使增密过程成为MCMC框架下的合法"跳跃移动"（jump move），确保了采样过程不会崩溃，从而在理论上保证了优化过程的稳定性
+3. **正则化项促进高斯高效利用，对初始化鲁棒且渲染质量提升显著**：作者引入了一个简单的正则化项，鼓励移除未使用的高斯（低透明度或不贡献渲染），使高斯基元数量能够根据场景复杂度自适应调整。实验表明，该方法在标准Mip-NeRF 360数据集上不仅渲染质量优于原始3DGS，而且对随机初始化（Random init）同样鲁棒——原始3DGS在随机初始化下性能显著下降，而MCMC版本在各种初始化条件下均保持稳定性能。这一鲁棒性突破降低了对高质量SfM初始化的依赖，为3DGS在缺乏精确相机标定的场景中的应用打开了新可能
