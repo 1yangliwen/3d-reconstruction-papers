@@ -1,3 +1,6 @@
+文档内容（简化版，仅供阅读）：
+============================================================
+
 > ⚠️ **注意（仅供阅读）**：此内容为简化版 Markdown，仅供阅读和总结，
 > **不可直接用于 createDocument --content 或 updateDocumentByXml**。
 > 如需编辑文档，请使用 `getDocumentXml` 获取完整格式后再通过 `updateDocumentByXml` 回传。
@@ -60,6 +63,7 @@
 - **MVGD**（2026-06-05）— 射线图条件化赋予扩散模型几何感知，零样本多视角 RGB 与深度联合生成，免中间三维表示，Toyota Research Institute · [CVPR 2025](https://arxiv.org/abs/2501.18804)
 - **OmniVGGT**（2026-06-15）— 全模态驱动视觉几何基础模型，GeoAdapter 渐进注入深度/相机几何先验，随机多模态融合训练支持任意辅助输入，港科大 × 南洋理工 · [CVPR 2026 Highlight](https://arxiv.org/abs/2511.10560)
 - **FoundationStereo**（2026-06-23）— CVPR 2025 Best Paper Candidate，首个具备强零样本泛化能力的立体深度估计基础模型，百万级合成数据 + 自筛选 + Side-Tuning Adapter 融合单目先验 · [CVPR 2025 Best Paper Candidate](https://arxiv.org/abs/2501.09898)
+- **Online3R**（2026-07-01）— CVPR 2026，基于几何基础模型的序列重建在线学习框架，参数高效视觉提示 + 自监督局部/全局一致性约束，实时适应新场景 · [CVPR 2026](https://arxiv.org/abs/2604.09480)
 
 ### 🎬 六、4D 动态场景重建（4D Dynamic Scene Reconstruction）
 
@@ -79,6 +83,7 @@
 - **WildGS-SLAM**（2026-05-29）— 首个基于 3DGS 的动态环境单目 SLAM，DINOv2 驱动不确定性预测去除动态干扰，室内外场景均超越 SOTA，斯坦福 × ETH Zürich · [CVPR 2025](https://arxiv.org/abs/2504.03886)
 - **MAGiC-SLAM**（2026-06-08）— 首个多智能体 3DGS SLAM 系统，DINOv2 回环检测 + 子地图协同融合，24× 加速，TU Wien × ETH Zürich · [CVPR 2025](https://arxiv.org/abs/2411.16785)
 - **SEGS-SLAM**（2026-06-16）— 结构增强 3DGS SLAM，结构化点云初始化高斯基元 + 运动外观嵌入消除渲染不一致，单目/双目/RGB-D 均达 SOTA，南开大学 · [ICCV 2025](https://arxiv.org/abs/2501.05242)
+- **SDGS**（2026-07-02）— 基于稀疏边缘描述子的在线 3DGS 系统，"先勾轮廓再上色"两阶段范式，极端高速运动下唯一不崩溃的 GS-SLAM，ATE 仅 3.91cm · [CVPR 2026](https://openaccess.thecvf.com/content/CVPR2026/html/Tian_SDGS_Spatial_Difference_Guided_Gaussian_Splatting_for_Simultaneous_Localization_and_CVPR_2026_paper.html)
 
 ### 🎨 八、三维生成（3D Generation）
 
@@ -91,6 +96,7 @@
 - **Turbo3D**（2026-06-09）— 双教师蒸馏 + Latent GS-LRM 全潜空间流水线，0.35 秒完成 Text-to-3D，CMU × Adobe × MIT · [CVPR 2025](https://arxiv.org/abs/2412.04470)
 - **WorldGen**（2026-06-17）— 首个从文本生成可漫游交互式三维世界的端到端框架，导航网格约束 + 组合式拆解增强，输出直接兼容游戏引擎，Meta × Oxford · [CVPR 2026](https://arxiv.org/abs/2511.16825)
 - **CAT3D**（2026-06-25）— 多视图扩散模型模拟真实捕捉流程，单张图像一分钟内创建完整三维场景 · [NeurIPS 2024](https://arxiv.org/abs/2405.10314)
+- **Realiz3D**（2026-07-03）— 领域感知学习框架将"域身份"与"3D 控制信号"解耦，实现强 3D 一致性与显著更高的真实感，Meta AI × Technion · [CVPR 2026](https://arxiv.org/abs/2605.13852)
 
 ### 🪟 九、3DGS 透明表面建模（Transparent Surface Modeling）
 
@@ -106,6 +112,7 @@
 - **MVSAnywhere**（2026-05-27）— 首个零样本通用 MVS 模型，成本体积块化 + 单/多目线索自适应融合，任意场景任意深度范围跨域 SOTA，Niantic Labs · [CVPR 2025](https://arxiv.org/abs/2503.22430)
 - **MV-DUSt3R+**（2026-06-12）— 单阶段前馈多视图重建，跨参考视图注意力消除单参考依赖，2 秒完成无需标定，Meta Reality Labs × UIUC · [CVPR 2025 Oral](https://arxiv.org/abs/2412.06974)
 - **Murre**（2026-06-22）— SfM 稀疏点云引导扩散模型单目深度估计，绕过传统多视图匹配，室内/街景/航拍多场景超越 SOTA MVS，浙江大学 · [CVPR 2025](https://arxiv.org/abs/2503.14483)
+- **HAMSt3R**（2026-06-30）— 将 MASt3R 扩展为联合重建人体与场景的前馈网络，DUNE 蒸馏编码器融合场景几何与人体结构先验，人体中心基准 SOTA，NAVER LABS Europe · [ICCV 2025](https://arxiv.org/abs/2508.16433)
 
 ### 🌐 十一、NeRF / 逆向渲染（NeRF / Inverse Rendering）
 
@@ -116,6 +123,7 @@
 - **Neural Inverse Rendering from Propagating Light**（2026-05-26）— 首个物理驱动的瞬态神经逆向渲染，时间分辨辐射缓存建模多次弹射间接光，CVPR 2025 最佳学生论文，多伦多大学 × CMU · [CVPR 2025 Best Student Paper](https://arxiv.org/abs/2506.05347)
 - **LIRM**（2026-06-11）— 推理时逆向渲染学习，每场景 20 min 自标定从零恢复几何 + 材质 + HDR 光照，Meta Reality Labs · [CVPR 2025 Oral](https://arxiv.org/abs/2504.20026)
 - **SVG-IR**（2026-06-19）— 空间变化高斯表示允许每高斯拥有变化材质与法线，物理间接光照模型，重光照 PSNR 超 NeRF 2.5 dB，南京大学 · [CVPR 2025](https://arxiv.org/abs/2504.06815)
+- **NeRF Emitter**（2026-06-29）— NeRF 作为非远距离环境发射器建模空间变化光照，物理逆向渲染精准重建几何与材质，清华大学 × UC Irvine · [SIGGRAPH 2024](https://arxiv.org/abs/2402.04829)
 
 ### 🏷️ 十二、3DGS 场景理解与语义编码（3DGS Scene Understanding）
 
@@ -1112,3 +1120,103 @@
 1. **从概率统计视角重构3DGS优化框架，将启发式增密剪枝转化为MCMC状态转移**：传统3DGS的克隆、分裂、剪枝等操作是手工设计的启发式规则，缺乏理论保证，且对初始化敏感。本文首次将3D高斯视为从场景概率分布中抽取的MCMC样本，证明参数更新等价于SGLD更新，并将增密和剪枝重写为保持分布不变的确定性状态转移。这一理论重构不仅消除了对精心调参的启发式策略的依赖，还为3DGS的收敛性和稳定性提供了概率框架下的理论支撑，是从"工程经验"走向"理论根基"的关键一步
 2. **重定位方案替代克隆操作，保持样本概率不变，解决分布偏移问题**：现有3DGS的克隆操作会显著改变选中高斯的空间覆盖范围，导致MCMC采样中的分布不变性被严重破坏。作者提出了一种重定位（relocalization）方案，通过将高斯参数重新分配到新的空间位置来近似保持样本概率，避免了传统克隆操作对分布的扭曲。这一设计使增密过程成为MCMC框架下的合法"跳跃移动"（jump move），确保了采样过程不会崩溃，从而在理论上保证了优化过程的稳定性
 3. **正则化项促进高斯高效利用，对初始化鲁棒且渲染质量提升显著**：作者引入了一个简单的正则化项，鼓励移除未使用的高斯（低透明度或不贡献渲染），使高斯基元数量能够根据场景复杂度自适应调整。实验表明，该方法在标准Mip-NeRF 360数据集上不仅渲染质量优于原始3DGS，而且对随机初始化（Random init）同样鲁棒——原始3DGS在随机初始化下性能显著下降，而MCMC版本在各种初始化条件下均保持稳定性能。这一鲁棒性突破降低了对高质量SfM初始化的依赖，为3DGS在缺乏精确相机标定的场景中的应用打开了新可能
+
+### 2026-06-29｜NeRF as Non-Distant Environment Emitter in Physics-based Inverse Rendering（NeRF 作为非远距离环境发射器的物理逆向渲染）
+
+**NeRF as Non-Distant Environment Emitter in Physics-based Inverse Rendering**
+**NeRF 作为非远距离环境发射器的物理逆向渲染**
+
+**方向**：NeRF / 逆向渲染　**来源**：SIGGRAPH 2024 (ACM Transactions on Graphics)　**机构**：清华大学 × 西藏大学 × University of California, Irvine
+
+- **作者**：Jingwang Ling、Ruihan Yu、Feng Xu†（通讯作者）、Chun Du、Shuang Zhao（清华大学 / 西藏大学 / UC Irvine）
+- **链接**：[https://arxiv.org/abs/2402.04829](https://arxiv.org/abs/2402.04829) | 项目页：[nerfemitterpbir.github.io](https://nerfemitterpbir.github.io/) | 代码：[github.com/gerwang/nerf-emitter](https://github.com/gerwang/nerf-emitter)
+
+![NeRF Emitter — Teaser](https://km.sankuai.com/api/file/cdn/2756902383/243821205235?contentType=0&isNewContent=false)
+
+**核心内容**：物理逆向渲染旨在从捕获的二维图像中联合优化场景的几何形状、表面材质和环境光照，是实现重光照、场景编辑等应用的基础技术。在逆向渲染中，光照模型的选择至关重要——传统方法普遍采用环境贴图（Environment Map）来近似场景照明，但环境贴图基于"远距离光照"假设，即所有光源都位于无限远处，导致光照分布在空间上恒定不变。然而在真实场景中，光源往往位于有限距离内，此时远距离假设失效：物体表面不同位置接收到的光照存在显著差异（即"非远距离光照效应"），空间恒定的光照模型成为劣质近似。本文首次提出使用 NeRF 作为空间变化的环境光照模型，替代传统的环境贴图。具体而言，作者用 HDR NeRF 建模物体周围的非边界场景环境，使其能够合成三维一致的、任意空间位置的入射辐射分布；同时将目标物体表示为带材质的几何表面，构建"表面+NeRF"混合渲染方程。为将 NeRF 光照有效融入物理逆向渲染流水线，作者设计了面向 NeRF 的发射器重要性采样（Emitter Importance Sampling）技术，大幅降低蒙特卡洛渲染方差。在真实和合成数据集上的实验表明，当光源非远距离时，环境贴图会导致重光照和几何重建出现明显伪影，而 NeRF 发射器能够精准建模非远距离光照，实现高质量的逆向渲染。
+
+**亮点**：
+
+1. **首次将 NeRF 用作环境光照模型，突破环境贴图的远距离光照假设**：传统逆向渲染方法普遍采用环境贴图（Environment Map）近似场景照明，其"远距离光照"假设导致光照在空间上恒定不变。本文首次提出使用 HDR NeRF 建模非远距离环境光照——NeRF 作为三维辐射场天然具有空间变化能力，能够为物体表面任意着色点合成三维一致的入射辐射分布，精准捕捉光源视差效应。这一创新从根本上解决了环境贴图在非远距离光照场景下的建模缺陷，为物理逆向渲染提供了更准确的照明模型
+2. **面向 NeRF 的发射器重要性采样技术，降低蒙特卡洛渲染方差**：将 NeRF 作为发光体融入物理渲染流水线的核心挑战在于：NeRF 表示的辐射场是体积型的，传统的环境贴图重要性采样方法无法直接适用。作者专门设计了面向 NeRF 的发射器重要性采样（Emitter Importance Sampling）策略——通过构建 NeRF 辐射场的重要性分布，在蒙特卡洛路径采样中优先采样高辐射区域，大幅降低渲染方差。这一技术使 NeRF 光照能够被高效地融入可微渲染管线，保证了逆向渲染中梯度计算的稳定性和效率
+3. **"表面+NeRF"混合场景表示与分阶段优化策略，实现几何、材质、光照的联合重建**：作者将场景建模为混合表示——目标物体用带 BRDF 材质的显式几何表面表示，周围环境用 HDR NeRF 表示——并推导了统一二者的混合渲染方程。在优化策略上，采用分阶段方案：先训练 HDR NeRF 获取环境光照初值，再联合优化几何、材质和 NeRF 光照。实验在真实和合成非远距离光照数据集上验证，相比环境贴图方案，NeRF 发射器在重光照质量和几何重建精度上均有显著提升，尤其在光源近距离的场景中优势突出。此外作者还搭建了专用非远距离光照数据采集系统，为该方向研究提供了基准数据
+
+### 2026-06-30｜HAMSt3R: Human-Aware Multi-view Stereo 3D Reconstruction（人体感知多视图立体三维重建）
+
+**HAMSt3R: Human-Aware Multi-view Stereo 3D Reconstruction**
+**HAMSt3R：人体感知多视图立体三维重建**
+
+**方向**：多视图立体重建（MVS）　**来源**：ICCV 2025　**机构**：NAVER LABS Europe
+
+- **作者**：Sara Rojas、Matthieu Armando、Bernard Ghanem、Philippe Weinzaepfel、Vincent Leroy、Grégory Rogez（NAVER LABS Europe）
+- **链接**：[https://arxiv.org/abs/2508.16433](https://arxiv.org/abs/2508.16433) | 项目页：[europe.naverlabs.com/research/hamst3r/](https://europe.naverlabs.com/research/hamst3r/)
+
+![HAMSt3R teaser](https://km.sankuai.com/api/file/cdn/2756902383/244028134799?contentType=0&isNewContent=false)
+
+**核心内容**：从稀疏、未标定的多视图图像中恢复场景三维几何是计算机视觉的经典难题。近期基于学习的方法如 DUSt3R 和 MASt3R 通过直接预测稠密场景几何取得了令人瞩目的成果，但它们主要在静态户外场景上训练，在人体中心场景（human-centric scenarios）中表现不佳。本文提出 HAMSt3R，将 MASt3R 扩展为能够联合重建人体与场景的前馈网络。HAMSt3R 首先利用 DUNE——一个通过蒸馏 MASt3R 编码器与最先进人体网格恢复模型 multi-HMR 编码器得到的强图像编码器，以同时理解场景几何与人体结构。随后，网络引入额外的预测头：人体分割头、基于 DensePose 的稠密对应估计头，以及人体中心环境下的深度估计头。通过这些多任务头的输出，HAMSt3R 生成一个富含人体语义信息的稠密三维点图。与依赖复杂优化流水线的现有方法不同，HAMSt3R 完全前馈且高效，适用于实际应用。在 EgoHumans 和 EgoExo4D 两个人体中心基准数据集上的评估表明，HAMSt3R 能够有效重建人体，同时在传统多视图立体和多视图姿态回归任务上保持强劲性能，弥合了人体理解与场景三维重建之间的鸿沟。
+
+**亮点**：
+
+1. **首次将人体感知能力融入端到端多视图立体重建框架，突破 MASt3R 在动态人体场景中的局限**：DUSt3R/MASt3R 系列模型在静态场景上表现优异，但在包含人体的场景中面临严重挑战——人体姿态变化、遮挡和自遮挡导致传统多视图匹配失效，且人体与场景的尺度差异巨大。HAMSt3R 通过引入人体分割和 DensePose 稠密对应估计头，使网络能够显式感知人体存在并建立人体表面上的稠密对应关系，从而在无需任何优化后处理的情况下，直接从稀疏未标定图像中恢复带人体语义标注的稠密三维点图。这一设计将"人体理解"与"三维重建"统一在单一前馈网络中，是端到端几何基础模型向通用场景理解演进的重要一步
+2. **DUNE 蒸馏编码器融合场景几何与人体结构先验，实现跨域特征统一**：HAMSt3R 的核心技术之一是 DUNE 编码器——通过知识蒸馏将 MASt3R 的几何感知编码器与 multi-HMR 的人体结构编码器融合为一个统一表征。DUNE 同时保留了场景几何理解能力和人体姿态/形状先验，使网络在处理包含人体的场景时能够自然区分人体与背景，并为后续的人体分割、DensePose 估计和深度预测提供高质量共享特征。这种"几何+人体"双先验融合策略为视觉基础模型的多任务联合训练提供了有价值的参考
+3. **完全前馈的高效推理，在人体中心基准上达到 SOTA 同时保持通用场景重建能力**：与依赖复杂优化管线（如 SMPLify、PIFu 等）的传统人体重建方法不同，HAMSt3R 完全前馈，单张图像前向传播即可完成人体分割、DensePose 估计、深度预测和点图生成，推理速度远超优化类方法。实验表明，HAMSt3R 在 EgoHumans 和 EgoExo4D 两个人体中心数据集上显著超越现有方法，同时在传统多视图立体和姿态回归任务上保持了与 MASt3R 相当的性能，证明了人体感知增强不会牺牲通用场景重建能力。这一"人体感知+通用重建"的双赢特性使 HAMSt3R 在 AR/VR 人体交互、运动分析等实际应用中具有直接价值
+
+### 2026-07-01｜Online3R: Online Learning for Consistent Sequential Reconstruction Based on Geometry Foundation Model（基于几何基础模型的序列重建在线学习）
+
+**Online3R: Online Learning for Consistent Sequential Reconstruction Based on Geometry Foundation Model**
+**Online3R：基于几何基础模型的序列重建在线学习**
+
+**方向**：视觉几何基础模型（Visual Geometry Foundation Models）　**来源**：CVPR 2026　**机构**：北京大学（查红彬团队）
+
+- **作者**：Shunkai Zhou、Zike Yan、Fei Xue、Dong Wu、Yuchen Deng、Hongbin Zha（北京大学）
+- **链接**：[https://arxiv.org/abs/2604.09480](https://arxiv.org/abs/2604.09480) | 项目页：[shunkaizhou.github.io/online3r-1.0](https://shunkaizhou.github.io/online3r-1.0/)
+
+![Online3R teaser](https://km.sankuai.com/api/file/cdn/2756902383/244220319391?contentType=0&isNewContent=false)
+
+**核心内容**：近年来以 DUSt3R、MASt3R、VGGT 为代表的几何基础模型（Geometry Foundation Models）在大规模数据集预训练后展现出强大的零样本三维重建能力，但这些模型在部署时通常保持"冻结"状态——一旦遇到训练分布外的新场景，其重建结果往往存在显著的不一致性、长程漂移和累积误差。Online3R 提出了一种全新的解决方案：无需重新训练模型，而是通过在线学习（Online Learning）在测试时动态适应新场景。具体而言，Online3R 在冻结的 MASt3R 编码器上插入一组参数极少的可学习视觉提示（Visual Prompts），在序列重建过程中通过局部融合伪真值与全局参考帧不变性两个自监督约束，实时在线更新这些提示，使前馈重建网络能够"边重建边适应"新场景。实验表明，在视频序列重建中，Online3R 显著提升了相机位姿估计的精度和稠密几何的一致性，同时保持了实时处理速度，无需任何手动标注或离线训练。
+
+**亮点**：
+
+1. **首次为冻结几何基础模型引入在线学习机制，实现"边重建边适应"**：DUSt3R/MASt3R/VGGT 等几何基础模型依赖大规模预训练，一旦部署后参数冻结，无法适应新场景。Online3R 开创性地在测试时通过在线学习动态更新视觉提示，使模型无需重训练即可适应不同场景的几何特性，从根本上解决了"预训练分布"与"真实场景分布"不匹配导致的重建不一致问题。这一"冻结模型+在线适配"的范式为视觉几何基础模型的实际部署提供了重要路径，极大降低了在新场景下获得高质量重建的门槛
+2. **参数高效的视觉提示 + 双重自监督约束，无需标注数据即可实时优化**：Online3R 仅引入少量可学习参数（视觉提示），相比全模型微调或重训练具有极高的参数效率。同时设计了两种自监督信号驱动在线更新：局部融合伪真值约束通过相邻帧的几何一致性生成伪监督信号，全局参考帧不变性约束则维护全局坐标系下关键帧的几何稳定性。两种约束均无需人工标注，完全依赖几何一致性本身，在保持实时处理速度的同时显著降低了长程漂移和累积误差
+3. **基于 MASt3R 架构即插即用，保持实时速度同时显著改善位姿与几何一致性**：Online3R 以 MASt3R 为基线几何基础模型，无需改动其网络架构或权重，仅通过插入视觉提示即可适配。实验在视频序列重建基准上验证了显著的性能提升——相机位姿估计精度提高，稠密几何的一致性和完整性显著改善，同时推理速度保持实时级别。这一轻量即插即用的特性使 Online3R 能够直接集成到现有的 SLAM、SfM 或视频三维重建管线中，作为几何基础模型在序列重建场景中的增强层，为机器人导航、AR/VR 实时建图等应用提供了更鲁棒的技术基础
+
+### 2026-07-02｜SDGS: Spatial Difference Guided Gaussian Splatting for Simultaneous Localization and 3D Reconstruction（空间差分引导高斯泼溅同步定位与三维重建）
+
+**SDGS: Spatial Difference Guided Gaussian Splatting for Simultaneous Localization and 3D Reconstruction**
+**SDGS：空间差分引导高斯泼溅同步定位与三维重建**
+
+**方向**：SLAM / 实时三维重建　**来源**：CVPR 2026
+
+- **作者**：Yijian Tian、Mingtao Ou、Zijian Pan、Xinglong Ji
+- **链接**：[https://openaccess.thecvf.com/content/CVPR2026/html/Tian_SDGS_Spatial_Difference_Guided_Gaussian_Splatting_for_Simultaneous_Localization_and_CVPR_2026_paper.html](https://openaccess.thecvf.com/content/CVPR2026/html/Tian_SDGS_Spatial_Difference_Guided_Gaussian_Splatting_for_Simultaneous_Localization_and_CVPR_2026_paper.html)
+
+![SDGS Poster Teaser](https://km.sankuai.com/api/file/cdn/2756902383/244412974994?contentType=0&isNewContent=false)
+
+**核心内容**：3D Gaussian Splatting（3DGS）虽然能以显式表示实现照片级实时三维重建，但原始 3DGS 依赖离线 SfM 预先计算相机位姿，引入了"感知—重建"之间的延迟，难以应对高速运动等非理想条件。本文提出 SDGS——一种基于稀疏边缘描述子的在线 3DGS 系统，可在无位姿先验的情况下同时完成 6-DoF 相机定位和稠密三维重建。SDGS 的核心创新在于利用新型混合像素传感器（如天眸 Tianmouc）的双通道特性——高帧率空间差分（SD）边缘信号与低帧率 RGB 信号精确同步——采用"先勾轮廓再上色"的两阶段范式：前端用细长各向异性高斯表示稀疏 3D 边缘，通过距离变换（DT）将稀疏边缘变为连续势场实现敏捷鲁棒的位姿跟踪；后端在位姿稳定后促升 RGB 关键帧，通过 SD 引导的互斥监督（边缘区由 SD 约束、色彩区由 RGB 光度约束）消除运动模糊，重建清晰稠密场景。实验表明，SDGS 每次跟踪迭代仅需约 2k 高斯，在极端高速运动场景下是唯一不崩溃的方法（ATE 仅 3.91cm），同时显著优于传统纯 3DGS-SLAM 和混合框架。
+
+**亮点**：
+
+1. **"先勾线后上色"两阶段范式实现软硬协同，极端运动下唯一不崩的在线 GS-SLAM**：SDGS 创造性地利用混合像素传感器的互补特性——差分快通道做敏捷跟踪、RGB 慢通道做稠密上色——首次在高速/极端运动模糊场景下实现鲁棒的在线 3DGS 跟踪与重建。相比传统稠密光度跟踪对模糊敏感且计算昂贵（MonoGS 在 extreme 场景完全崩溃），SDGS 的稀疏边缘 DT 对齐策略使系统在极端速度下仍保持 3.91cm ATE 精度。这种"几何骨架先行、外观纹理后补"的设计思路为实时 SLAM 在恶劣条件下的鲁棒性提升开辟了新路径
+2. **距离变换（DT）将稀疏边缘变成连续势场，破解稀疏描述子位姿优化的收敛难题**：稀疏边缘描述子天然比稠密像素高效，但直接做对应匹配极难收敛。SDGS 的关键突破在于引入距离变换——将二值稀疏边缘图转化为连续"势场"，每个渲染像素按其到最近观测边缘的欧氏距离受罚，无需显式对应即可在 SE(3) 上通过解析雅可比稳定优化位姿。这种 DT 形式使每次迭代比现有方法快约 2 倍，且对未重建区域比光度法更加鲁棒，是稀疏描述子能胜任实时位姿估计的核心原因
+3. **SD 引导互斥监督消除模糊 RGB 与锐利梯度的监督歧义，可迁移性强**：低帧率 RGB 常带运动模糊，若直接用其监督稠密重建会导致边缘模糊。SDGS 提出互斥监督——用 SD 信号将像素分为互斥的两组：强梯度区由锐利的 SD 信号约束（保证结构清晰），互补区由 RGB 光度约束（传播色彩），干净地消除了"用哪个信号监督哪个像素"的歧义。这一思想可迁移至任何拥有辅助锐利信号（事件相机、闪光灯等）的去模糊重建任务中，具有较强的通用性
+
+### 2026-07-03｜Realiz3D: 3D Generation Made Photorealistic via Domain-Aware Learning（基于领域感知学习的照片级真实三维生成）
+
+**Realiz3D: 3D Generation Made Photorealistic via Domain-Aware Learning**
+**Realiz3D：基于领域感知学习的照片级真实三维生成**
+
+**方向**：三维生成（3D Generation）/ 可控三维生成　**来源**：CVPR 2026　**机构**：Meta AI × Technion（以色列理工学院）
+
+- **作者**：Ido Sobol、Kihyuk Sohn、Yoav Blum、Egor Zakharov、Max Bluvstein、Andrea Vedaldi、Or Litany（Meta AI × Technion）
+- **链接**：[https://arxiv.org/abs/2605.13852](https://arxiv.org/abs/2605.13852) | 项目页：[https://idosobol.github.io/realiz3d/](https://idosobol.github.io/realiz3d/) | CVF 页面：[https://openaccess.thecvf.com/content/CVPR2026/html/Sobol_Realiz3D_3D_Generation_Made_Photorealistic_via_Domain-Aware_Learning_CVPR_2026_paper.html](https://openaccess.thecvf.com/content/CVPR2026/html/Sobol_Realiz3D_3D_Generation_Made_Photorealistic_via_Domain-Aware_Learning_CVPR_2026_paper.html)
+
+![Realiz3D teaser](https://km.sankuai.com/api/file/cdn/2756902383/244615510034?contentType=0&isNewContent=false)
+
+**核心内容**：要让图像扩散模型支持精确的几何、材质、视角控制（如多视图生成、法向图、相机位姿等），主流做法是先在大规模真实图像上预训练，再用带 3D 标注的合成渲染图微调。然而合成渲染图与真实照片之间存在严重的域间隙（domain gap），直接在合成数据上微调会灾难性遗忘真实图像的外观，导致"可控性"与"真实感"之间出现难以摆脱的权衡。Realiz3D 识别出真实感下降的关键根因——模型在微调时把"控制信号的存在"与"合成外观"绑定在一起，即**控制信号泄漏了域身份**（domain leakage）。为解决这一问题，Realiz3D 提出了一套轻量的领域感知学习框架：首先通过**Domain Shifter**（低秩残差适配器）把"域身份（真实/合成）"从"3D 控制信号"里解耦出来，使域概念被独立于控制学到；然后在微调阶段通过**层级感知训练**（Layer-Aware Training）和**域重指派**（Domain Reassignment）把只在合成数据上学到的控制力迁移到真实域。实验表明，Realiz3D 在多视图纹理生成和文本到多视图生成任务上同时实现了强 3D 一致性与显著更高的真实感——FID_I 从纯合成基线的 218.29 降至 200.24，KID_I 从 0.0431 降至 0.0291，同时 PSNR 仅小幅下降。
+
+**亮点**：
+
+1. **把"真实感丢失"重新诊断为"控制信号泄漏域身份"，从根源上解耦域与控制**：传统方法将真实感下降归因于合成数据本身质量差，但 Realiz3D 指出问题的本质在于模型隐式学到了"一旦给控制信号，就该画成合成样子"的关联。通过引入轻量 Domain Shifter（低秩残差适配器），将域身份（real/synthetic）作为独立协变量编码，阻断控制信号与合成外观的纠缠，为"可控三维生成保真实感"提供了全新的诊断视角和解决范式
+2. **两阶段解耦训练 + 层级感知域迁移，仅用标准扩散损失即可实现真实感与可控性兼得**：Stage 1 独立训练 Domain Shifter 学习域身份（控制置空），Stage 2 冻结 Domain Shifter 微调骨干学习控制。同时利用扩散模型"早层域无关管结构、深层域相关管外观"的层级分工，通过 Layer-Aware Training（真实样本只更新深层）和 Domain Reassignment（把真实样本早层重指派为合成模式）将控制力从合成域迁移到真实域。整个框架仅使用标准扩散去噪损失，无需额外对齐或判别损失，轻量且易于部署
+3. **推理时静态域重指派自由平衡真实感与可控性，无需额外训练**：Realiz3D 在推理阶段支持将预先选定的早期扩散块和早期 timestep 设为合成模式（增强控制），深层和晚期 timestep 保持真实模式（保真实感）。这种混合配置只需全局调一次，即可在测试时自由重新平衡真实感与可控性，无需针对每个样本重新训练或优化。作为即插即用的增强模块，Realiz3D 在 5 个 text-to-3D 和 2 个 image-to-3D baseline 上均稳定涨点，展示了极强的通用性和实用价值
