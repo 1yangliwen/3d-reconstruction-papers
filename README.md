@@ -1,12 +1,3 @@
-文档内容（简化版，仅供阅读）：
-============================================================
-
-> ⚠️ **注意（仅供阅读）**：此内容为简化版 Markdown，仅供阅读和总结，
-> **不可直接用于 createDocument --content 或 updateDocumentByXml**。
-> 如需编辑文档，请使用 `getDocumentXml` 获取完整格式后再通过 `updateDocumentByXml` 回传。
-> 直接用此内容编辑会丢失样式宏、合并表格、NodeID 等关键信息，导致文档数据损坏。
-
----
 
 # 三维重建论文收藏
 
@@ -37,6 +28,7 @@
 - **SSS（3D Student Splatting and Scooping）**（2026-06-02）— Student's t 分布替代高斯基元 + 负密度"舀取"机制，组件数减少 82% 仍保持可比质量 · [CVPR 2025 Oral](https://arxiv.org/abs/2503.10148)
 - **Vol3DGS**（2026-06-18）— 解析体积积分替代 EWA splatting 近似，物理精确 alpha 计算，SSIM/LPIPS 超越 3DGS，天然支持 CT 断层扫描重建 · [CVPR 2025 Highlight](https://arxiv.org/abs/2412.03378)
 - **3DGS-MCMC**（2026-06-26）— 将3DGS优化重构为MCMC采样，消除启发式增密剪枝，对初始化鲁棒 · [NeurIPS 2024](https://arxiv.org/abs/2404.09591)
+- **Neural Gabor Splatting**（2026-07-06）— 轻量 MLP 赋予单个高斯基元丰富色彩变化能力，频率感知稠密化精准控制基元数量，高频表面重建新范式 · [CVPR 2026](https://arxiv.org/abs/2604.15941)
 
 ### 🌧️ 三、3DGS 场景鲁棒性（恶劣条件重建）
 
@@ -97,6 +89,7 @@
 - **WorldGen**（2026-06-17）— 首个从文本生成可漫游交互式三维世界的端到端框架，导航网格约束 + 组合式拆解增强，输出直接兼容游戏引擎，Meta × Oxford · [CVPR 2026](https://arxiv.org/abs/2511.16825)
 - **CAT3D**（2026-06-25）— 多视图扩散模型模拟真实捕捉流程，单张图像一分钟内创建完整三维场景 · [NeurIPS 2024](https://arxiv.org/abs/2405.10314)
 - **Realiz3D**（2026-07-03）— 领域感知学习框架将"域身份"与"3D 控制信号"解耦，实现强 3D 一致性与显著更高的真实感，Meta AI × Technion · [CVPR 2026](https://arxiv.org/abs/2605.13852)
+- **LGM**（2026-07-08）— 多视角高斯特征 + 非对称 U-Net，5 秒从文本/单图生成 512 分辨率高保真 3D 资产，ECCV 2024 Oral · [ECCV 2024 Oral](https://arxiv.org/abs/2402.05054)
 
 ### 🪟 九、3DGS 透明表面建模（Transparent Surface Modeling）
 
@@ -113,6 +106,7 @@
 - **MV-DUSt3R+**（2026-06-12）— 单阶段前馈多视图重建，跨参考视图注意力消除单参考依赖，2 秒完成无需标定，Meta Reality Labs × UIUC · [CVPR 2025 Oral](https://arxiv.org/abs/2412.06974)
 - **Murre**（2026-06-22）— SfM 稀疏点云引导扩散模型单目深度估计，绕过传统多视图匹配，室内/街景/航拍多场景超越 SOTA MVS，浙江大学 · [CVPR 2025](https://arxiv.org/abs/2503.14483)
 - **HAMSt3R**（2026-06-30）— 将 MASt3R 扩展为联合重建人体与场景的前馈网络，DUNE 蒸馏编码器融合场景几何与人体结构先验，人体中心基准 SOTA，NAVER LABS Europe · [ICCV 2025](https://arxiv.org/abs/2508.16433)
+- **MonoMVSNet**（2026-07-07）— 单目基础模型先验引导的 MVS 网络，跨视图位置编码深度融合单目特征与多视图几何，Tanks-and-Temples 双基准第一 · [ICCV 2025](https://arxiv.org/abs/2507.11333)
 
 ### 🌐 十一、NeRF / 逆向渲染（NeRF / Inverse Rendering）
 
@@ -124,12 +118,14 @@
 - **LIRM**（2026-06-11）— 推理时逆向渲染学习，每场景 20 min 自标定从零恢复几何 + 材质 + HDR 光照，Meta Reality Labs · [CVPR 2025 Oral](https://arxiv.org/abs/2504.20026)
 - **SVG-IR**（2026-06-19）— 空间变化高斯表示允许每高斯拥有变化材质与法线，物理间接光照模型，重光照 PSNR 超 NeRF 2.5 dB，南京大学 · [CVPR 2025](https://arxiv.org/abs/2504.06815)
 - **NeRF Emitter**（2026-06-29）— NeRF 作为非远距离环境发射器建模空间变化光照，物理逆向渲染精准重建几何与材质，清华大学 × UC Irvine · [SIGGRAPH 2024](https://arxiv.org/abs/2402.04829)
+- **GaussianShader**（2026-07-09）— 简化着色函数赋予 3D 高斯反射表面建模能力，最短轴法线估计 + 球谐着色，PSNR 超 3DGS 1.57 dB，优化快 Ref-NeRF 40 倍 · [CVPR 2024](https://arxiv.org/abs/2311.17977)
 
 ### 🏷️ 十二、3DGS 场景理解与语义编码（3DGS Scene Understanding）
 
 研究将语义信息、开放词汇特征嵌入 3D Gaussian 表示，实现开放词汇分割、场景编辑等高层理解任务。
 
 - **Chorus**（2026-06-10）— 首个多教师预训练 3DGS 场景编码器，SigLIP2+DINOv3+PE-Spatial 三教师蒸馏统一语义/实例/空间感知，ETH Zürich · [CVPR 2026 Oral](https://arxiv.org/abs/2512.17817)
+- **SceneSplat**（2026-07-10）— 首个原生 3DGS 场景理解大规模预训练框架，视觉语言预训练 + 自监督学习，构建 SceneSplat-7K 数据集（7916 场景），ETH Zürich · [ICCV 2025 Oral](https://arxiv.org/abs/2503.18052)
 
 ---
 
@@ -1220,3 +1216,103 @@
 1. **把"真实感丢失"重新诊断为"控制信号泄漏域身份"，从根源上解耦域与控制**：传统方法将真实感下降归因于合成数据本身质量差，但 Realiz3D 指出问题的本质在于模型隐式学到了"一旦给控制信号，就该画成合成样子"的关联。通过引入轻量 Domain Shifter（低秩残差适配器），将域身份（real/synthetic）作为独立协变量编码，阻断控制信号与合成外观的纠缠，为"可控三维生成保真实感"提供了全新的诊断视角和解决范式
 2. **两阶段解耦训练 + 层级感知域迁移，仅用标准扩散损失即可实现真实感与可控性兼得**：Stage 1 独立训练 Domain Shifter 学习域身份（控制置空），Stage 2 冻结 Domain Shifter 微调骨干学习控制。同时利用扩散模型"早层域无关管结构、深层域相关管外观"的层级分工，通过 Layer-Aware Training（真实样本只更新深层）和 Domain Reassignment（把真实样本早层重指派为合成模式）将控制力从合成域迁移到真实域。整个框架仅使用标准扩散去噪损失，无需额外对齐或判别损失，轻量且易于部署
 3. **推理时静态域重指派自由平衡真实感与可控性，无需额外训练**：Realiz3D 在推理阶段支持将预先选定的早期扩散块和早期 timestep 设为合成模式（增强控制），深层和晚期 timestep 保持真实模式（保真实感）。这种混合配置只需全局调一次，即可在测试时自由重新平衡真实感与可控性，无需针对每个样本重新训练或优化。作为即插即用的增强模块，Realiz3D 在 5 个 text-to-3D 和 2 个 image-to-3D baseline 上均稳定涨点，展示了极强的通用性和实用价值
+
+### 2026-07-06｜Neural Gabor Splatting: Enhanced Gaussian Splatting with Neural Gabor for High-frequency Surface Reconstruction（神经 Gabor 泼溅：增强高频表面重建的高斯泼溅）
+
+**Neural Gabor Splatting: Enhanced Gaussian Splatting with Neural Gabor for High-frequency Surface Reconstruction**
+**神经 Gabor 泼溅：增强高频表面重建的高斯泼溅**
+
+**方向**：3DGS 渲染加速与结构优化　**来源**：CVPR 2026　**机构**：The University of Tokyo（东京大学）
+
+- **作者**：Haato Watanabe、Nobuyuki Umetani（The University of Tokyo）
+- **链接**：[https://arxiv.org/abs/2604.15941](https://arxiv.org/abs/2604.15941)
+
+![Neural Gabor Splatting 论文主图](https://km.sankuai.com/api/file/cdn/2756902383/244882532034?contentType=0&isNewContent=false)
+
+**核心内容**：3D Gaussian Splatting（3DGS）以显式高斯基元表示实现了快速训练和实时渲染，但存在一个关键缺陷：每个高斯基元只能表示单一颜色，当场景包含高频外观细节（如棋盘格纹理、锐利色彩边界等）时，需要大量基元来逼近每一次颜色跳变，导致基元数量急剧膨胀。本文提出 Neural Gabor Splatting，在每个高斯基元上附加一个轻量多层感知机（MLP），使单个基元即可建模丰富的色彩变化，从根本上减少高频表面所需的基元数量。此外，作者引入频率感知稠密化策略（Frequency-Aware Densification），基于频率能量选择性地对不匹配基元进行剪枝和克隆，精准控制基元增长。该方法在 Mip-NeRF360 标准基准和高频数据集（如棋盘格图案）上均实现了精确的高频表面重建，并通过充分的消融实验验证了各模块的有效性。
+
+**亮点**：
+
+1. **轻量 MLP 赋予单个高斯基元丰富的色彩表达能力，突破"一基元一颜色"瓶颈**：传统 3DGS 中每个高斯基元仅能表示单一颜色，高频纹理区域需要成倍增加基元来逼近颜色跳变。Neural Gabor Splatting 在每个基元上附加轻量 MLP，使单个基元即可在空间上建模连续的颜色变化，大幅减少了高频场景所需的基元数量，从根源上缓解了基元膨胀问题
+2. **频率感知稠密化策略精准控制基元增长，选择性剪枝与克隆提升效率**：不同于传统 3DGS 基于梯度阈值的均匀稠密化，本文提出基于频率能量的选择性策略——对高频区域的基元进行克隆以增强细节，对低频冗余基元进行剪枝以控制数量。这种频率引导的精细化策略使基元分配更加合理，在保证高频细节重建质量的同时有效控制了模型规模
+3. **在高频纹理场景（棋盘格等）上显著优于标准 3DGS，验证了方法在极端高频条件下的有效性**：标准 3DGS 在棋盘格等强高频纹理场景中基元数量爆炸且重建质量下降，而 Neural Gabor Splatting 在 Mip-NeRF360 和专门设计的高频数据集上均实现了精确重建，充分证明了 Gabor 增强表示在处理高频外观细节方面的优越性和实用价值
+
+### 2026-07-07｜MonoMVSNet: Monocular Priors Guided Multi-View Stereo Network（单目先验引导的多视图立体网络）
+
+**MonoMVSNet: Monocular Priors Guided Multi-View Stereo Network**
+**MonoMVSNet：单目先验引导的多视图立体网络**
+
+**方向**：多视图立体重建（MVS）　**来源**：ICCV 2025
+
+- **作者**：Jianfei Jiang, Qiankun Liu, Haochen Yu, Hongyuan Liu, Liyong Wang, Jiansheng Chen, Huimin Ma
+- **链接**：[https://arxiv.org/abs/2507.11333](https://arxiv.org/abs/2507.11333) | 代码：[github.com/JianfeiJ/MonoMVSNet](https://github.com/JianfeiJ/MonoMVSNet)
+
+![MonoMVSNet qualitative comparison](https://km.sankuai.com/api/file/cdn/2756902383/245139934431?contentType=0&isNewContent=false)
+
+**核心内容**：基于学习的多视图立体（MVS）方法旨在通过已标定多视图图像恢复稠密点云，但现有方法在无纹理区域、反光表面等特征匹配失效的困难区域表现不佳。相比之下，单目深度估计本质上不需要特征匹配，能够在这些区域实现鲁棒的相对深度估计。MonoMVSNet 首次将单目基础模型（monocular foundation model）的强大先验系统性地融入多视图几何框架：首先，通过注意力机制与新设计的跨视图位置编码（cross-view position encoding），将参考视图的单目特征集成到源视图特征中，实现单目语义与多视图几何的深度协同；其次，将参考视图的单目深度进行对齐，在采样过程中动态更新边缘区域的深度候选值，提升边界区域深度估计精度；最后，基于单目深度设计了相对一致性损失（relative consistency loss），监督深度预测的整体一致性。MonoMVSNet 在 DTU 和 Tanks-and-Temples 数据集上均达到 SOTA，并在 Tanks-and-Temples 中级（Intermediate）和高级（Advanced）基准上双双排名第一，代码已开源。
+
+**亮点**：
+
+1. **首次将单目基础模型先验系统融入多视图几何，通过跨视图位置编码实现单目特征与多视图特征的深度协同，在弱纹理/反光区域显著突破传统 MVS 瓶颈**：传统 MVS 方法严重依赖跨视图光度一致性，在无纹理、反光、半透明等特征匹配失效区域束手无策。MonoMVSNet 开创性地引入单目基础模型（如 Depth Anything）的稠密特征与深度先验，通过跨视图位置编码将参考视图的单目特征注入到所有源视图的特征表示中，使网络在特征匹配困难区域仍能利用单目先验进行鲁棒的深度推断。这一"单目先验+多视图几何"的融合范式，为 MVS 在真实复杂场景中的鲁棒性提升提供了全新思路
+2. **单目深度引导的动态采样策略，在边缘区域自适应更新深度候选，显著提升深度图边界质量**：传统 MVS 在深度采样阶段对所有区域采用固定深度假设，导致物体边缘处深度估计模糊。MonoMVSNet 利用单目深度先验为边缘区域动态调整深度候选范围，使边缘像素的深度采样更加聚焦于真实深度附近，显著改善了物体轮廓和深度不连续区域的重建精度。这一动态采样策略具有良好的通用性，可迁移到任何基于代价体的 MVS 框架中
+3. **Tanks-and-Temples 中级/高级基准双第一，兼顾传统室内 MVS 基准 SOTA，验证方法的通用性与领先性**：MonoMVSNet 在 Tanks-and-Temples 这一最具挑战性的室外大规模场景 MVS 基准上，同时取得 Intermediate 和 Advanced 两个子集的第一名，F-score 大幅超越现有方法；同时在经典室内 MVS 基准 DTU 上也达到 SOTA 性能。这种"室内+室外"、"中级+高级"全面领先的实验结果，充分证明了单目先验引导的 MVS 策略不仅能在困难区域发挥作用，在常规场景下同样优于传统纯多视图方法，具有广泛的适用性和实用价值
+
+### 2026-07-08｜LGM: Large Multi-View Gaussian Model for High-Resolution 3D Content Creation（大型多视角高斯模型：高分辨率三维内容创作）
+
+**LGM: Large Multi-View Gaussian Model for High-Resolution 3D Content Creation**
+**LGM：大型多视角高斯模型——高分辨率三维内容创作**
+
+**方向**：三维生成（3D Generation）　**来源**：ECCV 2024 Oral
+
+- **作者**：Jiaxiang Tang, Zhaoxi Chen, Xiaokang Chen, Tengfei Wang, Gang Zeng, Ziwei Liu
+- **链接**：[https://arxiv.org/abs/2402.05054](https://arxiv.org/abs/2402.05054) | 项目页：[me.kiui.moe/lgm/](https://me.kiui.moe/lgm/) | 代码：[github.com/3DTopia/LGM](https://github.com/3DTopia/LGM)
+
+![LGM method overview](https://km.sankuai.com/api/file/cdn/2756902383/245364596612?contentType=0&isNewContent=false)
+
+**核心内容**：3D 内容创作品质与速度均取得显著进步，但当前前馈模型虽可在数秒内生成 3D 物体，其分辨率受限于训练期间的密集计算需求。LGM 提出了一种全新框架，可从文本提示或单视角图像生成高分辨率 3D 模型，其核心思路有两点：一是 3D 表示——以多视角高斯特征（multi-view Gaussian features）作为高效且强大的中间表示，可融合后进行可微分渲染；二是 3D 骨干网络——设计非对称 U-Net 作为高吞吐量骨干，处理由多视角扩散模型从文本或单图生成的多视角图像。LGM 在保持 5 秒内生成 3D 物体速度的同时，将训练分辨率提升至 512，实现了高分辨率 3D 内容生成。实验充分验证了该方法的高保真度与高效率，在 GSO 和 Objaverse 数据集上的生成质量显著优于同期前馈方法，且代码完全开源。
+
+**亮点**：
+
+1. **多视角高斯特征作为高效 3D 表示，取代 NeRF/Triplane 实现高分辨率可微分渲染**：以往前馈 3D 生成方法普遍采用 Triplane-NeRF 作为 3D 表示，其渲染速度慢且显存开销大，训练分辨率被限制在 128-256。LGM 创新性地以多视角高斯特征为中间表示——每个视角生成一组带位置的 3D 高斯基元，多视角高斯融合后直接进行可微分光栅化渲染。3DGS 的显存效率远高于 NeRF 体渲染，使训练分辨率一举提升至 512，生成的 3D 资产细节大幅提升。这一设计也使推理阶段无需任何优化即可在 5 秒内输出可交互的高分辨率 3D 模型
+2. **非对称 U-Net 骨干网络实现高吞吐量多视角处理**：传统 LRM 方法使用 Transformer 处理多视角图像，显存消耗随视角数二次增长。LGM 提出以非对称 U-Net 替代 Transformer 作为 3D 骨干——U-Net 的卷积特性使其在处理高分辨率多视角图像时显存占用更低且吞吐量更高，非对称设计（编码器处理高分辨率、解码器逐步恢复）进一步优化了效率。配合精心设计的数据增强策略（随机背景、随机视角扰动）弥合训练数据与推理时多视角扩散模型输出的域差异，使模型在实际使用中表现鲁棒
+3. **5 秒内从文本/单图生成 512 分辨率 3D 资产，速度与质量同时领先**：LGM 在当时实现了速度与分辨率的双重突破——前馈生成仅 5 秒（不含多视角扩散），输出分辨率达 512×512，生成的 3D 高斯数量达 65536，可直接导出为网格。在 GSO 数据集上的定量评估中，LGM 在 PSNR、SSIM、LPIPS 指标上均优于 ImageDream、Wonder3D 等同期方法。该工作确立了"多视角扩散 + 前馈高斯重建"这一两阶段范式的有效性，后续大量工作（如 Turbo3D、TRELLIS 等）沿此范式继续发展，对 3D 生成领域产生了深远影响
+
+### 2026-07-09｜GaussianShader: 3D Gaussian Splatting with Shading Functions for Reflective Surfaces（面向反射表面的着色函数增强三维高斯泼溅）
+
+**GaussianShader: 3D Gaussian Splatting with Shading Functions for Reflective Surfaces**
+**GaussianShader：面向反射表面的着色函数增强三维高斯泼溅**
+
+**方向**：NeRF / 逆向渲染（3DGS 反射表面渲染）　**来源**：CVPR 2024
+
+- **作者**：Yingwenqi Jiang, Jiadong Tu, Yuan Liu, Xifeng Gao, Xiaoxiao Long, Wenping Wang, Yuexin Ma
+- **链接**：[https://arxiv.org/abs/2311.17977](https://arxiv.org/abs/2311.17977) | 项目页：[asparagus15.github.io/GaussianShader](https://asparagus15.github.io/GaussianShader.github.io/) | 代码：[github.com/Asparagus15/GaussianShader](https://github.com/Asparagus15/GaussianShader)
+
+![GaussianShader teaser](https://km.sankuai.com/api/file/cdn/2756902383/245577292063?contentType=0&isNewContent=false)
+
+**核心内容**：3D Gaussian Splatting（3DGS）以其显式、离散的高斯表示实现了高质量实时渲染，但在包含反射表面的场景中表现不佳——这是因为原始 3DGS 仅使用球谐函数（SH）建模视角相关外观，无法正确表达镜面反射等复杂光照效应。GaussianShader 提出在每个 3D 高斯基元上附加一个简化的着色函数（shading function），使其能够建模反射表面的渲染物理过程，同时保持 3DGS 的训练与渲染效率。该方法的核心挑战在于离散高斯椭球体上法线的准确估计——作者提出基于高斯最短轴方向（shortest axis）的法线估计框架，配合精心设计的一致性损失函数，使法线方向与高斯椭球的几何形状保持一致。在镜面反射物体数据集上，GaussianShader 的 PSNR 超越原始 3DGS 1.57 dB，与处理反射表面的先前方法（如 Ref-NeRF）相比，优化时间从 23 小时缩短至 0.58 小时，实现了效率与质量的双重提升。
+
+**亮点**：
+
+1. **首次将着色函数嵌入 3D 高斯基元，突破 3DGS 在反射表面场景中的渲染瓶颈**：原始 3DGS 依赖球谐函数建模视角相关颜色，无法表达镜面反射、金属光泽等复杂光照效应，在包含玻璃、金属、镜面等反射物体的场景中出现严重伪影。GaussianShader 创新性地为每个高斯基元引入简化的可微分着色函数，将入射光、表面法线和视角方向纳入物理着色模型，使 3DGS 具备了物理一致的反射渲染能力。这一设计仅需极少的额外计算开销，保持了 3DGS 实时渲染的核心优势
+2. **基于最短轴方向的法线估计框架，解决离散高斯椭球法线估计难题**：在离散 3D 高斯上准确估计表面法线是将着色函数引入 3DGS 的核心挑战。GaussianShader 提出利用高斯椭球的最短轴方向作为法线先验——最短轴对应高斯分布衰减最快的方向，在几何上最接近表面切平面的法线方向。配合设计的一致性损失函数，约束法线方向与高斯椭球几何形状保持一致，避免了法线估计的随机性。这一框架简洁有效，为后续 3DGS 逆向渲染工作（如 SVG-IR、GS-IR 等）提供了重要的法线估计基础
+3. **效率与质量的双重突破，优化速度较 Ref-NeRF 加速 40 倍**：GaussianShader 在镜面反射物体基准上 PSNR 超 3DGS 1.57 dB，视觉质量显著改善——镜面反射、高光、金属光泽等效果得到准确再现。与当时处理反射表面的代表性方法 Ref-NeRF 相比，优化时间从 23 小时缩短至仅 0.58 小时（加速约 40 倍），同时保持实时渲染速度。这一效率优势使高质量反射表面渲染从离线走向近实时应用，为 3DGS 在复杂材质场景重建中的实际部署奠定了基础
+
+### 2026-07-10｜SceneSplat: Gaussian Splatting-based Scene Understanding with Vision-Language Pretraining（基于高斯泼溅的视觉语言预训练场景理解）
+
+**SceneSplat: Gaussian Splatting-based Scene Understanding with Vision-Language Pretraining**
+**SceneSplat：基于高斯泼溅的视觉语言预训练场景理解**
+
+**方向**：3DGS 场景理解与语义编码　**来源**：ICCV 2025 Oral
+
+- **作者**：Yue Li, Qi Ma, Runyi Yang, Huapeng Li, Mengjiao Ma, Bin Ren, Nikola Popovic, Nicu Sebe, Ender Konukoglu, Theo Gevers, Luc Van Gool, Martin R. Oswald, Danda Pani Paudel（ETH Zürich & University of Amsterdam & University of Trento）
+- **链接**：[https://arxiv.org/abs/2503.18052](https://arxiv.org/abs/2503.18052) | 项目页：[unique1i.github.io/SceneSplat_webpage](https://unique1i.github.io/SceneSplat_webpage/) | 代码：[github.com/unique1i/SceneSplat](https://github.com/unique1i/SceneSplat)
+
+![SceneSplat 框架概览图](https://km.sankuai.com/api/file/cdn/2756902383/245772476744?contentType=0&isNewContent=false)
+
+**核心内容**：识别任意或未见过的物体类别是全面实现真实世界三维场景理解的关键能力。然而，现有所有三维语义理解方法在训练或推理时都依赖于二维或文本模态，尚未出现能够仅从三维数据端到端学习语义的模型，也缺乏支撑此类模型训练的大规模数据集。SceneSplat 针对这一空白，提出了首个原生操作于 3D Gaussian Splatting 的大规模室内场景理解框架。该方法的核心包含两大创新：一是视觉语言预训练方案——将 2D 视觉语言模型的知识蒸馏到 3DGS 编码器中，使其在单次前向传播中即可为百万级三维高斯基元预测开放词汇语言特征，无需在推理时依赖任何 2D 或文本输入；二是自监督学习方案——利用未标注场景中的几何一致性，通过自监督方式解锁从无标签场景中学习丰富三维特征的能力。为支撑训练与评估，作者构建了 SceneSplat-7K 数据集——首个大规模 3DGS 室内场景数据集，包含从 ScanNet、Matterport3D 等 7 个已有数据集衍生的 7916 个场景，生成过程消耗约 150 个 L4 GPU 日。在 SceneSplat-7K 上的全面实验验证了所提方法相比现有基线的显著优势，为 3DGS 原生场景理解建立了标准化基准。
+
+**亮点**：
+
+1. **首个原生操作于 3DGS 的大规模场景理解框架，实现纯三维端到端语义推理**：现有 3DGS 语义理解方法无一例外需要在训练或推理时依赖 2D 图像或文本模态作为桥梁，存在明显的模态依赖瓶颈。SceneSplat 首次构建了直接以 3DGS 为输入的通用场景编码器，通过视觉语言预训练将 2D 语义知识蒸馏到 3DGS 原生表示中，推理阶段仅需 3DGS 数据即可完成开放词汇语义分割等任务，彻底消除了对 2D 推理的依赖，是迈向"三维原生语义理解"的重要突破
+2. **自监督学习解锁无标签场景的三维特征学习**：SceneSplat 提出自监督学习方案，利用未标注场景中固有的几何一致性信号，通过设计的自监督代理任务学习丰富的三维特征表示。这一方案突破了三维语义理解领域对大规模标注数据的强依赖——在无需任何语义标签的情况下即可学习到具有判别力的三维特征，大幅降低了数据准备成本，为三维场景理解的规模化部署提供了新路径
+3. **构建 SceneSplat-7K 数据集，建立 3DGS 场景理解标准化基准**：作者构建了首个大规模 3DGS 室内场景数据集 SceneSplat-7K，涵盖 ScanNet、Matterport3D、ARKitScenes 等 7 个来源共 7916 个场景，生成过程消耗约 150 个 L4 GPU 日。该数据集填补了 3DGS 场景理解领域缺乏标准化评测基准的空白，为后续研究提供了统一的训练与评估平台，获 ICCV 2025 Oral 认可
