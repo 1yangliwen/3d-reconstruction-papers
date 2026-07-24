@@ -1,4 +1,3 @@
-
 # 三维重建论文收藏
 
 三维重建论文收藏
@@ -29,6 +28,7 @@
 - **Vol3DGS**（2026-06-18）— 解析体积积分替代 EWA splatting 近似，物理精确 alpha 计算，SSIM/LPIPS 超越 3DGS，天然支持 CT 断层扫描重建 · [CVPR 2025 Highlight](https://arxiv.org/abs/2412.03378)
 - **3DGS-MCMC**（2026-06-26）— 将3DGS优化重构为MCMC采样，消除启发式增密剪枝，对初始化鲁棒 · [NeurIPS 2024](https://arxiv.org/abs/2404.09591)
 - **Neural Gabor Splatting**（2026-07-06）— 轻量 MLP 赋予单个高斯基元丰富色彩变化能力，频率感知稠密化精准控制基元数量，高频表面重建新范式 · [CVPR 2026](https://arxiv.org/abs/2604.15941)
+- **Eulerian Gaussian Splatting**（2026-07-24）— 欧拉视角概率密度优化替代启发式增密/剪枝，哈希概率金字塔实现可学习密度场，质量与效率双赢 · [CVPR 2026](https://arxiv.org/abs/2605.29136)
 
 ### 🌧️ 三、3DGS 场景鲁棒性（恶劣条件重建）
 
@@ -57,6 +57,7 @@
 - **FoundationStereo**（2026-06-23）— CVPR 2025 Best Paper Candidate，首个具备强零样本泛化能力的立体深度估计基础模型，百万级合成数据 + 自筛选 + Side-Tuning Adapter 融合单目先验 · [CVPR 2025 Best Paper Candidate](https://arxiv.org/abs/2501.09898)
 - **Online3R**（2026-07-01）— CVPR 2026，基于几何基础模型的序列重建在线学习框架，参数高效视觉提示 + 自监督局部/全局一致性约束，实时适应新场景 · [CVPR 2026](https://arxiv.org/abs/2604.09480)
 - **DUSt3R**（2026-07-14）— 开创性端到端几何三维视觉范式，点图回归统一单目/双目重建，无需标定或位姿先验，催生 MASt3R/Fast3R/MUSt3R 等系列工作，CVPR 2024 奠基之作 · [CVPR 2024](https://arxiv.org/abs/2312.14132)
+- **VGGT-Ω**（2026-07-20）— 首次揭示前馈三维重建 Scaling Law，10B 参数 + 寄存器注意力支持 15× 数据量，Sintel 相机估计精度提升 77%，CVPR 2026 Oral / Best Paper Finalist · [CVPR 2026 Oral / Best Paper Finalist](https://arxiv.org/abs/2605.15195)
 
 ### 🎬 六、4D 动态场景重建（4D Dynamic Scene Reconstruction）
 
@@ -79,6 +80,7 @@
 - **SEGS-SLAM**（2026-06-16）— 结构增强 3DGS SLAM，结构化点云初始化高斯基元 + 运动外观嵌入消除渲染不一致，单目/双目/RGB-D 均达 SOTA，南开大学 · [ICCV 2025](https://arxiv.org/abs/2501.05242)
 - **SDGS**（2026-07-02）— 基于稀疏边缘描述子的在线 3DGS 系统，"先勾轮廓再上色"两阶段范式，极端高速运动下唯一不崩溃的 GS-SLAM，ATE 仅 3.91cm · [CVPR 2026](https://openaccess.thecvf.com/content/CVPR2026/html/Tian_SDGS_Spatial_Difference_Guided_Gaussian_Splatting_for_Simultaneous_Localization_and_CVPR_2026_paper.html)
 - **SplaTAM**（2026-07-13）— 首个将 3D Gaussian Splatting 引入 SLAM，轮廓掩码捕捉场景密度，位姿/地图/渲染均达 2× SOTA，CMU · [CVPR 2024](https://arxiv.org/abs/2312.02126)
+- **Pi³MOS-SLAM**（2026-07-22）— 前馈重建模型作为通用三维先验过滤动态区域，几何BA + 前馈模型互补融合，CVPR 2026，波恩大学PRBonn实验室 · [CVPR 2026](https://arxiv.org/abs/2512.06868)
 
 ### 🎨 八、三维生成（3D Generation）
 
@@ -111,6 +113,7 @@
 - **Murre**（2026-06-22）— SfM 稀疏点云引导扩散模型单目深度估计，绕过传统多视图匹配，室内/街景/航拍多场景超越 SOTA MVS，浙江大学 · [CVPR 2025](https://arxiv.org/abs/2503.14483)
 - **HAMSt3R**（2026-06-30）— 将 MASt3R 扩展为联合重建人体与场景的前馈网络，DUNE 蒸馏编码器融合场景几何与人体结构先验，人体中心基准 SOTA，NAVER LABS Europe · [ICCV 2025](https://arxiv.org/abs/2508.16433)
 - **MonoMVSNet**（2026-07-07）— 单目基础模型先验引导的 MVS 网络，跨视图位置编码深度融合单目特征与多视图几何，Tanks-and-Temples 双基准第一 · [ICCV 2025](https://arxiv.org/abs/2507.11333)
+- **DriveMVS**（2026-07-23）— LiDAR 提示的时空多视图立体网络，三线索融合器协同单目/度量/几何线索，时空解码器保障跨帧一致性，自动驾驶 MVS SOTA · [CVPR 2026](https://arxiv.org/abs/2603.03765)
 
 ### 🌐 十一、NeRF / 逆向渲染（NeRF / Inverse Rendering）
 
@@ -131,11 +134,12 @@
 - **Chorus**（2026-06-10）— 首个多教师预训练 3DGS 场景编码器，SigLIP2+DINOv3+PE-Spatial 三教师蒸馏统一语义/实例/空间感知，ETH Zürich · [CVPR 2026 Oral](https://arxiv.org/abs/2512.17817)
 - **SceneSplat**（2026-07-10）— 首个原生 3DGS 场景理解大规模预训练框架，视觉语言预训练 + 自监督学习，构建 SceneSplat-7K 数据集（7916 场景），ETH Zürich · [ICCV 2025 Oral](https://arxiv.org/abs/2503.18052)
 
-### 📐 十三、3DGS 表面重建（3DGS Surface Reconstruction）
+#### ### 📐 十三、3DGS 表面重建（3DGS Surface Reconstruction）
 
 研究如何从 3D Gaussian Splatting 表示中提取高质量、几何精确的表面与网格，通过折叠高斯、正则化约束等手段弥合辐射场渲染与几何重建之间的鸿沟。
 
 - **2DGS**（2026-07-15）— 将 3D 高斯折叠为 2D 定向圆盘，深度畸变 + 法线一致性正则化，同时实现 SOTA 渲染与表面重建，SIGGRAPH 2024 · [SIGGRAPH 2024](https://arxiv.org/abs/2403.17888)
+- **GSPrior**（2026-07-21）— 自约束 TSDF 先验引导高斯贴合表面，带宽渐进收缩实现高保真表面重建，CVPR 2026 · [CVPR 2026](https://arxiv.org/abs/2603.19682)
 
 ---
 
@@ -376,6 +380,26 @@
 1. 重建与语义理解的首次统一：Uni3R 首次在单一前馈框架内同时完成三维重建（新视角合成 + 深度预测）和开放词汇语义分割三大任务，无需任何位姿先验，彻底打破了"重建"与"理解"两个任务需要分别建模的传统范式，为具身智能、机器人导航等下游应用提供了一站式三维感知基础
 2. 跨视图 Transformer 实现无位姿泛化：通过跨视图注意力机制鲁棒整合任意数量无位姿多视图输入，无需相机标定或 SfM 预处理，直接回归带语义特征场的三维高斯基元，在 RE10K（PSNR 25.07）和 ScanNet（mIoU 55.84）等多个基准上全面超越现有方法，0.15 秒完成整个场景重建
 3. 开放词汇语义场的创新设计：将语义特征场直接嵌入三维高斯基元，支持任意文本查询的开放词汇三维语义分割，无需针对特定类别重新训练，极大提升了模型的通用性和实用价值，获得 CVPR 2026 Highlight 认可，是 3DGS 走向"感知-重建一体化"的重要里程碑
+
+### 2026-07-16｜Immediate 3D Gaussian Splat Reconstruction of Unordered Input with Global Consistency（即时三维高斯泼溅重建：无序输入的全局一致性方法）
+
+**Immediate 3D Gaussian Splat Reconstruction of Unordered Input with Global Consistency**
+**即时三维高斯泼溅重建：无序输入的全局一致性方法**
+
+**方向**：SLAM / 实时三维重建　**来源**：SIGGRAPH Conference Papers 2026　**机构**：INRIA（法国国家信息与自动化研究所）
+
+- **作者**：Andreas Meuleman, Linus Franke, Boris Zhestiankin, Camille Montemagni, George Drettakis
+- **链接**：[https://arxiv.org/abs/2607.14481](https://arxiv.org/abs/2607.14481) | ACM DL：[10.1145/3799902.3811167](https://doi.org/10.1145/3799902.3811167)
+
+![Immediate GS Reconstruction teaser](https://km.sankuai.com/api/file/cdn/2756902383/246877687534?contentType=0&isNewContent=false)
+
+**核心内容**：3D Gaussian Splatting（3DGS）已成为场景捕捉和实时渲染的首选方法。然而，为了获得良好的视觉质量，通常需要将连续图像序列与无序拍摄相结合以获得更好的场景覆盖。传统的运动恢复结构（SfM）方法虽然可以重建这些捕捉，但只有在所有图像都可用后才能进行，且计算成本很高。增量重建方法（通常源自SLAM解决方案）能够提供即时反馈，但无法处理无序捕捉场景。本文提供了第一个用于此类辐射场捕捉的即时反馈解决方案，能够在提供全局一致性保证的同时实现即时重建。该方法的核心创新包括：首先，通过重新利用视觉地点识别模型和共视图，实现了无序序列的快速匹配，并提供了一种高效方法来寻找高度连接的关键帧，即使对有序序列也能提升质量；其次，结合GPU优化和精心的高斯基元放置策略，实现了快速局部重建；然后，引入了一种新颖的簇基方法，再次利用共视图进行高效回环检测，无需顺序输入；最后，为了处理大规模场景，引入了渐进层次结构，使方法能够在不牺牲效率的情况下扩展到大型环境。实验结果表明，该方法在包含数千张输入图像的多个数据集上实现了具有良好视觉质量的即时反馈3DGS重建。
+
+**亮点**：
+
+1. **首个针对辐射场捕捉的即时反馈全局一致性方案**：传统 3DGS 重建依赖离线 SfM 预先计算相机位姿，引入显著的"感知-重建"延迟，且需要等待所有图像拍摄完成。本工作首次实现了无序输入的即时反馈 3DGS 重建，通过视觉地点识别模型和共视图实现快速无序序列匹配，结合簇基回环检测提供全局一致性，使重建过程无需等待全部图像即可开始，且能保持全局几何一致性
+2. **簇基回环检测与渐进层次结构处理大规模场景**：提出了新颖的簇基方法，利用共视图进行高效回环检测，无需顺序输入即可实现全局一致性优化。同时引入渐进层次结构，使方法能够扩展到包含数千张输入图像的大规模场景，在保持高效计算的同时确保重建质量
+3. **GPU 优化与精心的高斯基元放置策略**：通过精细的 GPU 优化和精心的高斯基元放置策略，实现了快速局部重建。这种"先局部重建后全局优化"的两阶段设计思路，为实时三维重建在大规模场景中的应用提供了实用的解决方案，对实际场景捕捉具有重要的实用价值
 
 ### 2026-04-30
 
@@ -1334,7 +1358,7 @@
 
 **方向**：SLAM / 实时三维重建　**来源**：CVPR 2024　**机构**：Carnegie Mellon University（CMU）等
 
-- **作者**：Nikhil Keetha, Jay Karhade, Krishna Murthy Jatavallabhula, Gengshan Yang, Sebastian Schere, Deva Ramanan, Jonathon Luiten
+- **作者**：Nikhil Keetha, Jay Karhade, Krishna Murthy Jatavallabhula, Gengshan Yang, Sebastian Scherer, Deva Ramanan, Jonathon Luiten
 - **链接**：[https://arxiv.org/abs/2312.02126](https://arxiv.org/abs/2312.02126) | 项目页：[spla-tam.github.io](https://spla-tam.github.io/)
 
 ![SplaTAM 论文主图](https://km.sankuai.com/api/file/cdn/2756902383/246055680453?contentType=0&isNewContent=false)
@@ -1344,7 +1368,7 @@
 **亮点**：
 
 1. **首次将 3D Gaussian Splatting 引入 SLAM，开创高斯泼溅实时建图新范式**：SplaTAM 是首个利用 3D 高斯泼溅作为显式场景表示的 SLAM 系统，打破了传统 SLAM 依赖点云、 surfel 或隐式场表示的范式。通过将高斯椭球作为基本地图元素，SplaTAM 同时获得了显式表示的可解释性和体积化表示的渲染能力，为后续大量 3DGS-SLAM 工作（如 MonoGS、Gaussian-SLAM 等）奠定了重要基础
-2. **轮廓掩码优雅捕捉场景密度，实现快速渲染、稠密优化与结构化地图扩展**：SplaTAM 利用 silhouette mask 判断场景空间中高斯基元的存在性，使系统能够以极快的速度完成渲染和优化循环。同时，基于高斯表示的在线稠密化策略允许系统以结构化方式扩展地图——只需在未观测区域添加新的高斯基元，而不需要全局重新优化。这种"增量式高斯扩展"机制使 SplaTAM能够高效处理大规模场景的在线建图
+2. **轮廓掩码优雅捕捉场景密度，实现快速渲染、稠密优化与结构化地图扩展**：SplaTAM 利用 silhouette mask 判断场景空间中高斯基元的存在性，使系统能够以极快的速度完成渲染和优化循环。同时，基于高斯表示的在线稠密化策略允许系统以结构化方式扩展地图——只需在未观测区域添加新的高斯基元，而不需要全局重新优化。这种"增量式高斯扩展"机制使 SplaTAM 能够高效处理大规模场景的在线建图
 3. **相机位姿估计、地图构建与新视角合成性能均达 2 倍 SOTA 提升，效率与质量兼得**：在 Replica 等标准 SLAM 基准上，SplaTAM 在相机轨迹精度（ATE）、地图重建质量（Accuracy / Completeness）和新视角合成（PSNR）三个核心指标上均达到或超越此前最优方法约 2 倍的性能。更重要的是，3DGS 的光栅化渲染速度使 SplaTAM 在消费级 GPU 上实现了实时跟踪与建图，为机器人导航、AR/VR 等延迟敏感应用提供了实用化的稠密 SLAM 解决方案
 
 ### 2026-07-14｜DUSt3R: Geometric 3D Vision Made Easy（让几何三维视觉变得简单）
@@ -1387,26 +1411,6 @@
 2. **深度畸变与法线一致性双正则化，弥合辐射场渲染与几何重建的鸿沟**：2DGS 引入两个关键正则化项——深度畸变损失迫使光线穿过的高斯在深度上集中分布，消除表面附近的"厚度"模糊；法线一致性损失强制相邻高斯基元的法线方向一致，确保重建表面的平滑性和连续性。这两个正则化项巧妙地将渲染优化目标与几何约束对齐，使模型在追求视觉质量的同时自然产生几何精确的表面表示，解决了辐射场方法"渲染好但几何差"的长期痛点
 3. **同时实现 SOTA 渲染与表面重建，超越神经隐式方法且保持高效优势**：在 DTU 和 Tanks & Temples 基准上，2DGS 在新视角合成（PSNR/SSIM/LPIPS）和表面重建（Chamfer 距离/F-score）两方面均达到 SOTA 水平，几何精度大幅超越 3DGS 并媲美甚至超越 NeuS、VolSDF 等专门设计的神经隐式表面重建方法，同时保持了 3DGS 的高效训练和实时渲染优势。2DGS 开创的"2D 高斯表面重建"范式直接催生了 GOF、SuGaR、PGSR 等大量后续工作，成为 3DGS 表面重建领域的奠基性方法
 
-### 2026-07-16｜Immediate 3D Gaussian Splat Reconstruction of Unordered Input with Global Consistency（即时三维高斯泼溅重建：无序输入的全局一致性方法）
-
-**Immediate 3D Gaussian Splat Reconstruction of Unordered Input with Global Consistency**
-**即时三维高斯泼溅重建：无序输入的全局一致性方法**
-
-**方向**：SLAM / 实时三维重建　**来源**：SIGGRAPH Conference Papers 2026　**机构**：INRIA（法国国家信息与自动化研究所）
-
-- **作者**：Andreas Meuleman, Linus Franke, Boris Zhestiankin, Camille Montemagni, George Drettakis
-- **链接**：[https://arxiv.org/abs/2607.14481](https://arxiv.org/abs/2607.14481) | ACM DL：[10.1145/3799902.3811167](https://doi.org/10.1145/3799902.3811167)
-
-![Immediate GS Reconstruction teaser](https://km.sankuai.com/api/file/cdn/2756902383/246877687534?contentType=0&isNewContent=false)
-
-**核心内容**：3D Gaussian Splatting（3DGS）已成为场景捕捉和实时渲染的首选方法。然而，为了获得良好的视觉质量，通常需要将连续图像序列与无序拍摄相结合以获得更好的场景覆盖。传统的运动恢复结构（SfM）方法虽然可以重建这些捕捉，但只有在所有图像都可用后才能进行，且计算成本很高。增量重建方法（通常源自SLAM解决方案）能够提供即时反馈，但无法处理无序捕捉场景。本文提供了第一个用于此类辐射场捕捉的即时反馈解决方案，能够在提供全局一致性保证的同时实现即时重建。该方法的核心创新包括：首先，通过重新利用视觉地点识别模型和共视图，实现了无序序列的快速匹配，并提供了一种高效方法来寻找高度连接的关键帧，即使对有序序列也能提升质量；其次，结合GPU优化和精心的高斯基元放置策略，实现了快速局部重建；然后，引入了一种新颖的簇基方法，再次利用共视图进行高效回环检测，无需顺序输入；最后，为了处理大规模场景，引入了渐进层次结构，使方法能够在不牺牲效率的情况下扩展到大型环境。实验结果表明，该方法在包含数千张输入图像的多个数据集上实现了具有良好视觉质量的即时反馈3DGS重建。
-
-**亮点**：
-
-1. **首个针对辐射场捕捉的即时反馈全局一致性方案**：传统 3DGS 重建依赖离线 SfM 预先计算相机位姿，引入显著的"感知-重建"延迟，且需要等待所有图像拍摄完成。本工作首次实现了无序输入的即时反馈 3DGS 重建，通过视觉地点识别模型和共视图实现快速无序序列匹配，结合簇基回环检测提供全局一致性，使重建过程无需等待全部图像即可开始，且能保持全局几何一致性
-2. **簇基回环检测与渐进层次结构处理大规模场景**：提出了新颖的簇基方法，利用共视图进行高效回环检测，无需顺序输入即可实现全局一致性优化。同时引入渐进层次结构，使方法能够扩展到包含数千张输入图像的大规模场景，在保持高效计算的同时确保重建质量
-3. **GPU 优化与精心的高斯基元放置策略**：通过精细的 GPU 优化和精心的高斯基元放置策略，实现了快速局部重建。这种"先局部重建后全局优化"的两阶段设计思路，为实时三维重建在大规模场景中的应用提供了实用的解决方案，对实际场景捕捉具有重要的实用价值
-
 ### 2026-07-16｜DreamGaussian: Generative Gaussian Splatting for Efficient 3D Content Creation（生成式高斯泼溅：高效三维内容创作）
 
 **DreamGaussian: Generative Gaussian Splatting for Efficient 3D Content Creation**
@@ -1426,3 +1430,101 @@
 1. **首次将 3D Gaussian Splatting 引入 3D 生成领域，实现 10 倍级加速**：DreamGaussian 是首个将 3DGS 作为生成表示的 3D 内容生成框架，通过 3D 高斯逐步稠密化替代 NeRF 的占用剪枝，在生成任务中收敛速度显著提升。相比基于 NeRF 的 SDS 方法（如 DreamFusion），DreamGaussian 将单图像到 3D 的生成时间从数小时压缩至约 2 分钟，加速约 10 倍，同时保持竞争性生成质量，为 3D 内容生成的实用化奠定了重要基础
 2. **生成式高斯表示与网格提取精化流水线，兼顾效率与下游可用性**：DreamGaussian 不仅是"快速生成"，更提供了完整的 3D 资产生产流水线——从生成式 3D 高斯表示到带纹理网格的转换与 UV 空间精化。相比 NeRF 隐式表示难以直接导出，3DGS 的显式表示天然支持高效的网格提取，配合 UV 空间纹理精化算法，生成的 3D 资产可直接用于游戏、AR/VR 等下游应用，解决了"生成快但不可用"的痛点
 3. **ICLR 2024 Oral 认可，开创 3DGS 生成范式并催生大量后续工作**：DreamGaussian 获得 ICLR 2024 Oral 认可，是 3D 生成领域的重要里程碑。其开创的"生成式高斯泼溅"范式直接启发了后续大量工作（如 GaussianDreamer、LGM、TRELLIS、Turbo3D 等），将 3DGS 从静态场景重建拓展到动态内容生成领域，对"3D 生成"方向产生了深远影响
+
+### 2026-07-20｜VGGT-Ω: Visual Geometry Grounded Transformer Omega（VGGT-Ω：视觉几何基础大模型）
+
+**VGGT-Ω: Visual Geometry Grounded Transformer Omega**
+**VGGT-Ω：视觉几何基础大模型**
+
+**方向**：视觉几何基础模型（Visual Geometry Foundation Models）　**来源**：CVPR 2026（Oral / Best Paper Finalist）　**机构**：Visual Geometry Group, University of Oxford × Meta AI
+
+- **作者**：Jianyuan Wang, Minghao Chen, Shangzhan Zhang, Nikita Karaev, Johannes Schönberger, Patrick Labatut, Piotr Bojanowski, David Novotny, Andrea Vedaldi, Christian Rupprecht
+- **链接**：[https://arxiv.org/abs/2605.15195](https://arxiv.org/abs/2605.15195) | 项目页：[vggt-omega.github.io](https://vggt-omega.github.io/) | CVF 页面：[CVPR 2026](https://openaccess.thecvf.com/content/CVPR2026/papers/Wang_VGGT-ohm_CVPR_2026_paper.html)
+
+![VGGT-Ω teaser](https://km.sankuai.com/api/file/cdn/2756902383/247164494149?contentType=0&isNewContent=false)
+
+**核心内容**：近期前馈重建模型（如 VGGT）已证明可与传统基于优化的重建方法竞争，同时为其他任务提供几何感知特征。本文证明这些模型的质量随模型规模与数据规模可预测地增长——首次揭示前馈三维重建领域存在类似大语言模型的 Scaling Law。为此，作者引入 VGGT-Ω，在静态与动态场景重建的准确性、效率和通用性上实现了大幅提升。为支持前所未有的训练规模，论文引入了三大创新：一是架构改进——通过使用单头多任务监督的密集预测头替代多头架构，移除昂贵的高分辨率卷积层，将训练显存降低至前作 VGGT 的约 30%；二是寄存器注意力机制（Register Attention）——将场景信息聚合到紧凑的寄存器表示中，并限制帧间信息交换仅通过寄存器进行，部分替代全局注意力，从而支持 15 倍于先前工作的监督数据量；三是自监督学习协议与动态场景数据流水线——构建高质量动态场景标注流水线，并采用 DINO 式自监督蒸馏充分利用大规模无标注视频数据。VGGT-Ω 将模型从 0.2B 参数扩展至 10B 参数，在静态和动态场景重建的六大基准上全面刷新 SOTA，例如在 Sintel 相机估计精度上较前作最佳提升了 77%（AUC@3° 从 22.5 提升至 40.0）。此外，论文还展示了学习到的寄存器表示能够增强视觉语言动作（VLA）模型，并支持与语言的对齐，表明三维重建可作为空间理解的强大且可扩展的代理任务。
+
+**亮点**：
+
+1. **首次证明前馈三维重建模型存在类似大语言模型的 Scaling Law，模型与数据规模可预测地提升重建精度**：VGGT-Ω 是首个系统性地将前馈三维重建模型"做大做强"的工作。实验表明，当模型规模从 0.5B 增长至 10B、数据规模从 2K 增长至 2M 序列时，3D 点云误差持续下降（图 1），呈现出清晰的幂律缩放关系。这一发现为三维视觉基础模型的未来发展指明了方向——与 LLM 领域类似，更大的模型和更多的数据将带来持续且可预测的精度提升，前馈重建从此具备与 SfM 等传统方法一较高下的数据驱动扩展能力
+2. **通过寄存器注意力与架构简化将训练显存降低至前作的约 30%，支持 15 倍数据量与 10B 参数模型训练**：VGGT-Ω 对 VGGT 架构进行了系统性精简——使用单头多任务监督的密集预测头替代多头架构，移除高分辨率卷积层；引入寄存器注意力机制（Register Attention）将帧间信息交换限制在紧凑的寄存器表示中，部分替代昂贵的全局注意力。这些改进使训练显存降至前作的约 30%，从而支持 15 倍于先前工作的监督数据量和 10B 参数模型的训练。这是前馈重建领域首次实现如此大规模的数据与模型扩展
+3. **将前馈重建从静态场景扩展到动态场景，Sintel 相机估计精度提升 77%，并展示重建特征对 VLA 和语言对齐的增强能力**：VGGT-Ω 构建了支持动态场景的高质量数据标注流水线，使前馈重建首次在动态场景上取得强结果。在 Sintel 相机估计基准上，AUC@3° 从 VGGT 的 22.5 大幅提升至 40.0（提升 77%）。论文进一步展示了学习到的寄存器表示能够有效增强视觉语言动作（VLA）模型，并支持与语言的对齐，表明三维重建不仅是计算机视觉的核心任务，更是通往空间理解通用智能的重要代理任务。该论文入选 CVPR 2026 Oral 并获最佳论文候选
+
+### 2026-07-21｜GSPrior: 3D Gaussian Splatting with Self-Constrained Priors for High Fidelity Surface Reconstruction（基于自约束先验的高保真表面三维高斯泼溅重建）
+
+**3D Gaussian Splatting with Self-Constrained Priors for High Fidelity Surface Reconstruction**
+**基于自约束先验的高保真表面三维高斯泼溅重建**
+
+**方向**：3D Gaussian Splatting 表面重建　**来源**：CVPR 2026　**机构**：清华大学 × 韦恩州立大学
+
+- **作者**：Takeshi Noda, Yu-Shen Liu, Zhizhong Han
+- **链接**：[https://arxiv.org/abs/2603.19682](https://arxiv.org/abs/2603.19682) | 项目页：[takeshie.github.io/GSPrior](https://takeshie.github.io/GSPrior/) | 代码：[github.com/takeshie/GSPrior](https://github.com/takeshie/GSPrior)
+
+![GSPrior 方法概览图](https://km.sankuai.com/api/file/cdn/2756902383/247397319747?contentType=0&isNewContent=false)
+
+**核心内容**：3D Gaussian Splatting（3DGS）虽然在渲染质量和速度上优于 NeRF，但在恢复高保真表面方面仍有提升空间。本文提出自约束先验（Self-Constrained Prior）来约束 3D 高斯的学习，以实现更精确的深度渲染。该先验源自一个 TSDF 网格，通过融合当前 3D 高斯渲染的深度图获得。先验度量估计表面周围的距离场，提供一个以表面为中心的"带"（band），对 3D 高斯施加更具体的约束：移除带外高斯、将高斯移近表面、以及以几何感知方式鼓励更大或更小的不透明度。更重要的是，该先验可定期由最新的深度图像更新（通常更准确和完整），并逐步缩窄带宽以收紧约束。在 NeRF-Synthetic、DTU、Tanks & Temples 和 MIP-NeRF 360 等广泛使用的基准上，该方法在表面重建质量上全面超越了现有 SOTA 方法。
+
+**亮点**：
+
+1. **自约束 TSDF 先验实现无外部监督的几何约束**：首次利用 3D 高斯自身渲染的深度图融合构建 TSDF 距离场作为自约束先验，无需任何外部几何监督信号。通过"带"约束机制（移除带外高斯、向表面移动高斯、几何感知不透明度调节）系统性地引导高斯基元贴合真实表面，将辐射场优化与几何重建目标自然对齐
+2. **渐进式带宽收缩与定期更新保证稳定收敛**：先验随训练进程定期更新（基于不断精化的深度渲染结果），并渐进缩窄带宽，使几何约束从粗到细逐步收紧。这一设计避免了过早强约束导致的优化停滞，实现了从粗略几何到高保真表面的稳定、渐进式收敛
+3. **多个主流基准上全面达到 SOTA 表面重建质量**：在 NeRF-Synthetic、DTU、Tanks & Temples 和 MIP-NeRF 360 四大基准上，GSPrior 在 Chamfer 距离、F-score 等几何指标上全面超越现有 3DGS 表面重建方法，同时保持竞争力的新视角合成质量，代码已开源
+
+### 2026-07-22｜Dynamic Visual SLAM using a General 3D Prior（使用通用三维先验的动态视觉SLAM / Pi3MOS-SLAM）
+
+**Dynamic Visual SLAM using a General 3D Prior**
+**使用通用三维先验的动态视觉SLAM / Pi****^3^****MOS-SLAM**
+
+**方向**：SLAM / 实时三维重建　**来源**：CVPR 2026　**机构**：University of Bonn（波恩大学，Photogrammetry & Robotics Lab）
+
+- **作者**：Xingguang Zhong, Liren Jin, Marija Popović, Jens Behley, Cyrill Stachniss
+- **链接**：[https://arxiv.org/abs/2512.06868](https://arxiv.org/abs/2512.06868) | 代码：[github.com/PRBonn/Pi3MOS-SLAM](https://github.com/PRBonn/Pi3MOS-SLAM) | CVF 页面：[CVPR 2026](https://openaccess.thecvf.com/content/CVPR2026/papers/Zhong_Dynamic_Visual_SLAM_using_a_General_3D_Prior_CVPR_2026_paper.html)
+
+**核心内容**：可靠的增量式相机位姿估计与三维重建是机器人、交互式可视化和增强现实等应用的关键技术基础。然而在动态自然环境中，场景动态会严重损害相机位姿估计的准确性，使在线 SLAM 面临极大挑战。本文提出一种新颖的单目视觉 SLAM 系统 Pi³MOS-SLAM，能够在动态场景中鲁棒地估计相机位姿。其核心创新在于利用两类方法的互补优势：基于几何面片（patch-based）的在线束调整（Bundle Adjustment）的鲁棒局部优化能力，以及近期前馈重建模型（feed-forward reconstruction models，如 DUSt3R/MASt3R 等视觉几何基础模型）隐含的场景理解与 3D 感知能力。具体而言，作者提出利用前馈重建模型精确过滤动态区域——模型在预测稠密深度时天然对动态物体敏感，通过将其深度预测与 BA 估计的面片进行尺度对齐，即可在不依赖任何类别先验或语义分割网络的情况下鲁棒识别和去除动态干扰。同时，前馈模型的深度预测还被用于增强面片视觉 SLAM 的鲁棒性。在多个任务上的广泛实验表明，该方法在动态场景中的位姿估计与三维重建性能显著超越了现有 SOTA 方法。
+
+**亮点**：
+
+1. **前馈重建模型作为通用三维先验：首次在 SLAM 中系统性利用几何基础模型的"暗知识"处理动态场景**：传统动态 SLAM 依赖语义分割网络或运动分割器识别动态物体，需要额外的类别标注和训练数据。Pi³MOS-SLAM 独辟蹊径——直接利用前馈重建模型（DUSt3R/MASt3R 等）在预测稠密深度时天然对动态物体的敏感性，通过将深度预测与 BA 面片进行尺度对齐，无需任何类别先验即可精确过滤动态区域。这一设计揭示了一个重要启示：大规模预训练的前馈重建模型已经隐式编码了对场景运动的理解，可作为强大的通用三维先验直接赋能 SLAM 系统
+2. **几何 BA 与前馈重建的互补融合：在线优化与预训练模型的协同增效**：论文巧妙地将两类方法互补结合——基于面片的在线 BA 提供局部几何一致性和实时位姿估计，前馈重建模型则提供全局稠密深度预测和动态区域识别能力。两者的连接点是"尺度对齐"：BA 面片估计的深度虽然稀疏但尺度一致，前馈模型的深度虽然稠密但存在跨帧尺度模糊；通过最小化两者的尺度差异，系统同时获得了稠密深度和尺度一致性。这种互补融合范式为 SLAM 领域提供了一种新的方法论框架
+3. **CVPR 2026 录用，PRBonn 团队出品，代码完全开源**：该工作来自 SLAM 领域顶级研究组——波恩大学摄影测量与机器人实验室（Cyrill Stachniss 组），被 CVPR 2026 正式录用，代码已在 GitHub 完全开源（基于 MASt3R 和 DROID-SLAM 构建）。在多个动态场景基准上的实验表明，该方法在相机位姿估计精度和三维重建质量方面均显著超越现有单目 SLAM SOTA，特别在动态物体占比高的场景中优势更为突出
+
+### 2026-07-23｜LiDAR Prompted Spatio-Temporal Multi-View Stereo for Autonomous Driving（激光雷达提示的时空多视图立体网络 / DriveMVS）
+
+**LiDAR Prompted Spatio-Temporal Multi-View Stereo for Autonomous Driving**
+**激光雷达提示的时空多视图立体网络 / DriveMVS**
+
+**方向**：多视图立体重建（MVS）　**来源**：CVPR 2026　**机构**：CaiNiao Inc.（菜鸟网络）× Alibaba Group（阿里巴巴集团）× Harbin Institute of Technology（哈尔滨工业大学）
+
+- **作者**：Qihao Sun, Jiarun Liu, Ziqian Ni, Jianyun Xu, Tao Xie, Lijun Zhao, Ruifeng Li, Sheng Yang
+- **链接**：[https://arxiv.org/abs/2603.03765](https://arxiv.org/abs/2603.03765) | CVF 页面：[CVPR 2026](https://openaccess.thecvf.com/content/CVPR2026/html/Sun_LiDAR_Prompted_Spatio-Temporal_Multi-View_Stereo_for_Autonomous_Driving_CVPR_2026_paper.html)
+
+![DriveMVS 方法概览图：LiDAR 提示的时空多视图立体网络架构](https://km.sankuai.com/api/file/cdn/2756902383/247796825939?contentType=0&isNewContent=false)
+
+**核心内容**：精确的度量级深度估计对于自动驾驶感知与仿真至关重要，但现有方法在度量精度、多视图一致性、时序稳定性和跨域泛化能力之间难以取得平衡。本文提出 DriveMVS，一种新颖的多视图立体（MVS）框架，通过两项关键洞察调和这些相互竞争的目标：（1）稀疏但度量精确的激光雷达（LiDAR）观测可作为几何提示，以绝对尺度锚定深度估计；（2）多种线索的深度融合对于消歧和增强鲁棒性至关重要，同时时空解码器确保跨帧一致性。基于这些原则，DriveMVS 以两种方式嵌入 LiDAR 提示：一是作为硬几何先验锚定代价体积（cost volume）的绝对尺度；二是作为软特征指导，通过三线索融合器（Triple-Cue Combiner）与单目线索和几何线索深度融合。在时序一致性方面，DriveMVS 采用时空解码器，联合利用来自 MVS 代价体积的几何线索和来自相邻帧的时间上下文。实验表明，DriveMVS 在多个基准上达到 SOTA 性能，在度量精度、时序稳定性和零样本跨域迁移方面均表现卓越，展示了其在可扩展、可靠的自动驾驶系统中的实用价值。
+
+**亮点**：
+
+1. **LiDAR 作为几何提示双重嵌入：以绝对尺度锚定深度估计，突破传统 MVS 尺度模糊瓶颈**：现有 MVS 方法依赖多视图光度一致性进行深度估计，但无法恢复绝对尺度；单目深度估计虽能处理弱纹理区域，却存在尺度不一致问题。DriveMVS 创新性地将稀疏但度量精确的 LiDAR 观测以两种方式嵌入 MVS 流程——作为硬几何先验直接锚定代价体积的绝对尺度，作为软特征指导通过三线索融合器与单目/几何线索深度融合。这一设计使 DriveMVS 在保持 MVS 几何精度的同时获得了绝对尺度感知能力，在自动驾驶等对度量精度要求极高的场景中具有重要价值
+2. **三线索融合器实现单目、度量与几何线索的深度协同，系统性地提升困难区域重建质量**：DriveMVS 提出 Triple-Cue Combiner，通过 Mask Transformer 架构将单目线索（来自 DINOv2）、度量线索（来自 LiDAR 提示编码器）和代价体积线索（来自 MVS cost volume）进行跨线索融合。单目线索提供丰富的语义和纹理信息，度量线索提供稀疏但精确的绝对尺度锚点，几何线索提供多视图一致性的稠密约束——三者的协同使模型在弱纹理、重复纹理、远距离区域等传统 MVS 失效场景中仍能稳健估计深度，显著提升了重建的完整性和鲁棒性
+3. **时空解码器保障跨帧时序一致性，零样本跨域泛化能力突出**：DriveMVS 的时空解码器联合利用当前帧 MVS 代价体积的几何线索与相邻帧的时间上下文，通过显式建模时序依赖关系消除深度估计的帧间闪烁，确保输出深度图在时序上平滑一致。实验表明，DriveMVS 不仅在域内基准上达到 SOTA，更在零样本跨域迁移设置下（如从 KITTI 迁移到 nuScenes）显著优于现有方法，展示了其作为可扩展自动驾驶深度感知系统的实用潜力
+
+### 2026-07-24｜Eulerian Gaussian Splatting using Hashed Probability Pyramids（基于哈希概率金字塔的欧拉高斯泼溅）
+
+**Eulerian Gaussian Splatting using Hashed Probability Pyramids**
+**基于哈希概率金字塔的欧拉高斯泼溅**
+
+**方向**：3DGS 渲染加速与结构优化　**来源**：CVPR 2026　**机构**：Brown University / MIT
+
+- **作者**：Mia Gaia Polansky, George Kopanas, Stephan Garbin, Todd Zickler, Dor Verbin
+- **链接**：[https://arxiv.org/abs/2605.29136](https://arxiv.org/abs/2605.29136)
+
+![Eulerian GS 概率密度优化框架图](https://km.sankuai.com/api/file/cdn/2756902383/247991914585?contentType=0&isNewContent=false)
+
+**核心内容**：提出 Eulerian Gaussian Splatting (EGS)，一种基于概率的 splat 辐射场框架，保留 3D Gaussian Splatting 的快速光栅化和测试时效率，同时将启发式高斯基元操作（如手动调整的增密/剪枝）替换为基于梯度的体积概率密度优化。核心创新在于将高斯基元位置重新诠释为从可学习的持续密度场中采样的随机变量，而非直接操作离散基元。使用一种新颖的内存高效多尺度分层网格（Hashed Probability Pyramids）来实现该可学习密度场，支持端到端的梯度优化。推导出基于控制变量（control variates）的无偏梯度估计器以显著降低方差，使基于密度的优化稳定可行。通过允许概率质量自动流向损失函数需求的位置，该框架消除了脆弱先验并自然地探索体积空间，在 mip-NeRF 360 上实现 SOTA 重建质量，同时保持 3DGS 级别的渲染速度。
+
+**亮点**：
+
+1. **欧拉视角的概率密度优化范式：**颠覆传统 3DGS 对离散高斯基元的直接操作，将基元位置重新诠释为从可学习密度场中采样的随机变量，用连续梯度优化彻底替代启发式增密/剪枝策略，消除脆弱先验，开创了 3DGS 优化的新范式
+2. **控制变量梯度估计器与哈希概率金字塔：**推导出无偏且低方差的梯度估计器使基于密度的优化稳定可行；提出内存高效的多尺度分层网格（Hashed Probability Pyramids）实现可学习密度场，支持端到端优化
+3. **质量与效率双赢：**在 mip-NeRF 360 上实现 SOTA 重建质量，同时保持 3DGS 级别的实时渲染速度，证明概率密度优化路线在质量和效率上的双重优势
