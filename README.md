@@ -1,3 +1,8 @@
+# 三维重建论文收藏
+
+## 论文分类大纲
+
+按研究方向分类索引，快速定位感兴趣的论文。
 
 ### 🔷 一、前馈式 3D Gaussian Splatting（Feed-Forward 3DGS）
 
@@ -36,6 +41,7 @@
 研究具备长上下文处理能力的大规模三维重建模型，探索测试时训练、自回归重建等新范式。
 
 - **tttLRM**（2026-04-16）— 将测试时训练（TTT）层引入三维重建，线性复杂度支持任意数量视角输入 · [CVPR 2026](https://arxiv.org/abs/2602.20160)
+- **Scal3R**（2026-08-06）— 神经全局上下文 + 测试时训练突破前馈模型长序列记忆瓶颈，公里级场景位姿与重建精度双 SOTA，CVPR 2026 Highlight · [CVPR 2026 Highlight](https://arxiv.org/abs/2604.08542)
 
 ### 🔬 五、视觉几何基础模型（Visual Geometry Foundation Models）
 
@@ -53,6 +59,7 @@
 - **DUSt3R**（2026-07-14）— 开创性端到端几何三维视觉范式，点图回归统一单目/双目重建，无需标定或位姿先验，催生 MASt3R/Fast3R/MUSt3R 等系列工作，CVPR 2024 奠基之作 · [CVPR 2024](https://arxiv.org/abs/2312.14132)
 - **VGGT-Ω**（2026-07-20）— 首次揭示前馈三维重建 Scaling Law，10B 参数 + 寄存器注意力支持 15× 数据量，Sintel 相机估计精度提升 77%，CVPR 2026 Oral / Best Paper Finalist · [CVPR 2026 Oral / Best Paper Finalist](https://arxiv.org/abs/2605.15195)
 - **Speed3R**（2026-07-27）— 稀疏注意力机制的前馈三维重建模型，1000视图序列推理加速12.4倍，与VGGT/π³等骨干即插即用，CVPR 2026 Findings · [CVPR 2026 Findings](https://arxiv.org/abs/2603.08055)
+- **D4RT**（2026-08-03）— 前馈 Transformer 统一五元组按需查询 4D 重建，单模型端到端输出点云/深度/相机参数，CVPR 2026 Best Paper，Google DeepMind · [CVPR 2026 Best Paper](https://arxiv.org/abs/2512.08924)
 
 ### 🎬 六、4D 动态场景重建（4D Dynamic Scene Reconstruction）
 
@@ -94,6 +101,7 @@
 - **DreamGaussian**（2026-07-16）— 首个将 3DGS 引入 3D 生成，逐步稠密化 + 网格提取精化，单图生成 3D 仅需 2 分钟，加速 10×，ICLR 2024 Oral · [ICLR 2024 Oral](https://arxiv.org/abs/2309.16653)
 - **DiffusionGS**（2026-07-28）— 将高斯泼溅嵌入扩散去噪器的单阶段三维扩散模型，像素对齐高斯基元预测保证视图一致性，场景-物体混合训练，ICCV 2025 · [ICCV 2025](https://arxiv.org/abs/2411.14384)
 - **OctGPT**（2026-07-30）— 基于八叉树的多尺度自回归三维形状生成，训练加速 13 倍、生成加速 69 倍，性能匹敌 SOTA 扩散模型，SIGGRAPH 2025 · [SIGGRAPH 2025](https://arxiv.org/abs/2504.09975)
+- **AR3D-R1**（2026-08-05）— 首次系统性研究 RL 在 3D 生成中的应用，Hi-GRPO 分层 RL 训练范式，首个 RL 增强 Text-to-3D 模型，CVPR 2026 · [CVPR 2026](https://arxiv.org/abs/2512.10949)
 
 ### 🪟 九、3DGS 透明表面建模（Transparent Surface Modeling）
 
@@ -112,6 +120,7 @@
 - **HAMSt3R**（2026-06-30）— 将 MASt3R 扩展为联合重建人体与场景的前馈网络，DUNE 蒸馏编码器融合场景几何与人体结构先验，人体中心基准 SOTA，NAVER LABS Europe · [ICCV 2025](https://arxiv.org/abs/2508.16433)
 - **MonoMVSNet**（2026-07-07）— 单目基础模型先验引导的 MVS 网络，跨视图位置编码深度融合单目特征与多视图几何，Tanks-and-Temples 双基准第一 · [ICCV 2025](https://arxiv.org/abs/2507.11333)
 - **DriveMVS**（2026-07-23）— LiDAR 提示的时空多视图立体网络，三线索融合器协同单目/度量/几何线索，时空解码器保障跨帧一致性，自动驾驶 MVS SOTA · [CVPR 2026](https://arxiv.org/abs/2603.03765)
+- **AMB3R**（2026-08-07）— 体积后端范式升级点图回归，免训练扩展至 VO/SfM，前馈模型首次系统性超越优化型 SLAM/SfM，CVPR 2026 Highlight · [CVPR 2026 Highlight](https://arxiv.org/abs/2511.20343)
 
 ### 🌐 十一、NeRF / 逆向渲染（NeRF / Inverse Rendering）
 
@@ -138,6 +147,12 @@
 
 - **2DGS**（2026-07-15）— 将 3D 高斯折叠为 2D 定向圆盘，深度畸变 + 法线一致性正则化，同时实现 SOTA 渲染与表面重建，SIGGRAPH 2024 · [SIGGRAPH 2024](https://arxiv.org/abs/2403.17888)
 - **GSPrior**（2026-07-21）— 自约束 TSDF 先验引导高斯贴合表面，带宽渐进收缩实现高保真表面重建，CVPR 2026 · [CVPR 2026](https://arxiv.org/abs/2603.19682)
+
+### ⚡ 十四、3DGS 物理仿真与交互（Physics Simulation & Interaction）
+
+研究将物理仿真（脆性断裂、碰撞检测等）嵌入 3D Gaussian Splatting 表示，实现具有物理真实感的动态三维场景模拟。
+
+- **GaussianFluent**（2026-08-04）— 首次将脆性断裂物理仿真引入 3DGS，生成模型补全体积内部 + CD-MPM 高速断裂仿真，CVPR 2026 Award Candidate · [CVPR 2026 Award Candidate](https://arxiv.org/abs/2601.09265)
 
 ---
 
@@ -1626,3 +1641,101 @@
 1. **首次将 3D Gaussian Splatting 引入单目 SLAM，以高斯作为唯一 3D 表示统一跟踪、建图与渲染**：Gaussian Splatting SLAM 是首个完全基于 3D Gaussian Splatting 的单目 SLAM 系统，打破了传统 SLAM 依赖点云、surfel 或隐式场表示的范式。通过将高斯椭球作为基本地图元素，系统同时获得了显式表示的可解释性和体积化表示的渲染能力，以同一组 3D Gaussians 统一支持相机跟踪、局部建图和高质量新视角合成，为后续 MonoGS、Gaussian-SLAM、SplaTAM 等大量 3DGS-SLAM 工作奠定了重要基础
 2. **直接对 3D Gaussians 优化实现相机跟踪，无需离线 SfM 位姿，具有广泛的收敛 basin**：原始 3DGS 算法依赖离线 Structure from Motion 提供的精确相机位姿，无法直接用于在线 SLAM。本文创新性地将相机跟踪重新表述为针对 3D Gaussians 的直接优化问题，通过可微高斯光栅化计算位姿梯度，实现了快速而稳健的在线相机跟踪，收敛 basin 显著宽于传统特征匹配方法。该设计使系统能够在没有先验位姿的情况下，从单目视频流实时增量式重建三维场景
 3. **利用显式高斯性质引入几何验证与正则化，能重建微小甚至透明物体，获 CVPR 2024 Highlight & Best Demo Award**：利用 3D Gaussians 的显式几何特性，论文引入了针对增量稠密重建的专用几何验证和正则化机制，有效处理在线建图过程中出现的深度模糊和几何不一致问题。得益于此，系统不仅能在大尺度场景上实现高质量重建，还能精确恢复微小物体（如眼镜框）甚至透明物体（如玻璃瓶）的几何结构，在 Replica、TUM RGB-D 等基准上的新视角合成和轨迹估计均达到 SOTA，并荣获 CVPR 2024 Highlight 与最佳演示奖
+
+### 2026-08-03｜D4RT: Dynamic 4D Reconstruction and Tracking（动态4D重建与追踪）
+
+**D4RT: Dynamic 4D Reconstruction and Tracking**
+**动态4D重建与追踪（D4RT）**
+
+**方向**：动态场景重建 / 视觉几何基础模型　**来源**：CVPR 2026 Best Paper　**机构**：Google DeepMind · UCL · Oxford
+
+- **作者**：Chuhan Zhang, Guillaume Le Moing, Skanda Koppula, Ignacio Rocco, Liliane Momeni, Junyu Xie, Shuyang Sun, Rahul Sukthankar, Joëlle K. Barral, Raia Hadsell, Zoubin Ghahramani, Andrew Zisserman, Junlin Zhang, Mehdi S. M. Sajjadi
+- **链接**：[https://arxiv.org/abs/2512.08924](https://arxiv.org/abs/2512.08924) | 项目页：[d4rt-paper.github.io](https://d4rt-paper.github.io/) | CVF 页面：[CVPR 2026](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_Efficiently_Reconstructing_Dynamic_Scenes_One_D4RT_at_a_Time_CVPR_2026_paper.html)
+
+![D4RT 动态4D重建统一查询框架示意图](https://km.sankuai.com/api/file/cdn/2756902383/249310188517?contentType=0&isNewContent=false)
+
+**核心内容**：D4RT 是 Google DeepMind、UCL 和牛津大学联合团队提出的 CVPR 2026 最佳论文，一个简单却极具扩展性的前馈 Transformer 模型，专为视频动态 4D 场景重建与追踪而设计。传统 4D 重建方案要么依赖 COLMAP/SfM/MVS 等传统多视图几何方法（仅适用于静态场景），要么采用 DUSt3R、VGGT 等深度学习模型但存在架构碎片化、动态效果差、计算冗余等问题。D4RT 的核心创新是一种新颖的五元组按需查询机制：模型将视频编码为紧凑的隐式场景表征，解码接口允许独立且灵活地查询任意像素在任意时刻、任意参考相机坐标系下的 3D 位置。这种"查询即服务"的设计彻底摆脱了对密集逐帧解码和多个任务专属解码器的依赖，使模型在单一统一架构中同时输出点云、像素轨迹、深度图和内外参相机参数。D4RT 训练与推理均极为高效轻量，在广泛的 4D 重建任务上全面超越先前方法，为动态场景理解、自动驾驶和实时三维感知开辟了全新路径。
+
+**亮点**：
+
+1. **统一查询接口替代碎片化多任务解码器，单一前馈网络端到端解决 4D 重建全链路**：D4RT 摒弃了传统 4D 重建中"为每个任务配备专属解码器"的碎片化架构，创新性地提出五元组按需查询机制（query = {帧ID, 像素坐标, 目标时刻, 目标相机, 输出类型}）。通过将视频编码为统一的隐式场景表征，解码器可以独立查询任意点在任意时空位置的几何信息，无需密集逐帧解码。这种设计使 D4RT 能以单一模型、单一接口同时输出点云、点轨迹、深度图和相机参数，架构极其简洁优雅，推理效率显著提升，在多个 4D 重建基准上全面刷新 SOTA
+2. **轻量高效，训练与推理成本远低于同类方法，具备良好的可扩展性**：得益于查询机制避免了全帧密集解码的计算浪费，D4RT 在模型设计和计算效率上实现了双重突破。论文表明，D4RT 在训练数据和模型规模上的扩展性显著优于现有方法，能够以更少的计算资源达到更高的重建精度。这种高效性使 D4RT 不仅适用于学术研究，更具备在自动驾驶、机器人感知和实时三维理解等实际场景中部署的潜力
+3. **从静态多视图迈向动态视频，连续两年 CVPR 最佳论文延续"端到端几何推理"主线**：CVPR 2025 最佳论文 VGGT 证明了静态场景可通过单一前馈网络完成端到端三维推理；D4RT 在此基础上更进一步，将问题域从静态多视图扩展到动态视频序列，证明了统一的前馈 Transformer 同样能够高效处理时变几何与运动。这一延续性标志着视觉几何基础模型从"静态重建"向"动态理解"的关键跃迁，是三维计算机视觉迈向通用空间智能的重要里程碑
+
+### 2026-08-04｜GaussianFluent: Gaussian Simulation for Dynamic Scenes with Mixed Materials（混合材质动态场景的高斯物理仿真）
+
+**GaussianFluent: Gaussian Simulation for Dynamic Scenes with Mixed Materials**
+**混合材质动态场景的高斯物理仿真（GaussianFluent）**
+
+**方向**：3D Gaussian Splatting（物理仿真与交互）　**来源**：CVPR 2026 Award Candidate　**机构**：北京大学
+
+- **作者**：Bei Huang, Yixin Chen, Ruijie Lu, Gang Zeng, Hongbin Zha, Yuru Pei, Siyuan Huang
+- **链接**：[https://arxiv.org/abs/2601.09265](https://arxiv.org/abs/2601.09265) | 项目页：[hb-pencil-zero.github.io/GaussianFluent](https://hb-pencil-zero.github.io/GaussianFluent/) | CVF 页面：[CVPR 2026](https://openaccess.thecvf.com/content/CVPR2026/html/Huang_GaussianFluent_Gaussian_Simulation_for_Dynamic_Scenes_with_Mixed_Materials_CVPR_2026_paper.html)
+
+![GaussianFluent 混合材质物理仿真 teaser 图](https://km.sankuai.com/api/file/cdn/2756902383/249532301434?contentType=0&isNewContent=false)
+
+**核心内容**：3D Gaussian Splatting（3DGS）已成为高保真实时渲染的主流三维表示，但现有 3DGS 场景大多是"静态可看"的——它们可以被渲染，却难以像真实世界物体一样发生碰撞、变形或物理交互。GaussianFluent 是北京大学团队提出的 CVPR 2026 Award Candidate 论文，首次将脆性断裂物理仿真系统性地引入 3DGS 框架，突破了此前仅支持软体材料（如橡胶、雪）仿真的局限。论文识别出两个核心障碍：3DGS 表示缺乏具有连贯纹理的体积内部结构，以及不存在面向高斯的断裂感知仿真方法。为此，GaussianFluent 构建了统一的物理仿真与渲染框架：首先利用生成模型引导内部高斯密集化，为仅含表面的 3DGS 补全真实感的体积内部；其次集成优化后的连续损伤物质点法（CD-MPM），在保持极高仿真速度的同时实现脆性断裂。该方法可处理混合材质物体和多阶段断裂传播等复杂场景（如子弹穿透果冻、西瓜碎裂、菠萝切片），实现了此前方法无法达到的逼真动态效果，并支持断裂后新暴露表面的实时重光照渲染，在 VR 和机器人等下游应用具有巨大潜力。
+
+**亮点**：
+
+1. **首次将脆性断裂物理仿真引入 3DGS，突破软体材料局限，实现混合材质真实破碎效果**：此前 PhysGaussian 等物理-高斯耦合工作主要针对橡胶、布料、雪等柔软可变形材料，对西瓜碎裂、玻璃破碎、子弹穿透等脆性断裂场景束手无策。GaussianFluent 创新性地将优化后的连续损伤物质点法（CD-MPM）嵌入 3DGS 表示，使高斯基元具备物理意义的速度、形变和应力属性，并按照连续介质力学演化。该方法不仅能模拟单材质脆性断裂，更能处理果冻、西瓜、菠萝等混合材质物体的多阶段断裂传播，在照片级真实感渲染与物理正确性之间实现了前所未有的统一
+2. **生成模型引导的内部高斯密集化，为表面-only 的 3DGS 补全具有连贯纹理的体积内部结构**：3DGS 作为一种表面主导的三维表示，天然缺乏物体内部信息，而物理断裂仿真必须依赖完整的体积结构。GaussianFluent 提出利用生成模型（生成式内部填充）为 3DGS 补全真实感的内部高斯分布，并通过不透明度优化使内部与表面自然融合。这一设计使断裂后的截面能呈现与外观一致的内部纹理（如西瓜的红色果肉、菠萝的黄色果肉），而非空洞或不真实的填充，显著提升了断裂场景的沉浸感和真实度
+3. **优化后的 CD-MPM 实现高速断裂仿真，支持多阶段断裂传播与实时照片级渲染**：论文对标准 CD-MPM 进行了针对性的并行化和稳定性优化，使其能够在高斯表示上高效运行，仿真速度显著提升。同时，断裂产生的新暴露表面会触发实时重光照计算，确保断裂后场景的光照一致性。系统在多种复杂场景下均实现了照片级真实感的实时渲染，在 VR 沉浸式体验、机器人抓取与操作仿真、影视特效制作等下游应用中展现出广阔前景
+
+### 2026-08-05｜Are We Ready for RL in Text-to-3D Generation? A Progressive Investigation（RL赋能文本到三维生成的系统性研究）
+
+**Are We Ready for RL in Text-to-3D Generation? A Progressive Investigation**
+**RL赋能文本到三维生成：一项渐进式系统研究**
+
+**方向**：三维生成（3D Generation）　**来源**：CVPR 2026　**机构**：西北工业大学 × 上海人工智能实验室 × 北京大学 × 香港中文大学 × 香港科技大学
+
+- **作者**：Yiwen Tang, Zoey Guo, Kaixin Zhu, Ray Zhang, Qizhi Chen, Dongzhi Jiang, Junli Liu, Bohan Zeng, Haoming Song, Delin Qu, Tianyi Bai, Dan Xu, Wentao Zhang, Bin Zhao
+- **链接**：[https://arxiv.org/abs/2512.10949](https://arxiv.org/abs/2512.10949) | 代码：[GitHub](https://github.com/Ivan-Tang-3D/3DGen-R1) | CVF 页面：[CVPR 2026](https://openaccess.thecvf.com/content/CVPR2026/html/Tang_Are_We_Ready_for_RL_in_Text-to-3D_Generation_A_Progressive_CVPR_2026_paper.html)
+
+**核心内容**：强化学习（RL）在大语言模型与多模态模型中的成功已得到广泛验证，但将其应用于三维生成领域仍是一片空白。本文首次对 RL 在文本到三维自回归生成中的应用进行了系统性研究，从奖励设计、RL 算法、评测基准和 RL 范式四个维度展开渐进式探索。研究首先揭示了 3D 生成比 2D 图像生成更难对齐的核心原因——三维对象需要全局一致的几何结构与精细的局部纹理，使生成结果对奖励函数设计和 RL 算法选择极为敏感。基于此，作者评估了多种奖励维度与模型选择，发现与人类偏好对齐的奖励信号至关重要，而通用多模态模型能为三维属性提供鲁棒的监督信号。进一步地，论文提出 Hi-GRPO——一种分层 coarse-to-fine 的 RL 训练范式，先训练模型生成粗糙几何形状，再逐步细化纹理细节，避免了一次性优化全维度三维属性导致的训练不稳定问题。最终，作者开发出 AR3D-R1，首个经 RL 增强的文本到三维生成模型，并设计了 MME-3DR 基准测试集，包含 249 个精心设计的复杂三维对象，从多视角几何一致性、语义细节对齐和纹理真实感三个层次全面评测三维生成模型的推理能力。
+
+**亮点**：
+
+1. **首次系统揭示 RL 在 3D 生成中的核心挑战与有效范式，为领域提供方法论基础**：不同于 2D 图像生成，三维对象具有更高的空间复杂度，需要同时满足全局几何一致性和局部纹理精细度，这使得 3D 生成对奖励设计和 RL 算法的选择极为敏感。本文通过大量消融实验系统回答了四个关键问题——什么奖励模型有效、哪种 GRPO 变体适合 3D、现有基准能否评出 3D 推理能力、能否设计更贴合 3D 分层本质的 RL 范式，为后续研究者提供了坚实的经验基础和方法论指导
+2. **提出 Hi-GRPO 分层训练策略并开发 AR3D-R1，首个 RL 增强的 Text-to-3D 模型**：作者创新性地提出 coarse-to-fine 的分层 RL 训练范式 Hi-GRPO，先利用 RL 优化模型的粗糙几何生成能力，再在此基础上逐步细化纹理和细节。这种分层策略避免了同时优化几何与纹理带来的训练不稳定问题，使 AR3D-R1 在 Toys4K 等基准上显著超越未经 RL 增强的基线模型。AR3D-R1 的成功证明了 RL 不仅能够提升三维生成的质量，还能赋予模型类似大语言模型的"推理能力"
+3. **构建 MME-3DR 评测基准，首次区分三维生成的"生成能力"与"推理能力"**：现有三维生成基准往往只能评估生成质量，无法区分模型是依靠记忆训练集分布还是真正具备空间推理能力。MME-3DR 包含 249 个复杂三维对象，从多视角几何一致性、语义细节对齐和纹理真实感三个层次进行评测，其设计确保仅靠记忆训练分布的模型无法取得高分。该基准为三维生成领域的 RL 研究提供了可靠的评测工具，也为评估三维基础模型的真正推理能力设立了新标准
+
+### 2026-08-06｜Scal3R: Scalable Test-Time Training for Large-Scale 3D Reconstruction（面向大规模三维重建的可扩展测试时训练）
+
+**Scal3R: Scalable Test-Time Training for Large-Scale 3D Reconstruction**
+**Scal3R：面向大规模三维重建的可扩展测试时训练**
+
+**方向**：大规模三维重建 / 长视频序列重建　**来源**：CVPR 2026 Highlight　**机构**：浙江大学 × 地平线机器人 × 之江实验室
+
+- **作者**：Tao Xie, Peishan Yang, Yudong Jin, Yingfeng Cai, Wei Yin, Weiqiang Ren, Qian Zhang, Wei Hua, Sida Peng, Xiaoyang Guo, Xiaowei Zhou
+- **链接**：[https://arxiv.org/abs/2604.08542](https://arxiv.org/abs/2604.08542) | 代码：[GitHub](https://github.com/zju3dv/Scal3R) | CVF 页面：[CVPR 2026](https://openaccess.thecvf.com/content/CVPR2026/html/Xie_Scal3R_Scalable_Test-Time_Training_for_Large-Scale_3D_Reconstruction_CVPR_2026_paper.html)
+
+![Scal3R teaser](https://km.sankuai.com/api/file/cdn/2756902383/249927075882?contentType=0&isNewContent=false)
+
+**核心内容**：本文针对从长视频序列进行大规模三维场景重建这一任务，提出了 Scal3R——一种基于可扩展测试时训练（Test-Time Training, TTT）的大规模三维重建框架。近期前馈式重建模型通过直接从 RGB 图像回归三维几何而取得了 promising 的进展，但这些方法由于记忆容量有限且难以有效捕获全局上下文线索，在长序列上的重建精度与一致性往往显著下降。受人类能够自然利用场景全局理解来指导局部感知的启发，Scal3R 提出了一种新颖的神经全局上下文表示，该表示能够高效压缩并保留长程场景信息，使模型能够利用广泛的上下文线索来增强重建精度与一致性。这一上下文表示通过一组轻量级神经子网络实现，这些子网络在测试阶段通过自监督目标进行快速自适应，从而在不增加显著计算开销的前提下大幅扩展记忆容量。在 KITTI Odometry 和 Oxford Spires 等多个大规模基准数据集上的实验表明，Scal3R 在处理超大规模场景（公里级）时具有出色的有效性，在保持高效性的同时实现了领先的位姿精度和最先进的重建精度。
+
+**亮点**：
+
+1. **首创神经全局上下文表示 + 测试时训练机制，突破前馈模型长序列记忆瓶颈**：前馈式重建模型（如 DUSt3R 系列、VGGT 等）通常以固定上下文窗口处理输入，难以利用超出窗口范围的长程场景信息，导致长视频序列上的重建误差随时间累积。Scal3R 创新性地引入神经全局上下文表示，通过轻量级子网络在测试阶段以自监督方式快速自适应，将长程场景信息压缩为紧凑的上下文编码，在不增加推理阶段显著计算开销的前提下，使模型具备"记忆"整个场景的能力，从根本上解决了前馈模型在长序列上的记忆瓶颈问题
+2. **公里级超大规模场景重建，位姿与重建精度双 SOTA**：在 KITTI Odometry（自动驾驶长序列）和 Oxford Spires（城市级大规模场景）等基准上，Scal3R 实现了领先的相机位姿估计精度和最先进的重建精度，成功处理了传统方法难以应对的公里级超大规模场景；相比现有前馈方法在长序列上性能快速退化的问题，Scal3R 通过全局上下文表示保持了贯穿整个序列的高精度重建，为自动驾驶高精地图构建、大规模城市三维建模等应用提供了可行的技术路径
+3. **测试时训练机制兼顾精度与效率，为前馈三维重建模型提供通用增强范式**：Scal3R 的测试时训练（TTT）机制具有良好的通用性——它无需修改底层重建网络架构，即可作为即插即用模块增强任意前馈重建模型；轻量级子网络的自适应过程计算开销极低，却能为模型带来显著的性能提升。这一设计为前馈式三维重建模型在长序列、大规模场景下的应用提供了通用的增强范式，也为其他需要长程上下文感知的视觉任务（如视频理解、长序列 SLAM）提供了有价值的参考
+
+### 2026-08-07｜AMB3R: Accurate Feed-forward Metric-scale 3D Reconstruction with Backend（精确前馈度量尺度三维重建与后端）
+
+**AMB3R: Accurate Feed-forward Metric-scale 3D Reconstruction with Backend**
+**AMB3R：精确前馈度量尺度三维重建与后端**
+
+**方向**：多视图立体重建（MVS） / 前馈三维重建　**来源**：CVPR 2026 Highlight　**机构**：University College London (UCL)
+
+- **作者**：Hengyi Wang, Lourdes Agapito
+- **链接**：[https://arxiv.org/abs/2511.20343](https://arxiv.org/abs/2511.20343) | 项目页：[AMB3R](https://hengyiwang.github.io/projects/amber) | 代码：[GitHub](https://github.com/HengyiWang/amb3r) | CVF 页面：[CVPR 2026](https://openaccess.thecvf.com/content/CVPR2026/html/Wang_AMB3R_Accurate_Feed-forward_Metric-scale_3D_Reconstruction_with_Backend_CVPR_2026_paper.html)
+
+![AMB3R 方法概览图](https://km.sankuai.com/api/file/cdn/2756902383/250117505181?contentType=0&isNewContent=false)
+
+**核心内容**：本文提出 AMB3R，一种面向度量尺度稠密三维重建的多视图前馈模型，出自 UCL 计算机视觉教授 Lourdes Agapito 课题组。该工作的核心创新在于将三维重建问题从传统"点图回归"范式升级为"体积后端"范式——采用稀疏但结构紧凑的体积素场景表示作为后端（backend），使模型能够在紧凑的空间中进行几何推理，同时避免了点图表示中的冗余和尺度不一致问题。尽管 AMB3R 仅针对多视图重建任务训练，论文证明它无需任何任务特定的微调或测试时优化，即可无缝扩展至未标定视觉里程计（AMB3R-VO，在线运行）和大规模运动恢复结构（AMB3R-SfM，离线处理）——两者均依赖同一套"关键帧即记忆 + 混合内存"设计，将多视图 Transformer 扩展到任意帧数。在相机位姿估计、深度估计、度量尺度估计和三维重建等 7 项任务、13 个数据集上，AMB3R 全面达到最先进性能，甚至超越了带有稠密重建先验的基于优化的传统 SLAM 和 SfM 方法。这一结果标志着前馈式三维重建模型首次在精度上系统性超越经典优化范式，是三维计算机视觉领域的重要里程碑。
+
+**亮点**：
+
+1. **首创体积后端范式，从前馈"点图回归"跃迁至"体积几何推理"，系统性超越优化型 SLAM/SfM**：此前的前馈三维重建模型（如 DUSt3R、VGGT 等）均以点图（pointmap）为核心表示，在尺度一致性、空间紧凑性和几何完备性方面存在固有限制。AMB3R 创新性地引入稀疏体积素场景表示作为后端，使模型能够隐式编码多视图几何一致性约束，从根本上解决了点图表征中不同视图点云重叠区域的冗余和不一致问题。这一体积后端设计使 AMB3R 能够输出度量尺度的稠密深度图和三维重建结果，且尺度在跨视图间天然一致。在常见基准上，AMB3R 的相机位姿和深度估计精度不仅超越所有前馈基线，更首次系统性超越了 MASt3R-SLAM、DROID-SLAM 等经典优化型 SLAM 和 SfM 方法，证明了前馈路线的实用化潜力
+2. **免训练扩展管线（AMB3R-VO / AMB3R-SfM），一套模型统一覆盖在线里程计与离线大规模重建**：AMB3R 的另一大亮点是其出色的通用性和扩展性。论文提出了两条完全免训练（training-free）且模型无关（model-agnostic）的扩展管线——AMB3R-VO 用于在线视觉里程计、AMB3R-SfM 用于无序图像集的大规模重建。两者共享"关键帧记忆 + 混合内存"的核心设计，将多视图 Transformer 自然地扩展到任意数量帧，无需任何微调或测试时优化步骤。这意味着同一个 AMB3R 模型可以同时胜任实时 SLAM、离线 SfM 和稠密 MVS 等多种任务，展现了作为通用三维感知基础模型的潜力
+3. **7 项任务 13 个数据集全面 SOTA，前馈模型首次全面超越经典优化范式，CVPR 2026 Highlight 实至名归**：论文在极为广泛的评测设置下验证了 AMB3R 的性能优势——涵盖相机位姿估计、深度估计、度量尺度估计、三维重建、视觉里程计和多视图立体匹配等 7 项任务，横跨室内、室外、驾驶、目标物体等 13 个数据集。在所有任务和数据集上，AMB3R 均达到或超越最先进水平，且计算效率显著优于需要逐场景迭代优化的传统方法。这一全面领先验证了体积后端范式的有效性和通用性，为三维重建领域的"前馈 vs 优化"之争提供了强有力的实证支持
