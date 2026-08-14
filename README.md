@@ -27,6 +27,8 @@
 - **3DGS-MCMC**（2026-06-26）— 将3DGS优化重构为MCMC采样，消除启发式增密剪枝，对初始化鲁棒 · [NeurIPS 2024](https://arxiv.org/abs/2404.09591)
 - **Neural Gabor Splatting**（2026-07-06）— 轻量 MLP 赋予单个高斯基元丰富色彩变化能力，频率感知稠密化精准控制基元数量，高频表面重建新范式 · [CVPR 2026](https://arxiv.org/abs/2604.15941)
 - **Eulerian Gaussian Splatting**（2026-07-24）— 欧拉视角概率密度优化替代启发式增密/剪枝，哈希概率金字塔实现可学习密度场，质量与效率双赢 · [CVPR 2026](https://arxiv.org/abs/2605.29136)
+- **Mip-Splatting**（2026-08-11）— 3D 平滑 + 2D Mip 双滤波器从根源消除 3DGS 混叠伪影，单尺度训练泛化至多尺度且保持实时渲染 · [CVPR 2024 Best Student Paper](https://arxiv.org/abs/2311.16493)
+- **Scaffold-GS**（2026-08-13）— 锚点驱动分层高斯表示 + 视图自适应属性预测，减少冗余基元提升鲁棒性，结构化场景表示新范式 · [CVPR 2024 Highlight](https://arxiv.org/abs/2312.00109)
 
 ### 🌧️ 三、3DGS 场景鲁棒性（恶劣条件重建）
 
@@ -68,6 +70,7 @@
 - **RetimeGS**（2026-04-28）— 连续时间 4DGS 表示，光流引导初始化 + 三重渲染监督，任意时刻无鬼影重建 · [CVPR 2026 Oral](https://arxiv.org/abs/2603.13783)
 - **L4DRotorGS**（2026-05-08）— 分层 4D 旋转体高斯泼溅，22.3× 压缩率支持长时动态场景（>10s），RTX 3090 实现 500+ FPS · [CVPR 2026](https://cvpr.thecvf.com/virtual/2026/poster/36256)
 - **IGS（Instant Gaussian Stream）**（2026-06-03）— 首个可泛化流式 4D 高斯重建，时序锚点机制维持跨帧一致性，2.67s/帧重建 + 204 FPS 渲染，CVPR 2025 Highlight · [CVPR 2025 Highlight](https://arxiv.org/abs/2503.16979)
+- **MoVieS**（2026-08-10）— 前馈式 4D 动态场景重建，1 秒内从单目视频联合建模外观/几何/运动，支持新视角合成、3D 点跟踪与零样本场景流估计 · [CVPR 2026](https://arxiv.org/abs/2507.10065)
 
 ### 📡 七、SLAM / 实时三维重建（SLAM / Real-Time 3D Reconstruction）
 
@@ -102,6 +105,7 @@
 - **DiffusionGS**（2026-07-28）— 将高斯泼溅嵌入扩散去噪器的单阶段三维扩散模型，像素对齐高斯基元预测保证视图一致性，场景-物体混合训练，ICCV 2025 · [ICCV 2025](https://arxiv.org/abs/2411.14384)
 - **OctGPT**（2026-07-30）— 基于八叉树的多尺度自回归三维形状生成，训练加速 13 倍、生成加速 69 倍，性能匹敌 SOTA 扩散模型，SIGGRAPH 2025 · [SIGGRAPH 2025](https://arxiv.org/abs/2504.09975)
 - **AR3D-R1**（2026-08-05）— 首次系统性研究 RL 在 3D 生成中的应用，Hi-GRPO 分层 RL 训练范式，首个 RL 增强 Text-to-3D 模型，CVPR 2026 · [CVPR 2026](https://arxiv.org/abs/2512.10949)
+- **Unique3D**（2026-08-12）— RGB+法线联合多视图生成 + ISOMER 即时网格重建，30 秒从单图生成高保真网格，清华大学 · [NeurIPS 2024](https://arxiv.org/abs/2405.20343)
 
 ### 🪟 九、3DGS 透明表面建模（Transparent Surface Modeling）
 
@@ -121,6 +125,7 @@
 - **MonoMVSNet**（2026-07-07）— 单目基础模型先验引导的 MVS 网络，跨视图位置编码深度融合单目特征与多视图几何，Tanks-and-Temples 双基准第一 · [ICCV 2025](https://arxiv.org/abs/2507.11333)
 - **DriveMVS**（2026-07-23）— LiDAR 提示的时空多视图立体网络，三线索融合器协同单目/度量/几何线索，时空解码器保障跨帧一致性，自动驾驶 MVS SOTA · [CVPR 2026](https://arxiv.org/abs/2603.03765)
 - **AMB3R**（2026-08-07）— 体积后端范式升级点图回归，免训练扩展至 VO/SfM，前馈模型首次系统性超越优化型 SLAM/SfM，CVPR 2026 Highlight · [CVPR 2026 Highlight](https://arxiv.org/abs/2511.20343)
+- **MVSFormer++**（2026-08-14）— DINOv2 侧视图注意力跨视图注入，揭示 Transformer 在 MVS 中的关键设计细节，DTU/Tanks-and-Temples SOTA · [ICLR 2024](https://arxiv.org/abs/2401.11673)
 
 ### 🌐 十一、NeRF / 逆向渲染（NeRF / Inverse Rendering）
 
@@ -1739,3 +1744,103 @@
 1. **首创体积后端范式，从前馈"点图回归"跃迁至"体积几何推理"，系统性超越优化型 SLAM/SfM**：此前的前馈三维重建模型（如 DUSt3R、VGGT 等）均以点图（pointmap）为核心表示，在尺度一致性、空间紧凑性和几何完备性方面存在固有限制。AMB3R 创新性地引入稀疏体积素场景表示作为后端，使模型能够隐式编码多视图几何一致性约束，从根本上解决了点图表征中不同视图点云重叠区域的冗余和不一致问题。这一体积后端设计使 AMB3R 能够输出度量尺度的稠密深度图和三维重建结果，且尺度在跨视图间天然一致。在常见基准上，AMB3R 的相机位姿和深度估计精度不仅超越所有前馈基线，更首次系统性超越了 MASt3R-SLAM、DROID-SLAM 等经典优化型 SLAM 和 SfM 方法，证明了前馈路线的实用化潜力
 2. **免训练扩展管线（AMB3R-VO / AMB3R-SfM），一套模型统一覆盖在线里程计与离线大规模重建**：AMB3R 的另一大亮点是其出色的通用性和扩展性。论文提出了两条完全免训练（training-free）且模型无关（model-agnostic）的扩展管线——AMB3R-VO 用于在线视觉里程计、AMB3R-SfM 用于无序图像集的大规模重建。两者共享"关键帧记忆 + 混合内存"的核心设计，将多视图 Transformer 自然地扩展到任意数量帧，无需任何微调或测试时优化步骤。这意味着同一个 AMB3R 模型可以同时胜任实时 SLAM、离线 SfM 和稠密 MVS 等多种任务，展现了作为通用三维感知基础模型的潜力
 3. **7 项任务 13 个数据集全面 SOTA，前馈模型首次全面超越经典优化范式，CVPR 2026 Highlight 实至名归**：论文在极为广泛的评测设置下验证了 AMB3R 的性能优势——涵盖相机位姿估计、深度估计、度量尺度估计、三维重建、视觉里程计和多视图立体匹配等 7 项任务，横跨室内、室外、驾驶、目标物体等 13 个数据集。在所有任务和数据集上，AMB3R 均达到或超越最先进水平，且计算效率显著优于需要逐场景迭代优化的传统方法。这一全面领先验证了体积后端范式的有效性和通用性，为三维重建领域的"前馈 vs 优化"之争提供了强有力的实证支持
+
+### 2026-08-10｜MoVieS: Motion-Aware 4D Dynamic View Synthesis in One Second（运动感知四维动态视图一秒合成）
+
+**MoVieS: Motion-Aware 4D Dynamic View Synthesis in One Second**
+**MoVieS：运动感知四维动态视图一秒合成**
+
+**方向**：4D 动态场景重建 / 前馈三维重建　**来源**：CVPR 2026　**机构**：北京大学 × 字节跳动 × 卡内基梅隆大学
+
+- **作者**：Chenguo Lin, Yuchen Lin, Panwang Pan, Yifan Yu, Honglei Yan, Katerina Fragkiadaki, Yadong Mu
+- **链接**：[https://arxiv.org/abs/2507.10065](https://arxiv.org/abs/2507.10065) | 项目页：[MoVieS](https://chenguolin.github.io/projects/MoVieS/) | 代码：[GitHub](https://github.com/chenguolin/MoVieS) | CVF 页面：[CVPR 2026](https://openaccess.thecvf.com/content/CVPR2026/html/Lin_MoVieS_Motion-Aware_4D_Dynamic_View_Synthesis_in_One_Second_CVPR_2026_paper.html)
+
+![MoVieS 框架概览图](https://km.sankuai.com/api/file/cdn/2756902383/250389158769?contentType=0&isNewContent=false)
+
+**核心内容**：本文提出 MoVieS，一种前馈式模型，能够在约一秒内从单目视频中合成 4D 动态新视角。MoVieS 使用像素对齐的高斯基元网格表示动态三维场景，并显式监督其时变运动，首次在统一框架中同时建模外观、几何和运动，使新视角合成、三维重建和 3D 点跟踪能够在单一学习框架内完成。模型架构包含三个核心组件：共享图像编码器、基于注意力的特征主干网络，以及同时预测外观、几何和运动的三个预测头。通过将新视角合成与动态几何重建桥接，MoVieS 能够在多样化数据集上进行大规模训练，且对任务特定监督的依赖最小化。该模型还自然支持广泛的零样本应用，包括场景流估计和运动物体分割。大量实验验证了 MoVieS 在多个任务上的有效性和效率，在提供数个数量级加速的同时达到有竞争力的性能。
+
+**亮点**：
+
+1. **首次在统一前馈框架中同时建模外观、几何和运动，三大任务一模型解决**：MoVieS 创新性地将新视角合成、三维重建和 3D 点跟踪统一在单一学习框架内，通过像素对齐的高斯基元网格（Dynamic Splatter Pixel）显式监督时变运动，打破了以往需要为每个任务单独训练模型或在优化框架中逐场景拟合的范式。这一统一建模不仅简化了训练流程，还使各任务之间形成互补监督信号——外观和几何监督增强运动估计，运动监督反过来提升几何一致性——实现了真正的协同学习
+2. **1 秒内完成 4D 动态场景重建，数个数量级加速**：相比基于优化的传统 4D 重建方法（如动态 3DGS 的逐场景优化，通常需要数分钟至数十分钟），MoVieS 作为前馈模型在约 1 秒内即可从单目视频完成 4D 场景的完整重建，在保持有竞争力性能的同时实现了数个数量级的速度提升。这一效率突破使实时 4D 动态场景感知成为可能，为增强现实、机器人视觉和视频编辑等对延迟敏感的应用提供了可行的技术路径
+3. **大规模跨数据集训练 + 零样本泛化能力，展现基础模型潜力**：通过将新视角合成与动态几何重建桥接，MoVieS 能够利用多样化数据集进行大规模训练，减少对任务特定监督的依赖。模型不仅在新视角合成和 3D 点跟踪上达到有竞争力的性能，还自然支持场景流估计和运动物体分割等零样本应用——这些任务无需专门训练即可完成，展现了 MoVieS 作为 4D 动态场景理解基础模型的潜力
+
+### 2026-08-11｜Mip-Splatting: Alias-free 3D Gaussian Splatting（无混叠三维高斯泼溅）
+
+**Mip-Splatting: Alias-free 3D Gaussian Splatting**
+**Mip-Splatting：无混叠三维高斯泼溅**
+
+**方向**：3D Gaussian Splatting 渲染质量改进 / 抗锯齿　**来源**：CVPR 2024 Best Student Paper　**机构**：University of Tübingen（图宾根大学）× Max Planck Institute for Intelligent Systems
+
+- **作者**：Zehao Yu, Torsten Sattler, Andreas Geiger
+- **链接**：[https://arxiv.org/abs/2311.16493](https://arxiv.org/abs/2311.16493) | 项目页：[Mip-Splatting](https://niujinshuchong.github.io/mip-splatting/) | 代码：[GitHub](https://github.com/autonomousvision/mip-splatting) | CVF 页面：[CVPR 2024](https://openaccess.thecvf.com/content/CVPR2024/html/Yu_Mip-Splatting_Alias-free_3D_Gaussian_Splatting_CVPR_2024_paper.html)
+
+![Mip-Splatting teaser](https://km.sankuai.com/api/file/cdn/2756902383/250607779022?contentType=0&isNewContent=false)
+
+**核心内容**：3D Gaussian Splatting（3DGS）以其显式高斯表示和高效光栅化实现了高质量实时新视角合成，但在视角变化或缩放时会出现严重的混叠（aliasing）伪影和高频 artifacts。这是因为原始 3DGS 使用 2D 膨胀滤波器（2D dilation filter）进行投影，无法正确处理不同采样频率下的信号重建问题。Mip-Splatting 提出了一种简洁而有效的双滤波器方案：首先在三维空间中引入 3D 平滑滤波器（3D smoothing filter），根据输入视图诱导的最大采样频率约束 3D 高斯基元的大小，从根本上消除放大时的高频伪影；其次在二维投影阶段用 2D Mip 滤波器替代原有的膨胀滤波器，该滤波器近似物理成像过程中的盒式滤波（box filter），有效缓解投影阶段的混叠和膨胀问题。这两个滤波器均为轻量级设计，仅需对原始 3DGS 代码进行少量修改即可集成。实验表明，Mip-Splatting 在单尺度图像上训练、多尺度图像上测试的场景中，显著消除了混叠效应和伪影，大幅提升了多视角合成的保真度和视觉质量，同时保持了 3DGS 的实时渲染速度。
+
+**亮点**：
+
+1. **3D 平滑滤波器 + 2D Mip 滤波器的双滤波器方案，从根源上消除 3DGS 混叠伪影**：原始 3DGS 的 2D 膨胀滤波器在高频区域会产生严重的混叠和膨胀伪影，特别是在视角拉远或缩放时。Mip-Splatting 的创新在于从信号处理的角度重新审视问题——3D 平滑滤波器在三维空间中根据采样定理约束高斯基元的最大频率，确保任何视角下都不会出现欠采样；2D Mip 滤波器则在投影阶段模拟物理成像的积分过程，用盒式滤波替代点采样。两者协同工作，实现了真正的无混叠渲染，且滤波器设计极为简洁，仅需少量代码修改即可集成到现有 3DGS 管线中
+2. **CVPR 2024 最佳学生论文，从想法到成稿仅用一个月**：Mip-Splatting 荣获 CVPR 2024 Best Student Paper 奖项。据导师 Andreas Geiger 透露，第一作者 Zehao Yu 在接触高斯泼溅技术仅一个月后便完成了从想法到成稿的全过程。这一快速迭代得益于问题定义的清晰性——作者从信号处理的基本原理出发，直接定位了 3DGS 混叠问题的根源，并给出了优雅的理论解决方案。该论文不仅解决了 3DGS 的核心渲染质量问题，其设计思想还深刻影响了后续 3DGS 的改进工作（如 3DGS 官方后续集成的抗锯齿特性）
+3. **训练于单尺度、泛化至多尺度，保持实时渲染速度**：Mip-Splatting 在仅在单尺度图像上训练的情况下，即能在多尺度测试场景中实现无混叠渲染，无需为不同分辨率训练单独的模型。更重要的是，两个滤波器的计算开销极低，完全保留了 3DGS 实时渲染（>100 FPS）的核心优势。这一特性使 Mip-Splatting 成为 3DGS 渲染质量改进的基准方法，为后续研究者在抗锯齿、多尺度渲染等方向提供了重要的技术参考
+
+### 2026-08-12｜Unique3D: High-Quality and Efficient 3D Mesh Generation from a Single Image（Unique3D：从单张图像高效生成高质量三维网格）
+
+**Unique3D: High-Quality and Efficient 3D Mesh Generation from a Single Image**
+**Unique3D：从单张图像高效生成高质量三维网格**
+
+**方向**：三维生成（3D Generation）　**来源**：NeurIPS 2024　**机构**：Tsinghua University（清华大学）
+
+- **作者**：Kailu Wu, Fangfu Liu, Zhihan Cai, Runjie Yan, Haoqian Wang, Yixiao Zhou, Yue Wang, Yebin Liu
+- **链接**：[https://arxiv.org/abs/2405.20343](https://arxiv.org/abs/2405.20343) | 代码：[GitHub](https://github.com/AiuniAI/Unique3D) | 项目页：[Unique3D](https://wukailu.github.io/Unique3D/) | NeurIPS 页面：[NeurIPS 2024](https://proceedings.neurips.cc/paper_files/paper/2024/hash/e25198b6a75f74277ee3a2bd4165d9ef-Abstract-Conference.html)
+
+![Unique3D teaser figure](https://km.sankuai.com/api/file/cdn/2756902383/250800823744?contentType=0&isNewContent=false)
+
+**核心内容**：Unique3D 是清华大学刘烨斌教授团队在 NeurIPS 2024 上发表的图像到三维网格生成框架，能够在约 30 秒内从单张 RGB 图像生成高保真度、带纹理的三维网格模型。该工作解决了此前图像到三维生成的两大核心难题——多视角一致性和高分辨率纹理生成。传统基于 Score Distillation Sampling（SDS）的方法（如 DreamFusion）虽然能利用 2D 扩散模型的知识生成多样化三维结果，但每个样本需要数十分钟的迭代优化，且常伴有过饱和、模糊和多视角不一致问题；而基于微调多视图扩散模型的方法（如 Zero123++）虽然在速度上有所改善，却在复杂几何和精细纹理的重建上仍显不足。Unique3D 通过三个关键技术创新系统性地解决了这些瓶颈：（1）在 Stable Diffusion 基础上微调的多视图扩散模型，同时生成四张正交视角的高分辨率 RGB 图像及其对应的法线图，通过共享注意力层确保多视图间的几何与纹理一致性；（2）多级超分辨率策略，将生成图像的分辨率从 256 逐步提升至 2048，使后续网格重建能捕捉亚像素级的表面细节；（3）ISOMER（即时流网格重建）算法，直接从前述多视图 RGB 和法线图中重建高质量流形网格，无需耗时的逐场景神经隐式优化。在 Google Scanned Objects（GSO）等标准三维生成基准上，Unique3D 在保真度、一致性和泛化能力上均达到或超越同期 SOTA 方法，生成速度比 SDS 方法快两个数量级。论文开源了完整代码和模型权重，已被 Roblox、腾讯混元 Hunyuan3D-2 等工业界头部平台采用，是当前单图到三维生成领域影响力最大的工作之一。
+
+**亮点**：
+
+1. **RGB+法线联合多视图生成 + ISOMER 即时网格重建，30 秒完成高保真网格输出**：Unique3D 的核心创新在于将多视图 RGB 生成与法线图生成紧密结合——共享注意力层的多视图扩散模型同时输出颜色与几何先验，ISOMER 算法利用法线图提供的强几何约束，在数秒内直接重建出具有精细表面细节的流形网格。相比 DreamFusion 等 SDS 方法需数十分钟优化且仅输出 NeRF/3DGS 隐式表示，Unique3D 首次实现了端到端的"单图 → 高保真网格"快速生成，输出可直接导入 Blender、Maya 等三维软件使用，极大降低了三维内容创作的门槛
+2. **多级超分辨率管线（256→512→2048），兼顾效率与极致纹理细节**：此前方法普遍受限于生成分辨率（通常 256×256），导致重建网格纹理模糊、缺乏细节。Unique3D 设计了两阶段超分辨率策略：第一阶段将 256 分辨率图像上采样至 512，第二阶段进一步提升至 2048，并通过法线扩散模型同步生成对应分辨率的法线图。这一多级渐进式超分策略使 Unique3D 在保持计算效率的同时，能捕捉到物体表面的凹凸纹理、锐利边缘和复杂几何结构，为高保真三维资产生成树立了新的质量标准
+3. **开源生态与工业落地双赢，NeurIPS 2024 最具影响力的图像到三维生成工作之一**：Unique3D 的论文、代码和模型权重均已全面开源（GitHub 已获超 4K+ Stars），训练数据源自 Objaverse 大规模三维数据集，具有良好的泛化能力和鲁棒性。该工作被 Roblox、腾讯混元 Hunyuan3D-2、XR-3DGen 等多家国际头部企业引用和集成，证明了其从学术研究到工业落地的强大转化能力。Unique3D 的成功也推动了"多视图扩散 + 网格重建"范式的普及，与 CraftsMan3D、TRELLIS 等工作共同构成了当前单图到三维生成的技术主线
+
+### 2026-08-13｜Scaffold-GS: Structured 3D Gaussians for View-Adaptive Rendering（Scaffold-GS：面向视图自适应渲染的结构化三维高斯）
+
+**Scaffold-GS: Structured 3D Gaussians for View-Adaptive Rendering**
+**Scaffold-GS：面向视图自适应渲染的结构化三维高斯**
+
+**方向**：3D Gaussian Splatting　**来源**：CVPR 2024 Highlight　**机构**：Nanjing University（南京大学）/ City University of Hong Kong（香港城市大学）/ CUHK（香港中文大学）/ Shanghai AI Lab
+
+- **作者**：Tao Lu, Mulin Yu, Linning Xu, Yuanbo Xiangli, Limin Wang, Dahua Lin, Bo Dai
+- **链接**：[https://arxiv.org/abs/2312.00109](https://arxiv.org/abs/2312.00109) | 代码：[GitHub](https://github.com/city-super/Scaffold-GS) | 项目页：[Scaffold-GS](https://city-super.github.io/scaffold-gs/) | CVF 页面：[CVPR 2024](https://openaccess.thecvf.com/content/CVPR2024/html/Lu_Scaffold-GS_Structured_3D_Gaussians_for_View-Adaptive_Rendering_CVPR_2024_paper.html)
+
+![Scaffold-GS 框架图：锚点驱动的分层三维高斯表示](https://km.sankuai.com/api/file/cdn/2756902383/250995377617?contentType=0&isNewContent=false)
+
+**核心内容**：Scaffold-GS 是 CVPR 2024 Highlight 论文，针对原始 3D Gaussian Splatting（3DGS）的一个关键缺陷——3DGS 在优化过程中倾向于生长大量冗余高斯基元来独立拟合每个训练视图，而忽视底层场景几何结构，导致模型在面临显著视角变化、无纹理区域和光照效果时鲁棒性不足。Scaffold-GS 引入"锚点"（anchor points）概念，从 SfM 稀疏点云初始化一组锚点网格，每个锚点负责在其局部区域内生成一组"神经高斯"（neural Gaussians）。这些神经高斯的属性（位置偏移、不透明度、缩放、旋转、颜色）并非在训练时直接优化，而是由一个小型 MLP 根据观察方向和距离实时预测，使表示能够动态适应不同视角和细节层级（LOD）。论文还提出了基于神经高斯重要性的锚点生长与修剪策略，可靠地提升场景覆盖率。实验表明，Scaffold-GS 有效减少了冗余高斯基元，同时提供高质量渲染，收敛速度更快，使用更少的基元达到更好的视觉质量，在大规模户外场景和复杂室内环境中展现出更强的鲁棒性，尤其在透明、镜面反射、无纹理区域和细节丰富区域的挑战性观察视角下表现突出。该方法为后续 3DGS 结构化改进工作（如 Octree-GS、Mip-Splatting 等）提供了重要的方法论基础。
+
+**亮点**：
+
+1. **锚点驱动的分层三维高斯表示，以场景结构先验约束冗余基元生长**：从 SfM 点云初始化锚点网格，每个锚点负责生成局部神经高斯，形成层次化和区域感知的场景表示。相比原始 3DGS 中每个高斯独立优化的"扁平"结构，Scaffold-GS 的分层设计有效利用场景结构先验约束高斯分布，减少冗余基元的同时提升了渲染质量，收敛速度更快且使用更少基元即超越原始 3DGS 的视觉质量
+2. **视图自适应属性预测，天然支持多细节层级与视角依赖外观**：神经高斯的属性（不透明度、颜色等）根据观察方向和距离由 MLP 在线预测，而非训练时固定。这使得 Scaffold-GS 在显著视角变化下保持鲁棒性，无需为不同视角训练不同模型，同时保持了与 3DGS 相当的实时渲染速度。该设计灵感来源于神经辐射场的视角依赖建模思想，但将其融入显式高斯表示中，兼顾了效率与质量
+3. **锚点生长与修剪策略 + 方法学影响力**：基于神经高斯重要性分数的锚点动态生长与修剪机制，可靠地提升场景覆盖率——生长策略在欠覆盖区域添加新锚点，修剪策略移除贡献度低的冗余锚点，两者协同确保表示的紧凑性和完整性。Scaffold-GS 的结构化思想深刻影响了后续 3DGS 改进工作，Octree-GS 在此基础上引入八叉树结构实现 LOD 渲染，Mip-Splatting 的抗混叠滤波器与 Scaffold-GS 的锚点约束互补，共同推动了 3DGS 从"逐基元优化"向"结构化场景表示"的范式转变
+
+### 2026-08-14｜MVSFormer++: Revealing the Devil in Transformer's Details for Multi-View Stereo（揭示Transformer细节玄机：多视图立体视觉的精进之路）
+
+**MVSFormer++: Revealing the Devil in Transformer's Details for Multi-View Stereo**
+**MVSFormer++：揭示Transformer细节玄机——多视图立体视觉的精进之路**
+
+**方向**：多视图立体重建（MVS）　**来源**：ICLR 2024　**机构**：Fudan University（复旦大学）
+
+- **作者**：Chenjie Cao, Xinlin Ren, Yanwei Fu
+- **链接**：[https://arxiv.org/abs/2401.11673](https://arxiv.org/abs/2401.11673) | 代码：[GitHub](https://github.com/maybeLx/MVSFormerPlusPlus) | ICLR 页面：[ICLR 2024](https://proceedings.iclr.cc/paper_files/paper/2024/hash/adad08c70863498b3c1d9d7882700cec-Abstract-Conference.html)
+
+![MVSFormer++ Teaser](https://km.sankuai.com/api/file/cdn/2756902383/251189994903?contentType=0&isNewContent=false)
+
+**核心内容**：近年来，基于学习的多视图立体视觉（Multi-View Stereo, MVS）方法取得了显著进展，尤其是以Transformer为核心的注意力机制模型。然而，现有研究并未充分探究Transformer对MVS不同模块的深远影响，导致深度估计能力受限。MVSFormer++ 作为 ICLR 2024 的亮点工作，首次系统性地挖掘了Transformer注意力机制的内在特性，并将其审慎地应用于MVS流水线的各个环节。具体而言，论文提出将跨视图信息注入预训练的DINOv2视觉基础模型，通过精心设计的侧视图注意力（Side View Attention, SVA）模块逐步增强其跨视图学习能力，使单目预训练特征能够有效适应多视图几何任务。此外，MVSFormer++ 针对特征编码器和代价体积正则化分别采用了不同的注意力机制——特征编码器侧重点关注特征聚合，代价体积正则化侧重点关注空间聚合，二者各司其职、协同增效。论文还揭示了若干对MVS中Transformer模块性能有显著影响的设计细节，包括归一化的三维位置编码、自适应注意力缩放因子以及层归一化的放置位置。在DTU、Tanks-and-Temples、BlendedMVS和ETH3D四大MVS基准数据集上的全面实验验证了该方法的有效性，MVSFormer++ 在极具挑战性的DTU和Tanks-and-Temples基准上均达到最先进性能。
+
+**亮点**：
+
+1. **将DINOv2单目特征改造为多视图特征，侧视图注意力（SVA）模块实现跨视图信息注入**：DINOv2作为当前最强大的单目视觉基础模型之一，其预训练特征蕴含丰富的语义与纹理先验，但缺乏多视图几何一致性。MVSFormer++ 提出的SVA模块以侧调谐（side-tuning）方式逐步向冻结的DINOv2特征中注入跨视图注意力，无需端到端微调即可显著提升其多视图推理能力。SVA采用线性注意力机制降低计算开销，使N张图像的特征编码复杂度保持可控。这一设计为视觉基础模型在三维几何任务中的高效迁移提供了重要范例，也为后续MVS方法如何利用预训练大模型指明了方向
+2. **针对特征编码与代价体积正则化分别定制注意力机制，实现特征聚合与空间聚合的协同优化**：MVSFormer++ 深刻洞察到MVS流水线中不同模块对注意力的需求存在本质差异——特征编码器需要聚合跨视图的全局上下文信息以建立鲁棒的像素对应关系，而代价体积正则化则需要沿深度维度进行空间聚合以抑制噪声并传播深度一致性。论文为二者分别设计了定制化的注意力变体：特征侧采用全局注意力捕获长距离依赖，代价体积侧采用自适应注意力缩放实现深度方向的有效正则。这种"分而治之"的注意力设计策略，使各模块性能均得到最大化发挥
+3. **揭示Transformer在MVS中的关键设计细节，为后续研究提供系统性设计指南**：MVSFormer++ 的另一重要贡献在于通过大量消融实验，揭示了若干此前被忽视但对性能影响显著的设计细节，包括：(1) 归一化的三维位置编码对代价体积正则化的稳定性至关重要；(2) 自适应注意力缩放因子能有效平衡不同深度层级上的梯度分布；(3) 层归一化在Transformer块中的放置位置（Pre-LN vs Post-LN）对MVS收敛速度和最终精度有显著影响。这些发现不仅帮助MVSFormer++ 在DTU和Tanks-and-Temples上达到SOTA，也为其他基于Transformer的密集预测任务（如深度估计、光流、立体匹配）提供了可迁移的设计原则
