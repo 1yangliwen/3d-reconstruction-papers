@@ -14,6 +14,8 @@
 - **IDESplat**（2026-04-17）— 迭代深度概率估计精准预测高斯球中心，以 10.7% 参数量超越 DepthSplat · [CVPR 2026](https://arxiv.org/abs/2601.03824)
 - **C3G**（2026-04-21）— 仅用 2K 个紧凑高斯完成无位姿场景重建与三维开放词汇分割 · [CVPR 2026](https://arxiv.org/abs/2512.04021)
 - **Uni3R**（2026-04-29）— 前馈框架统一三维重建与开放词汇语义理解，0.15 秒完成场景重建，RE10K PSNR 25.07 · [CVPR 2026 Highlight](https://arxiv.org/abs/2508.03643)
+- **TokenSplat**（2026-08-19）— Token 级语义对齐在特征空间中实现跨视图融合，非对称双流解码器显式解耦位姿线索与场景语义，RE10K PSNR 26.15 · [CVPR 2026](https://arxiv.org/abs/2603.00697)
+- **SPFSplat**（2026-08-21）— 首个完全无位姿监督的自监督 3DGS 框架，训练与推理均不需要真值位姿，重投影损失自监督几何约束 · [ICCV 2025 Highlight](https://arxiv.org/abs/2508.01171)
 
 ### 🔶 二、3DGS 渲染加速与结构优化
 
@@ -62,6 +64,7 @@
 - **VGGT-Ω**（2026-07-20）— 首次揭示前馈三维重建 Scaling Law，10B 参数 + 寄存器注意力支持 15× 数据量，Sintel 相机估计精度提升 77%，CVPR 2026 Oral / Best Paper Finalist · [CVPR 2026 Oral / Best Paper Finalist](https://arxiv.org/abs/2605.15195)
 - **Speed3R**（2026-07-27）— 稀疏注意力机制的前馈三维重建模型，1000视图序列推理加速12.4倍，与VGGT/π³等骨干即插即用，CVPR 2026 Findings · [CVPR 2026 Findings](https://arxiv.org/abs/2603.08055)
 - **D4RT**（2026-08-03）— 前馈 Transformer 统一五元组按需查询 4D 重建，单模型端到端输出点云/深度/相机参数，CVPR 2026 Best Paper，Google DeepMind · [CVPR 2026 Best Paper](https://arxiv.org/abs/2512.08924)
+- **MASt3R**（2026-08-18）— 将图像匹配奠基在3D空间：在DUSt3R点图回归上追加匹配头预测稠密2D-2D对应，Fast Reciprocal Matching加速互惠匹配提取，零样本多基准SOTA，NAVER LABS Europe · [ECCV 2024](https://arxiv.org/abs/2406.09756)
 
 ### 🎬 六、4D 动态场景重建（4D Dynamic Scene Reconstruction）
 
@@ -87,6 +90,7 @@
 - **SplaTAM**（2026-07-13）— 首个将 3D Gaussian Splatting 引入 SLAM，轮廓掩码捕捉场景密度，位姿/地图/渲染均达 2× SOTA，CMU · [CVPR 2024](https://arxiv.org/abs/2312.02126)
 - **Pi³MOS-SLAM**（2026-07-22）— 前馈重建模型作为通用三维先验过滤动态区域，几何BA + 前馈模型互补融合，CVPR 2026，波恩大学PRBonn实验室 · [CVPR 2026](https://arxiv.org/abs/2512.06868)
 - **MonoGS**（2026-07-31）— 首个将 3D Gaussian Splatting 引入单目 SLAM，直接优化高斯实现相机跟踪，统一跟踪/建图/渲染，CVPR 2024 Highlight & Best Demo Award · [CVPR 2024 Highlight](https://arxiv.org/abs/2312.06741)
+- **Photo-SLAM**（2026-08-20）— 首个"超基元地图"框架统一定位与照片级真实感建图，高斯金字塔渐进式训练，嵌入式平台实时运行 · [CVPR 2024](https://arxiv.org/abs/2311.16728)
 
 ### 🎨 八、三维生成（3D Generation）
 
