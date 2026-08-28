@@ -16,6 +16,7 @@
 - **Uni3R**（2026-04-29）— 前馈框架统一三维重建与开放词汇语义理解，0.15 秒完成场景重建，RE10K PSNR 25.07 · [CVPR 2026 Highlight](https://arxiv.org/abs/2508.03643)
 - **TokenSplat**（2026-08-19）— Token 级语义对齐在特征空间中实现跨视图融合，非对称双流解码器显式解耦位姿线索与场景语义，RE10K PSNR 26.15 · [CVPR 2026](https://arxiv.org/abs/2603.00697)
 - **SPFSplat**（2026-08-21）— 首个完全无位姿监督的自监督 3DGS 框架，训练与推理均不需要真值位姿，重投影损失自监督几何约束 · [ICCV 2025 Highlight](https://arxiv.org/abs/2508.01171)
+- **SR3R**（2026-08-28）— 将 3D 超分辨率重新定义为前馈映射，自主学习 3D 特有高频先验，仅两张 LR 图 1.7 秒预测 HR 3DGS · [CVPR 2026](https://arxiv.org/abs/2602.24020)
 
 ### 🔶 二、3DGS 渲染加速与结构优化
 
@@ -65,6 +66,7 @@
 - **Speed3R**（2026-07-27）— 稀疏注意力机制的前馈三维重建模型，1000视图序列推理加速12.4倍，与VGGT/π³等骨干即插即用，CVPR 2026 Findings · [CVPR 2026 Findings](https://arxiv.org/abs/2603.08055)
 - **D4RT**（2026-08-03）— 前馈 Transformer 统一五元组按需查询 4D 重建，单模型端到端输出点云/深度/相机参数，CVPR 2026 Best Paper，Google DeepMind · [CVPR 2026 Best Paper](https://arxiv.org/abs/2512.08924)
 - **MASt3R**（2026-08-18）— 将图像匹配奠基在3D空间：在DUSt3R点图回归上追加匹配头预测稠密2D-2D对应，Fast Reciprocal Matching加速互惠匹配提取，零样本多基准SOTA，NAVER LABS Europe · [ECCV 2024](https://arxiv.org/abs/2406.09756)
+- **Spann3R**（2026-08-26）— 外部空间记忆机制实现增量式全局一致重建，直接从有序/无序图像集合回归全局点图，无需全局优化对齐，65 FPS 实时重建，UCL · [3DV 2025 Award Candidate](https://arxiv.org/abs/2408.16061)
 
 ### 🎬 六、4D 动态场景重建（4D Dynamic Scene Reconstruction）
 
@@ -110,6 +112,8 @@
 - **OctGPT**（2026-07-30）— 基于八叉树的多尺度自回归三维形状生成，训练加速 13 倍、生成加速 69 倍，性能匹敌 SOTA 扩散模型，SIGGRAPH 2025 · [SIGGRAPH 2025](https://arxiv.org/abs/2504.09975)
 - **AR3D-R1**（2026-08-05）— 首次系统性研究 RL 在 3D 生成中的应用，Hi-GRPO 分层 RL 训练范式，首个 RL 增强 Text-to-3D 模型，CVPR 2026 · [CVPR 2026](https://arxiv.org/abs/2512.10949)
 - **Unique3D**（2026-08-12）— RGB+法线联合多视图生成 + ISOMER 即时网格重建，30 秒从单图生成高保真网格，清华大学 · [NeurIPS 2024](https://arxiv.org/abs/2405.20343)
+- **Nabla-R2D3**（2026-08-25）— 首个用 2D 奖励对齐 3D 原生扩散模型的 RL 框架，Nabla-GFlowNet 梯度匹配避免奖励作弊与先验遗忘，NeurIPS 2025 · [NeurIPS 2025](https://arxiv.org/abs/2506.15684)
+- **ForgeDreamer**（2026-08-27）— 多专家 LoRA 师生蒸馏解决工业语义适配 + 跨视角超图几何增强，工业文本到三维生成超越现有方法，CVPR 2026 Findings · [CVPR 2026 Findings](https://arxiv.org/abs/2603.09266)
 
 ### 🪟 九、3DGS 透明表面建模（Transparent Surface Modeling）
 
@@ -1848,3 +1852,75 @@
 1. **将DINOv2单目特征改造为多视图特征，侧视图注意力（SVA）模块实现跨视图信息注入**：DINOv2作为当前最强大的单目视觉基础模型之一，其预训练特征蕴含丰富的语义与纹理先验，但缺乏多视图几何一致性。MVSFormer++ 提出的SVA模块以侧调谐（side-tuning）方式逐步向冻结的DINOv2特征中注入跨视图注意力，无需端到端微调即可显著提升其多视图推理能力。SVA采用线性注意力机制降低计算开销，使N张图像的特征编码复杂度保持可控。这一设计为视觉基础模型在三维几何任务中的高效迁移提供了重要范例，也为后续MVS方法如何利用预训练大模型指明了方向
 2. **针对特征编码与代价体积正则化分别定制注意力机制，实现特征聚合与空间聚合的协同优化**：MVSFormer++ 深刻洞察到MVS流水线中不同模块对注意力的需求存在本质差异——特征编码器需要聚合跨视图的全局上下文信息以建立鲁棒的像素对应关系，而代价体积正则化则需要沿深度维度进行空间聚合以抑制噪声并传播深度一致性。论文为二者分别设计了定制化的注意力变体：特征侧采用全局注意力捕获长距离依赖，代价体积侧采用自适应注意力缩放实现深度方向的有效正则。这种"分而治之"的注意力设计策略，使各模块性能均得到最大化发挥
 3. **揭示Transformer在MVS中的关键设计细节，为后续研究提供系统性设计指南**：MVSFormer++ 的另一重要贡献在于通过大量消融实验，揭示了若干此前被忽视但对性能影响显著的设计细节，包括：(1) 归一化的三维位置编码对代价体积正则化的稳定性至关重要；(2) 自适应注意力缩放因子能有效平衡不同深度层级上的梯度分布；(3) 层归一化在Transformer块中的放置位置（Pre-LN vs Post-LN）对MVS收敛速度和最终精度有显著影响。这些发现不仅帮助MVSFormer++ 在DTU和Tanks-and-Temples上达到SOTA，也为其他基于Transformer的密集预测任务（如深度估计、光流、立体匹配）提供了可迁移的设计原则
+
+### 2026-08-25｜Nabla-R2D3: Effective and Efficient 3D Diffusion Alignment with 2D Rewards（基于二维奖励的高效三维扩散对齐）
+
+**Nabla-R2D3: Effective and Efficient 3D Diffusion Alignment with 2D Rewards**
+**Nabla-R2D3：基于二维奖励的高效三维扩散对齐**
+
+**方向**：三维生成（3D Generation）/ 3D 扩散对齐　**来源**：NeurIPS 2025　**机构**：香港中文大学（深圳）× Microsoft
+
+- **作者**：Qingming Liu, Zhen Liu, Dinghuai Zhang, Kui Jia
+- **链接**：[https://arxiv.org/abs/2506.15684](https://arxiv.org/abs/2506.15684) | 项目页：[nabla-r2d3.github.io](https://nabla-r2d3.github.io/) | 代码：[GitHub](https://github.com/MobiusLqm/Nabla-R2D3) | NeurIPS 页面：[NeurIPS 2025](https://neurips.cc/virtual/2025/poster/119200)
+
+**核心内容**：生成高质量、符合人类偏好的 3D 资产是三维视觉与计算机图形学领域的长期挑战。尽管 3D 原生扩散模型（如 DiffSplat、GaussianCube）在直接生成三维内容方面展现出前景，但生成的资产在视觉保真度、几何精度和指令遵循方面常达不到人类预期——典型问题包括"雅努斯问题"（Janus Problem，即多面神问题）、浑浊纹理和奇怪的几何形状。根本原因在于 3D 训练数据集优先追求数量而非美学质量与物理合理性。在 2D 图像生成领域，基于人类反馈的强化学习（RLHF）已成功解决对齐问题，但将其迁移到 3D 面临关键瓶颈：高质量的 3D 偏好数据极其稀缺，无法训练稳健的 3D 奖励模型。本文提出 Nabla-R2D3（Reward from 2D for Diffusion Alignment in 3D via Nabla-GFlowNet），首个利用 2D 奖励信号对齐 3D 原生扩散模型的强化学习框架。该方法基于一个关键观察：2D 信号可以有效指导 3D 生成——通过将 3D 奖励定义为多视图 2D 奖励的数学期望，将任何可微的 2D 奖励模型的梯度回传至 3D 空间。在 DiffSplat 和 GaussianCube 两个 3D 原生扩散模型上的广泛实验表明，Nabla-R2D3 在少量微调步骤内始终实现更高奖励与更低先验遗忘：美学评分从基础模型的 4.72 提升至 6.44，超越 ReFL（5.82）和 DRaFT（5.51）；360 度可视化确认其有效解决雅努斯问题，而基线方法存在严重的多视角不一致性。
+
+**亮点**：
+
+1. **首个用 2D 奖励对齐 3D 原生扩散模型的 RL 框架，巧妙解决 3D RLHF 数据稀缺瓶颈**：3D 偏好数据极其稀缺，无法训练稳健的 3D 奖励模型，这是 3D RLHF 的核心瓶颈。Nabla-R2D3 的突破在于将 3D 奖励定义为多视图 2D 奖励的数学期望，使任何现成的 2D 奖励模型（美学评分、HPSv2 等）的梯度都能通过渲染过程回传至 3D 空间。这一设计巧妙绕过了 3D 偏好数据缺乏的问题，首次实现了"3D 原生模型 + 2D 奖励"的对齐范式——兼得 3D 原生模型的空间一致性（解决雅努斯问题）和 2D 人类偏好模型的美学表现力
+2. **Nabla-GFlowNet 梯度匹配避免奖励作弊与先验遗忘，少量步骤即可高效收敛**：传统 RL 微调扩散模型面临两大顽疾——奖励作弊（模型找到欺骗奖励系统的方式，输出高分但视觉糟糕）和先验遗忘（模型忘记如何生成多样化对象，陷入崩溃状态）。Nabla-R2D3 基于 Nabla-GFlowNet 框架，将扩散去噪过程视为概率在有向无环图中的流动，通过梯度匹配目标使模型的得分函数与奖励梯度对齐。与 DDPO（策略梯度，效率极低）和 ReFL/DRaFT（直接反向传播，易奖励作弊）不同，Nabla-R2D3 利用奖励模型的梯度信息而非稀疏标量奖励值，训练更快更稳健
+3. **首创法线估计器奖励与 DNC 自洽几何奖励，从根本上改善 3D 几何质量**：仅用外观奖励微调 3D 模型可能导致"画上去"的扁平细节而非真正的 3D 几何深度。论文引入两类几何奖励：法线估计器奖励利用 2D 法线估计器（StableNormal）评估渲染法线与 AI 预测法线的一致性；深度-法线一致性（DNC）奖励从渲染深度图计算伪法线并与渲染法线对齐，在 3D 空间中强制数学自洽，无需任何外部神经网络
+
+### 2026-08-26｜Spann3R: 3D Reconstruction with Spatial Memory（Spann3R：基于空间记忆的三维重建）
+
+**Spann3R: 3D Reconstruction with Spatial Memory**
+**Spann3R：基于空间记忆的三维重建**
+
+**方向**：视觉几何基础模型（Visual Geometry Foundation Models）　**来源**：3DV 2025 Award Candidate　**机构**：University College London (UCL)
+
+- **作者**：Hengyi Wang, Lourdes Agapito
+- **链接**：[https://arxiv.org/abs/2408.16061](https://arxiv.org/abs/2408.16061) | 项目页：[Project Page](https://hengyiwang.github.io/projects/spanner) | 代码：[GitHub](https://github.com/HengyiWang/spann3r)
+
+**核心内容**：Spann3R 是 UCL 团队在 3DV 2025（Award Candidate）发表的论文，基于 DUSt3R 范式提出了一种从有序或无序图像集合进行密集三维重建的新方法。与 DUSt3R 仅处理双视图、多视图场景下需要基于优化的全局对齐不同，Spann3R 通过引入外部空间记忆（spatial memory）机制，学习跟踪所有先前相关的三维信息，并查询该空间记忆来预测下一帧的三维结构，从而在单次前向传播中直接预测每个图像在全局坐标系中的点图（pointmaps），无需相机参数或场景先验。Spann3R 采用 Transformer 架构，在 NVIDIA RTX 4090 上达到 65.49 FPS，相比 DUSt3R 提速约 40 倍。
+
+**亮点**：
+
+1. **外部空间记忆机制实现增量式全局一致重建，消除全局对齐需求**：传统 DUSt3R 方法仅处理双视图，多视图场景下需要基于优化的全局对齐，推理缓慢且误差逐级累积。Spann3R 创新性地引入外部空间记忆，学习跟踪所有先前相关的三维信息，并在 Transformer 解码器中查询该记忆来预测下一帧的全局点图，彻底消除了耗时的全局优化对齐步骤
+2. **实时性能（65 FPS），相比 DUSt3R 提速约 40 倍，支持在线流式重建**：Spann3R 在 NVIDIA RTX 4090 上实现了 65.49 FPS 的推理速度，相比 DUSt3R 的 0.78 FPS 提速约 40 倍，使 DUSt3R 系列方法从离线走向在线实时部署成为可能
+3. **跨 15 个数据集的零样本泛化能力，获 3DV 2025 Award Candidate 认可**：Spann3R 在包含 ScanNet、ScanNet++、WildRGBD、Co3D、Aria、ARKitScenes、BlendMVS、Waymo 等 15 个数据集上进行了大规模训练，并在多个未见过的测试数据集上展示了良好的零样本泛化能力
+
+### 2026-08-27｜ForgeDreamer: Industrial Text-to-3D Generation with Multi-Expert LoRA and Cross-View Hypergraph（ForgeDreamer：基于多专家 LoRA 与跨视角超图的工业文本到三维生成）
+
+**ForgeDreamer: Industrial Text-to-3D Generation with Multi-Expert LoRA and Cross-View Hypergraph**
+**ForgeDreamer：基于多专家 LoRA 与跨视角超图的工业文本到三维生成**
+
+**方向**：三维生成（3D Generation）　**来源**：CVPR 2026 Findings　**机构**：东北大学 × 深圳大学
+
+- **作者**：Junhao Cai, Deyu Zeng, Junhao Pang, Lini Li, Zongze Wu, Xiaopin Zhong
+- **链接**：[https://arxiv.org/abs/2603.09266](https://arxiv.org/abs/2603.09266) | 项目页：[forgedreamer.github.io](https://forgedreamer.github.io/) | 代码：[GitHub](https://github.com/Junhaocai27/ForgeDreamer)
+
+**核心内容**：现有文本到三维生成方法在自然场景上取得了显著进展，但在工业应用中面临两个关键瓶颈：一是领域适配困难，传统 LoRA 融合在跨类别场景下产生知识干扰（knowledge interference）；二是几何推理缺陷，现有方法依赖成对一致性约束（pairwise consistency constraints），无法捕捉精密制造所需的高阶结构依赖关系。本文提出 ForgeDreamer 框架，通过两大创新解决上述问题：首先，引入多专家 LoRA 集成（Multi-Expert LoRA Ensemble）机制；其次，提出跨视角超图几何增强（Cross-View Hypergraph Geometric Enhancement）方法。
+
+**亮点**：
+
+1. **多专家 LoRA 师生蒸馏消除知识干扰，实现跨类别泛化**：通过师生蒸馏将多个类别专家的 LoRA 知识整合进统一表示，每个专家保留其类别特异性的同时消除相互干扰
+2. **跨视角超图几何增强捕获高阶结构依赖，保障制造级精度**：将多个视角的几何信息建模为超图结构，通过超边同时连接多个视角节点，捕获跨越多个视点的高阶几何约束
+3. **面向工业落地的实用框架，CVPR 2026 Findings 认可**：在定制的工业数据集上的大量实验验证了方法的有效性和实用性
+
+### 2026-08-28｜SR3R: Rethinking Super-Resolution 3D Reconstruction With Feed-Forward Gaussian Splatting（SR3R：重新思考基于前馈高斯泼溅的超分辨率三维重建）
+
+**SR3R: Rethinking Super-Resolution 3D Reconstruction With Feed-Forward Gaussian Splatting**
+**SR3R：重新思考基于前馈高斯泼溅的超分辨率三维重建**
+
+**方向**：3D Gaussian Splatting / 前馈三维超分辨率重建　**来源**：CVPR 2026　**机构**：武汉大学 × 武汉工程大学 × 山东大学
+
+- **作者**：Xiang Feng, Xiangbo Wang, Tieshi Zhong, Chengkai Wang, Yiting Zhao, Tianxiang Xu, Zhenzhong Kuang, Feiwei Qin, Xuefei Yin, Yanming Zhu
+- **链接**：[https://arxiv.org/abs/2602.24020](https://arxiv.org/abs/2602.24020) | 项目页：[xiangfeng66.github.io/SR3R](https://xiangfeng66.github.io/SR3R/) | 代码：[GitHub](https://github.com/xiangfeng66/SR3R)
+
+**核心内容**：三维超分辨率（3DSR）旨在从低分辨率多视图图像重建高分辨率三维场景。现有方法依赖密集低分辨率输入和逐场景优化，其高频先验完全继承自预训练的二维超分模型，严重限制了重建保真度、跨场景泛化能力和实时可用性。本文提出将 3DSR 重新定义为从稀疏低分辨率视图到高分辨率 3DGS 表示的直接前馈映射，使模型能够从大规模多场景数据中自主学习三维特有的高频几何与外观先验，从根本上改变了 3DSR 获取高频知识的方式，实现了对未见场景的强泛化。
+
+**亮点**：
+
+1. **重新定义 3DSR 为前馈映射，摆脱对 2D 超分模型的依赖**：SR3R 将 3DSR 重新定义为从稀疏 LR 视图到 HR 3DGS 的直接前馈映射，使模型能够从大规模多场景数据中自主学习 3D 特有的高频几何与外观先验，即使仅有两张低分辨率照片也能在 1.7 秒内直接预测出精细的高分辨率三维高斯场景
+2. **高斯偏移学习与特征精炼，即插即用增强任意前馈 3DGS 骨干**：无需修改底层重建网络架构，即可作为即插即用模块与任意前馈 3DGS 重建骨干搭配使用
+3. **零样本泛化能力卓越，超越 SOTA 逐场景优化方法**：SR3R 在三个基准上的大量实验中展现出强大的零样本泛化能力，证明了前馈学习范式在三维超分辨率任务上的巨大潜力
