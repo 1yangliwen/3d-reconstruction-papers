@@ -1,5 +1,6 @@
 # 三维重建论文收藏
 
+
 ## 论文分类大纲
 
 按研究方向分类索引，快速定位感兴趣的论文。
@@ -32,6 +33,7 @@
 - **Eulerian Gaussian Splatting**（2026-07-24）— 欧拉视角概率密度优化替代启发式增密/剪枝，哈希概率金字塔实现可学习密度场，质量与效率双赢 · [CVPR 2026](https://arxiv.org/abs/2605.29136)
 - **Mip-Splatting**（2026-08-11）— 3D 平滑 + 2D Mip 双滤波器从根源消除 3DGS 混叠伪影，单尺度训练泛化至多尺度且保持实时渲染 · [CVPR 2024 Best Student Paper](https://arxiv.org/abs/2311.16493)
 - **Scaffold-GS**（2026-08-13）— 锚点驱动分层高斯表示 + 视图自适应属性预测，减少冗余基元提升鲁棒性，结构化场景表示新范式 · [CVPR 2024 Highlight](https://arxiv.org/abs/2312.00109)
+- **SpeeDe3DGS**（2026-09-01）— 时序剪枝 + SE(3) 运动蒸馏，动态 3DGS 渲染从 20 FPS 提升至 276 FPS（13.71× 加速） · [CVPR 2026](https://arxiv.org/abs/2506.07917)
 
 ### 🌧️ 三、3DGS 场景鲁棒性（恶劣条件重建）
 
@@ -40,6 +42,7 @@
 - **NimbusGS**（2026-04-23）— 统一框架处理雾/雨/雪混合天气退化，双分量分解 + 几何引导梯度缩放 · [CVPR 2026](https://arxiv.org/abs/2603.27228)
 - **VAD-GS**（2026-04-24）— 可见性感知致密化修复动态城市场景几何空洞，在 Waymo/nuScenes 超越 SOTA · [CVPR 2026](https://arxiv.org/abs/2510.09364)
 - **DroneSplat**（2026-07-29）— 自适应局部-全局掩膜消除野外动态干扰物，MVS 几何感知点采样 + 体素引导优化解决有限视角重建，CVPR 2025 · [CVPR 2025](https://arxiv.org/abs/2503.16964)
+- **DualSplat**（2026-09-03）— 将第一遍重建失败转化为伪掩码先验，打破瞬态检测与干净重建的循环依赖，在瞬态密集场景中鲁棒重建静态场景 · [CVPR 2026](https://arxiv.org/abs/2604.21631)
 
 ### 🧠 四、大规模三维重建基础模型（LRM）
 
@@ -67,6 +70,8 @@
 - **D4RT**（2026-08-03）— 前馈 Transformer 统一五元组按需查询 4D 重建，单模型端到端输出点云/深度/相机参数，CVPR 2026 Best Paper，Google DeepMind · [CVPR 2026 Best Paper](https://arxiv.org/abs/2512.08924)
 - **MASt3R**（2026-08-18）— 将图像匹配奠基在3D空间：在DUSt3R点图回归上追加匹配头预测稠密2D-2D对应，Fast Reciprocal Matching加速互惠匹配提取，零样本多基准SOTA，NAVER LABS Europe · [ECCV 2024](https://arxiv.org/abs/2406.09756)
 - **Spann3R**（2026-08-26）— 外部空间记忆机制实现增量式全局一致重建，直接从有序/无序图像集合回归全局点图，无需全局优化对齐，65 FPS 实时重建，UCL · [3DV 2025 Award Candidate](https://arxiv.org/abs/2408.16061)
+- **GGPT**（2026-08-31）— 改进 SfM 管线 + 3D Point Transformer 为前馈重建引入稀疏几何引导，跨架构增强 VGGT 等多种前馈模型，ETH Zurich · [CVPR 2026](https://arxiv.org/abs/2603.11174)
+- **MonST3R**（2026-09-04）— 几何优先的动态场景方法，为每个时间步直接回归点图，将 DUSt3R 从静态扩展到动态，视频深度/相机位姿 SOTA，前馈 4D 重建，UC Berkeley × Google DeepMind · [ICLR 2025](https://arxiv.org/abs/2410.03825)
 
 ### 🎬 六、4D 动态场景重建（4D Dynamic Scene Reconstruction）
 
@@ -134,6 +139,7 @@
 - **DriveMVS**（2026-07-23）— LiDAR 提示的时空多视图立体网络，三线索融合器协同单目/度量/几何线索，时空解码器保障跨帧一致性，自动驾驶 MVS SOTA · [CVPR 2026](https://arxiv.org/abs/2603.03765)
 - **AMB3R**（2026-08-07）— 体积后端范式升级点图回归，免训练扩展至 VO/SfM，前馈模型首次系统性超越优化型 SLAM/SfM，CVPR 2026 Highlight · [CVPR 2026 Highlight](https://arxiv.org/abs/2511.20343)
 - **MVSFormer++**（2026-08-14）— DINOv2 侧视图注意力跨视图注入，揭示 Transformer 在 MVS 中的关键设计细节，DTU/Tanks-and-Temples SOTA · [ICLR 2024](https://arxiv.org/abs/2401.11673)
+- **SPE-MVS**（2026-09-02）— 空间位置编码 + 单目深度先验增强代价体匹配，在弱纹理/非朗伯面等光度匹配失效区域显著提升 MVS 重建质量，DTU/T&T 双基准 SOTA · [CVPR 2026](https://openaccess.thecvf.com/content/CVPR2026/html/Wang_SPE-MVS_Spatial_Position_Encoding_Enhanced_Multi-View_Stereo_with_Monocular_Depth_CVPR_2026_paper.html)
 
 ### 🌐 十一、NeRF / 逆向渲染（NeRF / Inverse Rendering）
 
@@ -330,6 +336,24 @@
 1. 双分量天气退化分解：首次将复杂的混合天气退化系统地分解为全局传输场（静态大气效应，跨视图一致）和逐视图粒子残差（动态瞬态扰动，每帧独立）两部分，物理建模清晰，可同时处理雾、雨、雪及任意组合天气，突破了现有单一天气专用方法的局限
 2. 几何引导梯度缩放：针对强退化（低能见度）场景下三维高斯自监督优化中梯度失衡导致几何学习不稳定的痛点，提出几何引导的梯度缩放机制，有效稳定训练过程并显著提升几何重建精度，使 NimbusGS 在所有天气类型上均超越任务专用方法
 3. 统一框架泛化能力强：NimbusGS 无需为每种天气单独训练或调参，单一模型即可处理多种及混合天气输入，在实际部署中更具实用价值，为自动驾驶、机器人导航等恶劣天气下的三维感知重建提供了全新解决方案
+
+### 2026-09-03｜DualSplat: Robust 3D Gaussian Splatting via Pseudo-Mask Bootstrapping from Reconstruction Failures（DualSplat：基于重建失败伪掩码自举的鲁棒三维高斯泼溅）
+
+**DualSplat: Robust 3D Gaussian Splatting via Pseudo-Mask Bootstrapping from Reconstruction Failures**
+**DualSplat：基于重建失败伪掩码自举的鲁棒三维高斯泼溅**
+
+**方向**：3DGS 场景鲁棒性（恶劣条件重建）　**来源**：CVPR 2026　**机构**：Beihang University（北京航空航天大学）· Peking University（北京大学）
+
+- **作者**：Xu Wang, Zhiru Wang, Shiyun Xie, Chengwei Pan, Yisong Chen
+- **链接**：[https://arxiv.org/abs/2604.21631](https://arxiv.org/abs/2604.21631) | 项目页：[lans1ot.github.io/DualSplat](https://lans1ot.github.io/DualSplat/) | 代码：[github.com/Lans1ot/DualSplat](https://github.com/Lans1ot/DualSplat) | CVF 页面：[CVPR 2026](https://openaccess.thecvf.com/content/CVPR2026/html/Wang_DualSplat_Robust_3D_Gaussian_Splatting_via_Pseudo-Mask_Bootstrapping_from_Reconstruction_CVPR_2026_paper.html)
+
+**核心内容**：3D 高斯泼溅（3DGS）在新视角合成方面取得了显著成功，但当训练图像中包含瞬态物体（如行人、车辆等动态对象）时，其性能会严重下降。现有方法面临一个循环依赖问题：准确的瞬态检测需要良好的静态场景重建，而干净的重建又依赖于可靠的瞬态掩码。DualSplat 提出了一种"失败→先验"（Failure-to-Prior）范式来解决这一难题。该方法通过两阶段流程实现：首先进行保守的第一遍 3DGS 重建，利用不完整重建区域（即"失败"）来定位瞬态物体；然后将这些失败区域转化为物体级伪掩码（pseudo-masks），结合光度残差、特征匹配差异和 SAM2 实例边界来构建；最后利用这些伪掩码引导第二遍干净的 3DGS 优化，同时通过轻量 MLP 在线微调伪掩码，逐步从先验监督过渡到自一致性。在 RobustNeRF 和 NeRF On-the-go 数据集上的实验表明，DualSplat 在瞬态密集场景中显著超越现有基线方法。
+
+**亮点**：
+
+1. **"失败→先验"范式打破瞬态检测与干净重建的循环依赖**：现有方法陷入"瞬态检测需要良好重建→良好重建需要可靠瞬态掩码"的死循环。DualSplat 巧妙地将第一遍保守重建中的不完整碎片（失败区域）转化为定位瞬态物体的线索，将"失败"变成"先验"，用物体级伪掩码打破循环依赖。这一范式转变无需额外标注或预训练瞬态检测模型，仅依靠 3DGS 自身的重建失败信号即可启动整个流程，为瞬态鲁棒重建开辟了全新思路
+2. **多线索融合的伪掩码构建 + MLP 在线微调，实现从先验到自一致性的平滑过渡**：DualSplat 结合三种互补线索（光度残差、特征不匹配、SAM2 实例边界）构建物体级伪掩码，有效定位瞬态区域。更重要的是，引入轻量 MLP 对伪掩码进行在线微调——训练初期依赖伪掩码先验监督，随着重建质量提升，逐渐过渡到自一致性监督，让第二遍重建逐步"忘记"可能不完美的先验、依赖自身几何一致性，从而避免伪掩码误差累积导致的次优解
+3. **在瞬态密集场景中展现显著优势，为动态环境三维重建提供实用方案**：在 RobustNeRF 和 NeRF On-the-go 等具有挑战性的数据集上，DualSplat 在瞬态密集区域和整体重建质量上均显著超越现有基线方法。尤其在瞬态物体占比高的场景中，其优势更为明显——这是因为伪掩码能够精准定位并排除瞬态干扰，使第二遍重建专注于静态场景几何，从根本上解决了瞬态物体导致的伪影和几何退化问题
 
 ### 2026-04-24
 
@@ -1853,6 +1877,86 @@
 2. **针对特征编码与代价体积正则化分别定制注意力机制，实现特征聚合与空间聚合的协同优化**：MVSFormer++ 深刻洞察到MVS流水线中不同模块对注意力的需求存在本质差异——特征编码器需要聚合跨视图的全局上下文信息以建立鲁棒的像素对应关系，而代价体积正则化则需要沿深度维度进行空间聚合以抑制噪声并传播深度一致性。论文为二者分别设计了定制化的注意力变体：特征侧采用全局注意力捕获长距离依赖，代价体积侧采用自适应注意力缩放实现深度方向的有效正则。这种"分而治之"的注意力设计策略，使各模块性能均得到最大化发挥
 3. **揭示Transformer在MVS中的关键设计细节，为后续研究提供系统性设计指南**：MVSFormer++ 的另一重要贡献在于通过大量消融实验，揭示了若干此前被忽视但对性能影响显著的设计细节，包括：(1) 归一化的三维位置编码对代价体积正则化的稳定性至关重要；(2) 自适应注意力缩放因子能有效平衡不同深度层级上的梯度分布；(3) 层归一化在Transformer块中的放置位置（Pre-LN vs Post-LN）对MVS收敛速度和最终精度有显著影响。这些发现不仅帮助MVSFormer++ 在DTU和Tanks-and-Temples上达到SOTA，也为其他基于Transformer的密集预测任务（如深度估计、光流、立体匹配）提供了可迁移的设计原则
 
+### 2026-08-18｜MASt3R: Grounding Image Matching in 3D with MASt3R（将图像匹配奠基在三维空间中：MASt3R）
+
+**Grounding Image Matching in 3D with MASt3R**
+**MASt3R：将图像匹配奠基在三维空间中**
+
+**方向**：视觉几何基础模型（Visual Geometry Foundation Models）　**来源**：ECCV 2024　**机构**：NAVER LABS Europe
+
+- **作者**：Vincent Leroy, Yohann Cabon, Jerome Revaud
+- **链接**：[https://arxiv.org/abs/2406.09756](https://arxiv.org/abs/2406.09756) | 代码：[GitHub](https://github.com/naver/mast3r) | 项目页：[NAVER LABS](https://europe.naverlabs.com/research/publications/grounding-image-matching-in-3d-with-mast3r/)
+
+![MASt3R teaser 图](https://km.sankuai.com/api/file/cdn/2756902383/251699590549?contentType=0&isNewContent=false)
+
+**核心内容**：MASt3R 是 NAVER LABS Europe 在 ECCV 2024 发表的论文，开创性地将“图像匹配”这一三维视觉的基础任务从传统的二维像素对应问题重新定义为三维几何问题。图像匹配是 SfM、SLAM、视觉定位等几乎所有三维视觉算法的核心组件，但长期以来被当作 2D 特征匹配问题处理，在面对极端视角变化、尺度差异、重复纹理、昼夜光照变化等场景时容易失效。MASt3R 的核心思路建立在 DUSt3R 之上：DUSt3R 的点图回归范式能够直接从图像对中预测每个像素对应的三维点（pointmap），无需相机标定或位姿先验。MASt3R 在 DUSt3R 的 Transformer 解码器上追加一个轻量级匹配头（matching head），将两幅图像对齐到同一三维坐标系后，直接从点图之间的几何关联中预测稠密的 2D-2D 像素对应关系，从而将匹配任务“奠基”（ground）在三维几何之上。此外，MASt3R 还提出了无需额外训练的快速互惠匹配（Fast Reciprocal Matching, FRM）算法，通过“采样—近邻往返映射”高效提取互惠匹配，显著降低稠密匹配的计算开销。实验表明，MASt3R 在相对位姿估计、视觉定位等多个基准上刷新 SOTA，尤其在极具挑战性的 Map-free 视觉定位基准上，VCRE AUC 相比最佳已发表方法取得了 30% 的绝对提升。作为 DUSt3R 系列的里程碑之作，MASt3R 直接催生了 MASt3R-SLAM、HAMSt3R、MV-DUSt3R+、Online3R 等大量后续工作。
+
+**亮点**：
+
+1. **将图像匹配从 2D 问题重新定义为 3D 问题，基于 DUSt3R 点图回归奠基匹配**：传统图像匹配将两视图视为 2D 特征对应问题，在极端视角、尺度、光照变化下极易失效。MASt3R 的核心创新在于“3D grounding”——在 DUSt3R 预测的三维点图之上追加轻量匹配头，先将两视图对齐到统一坐标系，再从三维几何关联中推导稠密 2D-2D 对应。这一设计使匹配天然受益于 DUSt3R 强大的几何先验，显著提升相机位姿估计与视觉定位的鲁棒性，尤其解决了“面对面拍摄、基线极大”等传统方法难以处理的场景。
+2. **Fast Reciprocal Matching（FRM）快速互惠匹配算法，无需训练即可大幅加速稠密匹配**：MASt3R 提出的 FRM 算法通过“采样—近邻往返映射”迭代提取互惠匹配，利用收敛盆地（convergence basin）的结构特性，仅需对少量种子像素进行近邻查询即可覆盖大部分有效匹配，将稠密匹配计算复杂度大幅降低，同时保持甚至提升匹配质量。该算法无需额外训练或微调、即插即用，为多视图匹配与大规模三维重建的效率优化提供了重要参考。
+3. **零样本多基准 SOTA，成为 DUSt3R 系列演进的关键枢纽**：MASt3R 在相对位姿估计、视觉定位等多项基准上以零样本方式达到或逼近 SOTA，尤其在 Map-free 定位基准上 VCRE AUC 较最佳方法绝对提升 30%。更重要的是，MASt3R 的“点图回归 + 匹配头”架构成为后续大量工作的基石——MASt3R-SLAM（实时稠密 SLAM）、HAMSt3R（人体场景联合重建）、MV-DUSt3R+（单阶段多视图重建）、Online3R（在线适配）等均在其基础上扩展，确立了 NAVER LABS Europe 在端到端几何视觉基础模型领域的引领地位，代码已开源（github.com/naver/mast3r）。
+
+### 2026-08-19｜TokenSplat: Token-aligned 3D Gaussian Splatting for Feed-forward Pose-free Reconstruction（Token 对齐的三维高斯泼溅用于前馈式无位姿重建）
+
+**TokenSplat: Token-aligned 3D Gaussian Splatting for Feed-forward Pose-free Reconstruction**
+**TokenSplat：Token 对齐的三维高斯泼溅用于前馈式无位姿重建**
+
+**方向**：前馈式 3D Gaussian Splatting（Feed-Forward 3DGS）　**来源**：CVPR 2026　**机构**：北京航空航天大学
+
+- **作者**：Yihui Li, Chengxin Lv, Zichen Tang, Hongyu Yang, Di Huang
+- **链接**：[https://arxiv.org/abs/2603.00697](https://arxiv.org/abs/2603.00697) | 项目页：[Project Page](https://kidleyh.github.io/tokensplat/)
+
+![TokenSplat teaser 图](https://km.sankuai.com/api/file/cdn/2756902383/251908662609?contentType=0&isNewContent=false)
+
+**核心内容**：现有的前馈式 3D 高斯泼溅（Feed-Forward 3DGS）方法大多依赖已知的相机位姿进行像素对齐，在无位姿（pose-free）设定下重建质量显著下降。TokenSplat 提出了一种全新的前馈框架，能够从任意数量的无位姿多视图图像中一次性联合预测稠密 3D 高斯场景和相机位姿。其核心创新在于：（1）Token-aligned Gaussian Prediction 模块，直接在特征空间（而非像素空间或 3D 空间）中进行 token 级的跨视图语义对齐融合，使不同视图的语义对应信息能够在 Transformer 特征空间中精确匹配；（2）Asymmetric Dual-Flow Decoder（ADF-Decoder，非对称双流解码器），通过方向受限的通信机制将相机位姿线索与场景语义特征解耦，利用可学习的相机 token 显式建模视角信息，避免位姿线索污染场景几何表征；（3）Canonical Scene Decoder 处理参考视图以建立规范场景表示。实验表明，TokenSplat 在无位姿设定下取得了显著优于现有方法的重建保真度和新视角合成质量，在 RE10K（8视图 PSNR 26.15）和 ScanNet 等基准上超越依赖位姿的方法如 FreeSplat 达 0.95 dB，同时位姿估计精度也大幅提升。该工作为真正的野外无位姿多视图三维重建提供了高效、高质量的解决方案。
+
+**亮点**：
+
+1. **Token 级语义对齐在特征空间中实现跨视图融合，突破像素/3D 空间对齐的局限**：传统前馈 3DGS 方法在像素空间或 3D 空间进行跨视图特征匹配，容易受到纹理缺失、遮挡、重复纹理等因素干扰。TokenSplat 将对齐操作提升到 Transformer 的特征空间，利用 ViT token 的高层语义抽象能力建立跨视图对应关系，通过 Token-aligned Gaussian Prediction 模块直接在语义特征空间中聚合多视图信息生成高斯基元，使重建对表观变化和几何退化更加鲁棒，显著提升无位姿设定下的重建保真度
+2. **非对称双流解码器（ADF-Decoder）显式解耦位姿线索与场景语义**：TokenSplat 首次在前馈 3DGS 中引入方向受限的通信机制处理非参考视图——通过可学习的 camera token 与 image token 之间的非对称信息流动（camera token 可接收 image token 信息，但 image token 不接收 camera token 信息），将位姿估计与场景重建的表征学习彻底分离。这一设计有效避免了"位姿线索污染场景特征"的问题，使位姿估计更准确、场景重建更纯净，在 RE10K 和 ScanNet 上均取得位姿与重建双 SOTA
+3. **超越位姿依赖方法，在密集视图无位姿设定下实现 26.15 PSNR**：TokenSplat 的核心价值在于"无需位姿即可实现高质量重建"，真正打破了前馈 3DGS 对预先计算相机位姿的依赖。在 RE10K 8 视图设定下，TokenSplat 以 26.15 PSNR 超越了需要真实位姿输入的 FreeSplat（25.20），提升达 0.95 dB。这一结果挑战了"位姿是前馈 3D 重建必要条件"的传统认知，为实际应用（如手机随意拍摄、无人机航拍等无精确位姿场景）提供了可直接部署的高性能方案
+
+### 2026-08-20｜Photo-SLAM: Real-time Simultaneous Localization and Photorealistic Mapping for Monocular, Stereo, and RGB-D Cameras（Photo-SLAM：面向单目、双目与 RGB-D 相机的实时同步定位与照片级真实感建图）
+
+**Photo-SLAM: Real-time Simultaneous Localization and Photorealistic Mapping for Monocular, Stereo, and RGB-D Cameras**
+**Photo-SLAM：面向单目、双目与 RGB-D 相机的实时同步定位与照片级真实感建图**
+
+**方向**：SLAM / 实时三维重建（SLAM / Real-Time 3D Reconstruction）　**来源**：CVPR 2024　**机构**：香港科技大学（HKUST）× 中山大学
+
+- **作者**：Huajian Huang, Longwei Li, Hui Cheng, Sai-Kit Yeung
+- **链接**：[https://arxiv.org/abs/2311.16728](https://arxiv.org/abs/2311.16728) | 项目页：[Project Page](https://huajianup.github.io/research/Photo-SLAM/)
+
+![Photo-SLAM teaser 图](https://km.sankuai.com/api/file/cdn/2756902383/252103573348?contentType=0&isNewContent=false)
+
+**核心内容**：Photo-SLAM 提出了首个基于"超基元地图"（hyper primitives map）的实时同步定位与照片级真实感建图框架。其核心思想是：同时利用显式几何特征（ORB 角点等）进行相机定位，并学习隐式光度特征（3D Gaussian 表示）来刻画观测环境的纹理信息，从而在保持精确定位的同时实现照片级真实感的在线稠密重建。具体地，Photo-SLAM 在 ORB-SLAM3 的跟踪/局部建图基础上，构建了同时包含"定位超基元"（几何点特征）与"高斯超基元"（光度特征）的统一地图表示；并引入基于高斯金字塔（Gaussian-Pyramid）的渐进式训练方法，逐步学习多级特征以提升渲染保真度。整个系统完全用 C++ 与 CUDA 实现，支持单目、双目与 RGB-D 三种相机模式。在单目/双目/RGB-D 数据集上的大量实验表明，Photo-SLAM 在在线照片级真实感建图方面显著优于现有 SOTA 系统——例如在 Replica 数据集上 PSNR 提升 30%、渲染速度快数百倍；并且能在 Jetson AGX Orin 等嵌入式平台上实时运行，展示了机器人导航、AR/VR 等应用场景的巨大潜力。
+
+**亮点**：
+
+1. **首个"超基元地图"框架统一定位与照片级真实感建图**：Photo-SLAM 将显式几何特征（用于精确定位）与隐式光度特征（3D Gaussian，用于逼真渲染）融合进同一个"超基元"地图表示，解决了传统 SLAM 仅有稀疏几何、或纯神经渲染方法难以实时/嵌入式运行的问题，是 3D Gaussian Splatting 时代首个同时做到实时、精确、照片级的 SLAM 框架，为后续 Photo-SLAM 系列工作奠定了范式基础
+2. **高斯金字塔渐进式训练显著提升渲染保真度**：提出基于高斯金字塔的学习方法，逐步学习多尺度/多级特征，在保持实时性的同时大幅提升照片级真实感渲染质量；在 Replica 数据集上 PSNR 提升约 30%，渲染速度比同类神经渲染 SLAM 方法快数百倍，实现"精度与效率双赢"
+3. **全 C++/CUDA 实现，嵌入式平台实时运行**：系统完全用 C++ 和 CUDA 编写，支持单目、双目、RGB-D 三种输入模式，并能在 Jetson AGX Orin 等嵌入式设备上实时运行，兼顾学术精度与工业落地，为机器人导航、增强现实（AR）、虚拟现实（VR）等真实场景提供了工程可用的完整方案
+
+### 2026-08-21｜SPFSplat: No Pose at All: Self-Supervised Pose-Free 3D Gaussian Splatting from Sparse Views（SPFSplat：无位姿自监督稀疏视图三维高斯泼溅重建）
+
+**SPFSplat: No Pose at All: Self-Supervised Pose-Free 3D Gaussian Splatting from Sparse Views**
+**SPFSplat：无位姿自监督稀疏视图三维高斯泼溅重建**
+
+**方向**：前馈式 3D Gaussian Splatting / 无位姿三维重建　**来源**：ICCV 2025 Highlight　**机构**：Imperial College London（帝国理工学院）
+
+- **作者**：Ranran Huang, Jing He, Cheng Liu, Wenyu Li, Shuai Chen, Ying Chen, Gangshan Wu
+- **链接**：[https://arxiv.org/abs/2508.01171](https://arxiv.org/abs/2508.01171) | 代码：[GitHub](https://github.com/ranrhuang/SPFSplat) | 项目页：[Project Page](https://ranrhuang.github.io/spfsplat/)
+
+![SPFSplat 框架图](https://km.sankuai.com/api/file/cdn/2756902383/252304579651?contentType=0&isNewContent=false)
+
+**核心内容**：现有的稀疏视图三维高斯泼溅（3DGS）方法按相机位姿依赖可分为三类：（1）需要已知位姿的方法（如 pixelSplat、MVSplat）依赖 SfM 提供位姿，但在稀疏视图下 SfM 往往不可靠甚至失败；（2）需要位姿监督的无位姿方法（如 NoPoSplat、Splatt3R）在训练时仍需地面真值位姿进行监督，泛化能力受限；（3）完全无位姿方法受限于优化效率或重建质量。SPFSplat 是首个在训练和推理时均不需要任何真值位姿信息的自监督 3DGS 框架，通过共享 ViT 骨干网络在单次前馈步骤中同时预测 3D 高斯基元和相机位姿。具体而言，SPFSplat 设计了紧凑的高斯 token 表示和基于掩码注意力的解码器，通过重投影损失（reprojection loss）提供自监督几何约束，强制学习像素对齐的高斯基元。系统在未使用任何外部位姿监督的情况下，新视角合成性能达到 SOTA 水平，在视角变化显著且图像重叠有限的场景下仍能保持高质量重建，并超越了依赖几何先验训练的方法。该工作被 ICCV 2025 收录为 Highlight 论文，标志着无位姿三维重建在实际应用中的重要突破。
+
+**亮点**：
+
+1. **首个完全无位姿监督的自监督 3DGS 框架，训练与推理均不需要真值位姿**：现有方法要么依赖 SfM 提供位姿（稀疏视图下不可靠），要么在训练时需要真值位姿作为监督信号。SPFSplat 首次实现了端到端的无位姿训练范式——仅通过自监督重投影损失即可同时学习高斯基元和相机位姿，无需任何外部位姿信息。这一突破使 SPFSplat 真正适用于无位姿的实际场景（如互联网图片、手机随意拍摄等），大幅降低了三维重建的输入门槛
+2. **共享 ViT 骨干 + 紧凑高斯 token，单次前馈同时预测高斯与位姿**：SPFSplat 采用共享的 ViT 特征提取骨干网络，通过一组可学习的紧凑高斯 token 在统一的 Transformer 解码器中同时预测 3D 高斯基元属性和相机位姿。基于掩码注意力的解码器设计有效处理了稀疏视图输入下的跨视图特征聚合，使模型能够在单次前向传播中完成从图像到 3D 场景和相机参数的联合推理，推理高效且输出质量高
+3. **极端视角变化下超越位姿依赖方法，获 ICCV 2025 Highlight 认可**：尽管没有使用任何位姿监督，SPFSplat 在新视角合成方面仍达到了最先进的性能，在视角变化显著且图像重叠有限的极具挑战性场景下超越了依赖几何先验训练的方法，在相对姿态估计方面表现出色。该工作被 ICCV 2025 收录为 Highlight 论文（前 10%），其衍生版本 SPFSplatV2 进一步扩展了与 VGGT 的集成应用，证明了该范式的强大生命力和实际部署价值
+
 ### 2026-08-25｜Nabla-R2D3: Effective and Efficient 3D Diffusion Alignment with 2D Rewards（基于二维奖励的高效三维扩散对齐）
 
 **Nabla-R2D3: Effective and Efficient 3D Diffusion Alignment with 2D Rewards**
@@ -1863,13 +1967,15 @@
 - **作者**：Qingming Liu, Zhen Liu, Dinghuai Zhang, Kui Jia
 - **链接**：[https://arxiv.org/abs/2506.15684](https://arxiv.org/abs/2506.15684) | 项目页：[nabla-r2d3.github.io](https://nabla-r2d3.github.io/) | 代码：[GitHub](https://github.com/MobiusLqm/Nabla-R2D3) | NeurIPS 页面：[NeurIPS 2025](https://neurips.cc/virtual/2025/poster/119200)
 
-**核心内容**：生成高质量、符合人类偏好的 3D 资产是三维视觉与计算机图形学领域的长期挑战。尽管 3D 原生扩散模型（如 DiffSplat、GaussianCube）在直接生成三维内容方面展现出前景，但生成的资产在视觉保真度、几何精度和指令遵循方面常达不到人类预期——典型问题包括"雅努斯问题"（Janus Problem，即多面神问题）、浑浊纹理和奇怪的几何形状。根本原因在于 3D 训练数据集优先追求数量而非美学质量与物理合理性。在 2D 图像生成领域，基于人类反馈的强化学习（RLHF）已成功解决对齐问题，但将其迁移到 3D 面临关键瓶颈：高质量的 3D 偏好数据极其稀缺，无法训练稳健的 3D 奖励模型。本文提出 Nabla-R2D3（Reward from 2D for Diffusion Alignment in 3D via Nabla-GFlowNet），首个利用 2D 奖励信号对齐 3D 原生扩散模型的强化学习框架。该方法基于一个关键观察：2D 信号可以有效指导 3D 生成——通过将 3D 奖励定义为多视图 2D 奖励的数学期望，将任何可微的 2D 奖励模型的梯度回传至 3D 空间。在 DiffSplat 和 GaussianCube 两个 3D 原生扩散模型上的广泛实验表明，Nabla-R2D3 在少量微调步骤内始终实现更高奖励与更低先验遗忘：美学评分从基础模型的 4.72 提升至 6.44，超越 ReFL（5.82）和 DRaFT（5.51）；360 度可视化确认其有效解决雅努斯问题，而基线方法存在严重的多视角不一致性。
+![Nabla-R2D3 框架概览图](https://km.sankuai.com/api/file/cdn/2756902383/252814837164?contentType=0&isNewContent=false)
+
+**核心内容**：生成高质量、符合人类偏好的 3D 资产是三维视觉与计算机图形学领域的长期挑战。尽管 3D 原生扩散模型（如 DiffSplat、GaussianCube）在直接生成三维内容方面展现出前景，但生成的资产在视觉保真度、几何精度和指令遵循方面常达不到人类预期——典型问题包括"雅努斯问题"（Janus Problem，即多面神问题）、浑浊纹理和奇怪的几何形状。根本原因在于 3D 训练数据集优先追求数量而非美学质量与物理合理性。在 2D 图像生成领域，基于人类反馈的强化学习（RLHF）已成功解决对齐问题，但将其迁移到 3D 面临关键瓶颈：高质量的 3D 偏好数据极其稀缺，无法训练稳健的 3D 奖励模型。本文提出 Nabla-R2D3（Reward from 2D for Diffusion Alignment in 3D via Nabla-GFlowNet），首个利用 2D 奖励信号对齐 3D 原生扩散模型的强化学习框架。该方法基于一个关键观察：2D 信号可以有效指导 3D 生成——通过将 3D 奖励定义为多视图 2D 奖励的数学期望，将任何可微的 2D 奖励模型的梯度回传至 3D 空间。Nabla-R2D3 建立在最近提出的 Nabla-GFlowNet 方法之上，以原则性的方式将扩散模型的得分函数与奖励梯度对齐，而非使用传统策略梯度（如 DDPO）或直接反向传播（如 ReFL、DRaFT），从而有效避免了奖励作弊（reward hacking）和先验遗忘（prior forgetting）两大顽疾。在奖励设计方面，论文融合了两类 2D 奖励：基于外观的奖励（美学评分 LAION-Aesthetic、人类偏好分数 HPSv2）用于提升视觉质量和文本-图像对齐；基于几何的奖励包括新颖的法线估计器奖励（StableNormal 预测法线与渲染法线的一致性）和深度-法线一致性（DNC）自洽奖励（从渲染深度图计算伪法线并与渲染法线对齐，无需任何外部网络）。在 DiffSplat 和 GaussianCube 两个 3D 原生扩散模型上的广泛实验表明，Nabla-R2D3 在少量微调步骤内始终实现更高奖励与更低先验遗忘：美学评分从基础模型的 4.72 提升至 6.44，超越 ReFL（5.82）和 DRaFT（5.51）；360 度可视化确认其有效解决雅努斯问题，而基线方法存在严重的多视角不一致性。该工作为 3D 生成模型与人类偏好对齐开辟了新范式，在游戏、影视、机器人仿真和电商等领域具有广泛应用前景。
 
 **亮点**：
 
 1. **首个用 2D 奖励对齐 3D 原生扩散模型的 RL 框架，巧妙解决 3D RLHF 数据稀缺瓶颈**：3D 偏好数据极其稀缺，无法训练稳健的 3D 奖励模型，这是 3D RLHF 的核心瓶颈。Nabla-R2D3 的突破在于将 3D 奖励定义为多视图 2D 奖励的数学期望，使任何现成的 2D 奖励模型（美学评分、HPSv2 等）的梯度都能通过渲染过程回传至 3D 空间。这一设计巧妙绕过了 3D 偏好数据缺乏的问题，首次实现了"3D 原生模型 + 2D 奖励"的对齐范式——兼得 3D 原生模型的空间一致性（解决雅努斯问题）和 2D 人类偏好模型的美学表现力
-2. **Nabla-GFlowNet 梯度匹配避免奖励作弊与先验遗忘，少量步骤即可高效收敛**：传统 RL 微调扩散模型面临两大顽疾——奖励作弊（模型找到欺骗奖励系统的方式，输出高分但视觉糟糕）和先验遗忘（模型忘记如何生成多样化对象，陷入崩溃状态）。Nabla-R2D3 基于 Nabla-GFlowNet 框架，将扩散去噪过程视为概率在有向无环图中的流动，通过梯度匹配目标使模型的得分函数与奖励梯度对齐。与 DDPO（策略梯度，效率极低）和 ReFL/DRaFT（直接反向传播，易奖励作弊）不同，Nabla-R2D3 利用奖励模型的梯度信息而非稀疏标量奖励值，训练更快更稳健
-3. **首创法线估计器奖励与 DNC 自洽几何奖励，从根本上改善 3D 几何质量**：仅用外观奖励微调 3D 模型可能导致"画上去"的扁平细节而非真正的 3D 几何深度。论文引入两类几何奖励：法线估计器奖励利用 2D 法线估计器（StableNormal）评估渲染法线与 AI 预测法线的一致性；深度-法线一致性（DNC）奖励从渲染深度图计算伪法线并与渲染法线对齐，在 3D 空间中强制数学自洽，无需任何外部神经网络
+2. **Nabla-GFlowNet 梯度匹配避免奖励作弊与先验遗忘，少量步骤即可高效收敛**：传统 RL 微调扩散模型面临两大顽疾——奖励作弊（模型找到欺骗奖励系统的方式，输出高分但视觉糟糕）和先验遗忘（模型忘记如何生成多样化对象，陷入崩溃状态）。Nabla-R2D3 基于 Nabla-GFlowNet 框架，将扩散去噪过程视为概率在有向无环图中的流动，通过梯度匹配目标使模型的得分函数与奖励梯度对齐。与 DDPO（策略梯度，效率极低）和 ReFL/DRaFT（直接反向传播，易奖励作弊）不同，Nabla-R2D3 利用奖励模型的梯度信息而非稀疏标量奖励值，训练更快更稳健，在少量微调步骤内美学评分从 4.72 提升至 6.44，同时保持更低的 FID（更好先验保留）和更高 CLIP 相似度（更好文本对齐）
+3. **首创法线估计器奖励与 DNC 自洽几何奖励，从根本上改善 3D 几何质量**：仅用外观奖励微调 3D 模型可能导致"画上去"的扁平细节而非真正的 3D 几何深度。论文引入两类几何奖励：法线估计器奖励利用 2D 法线估计器（StableNormal）评估渲染法线与 AI 预测法线的一致性，惩罚"纹理有深度但几何扁平"的情况；深度-法线一致性（DNC）奖励从渲染深度图计算伪法线并与渲染法线对齐，在 3D 空间中强制数学自洽，无需任何外部神经网络。DNC 是一种纯自一致性奖励，不依赖外部 3D 监督或可能不可靠的 2D 估计器，为无标注条件下改善 3D 几何质量提供了创新思路。实验证实几何奖励有效解决了雅努斯问题——Nabla-R2D3 生成的物体在 360 度旋转下保持几何一致性，而 DRaFT 等基线方法存在严重的多面神问题
 
 ### 2026-08-26｜Spann3R: 3D Reconstruction with Spatial Memory（Spann3R：基于空间记忆的三维重建）
 
@@ -1881,13 +1987,13 @@
 - **作者**：Hengyi Wang, Lourdes Agapito
 - **链接**：[https://arxiv.org/abs/2408.16061](https://arxiv.org/abs/2408.16061) | 项目页：[Project Page](https://hengyiwang.github.io/projects/spanner) | 代码：[GitHub](https://github.com/HengyiWang/spann3r)
 
-**核心内容**：Spann3R 是 UCL 团队在 3DV 2025（Award Candidate）发表的论文，基于 DUSt3R 范式提出了一种从有序或无序图像集合进行密集三维重建的新方法。与 DUSt3R 仅处理双视图、多视图场景下需要基于优化的全局对齐不同，Spann3R 通过引入外部空间记忆（spatial memory）机制，学习跟踪所有先前相关的三维信息，并查询该空间记忆来预测下一帧的三维结构，从而在单次前向传播中直接预测每个图像在全局坐标系中的点图（pointmaps），无需相机参数或场景先验。Spann3R 采用 Transformer 架构，在 NVIDIA RTX 4090 上达到 65.49 FPS，相比 DUSt3R 提速约 40 倍。
+**核心内容**：Spann3R 是 UCL 团队在 3DV 2025（Award Candidate）发表的论文，基于 DUSt3R 范式提出了一种从有序或无序图像集合进行密集三维重建的新方法。与 DUSt3R 仅处理双视图、多视图场景下需要基于优化的全局对齐不同，Spann3R 通过引入外部空间记忆（spatial memory）机制，学习跟踪所有先前相关的三维信息，并查询该空间记忆来预测下一帧的三维结构，从而在单次前向传播中直接预测每个图像在全局坐标系中的点图（pointmaps），无需相机参数或场景先验。Spann3R 采用 Transformer 架构，在 NVIDIA RTX 4090 上达到 65.49 FPS，相比 DUSt3R 提速约 40 倍。该方法在包含 ScanNet、Co3D、Aria、ARKitScenes、Waymo 等 15 个数据集上展示了良好的零样本泛化能力，并在 7Scenes 等基准上保持了有竞争力的重建质量。Spann3R 将增量式三维重建与外部空间记忆相结合，打破了传统方法对全局优化对齐的依赖，为实时、大规模、在线三维重建提供了新的范式。
 
 **亮点**：
 
-1. **外部空间记忆机制实现增量式全局一致重建，消除全局对齐需求**：传统 DUSt3R 方法仅处理双视图，多视图场景下需要基于优化的全局对齐，推理缓慢且误差逐级累积。Spann3R 创新性地引入外部空间记忆，学习跟踪所有先前相关的三维信息，并在 Transformer 解码器中查询该记忆来预测下一帧的全局点图，彻底消除了耗时的全局优化对齐步骤
-2. **实时性能（65 FPS），相比 DUSt3R 提速约 40 倍，支持在线流式重建**：Spann3R 在 NVIDIA RTX 4090 上实现了 65.49 FPS 的推理速度，相比 DUSt3R 的 0.78 FPS 提速约 40 倍，使 DUSt3R 系列方法从离线走向在线实时部署成为可能
-3. **跨 15 个数据集的零样本泛化能力，获 3DV 2025 Award Candidate 认可**：Spann3R 在包含 ScanNet、ScanNet++、WildRGBD、Co3D、Aria、ARKitScenes、BlendMVS、Waymo 等 15 个数据集上进行了大规模训练，并在多个未见过的测试数据集上展示了良好的零样本泛化能力
+1. **外部空间记忆机制实现增量式全局一致重建，消除全局对齐需求**：传统 DUSt3R 方法仅处理双视图，多视图场景下需要基于优化的全局对齐，推理缓慢且误差逐级累积。Spann3R 创新性地引入外部空间记忆，学习跟踪所有先前相关的三维信息，并在 Transformer 解码器中查询该记忆来预测下一帧的全局点图。这一设计使 Spann3R 能够从有序或无序图像集合中直接输出全局一致的点图，彻底消除了耗时的全局优化对齐步骤，同时保证了重建结果的全局几何一致性
+2. **实时性能（65 FPS），相比 DUSt3R 提速约 40 倍，支持在线流式重建**：Spann3R 在 NVIDIA RTX 4090 上实现了 65.49 FPS 的推理速度，相比 DUSt3R 的 0.78 FPS 提速约 40 倍，使 DUSt3R 系列方法从离线走向在线实时部署成为可能。这一实时性能使 Spann3R 能够支持在线流式三维重建应用——如机器人导航、AR/VR 实时建图等，为端到端几何基础模型的实时化奠定了关键基础
+3. **跨 15 个数据集的零样本泛化能力，获 3DV 2025 Award Candidate 认可**：Spann3R 在包含 ScanNet、ScanNet++、WildRGBD、Co3D、Aria、ARKitScenes、BlendMVS、Waymo、TartanAir、OmniObject3D、MegaDepth、VKITTI2、Unreal、Spring、PointOdyssey 等 15 个数据集上进行了大规模训练，并在多个未见过的测试数据集上展示了良好的零样本泛化能力。该工作被 3DV 2025 收录并提名 Award Candidate，其空间记忆机制为后续在线三维重建工作（如 AMB3R 等）提供了重要的方法论参考，推动了端到端几何视觉基础模型向实时在线方向演进
 
 ### 2026-08-27｜ForgeDreamer: Industrial Text-to-3D Generation with Multi-Expert LoRA and Cross-View Hypergraph（ForgeDreamer：基于多专家 LoRA 与跨视角超图的工业文本到三维生成）
 
@@ -1899,13 +2005,13 @@
 - **作者**：Junhao Cai, Deyu Zeng, Junhao Pang, Lini Li, Zongze Wu, Xiaopin Zhong
 - **链接**：[https://arxiv.org/abs/2603.09266](https://arxiv.org/abs/2603.09266) | 项目页：[forgedreamer.github.io](https://forgedreamer.github.io/) | 代码：[GitHub](https://github.com/Junhaocai27/ForgeDreamer)
 
-**核心内容**：现有文本到三维生成方法在自然场景上取得了显著进展，但在工业应用中面临两个关键瓶颈：一是领域适配困难，传统 LoRA 融合在跨类别场景下产生知识干扰（knowledge interference）；二是几何推理缺陷，现有方法依赖成对一致性约束（pairwise consistency constraints），无法捕捉精密制造所需的高阶结构依赖关系。本文提出 ForgeDreamer 框架，通过两大创新解决上述问题：首先，引入多专家 LoRA 集成（Multi-Expert LoRA Ensemble）机制；其次，提出跨视角超图几何增强（Cross-View Hypergraph Geometric Enhancement）方法。
+**核心内容**：现有文本到三维生成方法（如 DreamFusion、ProlificDreamer）在自然场景上取得了显著进展，但在工业应用中面临两个关键瓶颈：一是领域适配困难，传统 LoRA 融合在跨类别场景下产生知识干扰（knowledge interference），导致模型在不同工业零件类别之间泛化能力不足；二是几何推理缺陷，现有方法依赖成对一致性约束（pairwise consistency constraints），无法捕捉精密制造所需的高阶结构依赖关系。本文提出 ForgeDreamer 框架，通过两大创新解决上述问题：首先，引入多专家 LoRA 集成（Multi-Expert LoRA Ensemble）机制，将多个类别特定的 LoRA 模型通过师生蒸馏整合为统一表示，在消除知识干扰的同时实现跨类别泛化；其次，在增强语义理解的基础上，提出跨视角超图几何增强（Cross-View Hypergraph Geometric Enhancement）方法，同时捕捉跨越多个视角的结构依赖关系，确保制造级几何一致性。实验在定制的工业数据集上表明，ForgeDreamer 在语义泛化和几何保真度上均超越现有 SOTA 方法，为工业领域高精度三维零件生成提供了实用解决方案。
 
 **亮点**：
 
-1. **多专家 LoRA 师生蒸馏消除知识干扰，实现跨类别泛化**：通过师生蒸馏将多个类别专家的 LoRA 知识整合进统一表示，每个专家保留其类别特异性的同时消除相互干扰
-2. **跨视角超图几何增强捕获高阶结构依赖，保障制造级精度**：将多个视角的几何信息建模为超图结构，通过超边同时连接多个视角节点，捕获跨越多个视点的高阶几何约束
-3. **面向工业落地的实用框架，CVPR 2026 Findings 认可**：在定制的工业数据集上的大量实验验证了方法的有效性和实用性
+1. **多专家 LoRA 师生蒸馏消除知识干扰，实现跨类别泛化**：传统 LoRA 微调在融合多个类别特定适配器时会产生知识干扰——不同类别的 LoRA 参数相互冲突，导致生成质量下降。ForgeDreamer 创新性地引入多专家 LoRA 集成机制，通过师生蒸馏将多个类别专家的 LoRA 知识整合进统一表示，每个专家保留其类别特异性的同时消除相互干扰，在工业零件跨类别泛化能力上显著超越现有方法，为工业领域多品类三维生成提供了高效的参数高效微调方案
+2. **跨视角超图几何增强捕获高阶结构依赖，保障制造级精度**：工业零件对几何精度和拓扑正确性要求极高，传统成对一致性约束仅能捕捉两两视角间的关系，无法建模多视角联合的高阶结构依赖。ForgeDreamer 提出跨视角超图几何增强方法，将多个视角的几何信息建模为超图结构，通过超边同时连接多个视角节点，捕获跨越多个视点的高阶几何约束，确保生成结果在严格拓扑和精确物理属性上达到制造级标准
+3. **面向工业落地的实用框架，CVPR 2026 Findings 认可**：不同于仅关注自然场景的现有方法，ForgeDreamer 直接面向工业应用中的实际瓶颈（领域适配和几何精度），设计了完整可行的技术路线。在定制的工业数据集上的大量实验验证了方法的有效性和实用性——在语义泛化能力和几何保真度两个维度上均超越现有 SOTA 方法，获得 CVPR 2026 Findings 认可，为三维生成技术在精密制造、工业设计等领域的真正落地提供了重要的技术参考
 
 ### 2026-08-28｜SR3R: Rethinking Super-Resolution 3D Reconstruction With Feed-Forward Gaussian Splatting（SR3R：重新思考基于前馈高斯泼溅的超分辨率三维重建）
 
@@ -1917,10 +2023,90 @@
 - **作者**：Xiang Feng, Xiangbo Wang, Tieshi Zhong, Chengkai Wang, Yiting Zhao, Tianxiang Xu, Zhenzhong Kuang, Feiwei Qin, Xuefei Yin, Yanming Zhu
 - **链接**：[https://arxiv.org/abs/2602.24020](https://arxiv.org/abs/2602.24020) | 项目页：[xiangfeng66.github.io/SR3R](https://xiangfeng66.github.io/SR3R/) | 代码：[GitHub](https://github.com/xiangfeng66/SR3R)
 
-**核心内容**：三维超分辨率（3DSR）旨在从低分辨率多视图图像重建高分辨率三维场景。现有方法依赖密集低分辨率输入和逐场景优化，其高频先验完全继承自预训练的二维超分模型，严重限制了重建保真度、跨场景泛化能力和实时可用性。本文提出将 3DSR 重新定义为从稀疏低分辨率视图到高分辨率 3DGS 表示的直接前馈映射，使模型能够从大规模多场景数据中自主学习三维特有的高频几何与外观先验，从根本上改变了 3DSR 获取高频知识的方式，实现了对未见场景的强泛化。
+![SR3R Teaser](https://km.sankuai.com/api/file/cdn/2756902383/253383252129?contentType=0&isNewContent=false)
+
+**核心内容**：三维超分辨率（3DSR）旨在从低分辨率多视图图像重建高分辨率三维场景。现有方法依赖密集低分辨率输入和逐场景优化，其高频先验完全继承自预训练的二维超分模型，严重限制了重建保真度、跨场景泛化能力和实时可用性。本文提出将 3DSR 重新定义为从稀疏低分辨率视图到高分辨率 3DGS 表示的直接前馈映射，使模型能够从大规模多场景数据中自主学习三维特有的高频几何与外观先验，从根本上改变了 3DSR 获取高频知识的方式，实现了对未见场景的强泛化。具体而言，SR3R 提出前馈框架通过学习的映射网络直接从稀疏 LR 视图预测 HR 3DGS 表示；引入高斯偏移学习（Gaussian offset learning）和特征精炼（feature refinement）稳定重建并锐化高频细节。SR3R 具有即插即用特性，可与任意前馈 3DGS 重建骨干网络搭配使用——骨干网络提供 LR 3DGS 支架，SR3R 将其上采样为 HR 3DGS。在三大基准上的大量实验表明，SR3R 超越现有 SOTA 3DSR 方法，甚至在某些未见场景上超越了 SOTA 逐场景优化方法。
 
 **亮点**：
 
-1. **重新定义 3DSR 为前馈映射，摆脱对 2D 超分模型的依赖**：SR3R 将 3DSR 重新定义为从稀疏 LR 视图到 HR 3DGS 的直接前馈映射，使模型能够从大规模多场景数据中自主学习 3D 特有的高频几何与外观先验，即使仅有两张低分辨率照片也能在 1.7 秒内直接预测出精细的高分辨率三维高斯场景
-2. **高斯偏移学习与特征精炼，即插即用增强任意前馈 3DGS 骨干**：无需修改底层重建网络架构，即可作为即插即用模块与任意前馈 3DGS 重建骨干搭配使用
-3. **零样本泛化能力卓越，超越 SOTA 逐场景优化方法**：SR3R 在三个基准上的大量实验中展现出强大的零样本泛化能力，证明了前馈学习范式在三维超分辨率任务上的巨大潜力
+1. **重新定义 3DSR 为前馈映射，摆脱对 2D 超分模型的依赖**：传统 3DSR 方法的高频先验完全来自预训练的 2D 超分模型，这种间接迁移导致三维特有的高频几何信息无法被有效利用。SR3R 将 3DSR 重新定义为从稀疏 LR 视图到 HR 3DGS 的直接前馈映射，使模型能够从大规模多场景数据中自主学习 3D 特有的高频几何与外观先验，从根本上解决了跨场景泛化不足的问题，即使仅有两张低分辨率照片也能在 1.7 秒内直接预测出精细的高分辨率三维高斯场景
+2. **高斯偏移学习与特征精炼，即插即用增强任意前馈 3DGS 骨干**：SR3R 提出的高斯偏移学习和特征精炼模块能够有效稳定重建过程并锐化高频细节，且具备出色的通用性——无需修改底层重建网络架构，即可作为即插即用模块与任意前馈 3DGS 重建骨干（如 pixelSplat、VGGT 等）搭配使用，为其提供从 LR 到 HR 的上采样能力，为前馈式三维重建模型提供了通用的超分辨率增强范式
+3. **零样本泛化能力卓越，超越 SOTA 逐场景优化方法**：SR3R 在三个基准上的大量实验中展现出强大的零样本泛化能力——不仅在已知场景上超越现有 SOTA 3DSR 方法，更在部分未见场景上超越了专门设计的 SOTA 逐场景优化方法，证明了前馈学习范式在三维超分辨率任务上的巨大潜力，为实际应用中的实时高分辨率三维重建提供了可行的技术路径
+
+### 2026-08-31｜GGPT: Geometry Grounded Point Transformer（GGPT：几何引导的点 Transformer）
+
+**GGPT: Geometry Grounded Point Transformer**
+**GGPT：几何引导的点 Transformer**
+
+**方向**：视觉几何基础模型（Visual Geometry Foundation Models）　**来源**：CVPR 2026　**机构**：ETH Zurich
+
+- **作者**：Yutong Chen, Yiming Wang, Xucong Zhang, Sergey Prokudin, Siyu Tang
+- **链接**：[https://arxiv.org/abs/2603.11174](https://arxiv.org/abs/2603.11174) | 项目页：[Project Page](https://chenyutongthu.github.io/research/ggpt) | 代码：[GitHub](https://github.com/ChenYutongTHU/GGPT)
+
+![GGPT Teaser](https://km.sankuai.com/api/file/cdn/2756902383/253635713373?contentType=0&isNewContent=false)
+
+**核心内容**：近期前馈网络通过直接从 RGB 图像预测稠密点图，在稀疏视图三维重建中取得了显著进展。然而，由于缺乏显式的多视图几何约束，这些方法往往存在几何不一致性和细粒度精度不足的问题。本文提出 Geometry-Grounded Point Transformer (GGPT)，一种通过可靠的稀疏几何引导来增强前馈重建的框架。首先，论文提出基于密集特征匹配和轻量级几何优化的改进 Structure-from-Motion 管线，从稀疏输入视图中高效估计准确的相机位姿和局部三维点云；在此基础上，提出几何引导的三维点 Transformer，利用优化的引导编码在显式稀疏几何监督下精炼稠密点图。广泛的实验表明，该方法提供了一种将几何先验与前馈稠密预测相融合的原则性机制，生成的重建结果既几何一致又空间完整，能够恢复精细结构并填充纹理缺失区域的空白。仅在 ScanNet++ 上以 VGGT 预测进行训练，GGGPT 即可跨架构和数据集泛化，在域内和域外设置下均显著超越现有 SOTA 前馈三维重建模型。
+
+**亮点**：
+
+1. **改进 SfM 管线 + 3D Point Transformer，为前馈重建引入可靠的稀疏几何引导**：GGGPT 提出了一种改进的轻量 SfM 管线（密集匹配 + 稀疏 BA + DLT 三角化）来获取几何一致的稀疏点云，然后利用 3D Point Transformer 在三维空间中直接融合稀疏几何引导与前馈稠密预测进行残差精炼。这种显式的多视图几何约束有效解决了前馈模型固有的几何不一致性问题，使模型能够恢复精细结构并在纹理缺失区域完成几何填充，为前馈重建与经典几何方法的融合提供了新的范式
+2. **仅在 ScanNet++ 上训练即可跨架构泛化，显著提升 VGGT 等多种前馈模型的重建精度**：GGGPT 的独特优势在于其极强的跨架构泛化能力——仅在 ScanNet++ 数据集上以 VGGT 预测进行训练，即可直接应用于增强 VGGT、π³、Fast3R 等多种不同架构的前馈重建模型，在域内和域外数据集上均实现显著精度提升。这种"一次训练、多处受益"的特性使 GGPT 成为前馈三维重建领域的通用增强模块，为工业级部署提供了高效且经济的解决方案
+3. **优化的引导编码机制，将稀疏几何先验与前馈稠密预测深度融合**：GGGPT 设计了优化的引导编码（optimised guidance encoding）机制，将稀疏 SfM 点云的信息有效注入到稠密点图精炼过程中。这种编码方式能够精确表达局部几何结构的置信度和空间分布，使 Transformer 在精炼过程中能够自适应地信任高置信度的稀疏几何区域、同时修正低置信度的稠密预测区域，实现稀疏几何与稠密预测的最优融合，在恢复场景精细结构和保证全局几何一致性之间取得了出色的平衡
+
+### 2026-09-01｜SpeeDe3DGS: Speedy Deformable 3D Gaussian Splatting with Temporal Pruning and Motion Grouping（SpeeDe3DGS：基于时序剪枝与运动分组的快速可变形三维高斯泼溅）
+
+**SpeeDe3DGS: Speedy Deformable 3D Gaussian Splatting with Temporal Pruning and Motion Grouping**
+**SpeeDe3DGS：基于时序剪枝与运动分组的快速可变形三维高斯泼溅**
+
+**方向**：3D Gaussian Splatting / 动态场景重建　**来源**：CVPR 2026　**机构**：University of Maryland, College Park
+
+- **作者**：Allen Tu, Haiyang Ying, Alex Hanson, Yonghan Lee, Tom Goldstein, Matthias Zwicker
+- **链接**：[https://arxiv.org/abs/2506.07917](https://arxiv.org/abs/2506.07917) | 项目页：[speede3dgs.github.io](https://speede3dgs.github.io/)
+
+![SpeeDe3DGS Teaser](https://km.sankuai.com/api/file/cdn/2756902383/253835666640?contentType=0&isNewContent=false)
+
+**核心内容**：动态三维高斯泼溅（3DGS）扩展通过神经运动场实现了高质量的四维场景重建，但每个高斯基元都需要进行神经推理，导致计算成本极高——典型动态 3DGS 模型的渲染速度仅约 20 FPS，严重制约了其在实时应用中的部署。本文提出 SpeeDe3DGS，一个通用的动态 3DGS/4DGS 加速管线，通过三个互补模块大幅减少冗余神经推理：时序敏感性剪枝（Temporal Sensitivity Pruning, TSP）通过时间聚合的敏感性分析去除对渲染贡献低的高斯基元；时序敏感性采样（Temporal Sensitivity Sampling, TSS）通过扰动时间戳来抑制漂浮物伪影；运动分组（Motion Grouping）通过 SE(3) 蒸馏将多个高斯的形变推理共享为组级推理，大幅降低单个高斯的形变计算成本。实验表明，SpeeDe3DGS 在 DeformableGS 基础上将渲染速度从 20 FPS 提升至 276 FPS（13.71× 加速），同时保持与原始模型相当的渲染质量，使动态 3DGS 的实时渲染成为现实。
+
+**亮点**：
+
+1. **三模块协同实现 13.71× 渲染加速，将动态 3DGS 从 20 FPS 提升至 276 FPS**：SpeeDe3DGS 通过时序敏感性剪枝（TSP）、时序敏感性采样（TSS）和运动分组（Motion Grouping）三个互补模块的协同作用，在 DeformableGS 基础上实现了 13.71× 的渲染加速——从约 20 FPS 提升至 276 FPS，同时保持与原始动态 3DGS 模型相当的渲染质量。这一突破性性能使动态 3DGS 首次具备了实时渲染能力，为动态场景的实时交互式应用（如 VR/AR、机器人导航、自动驾驶仿真等）奠定了关键基础
+2. **时序敏感性剪枝与采样机制，有效解决动态场景特有的过参数化与漂浮物问题**：动态 3DGS 模型存在严重的过参数化问题——大量高斯基元在时间维度上冗余，且静态场景的敏感度剪枝方法无法处理动态场景中"在观测帧表现正常、外推到未见时刻就漂移"的问题。SpeeDe3DGS 提出时间聚合的敏感性分析机制，通过在时间维度上累积梯度来准确评估每个高斯对渲染质量的贡献，并通过时间戳扰动来检测和抑制漂浮物伪影，有效解决了动态场景特有的冗余和伪影问题
+3. **SE(3) 运动蒸馏实现组级形变推理，大幅降低单个高斯的形变计算成本**：动态 3DGS 中每个高斯都需要独立进行神经形变推理，这是计算瓶颈的主要来源。SpeeDe3DGS 提出运动分组机制，通过 SE(3) 蒸馏将多个空间相邻且运动模式相似的高斯分组，共享组级形变推理结果，大幅降低了单个高斯的形变计算成本。这种组级推理策略在保持形变精度的同时显著提升了计算效率，为动态场景的高效表示和渲染提供了新的技术路径
+
+### 2026-09-02｜SPE-MVS: Spatial Position Encoding Enhanced Multi-View Stereo with Monocular Depth Priors（SPE-MVS：基于单目深度先验的空间位置编码增强多视图立体）
+
+**SPE-MVS: Spatial Position Encoding Enhanced Multi-View Stereo with Monocular Depth Priors**
+**SPE-MVS：基于单目深度先验的空间位置编码增强多视图立体**
+
+**方向**：多视图立体重建（MVS / Dense Matching）　**来源**：CVPR 2026　**机构**：匿名（双盲评审中）
+
+- **作者**：Wang 等（CVPR 2026 双盲评审）
+- **链接**：[CVPR 2026 Open Access](https://openaccess.thecvf.com/content/CVPR2026/html/Wang_SPE-MVS_Spatial_Position_Encoding_Enhanced_Multi-View_Stereo_with_Monocular_Depth_CVPR_2026_paper.html) | 代码：[GitHub](https://github.com/bdwsq1996/SPE-MVS)
+
+**核心内容**：学习型多视图立体（MVS）方法过度依赖视图间的光度相似度来表征匹配相似度，在弱纹理区域和非朗伯表面上表现不佳。SPE-MVS 提出了一种通过空间位置编码（SPE）增强的 MVS 框架，利用度量单目深度先验为每个视角的每个像素构造统一坐标系下的"空间位置编码"，将其和图像一起输入特征提取与代价体构建流程。核心创新包括四大模块：（1）空间位置编码（SPE）：利用 COLMAP 稀疏深度配合 Prior Depth Anything（PDA）单目深度模型生成度量单目深度图，将各视角像素反投影到参考视坐标系下并归一化为逐像素 3D 坐标；（2）光度-空间混合特征提取器（PSHF）：双分支融合 FPN 结构，分别对图像和 SPE 进行特征提取与聚合，生成多尺度混合特征；（3）SPE 增强代价体构建（SPEC）：在传统的特征相似度代价体基础上，新增基于 SPE 平方差的空间位置相似度代价体，二者融合后形成增强代价体；（4）单目深度引导增强（MDGE）：通过单目特征增强（MFE）和单目深度增强（MDE）两阶段串行细化概率图，将单目先验的"表面平滑"特性注入 MVS。实验表明，SPE-MVS 在 DTU 数据集上取得 Overall 0.272mm、Completeness 0.220mm 的 SOTA 成绩，在 Tanks & Temples Intermediate 和 Advanced 集上的 Mean F1 分别达到 69.13 和 44.72，全面超越现有方法。
+
+**亮点**：
+
+1. **首创"空间位置相似度"作为与光度互补的新匹配信号，从根源缓解对光度一致性的依赖**：MVS 几十年来几乎将匹配信号完全押注在光度相似度上，在弱纹理/非朗伯面等光度一致性假设失效的区域表现差。SPE-MVS 用归一化 3D 位置的平方差构造出一路与光度正交的相似度信号，在光度失效处依然可判别——位置对得上的像素，平方差自然小。这是一条可直接嫁接到任意 MVS 代价体框架的通用增量模块，思路简洁但效果显著
+2. **"全视角 + 全像素"充分利用单目深度先验，将单目线索榨干到每个视角、每个像素**：相比 MonoMVSNet 仅在参考视图使用单目线索来优化深度搜索范围，SPE-MVS 为所有视角都构建逐像素 SPE，既进入特征提取又进入代价体构建，将单目先验用得更彻底。消融实验证实：PSHF 和 SPEC 两个与 SPE 直接相关的模块主要拉动 Completeness（从 0.254 降至 0.220/0.236），验证了"空间位置信息专治困难区的重建残缺"
+3. **概率图层面的两阶段细化（MFE→MDE），从"特征"和"深度"两个角度分步注入单目先验**：MDGE 模块设计了串行两步细化——先利用高层单目特征增强概率图（MFE），再利用单目深度进一步强调几何一致性（MDE）。这种分阶段、分模态的细化设计避免了一股脑拼进去的粗糙融合，从特征和深度两个互补角度逐步将单目先验的"表面平滑"特性灌进 MVS。实验表明 MFE 贡献更大（Overall 从 0.279 优化到 0.274），整体管线在 DTU + T&T 双基准上全面 SOTA
+
+### 2026-09-04｜MonST3R: A Simple Approach for Estimating Geometry in the Presence of Motion（MonST3R：在运动场景中估计几何的简单方法）
+
+**MonST3R: A Simple Approach for Estimating Geometry in the Presence of Motion**
+**MonST3R：在运动场景中估计几何的简单方法**
+
+**方向**：视觉几何基础模型（Visual Geometry Foundation Models）／动态场景几何　**来源**：ICLR 2025　**机构**：UC Berkeley × Google DeepMind × UC San Diego
+
+- **作者**：Junyi Zhang, Charles Herrmann, Junhwa Hur, Varun Jampani, Trevor Darrell, Forrester Cole, Deqing Sun, Ming-Hsuan Yang
+- **链接**：[https://arxiv.org/abs/2410.03825](https://arxiv.org/abs/2410.03825) | 项目页：[monst3r-project.github.io](https://monst3r-project.github.io/) | 代码：[GitHub](https://github.com/Junyi42/monst3r)
+
+![MonST3R Teaser](https://km.sankuai.com/api/file/cdn/2756902383/254409041409?contentType=0&isNewContent=false)
+
+**核心内容**：提出 MonST3R（Motion DUSt3R），一种“几何优先”（geometry-first）的动态场景几何估计方法，将 DUSt3R 的点图（pointmap）回归表示从静态场景直接扩展到动态场景。核心洞察在于：只需为每个时间步直接估计点图，即可将 DUSt3R 的静态表示自然适配到动态场景，从而以预前馈方式同时输出时变动态点云、逐帧相机位姿与内参。与依赖多阶段流水线（将问题分解为深度、光流等子任务再拼接）或全局优化的传统方法不同，MonST3R 无需显式建模任何运动表示（如光流、轨迹），而是将动态几何估计视为在有限动态数据上的微调任务，识别并策略性利用多个带深度标签的动态视频数据集进行训练。MonST3R 在视频深度估计、相机位姿估计等下游任务上展现出强大的鲁棒性与效率，全面超越现有方法，并首次展示前馈 4D 动态重建的可行性，为动态场景几何基础模型开辟了新方向。
+
+**亮点**：
+
+1. **几何优先范式，统一处理动态场景**：直接为每个时间步估计点图，避免传统“深度+光流分解再拼接”多阶段流水线的误差累积，方法简洁且端到端可训练，将 DUSt3R 的静态点图表示自然推广到动态场景，是该系列从静态走向动态的关键一步
+2. **无需显式运动表示，建模大幅简化**：仅通过点图回归就将 DUSt3R 从静态扩展到动态，无需光流、轨迹等显式运动先验，也无需多任务分解，极大简化了动态场景几何估计的建模复杂度，在有限的动态深度数据上通过微调即可取得显著效果
+3. **下游任务 SOTA + 前馈 4D 重建，奠定动态几何基础模型**：在视频深度估计、相机位姿估计等下游任务上全面超越现有方法（鲁棒性与效率兼得），并首次展示前馈 4D 动态重建的可行性，为动态场景几何基础模型开辟了新方向
