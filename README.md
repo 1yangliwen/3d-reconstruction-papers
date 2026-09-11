@@ -1,5 +1,6 @@
 # 三维重建论文收藏
 
+三维重建论文收藏
 
 ## 论文分类大纲
 
@@ -34,6 +35,7 @@
 - **Mip-Splatting**（2026-08-11）— 3D 平滑 + 2D Mip 双滤波器从根源消除 3DGS 混叠伪影，单尺度训练泛化至多尺度且保持实时渲染 · [CVPR 2024 Best Student Paper](https://arxiv.org/abs/2311.16493)
 - **Scaffold-GS**（2026-08-13）— 锚点驱动分层高斯表示 + 视图自适应属性预测，减少冗余基元提升鲁棒性，结构化场景表示新范式 · [CVPR 2024 Highlight](https://arxiv.org/abs/2312.00109)
 - **SpeeDe3DGS**（2026-09-01）— 时序剪枝 + SE(3) 运动蒸馏，动态 3DGS 渲染从 20 FPS 提升至 276 FPS（13.71× 加速） · [CVPR 2026](https://arxiv.org/abs/2506.07917)
+- **3DGS-DR**（2026-09-08）— 延迟着色框架实现 3DGS 镜面反射高效渲染，每像素反射梯度桥接相邻高斯优化，法线估计自传播覆盖全部反射表面，实时帧率 · [SIGGRAPH 2024](https://arxiv.org/abs/2404.18454)
 
 ### 🌧️ 三、3DGS 场景鲁棒性（恶劣条件重建）
 
@@ -72,6 +74,7 @@
 - **Spann3R**（2026-08-26）— 外部空间记忆机制实现增量式全局一致重建，直接从有序/无序图像集合回归全局点图，无需全局优化对齐，65 FPS 实时重建，UCL · [3DV 2025 Award Candidate](https://arxiv.org/abs/2408.16061)
 - **GGPT**（2026-08-31）— 改进 SfM 管线 + 3D Point Transformer 为前馈重建引入稀疏几何引导，跨架构增强 VGGT 等多种前馈模型，ETH Zurich · [CVPR 2026](https://arxiv.org/abs/2603.11174)
 - **MonST3R**（2026-09-04）— 几何优先的动态场景方法，为每个时间步直接回归点图，将 DUSt3R 从静态扩展到动态，视频深度/相机位姿 SOTA，前馈 4D 重建，UC Berkeley × Google DeepMind · [ICLR 2025](https://arxiv.org/abs/2410.03825)
+- **π³**（2026-09-10）— 首个完全置换等变的前馈视觉几何模型，彻底消除固定参考视图依赖，预测仿射不变相机位姿 + 尺度不变局部点图，对输入顺序零敏感，多基准 SOTA，上海交大 × 上海AI实验室 · [ICLR 2026](https://arxiv.org/abs/2507.13347)
 
 ### 🎬 六、4D 动态场景重建（4D Dynamic Scene Reconstruction）
 
@@ -98,6 +101,7 @@
 - **Pi³MOS-SLAM**（2026-07-22）— 前馈重建模型作为通用三维先验过滤动态区域，几何BA + 前馈模型互补融合，CVPR 2026，波恩大学PRBonn实验室 · [CVPR 2026](https://arxiv.org/abs/2512.06868)
 - **MonoGS**（2026-07-31）— 首个将 3D Gaussian Splatting 引入单目 SLAM，直接优化高斯实现相机跟踪，统一跟踪/建图/渲染，CVPR 2024 Highlight & Best Demo Award · [CVPR 2024 Highlight](https://arxiv.org/abs/2312.06741)
 - **Photo-SLAM**（2026-08-20）— 首个"超基元地图"框架统一定位与照片级真实感建图，高斯金字塔渐进式训练，嵌入式平台实时运行 · [CVPR 2024](https://arxiv.org/abs/2311.16728)
+- **RTG-SLAM**（2026-09-07）— 大规模 RGB-D 实时 3DGS 重建系统，不透明/近透明二态紧凑高斯 + 稳定/不稳定分级在线优化，速度约 2×、内存约减半，浙江大学 × UTS · [SIGGRAPH 2024](https://arxiv.org/abs/2404.19706)
 
 ### 🎨 八、三维生成（3D Generation）
 
@@ -119,6 +123,8 @@
 - **Unique3D**（2026-08-12）— RGB+法线联合多视图生成 + ISOMER 即时网格重建，30 秒从单图生成高保真网格，清华大学 · [NeurIPS 2024](https://arxiv.org/abs/2405.20343)
 - **Nabla-R2D3**（2026-08-25）— 首个用 2D 奖励对齐 3D 原生扩散模型的 RL 框架，Nabla-GFlowNet 梯度匹配避免奖励作弊与先验遗忘，NeurIPS 2025 · [NeurIPS 2025](https://arxiv.org/abs/2506.15684)
 - **ForgeDreamer**（2026-08-27）— 多专家 LoRA 师生蒸馏解决工业语义适配 + 跨视角超图几何增强，工业文本到三维生成超越现有方法，CVPR 2026 Findings · [CVPR 2026 Findings](https://arxiv.org/abs/2603.09266)
+- **Dehallu3D**（2026-09-09）— 相邻视图一致性约束消除单图三维生成中的幻觉离群点，即插即用优化模块 + ORM 离群风险度量，CVPR 2026 · [CVPR 2026](https://arxiv.org/abs/2603.01601)
+- **Direct3D-S2**（2026-09-11）— 基于空间稀疏注意力的超大规模三维生成框架，仅 8 卡即可训练 1024³ 分辨率模型，前向 3.9×/反向 9.6× 加速，NeurIPS 2025 · [NeurIPS 2025](https://arxiv.org/abs/2505.17412)
 
 ### 🪟 九、3DGS 透明表面建模（Transparent Surface Modeling）
 
@@ -2110,3 +2116,103 @@
 1. **几何优先范式，统一处理动态场景**：直接为每个时间步估计点图，避免传统“深度+光流分解再拼接”多阶段流水线的误差累积，方法简洁且端到端可训练，将 DUSt3R 的静态点图表示自然推广到动态场景，是该系列从静态走向动态的关键一步
 2. **无需显式运动表示，建模大幅简化**：仅通过点图回归就将 DUSt3R 从静态扩展到动态，无需光流、轨迹等显式运动先验，也无需多任务分解，极大简化了动态场景几何估计的建模复杂度，在有限的动态深度数据上通过微调即可取得显著效果
 3. **下游任务 SOTA + 前馈 4D 重建，奠定动态几何基础模型**：在视频深度估计、相机位姿估计等下游任务上全面超越现有方法（鲁棒性与效率兼得），并首次展示前馈 4D 动态重建的可行性，为动态场景几何基础模型开辟了新方向
+
+### 2026-09-07｜RTG-SLAM: Real-time 3D Reconstruction at Scale using Gaussian Splatting（基于高斯溅射的大规模实时三维重建）
+
+**RTG-SLAM: Real-time 3D Reconstruction at Scale using Gaussian Splatting**
+**RTG-SLAM：基于高斯溅射的大规模实时三维重建**
+
+**方向**：SLAM / 实时三维重建（大规模 RGB-D 实时稠密重建）　**来源**：SIGGRAPH 2024（ACM TOG）　**机构**：浙江大学 CAD&CG 全国重点实验室 × 悉尼科技大学（UTS） × 百度
+
+- **作者**：Zhexi Peng, Tianjia Shao, Yong Liu, Jingke Zhou, Yin Yang, Jingdong Wang, Kun Zhou
+- **链接**：[https://arxiv.org/abs/2404.19706](https://arxiv.org/abs/2404.19706) | ACM DL：[10.1145/3658233](https://dl.acm.org/doi/10.1145/3658233) | 代码：[GitHub](https://github.com/MisEty/RTG-SLAM)
+
+![RTG-SLAM teaser](https://km.sankuai.com/api/file/cdn/2756902383/254668883011?contentType=0&isNewContent=false)
+
+**核心内容**：提出 RTG-SLAM（Real-time Gaussian SLAM），一套面向大规模环境、以 RGB-D 相机为输入、以 3D Gaussian Splatting 为核心地图与渲染表示的实时三维重建系统。系统包含两大核心设计：其一是紧凑高斯表示——强制每个高斯“要么不透明、要么近乎透明”，不透明高斯负责拟合表面与主颜色，近透明高斯负责修补残差颜色；同时以与颜色渲染不同的方式渲染深度，使单个不透明高斯即可很好地拟合一块局部表面区域，无需多个高斯重叠堆叠，大幅削减地图内存与计算开销。其二是高效的即时（on-the-fly）高斯优化——每帧仅面向三类像素显式添加高斯（新观测像素、颜色误差大的像素、深度误差大的像素），并将全部高斯划分为稳定/不稳定两类：能稳定拟合历史 RGBD 观测的为稳定高斯，其余为不稳定；系统仅优化不稳定高斯、仅渲染不稳定高斯占据的像素，使待优化高斯数量与待渲染像素数均大幅下降，从而在单卡上实现大规模场景的实时优化。实验表明，与当时最先进的 NeRF-based RGB-D SLAM 相比，RTG-SLAM 在取得相当高质量重建的同时速度约 2 倍、内存占用约一半，且在新视角合成真实感与相机跟踪精度上表现更优。
+
+**亮点**：
+
+1. **“不透明/近透明”二态高斯 + 深度渲染解耦，用单个高斯拟合局部表面**：打破 3DGS 用多个半透明高斯重叠堆叠拟合同一表面的惯性做法，强制每个高斯承担明确职责——不透明者贴合表面与主颜色，近透明者修补残差颜色；再通过与颜色渲染相解耦的深度渲染方式，让单个不透明高斯即可覆盖一整块局部表面区域，高斯数量、显存与计算量同步大幅下降，是 3DGS 走向大规模实时重建的关键表示创新
+2. **稳定/不稳定高斯分级 + 三类像素增量添加，实现真正的 on-the-fly 实时优化**：将全部高斯按“能否稳定拟合历史观测”分为两级，每帧仅优化不稳定高斯、仅渲染其占据的像素，配合面向“新观测/大颜色误差/大深度误差”三类像素的定向增点策略，把待优化变量与待渲染像素都压缩到最小集合，使大规模场景下的高斯优化稳定运行于实时帧率，算法设计与工程实现高度统一
+3. **大规模 RGB-D SLAM 综合性能新标杆：速度约 2×、内存约 1/2、渲染与跟踪精度更优**：在与 SOTA NeRF-based RGB-D SLAM 的对比中，RTG-SLAM 在重建质量相当的前提下速度翻倍、内存减半，同时在新视角合成真实感与相机跟踪精度上反超，验证了紧凑高斯表示在大场景实时重建中的实用价值；系统完成多个大规模场景（含 ScanNet++ 等数据集）的实时重建并开源代码，是 SIGGRAPH 2024 上 3DGS-SLAM 方向的代表性工作
+
+### 2026-09-08｜3D Gaussian Splatting with Deferred Reflection（基于延迟着色的三维高斯反射渲染）
+
+**3D Gaussian Splatting with Deferred Reflection**
+**基于延迟着色的三维高斯反射渲染**
+
+**方向**：3D Gaussian Splatting（反射表面 Deferred Shading）　**来源**：SIGGRAPH 2024　**机构**：浙江大学
+
+- **作者**：Keyang Ye, Qiming Hou, Kun Zhou
+- **链接**：[https://arxiv.org/abs/2404.18454](https://arxiv.org/abs/2404.18454) | ACM DL：[10.1145/3641519.3657456](https://dl.acm.org/doi/10.1145/3641519.3657456) | 项目页：[gapszju.github.io/3DGS-DR](https://gapszju.github.io/3DGS-DR/)
+
+![3DGS-DR teaser](https://km.sankuai.com/api/file/cdn/2756902383/254890659209?contentType=0&isNewContent=false)
+
+**核心内容**：提出一种基于延迟着色（deferred shading）的三维高斯泼溅反射渲染方法，有效解决 3D Gaussian Splatting（3DGS）在镜面反射场景中的渲染瓶颈。核心挑战来自环境光反射模型：它要求准确的表面法线，但其不连续的梯度又会反过来制约法线估计的精度，导致优化陷入局部最优。作者利用延迟着色生成的每像素反射梯度，桥接相邻高斯的优化过程，使局部近乎正确的法线估计能够像涟漪般逐渐传播，最终覆盖全部反射物体表面。具体而言，方法将渲染管线解耦为前向 splatting（生成法线、反射强度和基础颜色图）与屏幕空间延迟反射计算两个阶段，在屏幕空间获得连续且密集的反射梯度；同时引入颜色破坏（color sabotage）策略，在训练初期抑制基础颜色对反射区域的过度拟合，迫使优化器依赖反射梯度修正法线。实验表明，该方法在合成与真实场景的镜面反射对象上均显著超越现有技术与同期工作，峰值信噪比（PSNR）一致提升，且渲染帧率与原始 3DGS 几乎持平（约 80 FPS），实现了反射质量与实时性能的双重突破。
+
+**亮点**：
+
+1. **延迟着色框架将反射渲染与基础颜色解耦，每像素反射梯度桥接相邻高斯优化**：原始 3DGS 的前向渲染管线难以稳定拟合高频镜面反射，因为环境光反射模型对法线的梯度不连续，导致优化停滞在局部极小值。3DGS-DR 引入延迟着色管线，先通过高斯 splatting 得到法线、反射强度和基础颜色图，再在屏幕空间计算环境光反射，从而获得连续、密集的每像素反射梯度。这些梯度能够有效桥接相邻高斯的优化过程，使局部正确的法线估计像"涟漪"一样逐渐传播到整个反射表面，是对 3DGS 渲染管线的根本性扩展
+2. **无需显式法线真值监督，法线估计自传播覆盖全部反射物体**：方法无需任何显式法线真值或预训练法线估计器，仅通过图像损失驱动的反射梯度，就能让法线从初始的随机/粗糙状态逐步精炼并传播至所有反射区域。配合精心设计的颜色破坏策略（在训练初期抑制基础颜色对反射区域的过度拟合），系统被迫依赖反射梯度修正法线，最终在所有反射物体上获得平滑、准确的表面法线。这种自传播机制使得方法对复杂反射物体（如汽车漆面、金属雕像、玻璃器皿）均能有效建模
+3. **反射质量显著超越 SOTA 且保持实时渲染速度**：在多个合成和真实场景基准上，方法相比原始 3DGS 和同期反射建模工作（如 Ref-NeRF、ENVIDR、GaussianShader）实现了 PSNR 的一致提升，镜面反射更清晰、高光位置更准确、金属质感更真实。同时由于延迟着色管线的高效 GPU 实现，渲染帧率与原始 3DGS 几乎相同（约 80 FPS），在提升反射质量的同时未牺牲 3DGS 最核心的实时性优势，为高质量反射表面重建的实际应用奠定了基础
+
+### 2026-09-09｜Dehallu3D: Hallucination-Mitigated 3D Generation from Single Image via Cyclic View Consistency Refinement（Dehallu3D：基于循环视图一致性细化的单图三维生成幻觉消除）
+
+**Dehallu3D: Hallucination-Mitigated 3D Generation from Single Image via Cyclic View Consistency Refinement**
+**Dehallu3D：基于循环视图一致性细化的单图三维生成幻觉消除**
+
+**方向**：三维生成（3D Generation）　**来源**：CVPR 2026　**机构**：匿名（双盲评审中）
+
+- **作者**：Xiwen Wang, Shichao Zhang, Hailun Zhang, Ruowei Wang, Mao Li, Chenyu Zhou, Qijun Zhao, Ji-Zhe Zhou
+- **链接**：[https://arxiv.org/abs/2603.01601](https://arxiv.org/abs/2603.01601) | [CVPR 2026 Open Access](https://openaccess.thecvf.com/content/CVPR2026/html/Wang_Dehallu3D_Hallucination-Mitigated_3D_Generation_from_a_Single_Image_via_Cyclic_CVPR_2026_paper.html)
+
+![Dehallu3D teaser](https://km.sankuai.com/api/file/cdn/2756902383/255079059321?contentType=0&isNewContent=false)
+
+**核心内容**：大规模三维重建模型（如 LRM、InstantMesh、One-2-3-45 等）虽然彻底改变了三维内容生成领域，但与其他大模型一样，同样存在幻觉问题——生成结果中会出现偏离输入数据的结构性离群点（如奇怪的孔洞或突起），导致 3D 打印物体畸形或虚拟场景沉浸感不足。这些幻觉主要源于现有方法从稀疏生成的多视图图像重建三维内容时，存在大视角间隙和不连续性。Dehallu3D 提出了一种即插即用的优化模块，通过两个关键约束来消除离群点：（1）**相邻一致性约束**（adjacent consistency）确保跨视图的几何连续性；（2）**自适应平滑约束**（adaptive smoothness）保留精细几何特征，避免过度平滑。此外，论文还提出了 Outlier Risk Measure（ORM）指标，从离群点角度量化三维生成的几何保真度。大量实验表明，Dehallu3D 在有效去除幻觉离群点的同时保留结构细节，实现了高保真三维生成。
+
+**亮点**：
+
+1. **首次系统关注并量化三维生成模型的幻觉问题，提出即插即用优化模块消除结构性离群点**：三维生成中的幻觉（孔洞、突起等结构性缺陷）长期以来被忽视，因为传统评估指标（如 PSNR、LPIPS）无法捕捉这类几何层面的不一致。Dehallu3D 首次将三维生成幻觉作为核心问题进行研究，提出的即插即用优化模块无需重新训练模型，可直接应用于现有 LRM 管线，通过相邻视图一致性约束和自适应平滑约束在几何层面消除离群点。这为三维生成模型的实际部署（尤其是 3D 打印、VR/AR 等对几何质量要求严格的应用）提供了关键的质量保障
+2. **相邻一致性 + 自适应平滑双约束机制，在去除幻觉的同时保留精细几何特征**：简单的全局平滑会抹杀锐利边缘和精细结构。Dehallu3D 的核心设计在于平衡——相邻一致性约束强制跨视图几何连续，消除不合理的几何突变；自适应平滑约束则在平坦区域施加强平滑、在边缘/细节区域自动减弱平滑力度，从而在去除幻觉离群点和保持结构细节之间取得最优平衡。这种自适应机制使方法对复杂几何形状（如薄结构、锐利边缘）同样有效
+3. **提出 Outlier Risk Measure（ORM）指标，填补三维生成幻觉量化评估的空白**：现有三维生成评估指标侧重于图像质量或几何精度，无法直接度量"幻觉"程度。ORM 从离群点角度量化几何保真度，为三维生成模型提供了一种新的评估维度，有助于社区更系统地研究和改进三维生成模型的几何质量，推动三维生成技术向更高可靠性和实用性的方向发展
+
+### 2026-09-10｜π³: Permutation-Equivariant Visual Geometry Learning（π³：置换等变视觉几何学习）
+
+**π³: Permutation-Equivariant Visual Geometry Learning**
+**π³：置换等变视觉几何学习**
+
+**方向**：视觉几何基础模型（Visual Geometry Foundation Models）　**来源**：ICLR 2026　**机构**：上海交通大学 × 上海人工智能实验室 × 浙江大学 × 中国科学技术大学 × 复旦大学
+
+- **作者**：Yifan Wang, Jianjun Zhou, Haoyi Zhu, Wenzheng Chang, Yang Zhou, Zizun Li, Junyi Chen, Jiangmiao Pang, Chunhua Shen, Tong He
+- **链接**：[https://arxiv.org/abs/2507.13347](https://arxiv.org/abs/2507.13347) | 项目页：[https://yyfz.github.io/pi3/](https://yyfz.github.io/pi3/) | 代码：[https://github.com/yyfz/Pi3](https://github.com/yyfz/Pi3)
+
+![π³ teaser](https://km.sankuai.com/api/file/cdn/2756902383/255271904517?contentType=0&isNewContent=false)
+
+**核心内容**：以 DUSt3R、VGGT 为代表的前馈视觉几何模型已经能够从任意数量视图直接推理相机参数与三维点图，但这类方法普遍将整个重建锚定在一个固定的参考视图上——网络通过参考帧将各视图的结果对齐到统一坐标系。这种归纳偏置在参考视图选择欠佳时会导致训练与推理的不稳定，甚至在参考帧失效时造成整个重建失败。π³ 提出了一种全新的思路：构建完全置换等变（permutation-equivariant）的前馈神经网络，网络中不指定任何参考帧，直接预测仿射不变的相机位姿和尺度不变的局部点图，从而在架构层面彻底消除参考视图偏置。其架构采用帧间/帧内交替注意力机制，不引入特殊相机 token 或位姿先验，仅在与相机位姿回归相关的输出端打破等变性，绝大部分计算均在等变空间中进行。这一"无偏置"设计带来三重收益：模型对输入顺序天然鲁棒（多次推理结果方差趋近于零）、训练更稳定、精度更高。π³ 在相机位姿估计、单目/视频深度估计、稠密点图重建等多项任务上全面达到 SOTA（如 Sintel、NRGBD 等基准），且无需任务专属设计。代码与模型权重已开源，GitHub 星标超 2.2k，已被 Speed3R 等后续工作作为骨干网络采用。
+
+**亮点**：
+
+1. **首个彻底消除固定参考视图的置换等变视觉几何基础模型**：DUSt3R/VGGT 系列均依赖参考帧作为坐标系锚点，参考视图选择欠佳时会导致不稳定甚至重建失败。π³ 通过完全置换等变架构——帧间/帧内交替注意力且不设参考帧——从架构层面消除这一归纳偏置，直接预测仿射不变相机位姿与尺度不变局部点图。这种设计与 Transformer 中"相对位置编码取代绝对位置编码"的思路异曲同工，为视觉几何基础模型的架构设计提供了全新范式
+2. **对输入顺序零敏感，鲁棒性从根本上得到保障**：由于网络对输入视图的任意排列保持等变，同一组图像无论以何种顺序输入，重建结果几乎完全一致（多次推理方差趋近于零）。这与 DUSt3R/VGGT 等方法对参考帧敏感、输入顺序变化会导致结果波动的现象形成鲜明对比，使其在视频流、无序图像集合等输入顺序不可控的真实场景中具有天然的工程优势
+3. **极简设计哲学 + 多任务全面 SOTA，成为后续工作的通用骨干**：π³ 不依赖特殊相机 token、位姿先验或任务专属模块，仅靠架构对称性即可在相机位姿估计、单目/视频深度估计、稠密点图重建等任务上全面超越 SOTA，证明了"少即是多"的设计价值。其开源代码与权重已被 Speed3R 等后续工作作为骨干网络即插即用，正在成为视觉几何基础模型生态中的重要基础设施
+
+### 2026-09-11｜Direct3D-S2: Gigascale 3D Generation Made Easy with Spatial Sparse Attention（Direct3D-S2：基于空间稀疏注意力的超大规模三维生成）
+
+**Direct3D-S2: Gigascale 3D Generation Made Easy with Spatial Sparse Attention**
+**Direct3D-S2：基于空间稀疏注意力的超大规模三维生成**
+
+**方向**：三维生成（3D Generation）　**来源**：NeurIPS 2025　**机构**：南京大学 × DreamTech × 复旦大学 × 牛津大学
+
+- **作者**：Shuang Wu, Youtian Lin, Feihu Zhang, Yifei Zeng, Yikang Yang, Yajie Bao, Jiachen Qian, Siyu Zhu, Xun Cao, Philip Torr, Yao Yao
+- **链接**：[arXiv:2505.17412](https://arxiv.org/abs/2505.17412) | 项目页：[neural4d.com](https://www.neural4d.com/research/direct3d-s2) | 代码：[GitHub](https://github.com/DreamTechAI/Direct3D-S2)
+
+![Direct3D-S2 论文主图](https://km.sankuai.com/api/file/cdn/2756902383/255461232125?contentType=0&isNewContent=false)
+
+**核心内容**：使用体素表示（如符号距离函数 SDF）生成高分辨率三维形状面临巨大的计算与内存挑战。Direct3D-S2 提出了一种基于稀疏体素的可扩展三维生成框架，核心创新是空间稀疏注意力（Spatial Sparse Attention, SSA）机制——受 DeepSeek 原生稀疏注意力（NSA）启发，但针对非结构化的稀疏三维数据重新设计了块划分策略与压缩/选择/窗口模块，使 DiT 能高效处理稀疏体素内的大量 token，前向传递速度提升 3.9 倍，后向传递速度提升 9.6 倍（相比 FlashAttention-2 在 1024³ 分辨率下）。框架还提出端到端稀疏 SDF 变分自编码器（SS-VAE），在输入、潜空间和输出三个阶段保持一致的稀疏体素格式，消除了以往 3D VAE 中点云输入/1D 向量潜空间/稠密体素输出的异构表示转换开销。Direct3D-S2 仅用 8 张 GPU 即可在公开数据集上训练 1024³ 分辨率的三维生成模型——而此前 SOTA 方法训练 256³ 分辨率通常需要 32 张或更多 GPU——使超大规模三维生成真正实用且易于获取。
+
+**亮点**：
+
+1. **空间稀疏注意力（SSA）机制：将 NSA 从一维序列推广至非结构化稀疏三维体素，实现数量级效率提升**：现有扩散 Transformer 在稀疏体素上的全注意力计算随 token 数呈二次增长，严重制约了分辨率扩展。SSA 通过块级划分保持三维空间相干性，设计压缩、选择和窗口三个核心模块识别空间相关 token，仅对重要 token 对执行精确注意力计算。配合定制 Triton GPU 内核，在 1024³ 分辨率下实现前向 3.9× 加速和反向 9.6× 加速，使高分辨率体素级扩散训练在计算上首次可行
+2. **端到端稀疏 SDF VAE（SS-VAE）：统一稀疏体素格式消除异构表示转换开销**：以往 3D VAE 采用异构表示（点云输入→1D 向量潜空间→稠密体素输出），跨模态转换引入计算瓶颈和几何近似误差。SS-VAE 采用对称编码器-解码器网络，在输入、潜空间和输出三个阶段均保持一致的稀疏体素格式，无需跨模态翻译，显著提升了训练效率、稳定性和几何保真度，为三维生成 VAE 的设计提供了新范式
+3. **8 张 GPU 训练 1024³ 超大规模三维生成模型，算力门槛降低 4 倍以上**：Direct3D-S2 的 SSA + SS-VAE 组合使训练算力需求大幅降低——仅用 8 张 GPU 即可训练 1024³ 分辨率模型，而此前 SOTA 方法训练 256³ 分辨率通常需要 32+ GPU。这一突破性效率使超大规模三维生成从只有少数大型实验室能进行的研究变为广泛可及，有力推动了三维生成民主化。实验表明 Direct3D-S2 在生成质量和效率上全面超越现有方法
