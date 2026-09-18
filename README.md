@@ -1,3 +1,4 @@
+
 # 三维重建论文收藏
 
 三维重建论文收藏
@@ -36,6 +37,7 @@
 - **Scaffold-GS**（2026-08-13）— 锚点驱动分层高斯表示 + 视图自适应属性预测，减少冗余基元提升鲁棒性，结构化场景表示新范式 · [CVPR 2024 Highlight](https://arxiv.org/abs/2312.00109)
 - **SpeeDe3DGS**（2026-09-01）— 时序剪枝 + SE(3) 运动蒸馏，动态 3DGS 渲染从 20 FPS 提升至 276 FPS（13.71× 加速） · [CVPR 2026](https://arxiv.org/abs/2506.07917)
 - **3DGS-DR**（2026-09-08）— 延迟着色框架实现 3DGS 镜面反射高效渲染，每像素反射梯度桥接相邻高斯优化，法线估计自传播覆盖全部反射表面，实时帧率 · [SIGGRAPH 2024](https://arxiv.org/abs/2404.18454)
+- **Taming 3DGS**（2026-09-14）— 预算约束下确定性高斯致密化（纯构建、无剪枝、无峰值）+ 逐 splat 并行反向传播加速，模型大小与训练时间减少 4-5× · [SIGGRAPH Asia 2024](https://arxiv.org/abs/2406.15643)
 
 ### 🌧️ 三、3DGS 场景鲁棒性（恶劣条件重建）
 
@@ -75,6 +77,7 @@
 - **GGPT**（2026-08-31）— 改进 SfM 管线 + 3D Point Transformer 为前馈重建引入稀疏几何引导，跨架构增强 VGGT 等多种前馈模型，ETH Zurich · [CVPR 2026](https://arxiv.org/abs/2603.11174)
 - **MonST3R**（2026-09-04）— 几何优先的动态场景方法，为每个时间步直接回归点图，将 DUSt3R 从静态扩展到动态，视频深度/相机位姿 SOTA，前馈 4D 重建，UC Berkeley × Google DeepMind · [ICLR 2025](https://arxiv.org/abs/2410.03825)
 - **π³**（2026-09-10）— 首个完全置换等变的前馈视觉几何模型，彻底消除固定参考视图依赖，预测仿射不变相机位姿 + 尺度不变局部点图，对输入顺序零敏感，多基准 SOTA，上海交大 × 上海AI实验室 · [ICLR 2026](https://arxiv.org/abs/2507.13347)
+- **MoGe-2**（2026-09-16）— 在 MoGe 仿射不变点图上解耦全局尺度因子预测，首次同时实现相对几何精度、度量尺度与清晰细节三重最优，统一数据精炼管线突破真实数据噪声导致的细节退化，单图 60ms 级推理，中科大 × 微软研究院 · [NeurIPS 2025](https://arxiv.org/abs/2507.02546)
 
 ### 🎬 六、4D 动态场景重建（4D Dynamic Scene Reconstruction）
 
@@ -84,6 +87,7 @@
 - **L4DRotorGS**（2026-05-08）— 分层 4D 旋转体高斯泼溅，22.3× 压缩率支持长时动态场景（>10s），RTX 3090 实现 500+ FPS · [CVPR 2026](https://cvpr.thecvf.com/virtual/2026/poster/36256)
 - **IGS（Instant Gaussian Stream）**（2026-06-03）— 首个可泛化流式 4D 高斯重建，时序锚点机制维持跨帧一致性，2.67s/帧重建 + 204 FPS 渲染，CVPR 2025 Highlight · [CVPR 2025 Highlight](https://arxiv.org/abs/2503.16979)
 - **MoVieS**（2026-08-10）— 前馈式 4D 动态场景重建，1 秒内从单目视频联合建模外观/几何/运动，支持新视角合成、3D 点跟踪与零样本场景流估计 · [CVPR 2026](https://arxiv.org/abs/2507.10065)
+- **L4GM**（2026-09-17）— 首个 4D 大型重建模型，单次前馈约 1 秒从单目视频生成可动画的逐帧 3D 高斯资产，自建 1200 万视频 / 3 亿帧训练数据，NVIDIA × 多伦多大学 × MIT · [NeurIPS 2024](https://arxiv.org/abs/2406.10324)
 
 ### 📡 七、SLAM / 实时三维重建（SLAM / Real-Time 3D Reconstruction）
 
@@ -146,6 +150,7 @@
 - **AMB3R**（2026-08-07）— 体积后端范式升级点图回归，免训练扩展至 VO/SfM，前馈模型首次系统性超越优化型 SLAM/SfM，CVPR 2026 Highlight · [CVPR 2026 Highlight](https://arxiv.org/abs/2511.20343)
 - **MVSFormer++**（2026-08-14）— DINOv2 侧视图注意力跨视图注入，揭示 Transformer 在 MVS 中的关键设计细节，DTU/Tanks-and-Temples SOTA · [ICLR 2024](https://arxiv.org/abs/2401.11673)
 - **SPE-MVS**（2026-09-02）— 空间位置编码 + 单目深度先验增强代价体匹配，在弱纹理/非朗伯面等光度匹配失效区域显著提升 MVS 重建质量，DTU/T&T 双基准 SOTA · [CVPR 2026](https://openaccess.thecvf.com/content/CVPR2026/html/Wang_SPE-MVS_Spatial_Position_Encoding_Enhanced_Multi-View_Stereo_with_Monocular_Depth_CVPR_2026_paper.html)
+- **MVSplat**（2026-09-15）— 平面扫描代价体积精准定位高斯中心，从稀疏多视图高效前馈重建三维高斯，仅约 10% 参数、2× 推理速度超越 pixelSplat · [ECCV 2024](https://arxiv.org/abs/2403.14627)
 
 ### 🌐 十一、NeRF / 逆向渲染（NeRF / Inverse Rendering）
 
@@ -172,6 +177,7 @@
 
 - **2DGS**（2026-07-15）— 将 3D 高斯折叠为 2D 定向圆盘，深度畸变 + 法线一致性正则化，同时实现 SOTA 渲染与表面重建，SIGGRAPH 2024 · [SIGGRAPH 2024](https://arxiv.org/abs/2403.17888)
 - **GSPrior**（2026-07-21）— 自约束 TSDF 先验引导高斯贴合表面，带宽渐进收缩实现高保真表面重建，CVPR 2026 · [CVPR 2026](https://arxiv.org/abs/2603.19682)
+- **GOF**（2026-09-18）— 基于 ray-tracing 体渲染的 Gaussian Opacity Fields 直接识别 level set 提取表面，无需 Poisson/TSDF 融合，Marching Tetrahedra 自适应网格提取，SIGGRAPH Asia 2024 · [SIGGRAPH Asia 2024](https://arxiv.org/abs/2404.10772)
 
 ### ⚡ 十四、3DGS 物理仿真与交互（Physics Simulation & Interaction）
 
@@ -2216,3 +2222,103 @@
 1. **空间稀疏注意力（SSA）机制：将 NSA 从一维序列推广至非结构化稀疏三维体素，实现数量级效率提升**：现有扩散 Transformer 在稀疏体素上的全注意力计算随 token 数呈二次增长，严重制约了分辨率扩展。SSA 通过块级划分保持三维空间相干性，设计压缩、选择和窗口三个核心模块识别空间相关 token，仅对重要 token 对执行精确注意力计算。配合定制 Triton GPU 内核，在 1024³ 分辨率下实现前向 3.9× 加速和反向 9.6× 加速，使高分辨率体素级扩散训练在计算上首次可行
 2. **端到端稀疏 SDF VAE（SS-VAE）：统一稀疏体素格式消除异构表示转换开销**：以往 3D VAE 采用异构表示（点云输入→1D 向量潜空间→稠密体素输出），跨模态转换引入计算瓶颈和几何近似误差。SS-VAE 采用对称编码器-解码器网络，在输入、潜空间和输出三个阶段均保持一致的稀疏体素格式，无需跨模态翻译，显著提升了训练效率、稳定性和几何保真度，为三维生成 VAE 的设计提供了新范式
 3. **8 张 GPU 训练 1024³ 超大规模三维生成模型，算力门槛降低 4 倍以上**：Direct3D-S2 的 SSA + SS-VAE 组合使训练算力需求大幅降低——仅用 8 张 GPU 即可训练 1024³ 分辨率模型，而此前 SOTA 方法训练 256³ 分辨率通常需要 32+ GPU。这一突破性效率使超大规模三维生成从只有少数大型实验室能进行的研究变为广泛可及，有力推动了三维生成民主化。实验表明 Direct3D-S2 在生成质量和效率上全面超越现有方法
+
+### 2026-09-14｜Taming 3DGS: High-Quality Radiance Fields with Limited Resources（Taming 3DGS：资源受限条件下的高质量辐射场）
+
+**Taming 3DGS: High-Quality Radiance Fields with Limited Resources**
+**Taming 3DGS：资源受限条件下的高质量辐射场**
+
+**方向**：3DGS 渲染加速与结构优化　**来源**：SIGGRAPH Asia 2024　**机构**：Carnegie Mellon University × TU Graz
+
+- **作者**：Saswat Subhajyoti Mallick, Rahul Goel, Bernhard Kerbl, Francisco Vicente Carrasco, Markus Steinberger, Fernando De La Torre（Bernhard Kerbl 为 3DGS 原始论文作者之一）
+- **链接**：[arXiv:2406.15643](https://arxiv.org/abs/2406.15643) | ACM DL：[10.1145/3680528.3687694](https://dl.acm.org/doi/10.1145/3680528.3687694) | 项目页：[humansensinglab.github.io](https://humansensinglab.github.io/taming-3dgs/) | 代码：[GitHub](https://github.com/humansensinglab/taming-3dgs)
+
+![Taming 3DGS 论文主图](https://km.sankuai.com/api/file/cdn/2756902383/255730298625?contentType=0&isNewContent=false)
+
+**核心内容**：3D Gaussian Splatting 以快速、可解释、高保真的渲染革新了新视角合成，但其资源需求限制了可用性：在受限设备上训练性能迅速退化甚至因内存耗尽而无法完成；原始方法收敛时高斯数量不定且大量冗余，使渲染不必要地缓慢，也无法服务于期望固定大小输入的下游任务（如移动端部署）。Taming 3DGS 系统性地解决“预算约束下训练与渲染 3DGS”的挑战：一是在致密化过程中引入严格管制，采用引导式、纯构建性（purely constructive）的致密化策略，利用训练时先验（像素损失、梯度等贡献度量）计算每个高斯的重要性得分，将致密化导向能真正提升重建质量的高斯，模型大小沿受控增长曲线精确逼近用户指定的预算，全程无需大规模剪枝、消除内存峰值；二是对原 3DGS 训练流水线进行仔细分析，推导出数值等价（numerically equivalent）的梯度计算与属性更新快速方案，包括全新的一次“逐 splat”并行反向传播（per-splat backpropagation）替代原像素级并行从而消除访存冲突，并以质量保持的近似进一步压缩训练时间。实验表明：在预算设定下其质量指标与原版 3DGS 相当，而模型大小与训练时间均减少 4-5×；预算宽松时质量反超原版 3DGS，为移动设备等受限环境的新视角合成打开大门。
+
+**亮点**：
+
+1. **预算约束的确定性致密化：用户指定模型大小，精确收敛到目标高斯数量**：与依赖事后预算控制或剪枝的现有加速方法不同，本文设计纯构建式致密化过程——沿二次递减增长曲线持续新增高斯直至精确达到预设预算，确定性训练调度使最终高斯数量可控且可预期，全程无剪枝、无冗余高斯堆积、无训练内存峰值，天然适配期望固定大小输入的下游任务与部署场景
+2. **多维度分数引导：让每一个高斯都物尽其用**：融合像素损失、几何梯度、高斯属性变化与显著性信息综合评估每个高斯的重建贡献，致密化始终定向发生在高价值区域，支持感兴趣区域优先级加权；在极低高斯预算下仍能保障渲染质量，并可与 Mip-Splatting 等正交改进自由组合
+3. **数值等价的训练流水线加速：逐 splat 并行反向传播消除访存冲突**：对原 3DGS 反向传播的像素级并行方式进行深入分析，提出替代的 per-splat 并行化及其他数值等价的梯度/属性更新方案，在结果完全一致的前提下显著降低训练时间，配合质量保持的近似优化进一步提效，最终实现模型大小与训练时间的 4-5× 同步缩减，把 3DGS 训练带入消费级/移动级资源区间
+
+### 2026-09-15｜MVSplat: Efficient 3D Gaussian Splatting from Sparse Multi-View Images（MVSplat：从稀疏多视图图像高效重建三维高斯泼溅）
+
+**MVSplat: Efficient 3D Gaussian Splatting from Sparse Multi-View Images**
+**MVSplat：从稀疏多视图图像高效重建三维高斯泼溅**
+
+**方向**：多视图稠密匹配与三维重建（MVS / Dense Matching）　**来源**：ECCV 2024　**机构**：Monash University × ETH Zürich × University of Oxford × University of Tübingen × NTU
+
+- **作者**：Yuedong Chen, Haofei Xu, Chuanxia Zheng, Bohan Zhuang, Marc Pollefeys, Andreas Geiger, Tat-Jen Cham, Jianfei Cai
+- **链接**：[arXiv:2403.14627](https://arxiv.org/abs/2403.14627) | ECCV 2024：[10.1007/978-3-031-72664-4_21](https://doi.org/10.1007/978-3-031-72664-4_21) | 项目页：[donydchen.github.io](https://donydchen.github.io/mvsplat/) | 代码：[GitHub](https://github.com/donydchen/mvsplat)
+
+![MVSplat 论文主图](https://km.sankuai.com/api/file/cdn/2756902383/255967037623?contentType=0&isNewContent=false)
+
+**核心内容**：MVSplat 提出一种高效的前馈式三维重建模型：输入稀疏多视图图像，直接预测“干净”的 3D 高斯（feed-forward 3DGS），无需逐场景优化。其核心在于用代价体积（cost volume）精准定位高斯中心——通过平面扫描（plane sweeping）沿多条深度假设构建跨视角特征相似性代价体积，将其中蕴含的几何线索用于深度估计，再由估计出的深度图反投影得到 3D 高斯中心，同时联合学习不透明度、协方差与颜色等其余高斯参数，全程仅依赖光度监督。与同期 SOTA 方法 pixelSplat 采用的“逐视图深度回归 + 双视角单目深度拼接”范式不同，MVSplat 的代价体积显式建模跨视角对应关系，几何定位更准确、高斯更干净。在 RealEstate10K 与 ACID 基准上，MVSplat 以最快的前馈推理速度（22 fps）达到 SOTA 重建质量；相比 pixelSplat，参数量减少 10×、推理速度快 2 倍以上，同时外观与几何质量更高、跨数据集泛化更强。该工作以“代价体积 + 高斯泼溅”的简洁结合成为稀疏视图前馈重建的经典基线，并被 MVSplat360、DepthSplat、MVSGaussian 等大量后续工作沿用扩展。
+
+**亮点**：
+
+1. **平面扫描代价体积精准定位高斯中心，将 MVS 的几何强先验引入前馈 3DGS**：与 pixelSplat 逐视图回归深度再拼接的单目范式不同，MVSplat 在参考视角上沿深度假设构建跨视图特征相似性代价体积，显式编码多视图对应关系，深度估计更准、3D 高斯中心更干净，仅靠光度监督即可端到端学习全部高斯参数
+2. **极致高效：参数量仅为 pixelSplat 约 1/10，推理速度 2 倍以上（22 fps）**：轻量代价体积与高斯头设计大幅降低计算与存储开销，在 RealEstate10K/ACID 上以最快前馈速度达到 SOTA，让秒级稀疏视图重建成为现实，为实时与移动端部署奠定基础
+3. **强跨数据集泛化，成为 feed-forward 3DGS 的事实标准基线**：在跨域数据上外观与几何质量均优于 pixelSplat，其“代价体积 + 高斯泼溅”范式被 MVSplat360、DepthSplat、MVSGaussian 等大量后续工作沿用扩展，深刻影响了稀疏视图重建与可泛化 3DGS 方向的发展
+
+### 2026-09-16｜MoGe-2: Accurate Monocular Geometry with Metric Scale and Sharp Details（MoGe-2：具有度量尺度与清晰细节的精确单目几何估计）
+
+**MoGe-2: Accurate Monocular Geometry with Metric Scale and Sharp Details**
+**MoGe-2：具有度量尺度与清晰细节的精确单目几何估计**
+
+**方向**：视觉几何基础模型（Visual Geometry Foundation Models）　**来源**：NeurIPS 2025　**机构**：中国科学技术大学 × 微软研究院（Microsoft Research）× 清华大学
+
+- **作者**：Ruicheng Wang, Sicheng Xu, Yue Dong, Yu Deng, Jianfeng Xiang, Zelong Lv, Guangzhong Sun, Xin Tong, Jiaolong Yang
+- **链接**：[arXiv:2507.02546](https://arxiv.org/abs/2507.02546) | 项目页：[wangrc.site/MoGe2Page](https://wangrc.site/MoGe2Page/) | 代码：[GitHub (microsoft/MoGe)](https://github.com/microsoft/MoGe)
+
+![MoGe-2 论文主图：综合评估排名对比](https://km.sankuai.com/api/file/cdn/2756902383/256161663829?contentType=0&isNewContent=false)
+
+**核心内容**：MoGe-2 是一个先进的开放域单目几何估计模型，能够从单张图像直接恢复具有度量尺度（metric scale）的三维点图。方法建立在其前身 MoGe（CVPR 2025 Oral）的仿射不变点图（affine-invariant point map）表示之上，重点解决两大问题：其一，如何在保留仿射不变表示所提供的相对几何精度的同时，将其扩展为度量几何预测——MoGe-2 将度量尺度与仿射不变点图解耦，仅额外回归一个全局尺度因子即可获得真实物理尺度的点云，有效缓解了单目几何中固有的焦距-距离模糊性问题；其二，作者发现真实训练数据（如 LiDAR 扫描）中的噪声与误差会显著削弱预测几何的细节粒度，为此提出了统一的数据精炼（data refinement）方法，利用合成数据的锐利标注对来自不同源的真实数据进行过滤与补全，在保持整体精度的同时显著增强重建几何的边界锐度与细节层次。模型在大规模混合数据集上训练，在 10 个评估数据集的相对几何误差、7 个数据集的度量精度以及边界锐度（F1 分数）上全面超越 Depth Pro、UniDepth V2 等主流方法，首次同时实现精确相对几何、精准度量尺度与细粒度细节恢复三项能力，且推理延迟仅约 60ms（A100, FP16, ViT-L），模型与代码已全面开源。
+
+**亮点**：
+
+1. **解耦式度量尺度扩展，兼得相对精度与真实尺度**：不在仿射不变表示与度量预测之间做取舍——保留 MoGe 仿射不变点图的强泛化与高相对精度，仅解耦地预测单一全局尺度因子即可获得度量点云，缓解焦距-距离模糊性问题，为 SLAM、自动驾驶、具身智能等需要真实物理尺度的应用提供可靠输入
+2. **统一数据精炼管线，突破真实数据噪声导致的细节退化**：首次系统性指出并解决“真实标注噪声削弱预测几何细节粒度”的问题——用合成数据训练的保边补全模型对多源真实数据（LiDAR、SfM 点云等）进行噪声过滤与缺失区域补全，使模型学得发丝级、细线级的锐利几何细节，该数据策略对其他几何基础模型训练同样具有借鉴意义
+3. **首次同时实现相对几何、度量尺度、细节锐度三重最优，兼顾实用效率**：在 10 个数据集的相对几何、7 个数据集的度量精度及边界 F1 分数上全面领先 Depth Pro、UniDepth V2 等 SOTA 方法，同时保持约 60ms 的单图推理速度与 326M 参数的轻量规模，MoGe 系列已成为单目几何基础模型的重要开源标杆
+
+### 2026-09-17｜L4GM: Large 4D Gaussian Reconstruction Model（L4GM：大型四维高斯重建模型）
+
+**L4GM: Large 4D Gaussian Reconstruction Model**
+**L4GM：大型四维高斯重建模型**
+
+**方向**：4D 动态场景重建 / 4D 生成（4D Dynamic Scene Reconstruction & 4D Generation）　**来源**：NeurIPS 2024（poster）　**机构**：NVIDIA（Toronto AI Lab）× 多伦多大学 × UT Austin × CMU × MIT × 南洋理工大学（NTU S-Lab）
+
+- **作者**：Jiawei Ren, Kevin Xie, Ashkan Mirzaei, Hanxue Liang, Xiaohui Zeng, Karsten Kreis, Ziwei Liu, Antonio Torralba, Sanja Fidler, Seung Wook Kim, Huan Ling
+- **链接**：[arXiv:2406.10324](https://arxiv.org/abs/2406.10324) | OpenReview：[openreview.net/forum?id=PSPtj26Lbp](https://openreview.net/forum?id=PSPtj26Lbp)
+
+![L4GM 论文主图：单目视频单次前馈生成可动画 4D 高斯资产](https://km.sankuai.com/api/file/cdn/2756902383/256345209100?contentType=0&isNewContent=false)
+
+**核心内容**：L4GM 是首个 4D 大型重建模型（4D Large Reconstruction Model），能够从单目视频输入出发，在单次前向传播中约 1 秒生成可动画的 4D 物体（逐帧 3D 高斯表示）。方法直接构建在预训练 3D 大型重建模型 LGM（ECCV 2024 Oral）之上：在 LGM 骨干中插入时序自注意力（temporal self-attention）层，从低帧率采样的视频帧逐帧预测 3DGS 表示，并通过逐时间步的多视图渲染损失训练保证跨时间一致性；最后训练一个插值模型在相邻帧的 3DGS 表示之间生成中间帧，将表示上采样到更高帧率以获得时间平滑的动画。训练方面，作者从 Objaverse 精选渲染构建了大规模 4D 多视图视频数据集：覆盖 44K 多样化物体、110K 个动画、48 个视角，共 1200 万视频、3 亿帧，为前馈式 4D 重建奠定了关键的数据基础。仅用合成数据训练的 L4GM 在真实野外视频上展现出很强的泛化能力，可生成高质量动画 3D 资产。
+
+**亮点**：
+
+1. **首个 4D 大型重建模型，秒级前馈生成动画资产**：将 LGM 的前馈 3D 重建范式扩展到时间维度，单次前向传播约 1 秒即可从单目视频生成可渲染动画的逐帧 3D 高斯表示，相比依赖逐场景 SDS 优化、动辄数十分钟到数小时的 4D 生成方法加速两到三个数量级
+2. **大规模 4D 多视图视频数据集，填补前馈 4D 重建的数据空白**：从 Objaverse 精选 44K 物体与 110K 动画，以 48 视角渲染出 1200 万视频、3 亿帧规模的训练数据，为后续前馈式 4D / 动态重建研究提供了可复用的数据基础
+3. **时序自注意力 + 插值上采样保证时间平滑，合成数据训练真实场景可用**：在 LGM 骨干中加入时序自注意力学习跨时间一致性，配合逐时间步多视图渲染监督，再训练插值模型对 3DGS 表示进行帧率上采样；仅在合成数据上训练即可较好泛化到真实野外视频，验证了前馈 4D 重建路线的可行性
+
+### 2026-09-18｜GOF: Gaussian Opacity Fields — Efficient Adaptive Surface Reconstruction in Unbounded Scenes（GOF：无界场景中高效自适应的表面重建）
+
+**Gaussian Opacity Fields: Efficient Adaptive Surface Reconstruction in Unbounded Scenes**
+**GOF：无界场景中高效自适应的表面重建**
+
+**方向**：3DGS 表面重建（3DGS Surface Reconstruction）　**来源**：SIGGRAPH Asia 2024（Journal Track，ACM TOG）　**机构**：图宾根大学（University of Tübingen）× 图宾根 AI 中心（Tübingen AI Center）
+
+- **作者**：Zehao Yu, Torsten Sattler, Andreas Geiger
+- **链接**：[arXiv:2404.10772](https://arxiv.org/abs/2404.10772) | 项目页：[niujinshuchong.github.io/gaussian-opacity-fields](https://niujinshuchong.github.io/gaussian-opacity-fields/) | 代码：[github.com/autonomousvision/gaussian-opacity-fields](https://github.com/autonomousvision/gaussian-opacity-fields)
+
+![GOF 论文主图：Gaussian Opacity Fields 直接从 3DGS 识别 level set 提取高质量表面](https://km.sankuai.com/api/file/cdn/2756902383/256521871232?contentType=0&isNewContent=false)
+
+**核心内容**：GOF（Gaussian Opacity Fields）面向无界场景的高效、高质量、自适应表面重建。3D 高斯显式且相互独立的特性使其难以直接用于表面重建，此前工作（如 SuGaR、2DGS）大多依赖 Poisson 重建或 TSDF 融合间接提取网格。GOF 从基于光线追踪（ray-tracing）的 3DGS 体渲染出发，推导出沿光线的 Gaussian Opacity Field（不透明度场），从而能够直接从 3D 高斯中识别其 level set 来提取几何，无需任何后处理融合步骤；同时将高斯的表面法线近似为光线-高斯相交平面（唯一确定的平面）的法线，并据此施加正则化约束，显著提升几何质量。在网格提取方面，GOF 利用 3D 高斯自身诱导四面体网格（通过对高斯中心投影进行 2D Delaunay 三角化再提升），使网格分辨率自适应场景复杂度，再用 Marching Tetrahedra 从不透明度场中高效提取紧凑网格。GOF 在表面重建与新视角合成上全面超越已有 3DGS 系方法（DTU、Tanks and Temples、Mip-NeRF 360 等基准），并在质量与速度上达到甚至超越 NeuS2、Neuralangelo 等神经隐式方法。
+
+**亮点**：
+
+1. **首个直接从 3DGS 识别 level set 的表面提取方法，摆脱 Poisson/TSDF 后处理**：基于 ray-tracing 式体渲染推导不透明度场，发现沿光线不透明度从 0 到 1 的突变位置即为几何表面，可直接从 3D 高斯中提取 level set，是 3DGS 表面重建范式的重要转变
+2. **光线-高斯相交平面法线近似 + 有效正则化，大幅提升几何质量**：提出用唯一确定的光线-高斯交平面法线近似高斯表面法线，配合深度法线一致性等正则化约束，在无界场景上显著改善法线与深度质量，且无需改变 3DGS 的高效光栅化训练
+3. **高斯诱导的自适应 Marching Tetrahedra，网格紧凑且高效**：四面体网格由 3D 高斯自身诱导生成，分辨率随场景复杂度自适应，避免固定分辨率网格的冗余；最终网格提取质量与速度均达到或超越神经隐式 SOTA（如 NeuS2、Neuralangelo），兼顾实时渲染与高质量表面
