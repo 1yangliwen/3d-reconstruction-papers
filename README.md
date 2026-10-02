@@ -1,4 +1,3 @@
-
 # 三维重建论文收藏
 
 三维重建论文收藏
@@ -38,6 +37,7 @@
 - **SpeeDe3DGS**（2026-09-01）— 时序剪枝 + SE(3) 运动蒸馏，动态 3DGS 渲染从 20 FPS 提升至 276 FPS（13.71× 加速） · [CVPR 2026](https://arxiv.org/abs/2506.07917)
 - **3DGS-DR**（2026-09-08）— 延迟着色框架实现 3DGS 镜面反射高效渲染，每像素反射梯度桥接相邻高斯优化，法线估计自传播覆盖全部反射表面，实时帧率 · [SIGGRAPH 2024](https://arxiv.org/abs/2404.18454)
 - **Taming 3DGS**（2026-09-14）— 预算约束下确定性高斯致密化（纯构建、无剪枝、无峰值）+ 逐 splat 并行反向传播加速，模型大小与训练时间减少 4-5× · [SIGGRAPH Asia 2024](https://arxiv.org/abs/2406.15643)
+- **LightGaussian**（2026-09-23）— 全局显著性剪枝 + SH 蒸馏 + VecTree 量化三步压缩管线，平均 15× 存储缩减、139→215 FPS 加速且质量几乎无损 · [NeurIPS 2024 Spotlight](https://arxiv.org/abs/2311.17245)
 
 ### 🌧️ 三、3DGS 场景鲁棒性（恶劣条件重建）
 
@@ -106,6 +106,7 @@
 - **MonoGS**（2026-07-31）— 首个将 3D Gaussian Splatting 引入单目 SLAM，直接优化高斯实现相机跟踪，统一跟踪/建图/渲染，CVPR 2024 Highlight & Best Demo Award · [CVPR 2024 Highlight](https://arxiv.org/abs/2312.06741)
 - **Photo-SLAM**（2026-08-20）— 首个"超基元地图"框架统一定位与照片级真实感建图，高斯金字塔渐进式训练，嵌入式平台实时运行 · [CVPR 2024](https://arxiv.org/abs/2311.16728)
 - **RTG-SLAM**（2026-09-07）— 大规模 RGB-D 实时 3DGS 重建系统，不透明/近透明二态紧凑高斯 + 稳定/不稳定分级在线优化，速度约 2×、内存约减半，浙江大学 × UTS · [SIGGRAPH 2024](https://arxiv.org/abs/2404.19706)
+- **RGBD GS-ICP SLAM**（2026-09-21）— G-ICP 与 3DGS 共享单一高斯地图的耦合式稠密 SLAM，协方差双向交换 + 尺度对齐，整体系统最高 107 FPS，成均馆大学 · [ECCV 2024](https://arxiv.org/abs/2403.12550)
 
 ### 🎨 八、三维生成（3D Generation）
 
@@ -129,6 +130,7 @@
 - **ForgeDreamer**（2026-08-27）— 多专家 LoRA 师生蒸馏解决工业语义适配 + 跨视角超图几何增强，工业文本到三维生成超越现有方法，CVPR 2026 Findings · [CVPR 2026 Findings](https://arxiv.org/abs/2603.09266)
 - **Dehallu3D**（2026-09-09）— 相邻视图一致性约束消除单图三维生成中的幻觉离群点，即插即用优化模块 + ORM 离群风险度量，CVPR 2026 · [CVPR 2026](https://arxiv.org/abs/2603.01601)
 - **Direct3D-S2**（2026-09-11）— 基于空间稀疏注意力的超大规模三维生成框架，仅 8 卡即可训练 1024³ 分辨率模型，前向 3.9×/反向 9.6× 加速，NeurIPS 2025 · [NeurIPS 2025](https://arxiv.org/abs/2505.17412)
+- **PartCrafter**（2026-09-22）— 首个单图端到端联合生成多个语义可分解三维网格部件的结构化生成模型，组合式隐空间 + 层级注意力，北大 × CMU × ByteDance · [NeurIPS 2025](https://arxiv.org/abs/2506.05573)
 
 ### 🪟 九、3DGS 透明表面建模（Transparent Surface Modeling）
 
@@ -2322,3 +2324,63 @@
 1. **首个直接从 3DGS 识别 level set 的表面提取方法，摆脱 Poisson/TSDF 后处理**：基于 ray-tracing 式体渲染推导不透明度场，发现沿光线不透明度从 0 到 1 的突变位置即为几何表面，可直接从 3D 高斯中提取 level set，是 3DGS 表面重建范式的重要转变
 2. **光线-高斯相交平面法线近似 + 有效正则化，大幅提升几何质量**：提出用唯一确定的光线-高斯交平面法线近似高斯表面法线，配合深度法线一致性等正则化约束，在无界场景上显著改善法线与深度质量，且无需改变 3DGS 的高效光栅化训练
 3. **高斯诱导的自适应 Marching Tetrahedra，网格紧凑且高效**：四面体网格由 3D 高斯自身诱导生成，分辨率随场景复杂度自适应，避免固定分辨率网格的冗余；最终网格提取质量与速度均达到或超越神经隐式 SOTA（如 NeuS2、Neuralangelo），兼顾实时渲染与高质量表面
+
+### 2026-09-21｜RGBD GS-ICP SLAM（RGBD GS-ICP SLAM：G-ICP 与 3DGS 共享单一高斯地图的高效稠密视觉 SLAM）
+
+**RGBD GS-ICP SLAM**
+**RGBD GS-ICP SLAM：基于广义迭代最近点与三维高斯泼溅融合的高效稠密视觉 SLAM**
+
+**方向**：SLAM / 实时三维重建（SLAM / Real-Time 3D Reconstruction）　**来源**：ECCV 2024　**机构**：成均馆大学（Sungkyunkwan University）
+
+- **作者**：Seongbo Ha, Jiung Yeon, Hyeonwoo Yu
+- **链接**：[arXiv:2403.12550](https://arxiv.org/abs/2403.12550) | 代码：[github.com/Lab-of-AI-and-Robotics/GS_ICP_SLAM](https://github.com/Lab-of-AI-and-Robotics/GS_ICP_SLAM)
+
+![RGBD GS-ICP SLAM 论文主图：整体系统 PSNR-FPS 对比，跟踪速度与渲染质量双 SOTA](https://km.sankuai.com/api/file/cdn/2756902383/256900701694?contentType=0&isNewContent=false)
+
+**核心内容**：RGBD GS-ICP SLAM 针对 3DGS 系 SLAM 的一个根本问题：现有方法虽然利用了 3DGS 的高速光栅化渲染，但相机跟踪仍通过最小化渲染图像与观测图像之间的 2D 光度误差间接进行，无法直接利用三维显式表示。本文将三维扫描匹配领域的广义迭代最近点（Generalized Iterative Closest Point, G-ICP）与 3DGS 融合，提出跟踪与建图共享同一张高斯地图的耦合式稠密 SLAM 框架：G-ICP 跟踪过程中为当前帧各点计算的高斯协方差，经尺度对齐（scale alignment）后直接作为 3DGS 建图基元的初始状态；反过来，3DGS 地图中的高斯中心与协方差又直接充当 G-ICP 配准所需的 3D 点及其分布，双方互惠互利，消除冗余计算并加速高斯基元收敛。系统还通过关键帧选择方法进一步提升跟踪精度与建图质量。在 Replica 等 RGB-D 基准上，整体系统（跟踪+建图+渲染）速度最高达 107 FPS，地图渲染质量（PSNR）同时达到 SOTA，相对 GS-SLAM、SplaTAM、MonoGS 等 3DGS 系 SLAM 实现了数量级的速度提升且不牺牲质量，代码已开源。
+
+**亮点**：
+
+1. **首个将 G-ICP 与 3DGS 融合、共享单一高斯地图的耦合式稠密 SLAM**：跟踪不再依赖 2D 光度误差的间接优化，而是直接用 G-ICP 在 3D 显式高斯表示上做扫描匹配，同时保持了类似解耦式方法的快速跟踪速度，无需额外的独立地图或特征存储，实现了跟踪与建图的真正互惠
+2. **协方差双向交换 + 尺度对齐，消除冗余计算并加速收敛**：洞察到 G-ICP 所需的点协方差与 3DGS 高斯的协方差本质上是同一信息，让两过程共享"同一个高斯世界"——跟踪算出的协方差直接喂给建图做初始化，地图高斯直接供跟踪复用，显著降低计算开销并促进 3DGS 基元快速收敛
+3. **整体系统最高 107 FPS，速度与质量双 SOTA**：在 Replica 8 个场景上，全系统帧率达 107 FPS，比 GS-SLAM、SplaTAM、MonoGS 等 3DGS 系 SLAM 快一个数量级，同时 PSNR 等渲染质量指标仍达 SOTA 水平，为机器人、VR/AR 等高实时性应用提供了实用化基础
+
+### 2026-09-22｜PartCrafter: Structured 3D Mesh Generation via Compositional Latent Diffusion Transformers（PartCrafter：基于组合式隐空间扩散 Transformer 的结构化三维网格生成）
+
+**PartCrafter: Structured 3D Mesh Generation via Compositional Latent Diffusion Transformers**
+**PartCrafter：基于组合式隐空间扩散 Transformer 的结构化三维网格生成**
+
+**方向**：三维生成（3D Generation）　**来源**：NeurIPS 2025　**机构**：北京大学 × 卡耐基梅隆大学 × ByteDance
+
+- **作者**：Yuchen Lin, Chenguo Lin, Panwang Pan, Honglei Yan, Yiqiang Feng, Yadong Mu, Katerina Fragkiadaki
+- **链接**：[arXiv:2506.05573](https://arxiv.org/abs/2506.05573) | 项目页：[wgsxm.github.io](https://wgsxm.github.io/projects/partcrafter/) | 代码：[GitHub](https://github.com/wgsxm/PartCrafter)
+
+![PartCrafter 论文主图](https://km.sankuai.com/api/file/cdn/2756902383/257110712094?contentType=0&isNewContent=false)
+
+**核心内容**：现有三维生成方法大多输出一个不可拆分的整体网格，或者采用"先图像分割、再逐段重建"的两阶段流水线——前者无法满足下游对结构化、可编辑三维资产的需求，后者则严重依赖预分割质量且各部件独立重建、缺乏全局一致性。PartCrafter 是首个端到端的结构化三维生成模型：仅以单张 RGB 图像为条件，无需任何预分割输入，即可同时去噪生成多个语义明确、几何独立的三维网格部件，既能处理单个物体（如椅子拆分为椅背、椅腿、座面），也能处理包含多个物体的复杂场景。方法在一个预训练的整物体三维网格扩散 Transformer（DiT）基础上构建，继承其预训练权重、编码器与解码器，并引入两大关键设计：（1）组合式隐空间（compositional latent space）——每个三维部件由一组相互解耦的隐 token 表示，部件数量可在推理时灵活指定；（2）层级注意力机制（hierarchical attention）——在部件内部与跨部件两个层级上组织信息流动，既保证生成结果的全局协调一致，又保留部件级几何细节。为支撑部件级监督，作者还从大规模三维物体数据集中挖掘部件级标注构建了新的训练数据集。实验表明，PartCrafter 在可分解三维网格生成上超越现有方法，甚至能合理补全输入图像中不可见的部件，展示了部件感知生成先验对三维理解与合成的价值，代码与训练数据已开源。
+
+**亮点**：
+
+1. **首个端到端的部件级结构化三维生成框架**：摆脱"整体生成"与"分割-重建"两阶段范式的束缚，单图输入即可联合生成多个语义可分解的三维网格部件，无需预分割 mask，生成的资产天然具备可编辑、可重组的结构化属性，直接对接游戏、仿真等下游工业管线
+2. **组合式隐空间 + 层级注意力，兼顾全局一致与局部细节**：每个部件用一组解耦隐 token 表示，层级注意力在部件内与跨部件两个尺度上组织信息流，使各部件在保持自身几何细节的同时与整体结构协调统一；该设计还使模型具备外推能力，可生成训练时未见过的部件数量，并能合理想象输入图像中不可见的隐藏部件
+3. **继承整物体三维 DiT 预训练先验 + 新部件级数据集，高效实现能力迁移**：巧妙地在预训练整物体网格 DiT 基础上微调，继承其权重、编码器与解码器，以较低成本将"整物体生成"能力升级为"结构化生成"能力；同时从大规模三维数据集中系统挖掘部件级标注构建新训练集，为结构化三维生成研究提供了数据与模型双重基础设施
+
+### 2026-09-23｜LightGaussian: Unbounded 3D Gaussian Compression with 15x Reduction and 200+ FPS（LightGaussian：无界三维高斯压缩——15 倍存储缩减与 200+ FPS 实时渲染）
+
+**LightGaussian: Unbounded 3D Gaussian Compression with 15x Reduction and 200+ FPS**
+**LightGaussian：无界三维高斯压缩——15 倍存储缩减与 200+ FPS 实时渲染**
+
+**方向**：3DGS 渲染加速与结构优化　**来源**：NeurIPS 2024 Spotlight　**机构**：德克萨斯大学奥斯汀分校（UT Austin, VITA Group）× 厦门大学
+
+- **作者**：Zhiwen Fan, Kevin Wang（共同一作）, Kairun Wen, Zehao Zhu, Dejia Xu, Zhangyang Wang
+- **链接**：[arXiv:2311.17245](https://arxiv.org/abs/2311.17245) | 项目页：[lightgaussian.github.io](https://lightgaussian.github.io/) | 代码：[GitHub](https://github.com/VITA-Group/LightGaussian)
+
+![LightGaussian 论文主图：压缩率与渲染速度](https://km.sankuai.com/api/file/cdn/2756902383/257288045692?contentType=0&isNewContent=false)
+
+**核心内容**：3D Gaussian Splatting（3DGS）虽实现了实时照片级渲染，但其将 SfM 稀疏点云膨胀为数百万个带属性的三维高斯，单个无界场景常需 GB 级存储（如 Mip-NeRF 360 的 Bicycle 场景达 1.4GB），高斯数量与高阶球谐（SH）系数造成的过参数化严重制约了 3DGS 的规模化部署、传输与渲染效率。LightGaussian 提出一套三步压缩管线，将训练好的 3DGS 转换为高效紧凑格式：（1）高斯剪枝与恢复——借鉴网络剪枝思想，基于训练观测为每个高斯计算全局显著性分数（综合不透明度及其在各训练视点上的贡献），识别并剪除对场景重建贡献微小的高斯（如 Bicycle 场景从 149 万减至 57.5 万），再经短暂的恢复微调保持视觉质量；（2）SH 蒸馏与伪视图增广——高阶 SH 系数是存储大头，直接砍阶会严重损伤视角相关的镜面反射效果，LightGaussian 通过知识蒸馏将高阶 SH 建模的视角依赖外观迁移至低阶表示，并合成伪视图进行增广训练，保证未观测视角下的外观一致性；（3）VecTree 量化——混合量化方案，对高斯属性按全局显著性自适应分配码本进行向量量化（有损），对位置等采用八叉树量化（无损），将全部属性压缩至极低位宽。最终在 Mip-NeRF 360、Tanks & Temples 数据集上平均实现超过 15× 的存储压缩（如 727MB 降至 42MB），渲染帧率从 139 FPS 提升至 215 FPS，而 SSIM 仅下降 0.013，视觉质量几乎无损，代码已开源。
+
+**亮点**：
+
+1. **首个系统性的 3DGS 压缩框架，实现 15× 存储缩减与渲染加速双收益**：不同于针对单一环节的优化，LightGaussian 覆盖"高斯数量—SH 系数—属性位宽"3DGS 存储构成的三大来源，形成端到端压缩管线；平均 15× 压缩率（727MB→42MB）的同时 FPS 从 139 提升至 215，SSIM 仅降 0.013，让 GB 级无界场景表示首次具备了在 Web 端、移动端等存储/带宽受限环境部署的可行性
+2. **全局显著性剪枝 + SH 蒸馏，精准消除过参数化冗余而不损外观**：提出基于训练观测的全局显著性度量，量化每个高斯对最终渲染的真实贡献，使剪枝决策有明确依据；针对 SH 系数"直接降阶即损伤镜面反射"的难题，用蒸馏配合伪视图增广将高阶外观知识无损迁移到低阶表示，在大幅压缩的同时保留了视角依赖的精细光照效果
+3. **VecTree 混合量化，以极小码本开销实现全属性低位宽表示**：将向量量化（码本）与八叉树量化结合，码本大小根据各属性全局显著性自适应分配，对贡献大的高斯属性保留更精细的量化粒度；该设计以可忽略的精度损失换取位宽大幅下降，且无需训练额外的压缩网络，可直接作用于任意已训练的 3DGS 模型，即插即用
