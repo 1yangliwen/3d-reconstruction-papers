@@ -88,6 +88,7 @@
 - **IGS（Instant Gaussian Stream）**（2026-06-03）— 首个可泛化流式 4D 高斯重建，时序锚点机制维持跨帧一致性，2.67s/帧重建 + 204 FPS 渲染，CVPR 2025 Highlight · [CVPR 2025 Highlight](https://arxiv.org/abs/2503.16979)
 - **MoVieS**（2026-08-10）— 前馈式 4D 动态场景重建，1 秒内从单目视频联合建模外观/几何/运动，支持新视角合成、3D 点跟踪与零样本场景流估计 · [CVPR 2026](https://arxiv.org/abs/2507.10065)
 - **L4GM**（2026-09-17）— 首个 4D 大型重建模型，单次前馈约 1 秒从单目视频生成可动画的逐帧 3D 高斯资产，自建 1200 万视频 / 3 亿帧训练数据，NVIDIA × 多伦多大学 × MIT · [NeurIPS 2024](https://arxiv.org/abs/2406.10324)
+- **MoSca**（2026-10-13）— 4D 运动脚手架：无位姿单目日常视频的全自动 4D 重建系统，稀疏 6-DoF 轨迹图编码形变 + 高斯全局融合，动态渲染基准 SOTA，宾夕法尼亚大学 × 斯坦福大学 · [CVPR 2025](https://arxiv.org/abs/2405.17421)
 
 ### 📡 七、SLAM / 实时三维重建（SLAM / Real-Time 3D Reconstruction）
 
@@ -153,6 +154,7 @@
 - **MVSFormer++**（2026-08-14）— DINOv2 侧视图注意力跨视图注入，揭示 Transformer 在 MVS 中的关键设计细节，DTU/Tanks-and-Temples SOTA · [ICLR 2024](https://arxiv.org/abs/2401.11673)
 - **SPE-MVS**（2026-09-02）— 空间位置编码 + 单目深度先验增强代价体匹配，在弱纹理/非朗伯面等光度匹配失效区域显著提升 MVS 重建质量，DTU/T&T 双基准 SOTA · [CVPR 2026](https://openaccess.thecvf.com/content/CVPR2026/html/Wang_SPE-MVS_Spatial_Position_Encoding_Enhanced_Multi-View_Stereo_with_Monocular_Depth_CVPR_2026_paper.html)
 - **MVSplat**（2026-09-15）— 平面扫描代价体积精准定位高斯中心，从稀疏多视图高效前馈重建三维高斯，仅约 10% 参数、2× 推理速度超越 pixelSplat · [ECCV 2024](https://arxiv.org/abs/2403.14627)
+- **GoMVS**（2026-10-16）— 表面法线驱动的几何一致代价聚合（GCP 模块），在深度假设空间建立相邻-参考对应后传播代价，DTU/T&T/ETH3D 三基准 SOTA，T&T Advanced 榜单第一 · [CVPR 2024](https://arxiv.org/abs/2404.07992)
 
 ### 🌐 十一、NeRF / 逆向渲染（NeRF / Inverse Rendering）
 
@@ -180,12 +182,26 @@
 - **2DGS**（2026-07-15）— 将 3D 高斯折叠为 2D 定向圆盘，深度畸变 + 法线一致性正则化，同时实现 SOTA 渲染与表面重建，SIGGRAPH 2024 · [SIGGRAPH 2024](https://arxiv.org/abs/2403.17888)
 - **GSPrior**（2026-07-21）— 自约束 TSDF 先验引导高斯贴合表面，带宽渐进收缩实现高保真表面重建，CVPR 2026 · [CVPR 2026](https://arxiv.org/abs/2603.19682)
 - **GOF**（2026-09-18）— 基于 ray-tracing 体渲染的 Gaussian Opacity Fields 直接识别 level set 提取表面，无需 Poisson/TSDF 融合，Marching Tetrahedra 自适应网格提取，SIGGRAPH Asia 2024 · [SIGGRAPH Asia 2024](https://arxiv.org/abs/2404.10772)
+- **RaDe-GS**（2026-10-15）— 光栅化求解通用 3D 高斯的深度/法线图，不改基元实现 DTU 0.69mm Chamfer 媲美 NeuraLangelo，保持 3DGS 原生效率，ACM TOG · [ACM TOG](https://arxiv.org/abs/2406.01467)
 
 ### ⚡ 十四、3DGS 物理仿真与交互（Physics Simulation & Interaction）
 
 研究将物理仿真（脆性断裂、碰撞检测等）嵌入 3D Gaussian Splatting 表示，实现具有物理真实感的动态三维场景模拟。
 
 - **GaussianFluent**（2026-08-04）— 首次将脆性断裂物理仿真引入 3DGS，生成模型补全体积内部 + CD-MPM 高速断裂仿真，CVPR 2026 Award Candidate · [CVPR 2026 Award Candidate](https://arxiv.org/abs/2601.09265)
+
+### 🤖 十五、机器人（Robotics）
+
+研究机器人操作、视觉-语言-动作（VLA）模型、具身智能与仿真到真机迁移等机器人学习方法，探索通用机器人策略新范式。
+
+- **OpenVLA**（2026-10-09）— 首个开源通才视觉-语言-动作模型，7B 参数在 970k 真机演示上训练，29 项任务成功率超 RT-2-X (55B) 16.5%，支持消费级 GPU LoRA 微调，斯坦福 × UC Berkeley × Google DeepMind · [CoRL 2024](https://arxiv.org/abs/2406.09246)
+- **UMI**（2026-10-14）— 手持式夹爪的人类演示采集框架，免机器人本体免标定，采集速度达人类手速 48%、比遥操作快 3 倍，相对轨迹动作表示实现策略跨本体零样本部署，斯坦福 × 哥伦比亚大学 × 丰田研究院 · [RSS 2024](https://arxiv.org/abs/2402.10329)
+
+### 🌊 十六、Flow Matching 生成（Flow Matching）
+
+研究以流匹配（Flow Matching / Rectified Flow）为核心的生成建模范式，涵盖图像、视频、3D 资产及机器人连续控制策略等任务的高效训练、采样与优化。
+
+- **ReinFlow**（2026-10-12）— 首个能稳定微调一系列流匹配策略的在线 RL 框架，向确定性流注入可学习噪声转为离散马尔可夫过程实现精确似然计算，足式运动奖励平均净增 135.4%、较 DPPO 省 82.6% 墙钟时间，CMU × 清华 × NUS · [NeurIPS 2025](https://arxiv.org/abs/2505.22094)
 
 ---
 
@@ -2384,3 +2400,123 @@
 1. **首个系统性的 3DGS 压缩框架，实现 15× 存储缩减与渲染加速双收益**：不同于针对单一环节的优化，LightGaussian 覆盖"高斯数量—SH 系数—属性位宽"3DGS 存储构成的三大来源，形成端到端压缩管线；平均 15× 压缩率（727MB→42MB）的同时 FPS 从 139 提升至 215，SSIM 仅降 0.013，让 GB 级无界场景表示首次具备了在 Web 端、移动端等存储/带宽受限环境部署的可行性
 2. **全局显著性剪枝 + SH 蒸馏，精准消除过参数化冗余而不损外观**：提出基于训练观测的全局显著性度量，量化每个高斯对最终渲染的真实贡献，使剪枝决策有明确依据；针对 SH 系数"直接降阶即损伤镜面反射"的难题，用蒸馏配合伪视图增广将高阶外观知识无损迁移到低阶表示，在大幅压缩的同时保留了视角依赖的精细光照效果
 3. **VecTree 混合量化，以极小码本开销实现全属性低位宽表示**：将向量量化（码本）与八叉树量化结合，码本大小根据各属性全局显著性自适应分配，对贡献大的高斯属性保留更精细的量化粒度；该设计以可忽略的精度损失换取位宽大幅下降，且无需训练额外的压缩网络，可直接作用于任意已训练的 3DGS 模型，即插即用
+
+### 2026-10-09｜OpenVLA: An Open-Source Vision-Language-Action Model（OpenVLA：开源视觉-语言-动作模型）
+
+**OpenVLA: An Open-Source Vision-Language-Action Model**
+**OpenVLA：开源视觉-语言-动作模型**
+
+**方向**：机器人（Robotics / 具身智能）　**来源**：CoRL 2024　**机构**：斯坦福大学 × UC Berkeley × 丰田研究院 × Google DeepMind × Physical Intelligence × MIT
+
+- **作者**：Moo Jin Kim, Karl Pertsch, Siddharth Karamcheti（共同一作）, Ted Xiao, Ashwin Balakrishna, Suraj Nair, Rafael Rafailov, Ethan Foster, Grace Lam, Pannag Sanketi, Quan Vuong, Thomas Kollar, Benjamin Burchfiel, Russ Tedrake, Dorsa Sadigh, Sergey Levine, Percy Liang, Chelsea Finn
+- **链接**：[arXiv:2406.09246](https://arxiv.org/abs/2406.09246) | 项目页：[openvla.github.io](https://openvla.github.io/) | 代码：[GitHub](https://github.com/openvla/openvla)
+
+![OpenVLA 论文主图：7B 开源 VLA 总览](https://km.sankuai.com/api/file/cdn/2756902383/258455193617?contentType=0&isNewContent=false)
+
+**核心内容**：视觉-语言-动作（VLA）模型通过直接微调视觉-语言基础模型来生成机器人控制动作，已被证明是构建通才机器人策略的有效路径，但此前的 VLA（如 Google 的 RT-2-X）均为闭源，且缺乏面向新机器人、新任务的高效微调方案，严重制约了 VLA 在机器人社区的普及。OpenVLA 是首个开源的通才 VLA 模型：以 7B 参数规模，在 Open X-Embodiment 数据集的 97 万条真实机器人操作演示上训练。模型以 Prismatic-7B VLM 为骨干——视觉侧融合 DINOv2（低层空间细节）与 SigLIP（高层语义）双预训练编码器特征，语言侧基于 Llama 2 7B，将机器人动作离散化为 token 直接纳入语言模型的词表进行预测。在 WidowX 与 Google Robot 两类本体、29 个操作任务上，OpenVLA 以 7 倍更少的参数量在绝对成功率上超越 55B 的闭源 RT-2-X 达 16.5%。论文还系统研究了 VLA 的高效微调策略：在 7 个多样化操作任务上，微调后的 OpenVLA 显著优于 Octo 等通才策略，并在多目标、强语言对齐任务上超越从零训练的 Diffusion Policy 达 20.4%；首次验证了 LoRA 参数高效微调与量化推理可让 OpenVLA 在消费级 GPU 上完成适配与部署而不损失下游成功率。模型权重、微调笔记与训练代码全部开源，成为后续 VLA 研究（如 π0、RDT、OpenVLA-OFT 等大量工作）的事实基座。
+
+**亮点**：
+
+1. **首个开源通才 VLA，7B 参数以一敌众超越闭源 55B 巨型模型**：以 Llama 2 7B + DINOv2/SigLIP 双视觉编码器的简洁"patch-as-token"架构，在 97 万条跨本体真机演示上端到端训练，在 WidowX 与 Google Robot 共 29 个任务上以 7 倍更少参数将绝对成功率较 RT-2-X (55B) 提升 16.5%，证明"开源 VLM 骨干 + 多样化机器人数据"的缩放路线可以胜过纯堆参数的闭源方案
+2. **首次系统建立 VLA 高效微调方法学，打通"预训练→领域适配"全链路**：此前工作从不研究 VLA 如何适配新机器人与新任务，OpenVLA 首次给出系统结论——LoRA 参数高效微调在多目标与语言对齐任务上比从零训练的 Diffusion Policy 高出 20.4%，配合 4-bit 量化推理，消费级 GPU 即可完成微调与部署且不损失成功率，极大降低了 VLA 的使用门槛
+3. **完全开源生态，成为具身智能研究的"Llama 时刻"**：模型权重、训练管线、微调与部署笔记全部开源并支持在 Open X-Embodiment 数据集上规模化训练 VLA；开源属性使社区可以透明研究架构、数据配比与训练目标，直接催生了 OpenVLA-OFT、HybridVLA 等大量后续工作，成为 VLA 领域事实上的标准基线与基座模型
+
+### 2026-10-12｜ReinFlow: Fine-tuning Flow Matching Policy with Online Reinforcement Learning（ReinFlow：基于在线强化学习的流匹配策略微调）
+
+**ReinFlow: Fine-tuning Flow Matching Policy with Online Reinforcement Learning**
+**ReinFlow：基于在线强化学习的流匹配策略微调**
+
+**方向**：Flow Matching 生成（流匹配策略 × 机器人 RL）　**来源**：NeurIPS 2025　**机构**：卡内基梅隆大学 × 清华大学 × 北京中关村学院 × 新加坡国立大学
+
+- **作者**：Tonghe Zhang, Chao Yu（通讯）, Sichang Su, Yu Wang
+- **链接**：[arXiv:2505.22094](https://arxiv.org/abs/2505.22094) | 项目页：[reinflow.github.io](https://reinflow.github.io/) | 代码：[GitHub](https://github.com/ReinFlow/ReinFlow)
+
+![ReinFlow 架构图：噪声注入网络与速度头](https://km.sankuai.com/api/file/cdn/2756902383/258714986019?contentType=0&isNewContent=false)
+
+**核心内容**：流匹配（Flow Matching）策略凭借建模多峰动作分布的表达能力与简洁的训练目标，正迅速取代扩散策略成为机器人学习的主流生成式策略骨干（π0、GR00T 等先进 VLA 均采用），但这类策略完全由行为克隆训练，探索能力不足、性能受制于专家数据的质与量，训练结束后难以继续提升。用在线强化学习微调流策略面临根本障碍：流匹配通过 ODE 积分生成动作，每步转移都是确定性映射（狄拉克分布），动作的边缘似然无法计算，策略梯度无从下手。ReinFlow 给出了简洁而理论严格的解法：向流策略的确定性路径中注入可学习噪声（对 Rectified Flow 用可学习的连续噪声方差、对 Shortcut Models 用离散噪声），把确定性流转换为离散时间马尔可夫过程，使每个中间动作都拥有精确的边缘分布，从而可通过链式法则进行精确且数值稳定的对数似然计算，直接套用 PPO 类策略梯度端到端优化整条流匹配链。实验覆盖足式运动与操作两大类任务（含视觉输入与稀疏奖励的长程规划）：足式运动任务上 Rectified Flow 策略奖励平均净增 135.36%，同时相比扩散 RL 微调 SOTA 方法 DPPO 节省 82.63% 墙钟时间；状态与视觉操作任务上 Shortcut Model 策略成功率平均净增 40.34%，在 4 步甚至 1 步去噪下即可达到与微调 DDIM 策略相当的性能，平均节省 23.20% 计算时间。代码、模型权重、数据与 W&B 训练记录全部开源，并提供 SimplerEnv 大规模并行仿真微调的完整复现教程。
+
+**亮点**：
+
+1. **噪声注入打通"确定性 ODE 策略 → 可精确策略梯度"的理论上堵点**：流匹配 ODE 的每步转移是狄拉克分布、似然不可计算，ReinFlow 通过注入可学习噪声将流转换为离散时间马尔可夫过程，实现精确、数值稳定的对数似然估计，是首个能稳定微调 Rectified Flow、Shortcut Models 等一系列流匹配策略的在线 RL 框架，且在极少步甚至单步去噪下依然训练稳定
+2. **性能与效率双丰收，大幅超越扩散 RL 微调 SOTA**：足式运动任务上策略奖励平均净增 135.36%，较 DPPO 节省 82.63% 墙钟时间；操作任务上成功率平均净增 40.34%（4 步乃至 1 步去噪即可与微调 DDIM 策略持平），平均节省 23.20% 计算时间，"少步流策略 + 在线 RL"展现出显著的效率优势
+3. **打通"行为克隆预训练 → 在线 RL 进化"的流匹配策略全链路，直指主流 VLA 的策略形态**：方法与 π0、GR00T 等流匹配 VLA 的策略骨干直接兼容，为跳出专家数据分布、持续提升通用机器人策略提供了一条可复现路径；完整开源训练教程、代码、权重与 W&B 记录，支持 SimplerEnv 规模化并行仿真微调
+
+### 2026-10-13｜MoSca: Dynamic Gaussian Fusion from Casual Videos via 4D Motion Scaffolds（MoSca：基于4D运动脚手架的日常单目视频动态高斯重建）
+
+**MoSca: Dynamic Gaussian Fusion from Casual Videos via 4D Motion Scaffolds**
+**MoSca：基于4D运动脚手架的日常单目视频动态高斯重建**
+
+**方向**：4D 动态场景重建　**来源**：CVPR 2025　**机构**：宾夕法尼亚大学（GRASP Lab）× 斯坦福大学 × Google DeepMind
+
+- **作者**：Jiahui Lei（雷嘉晖）, Yijia Weng, Adam W. Harley, Leonidas Guibas, Kostas Daniilidis
+- **链接**：[arXiv:2405.17421](https://arxiv.org/abs/2405.17421) | 项目页：[jiahuilei.com/projects/mosca](https://www.jiahuilei.com/projects/mosca) | 代码：[GitHub](https://github.com/JiahuiLei/MoSca) | 作者 Camera-Ready PDF：[CVPR 2025](https://www.jiahuilei.com/projects/mosca/pub/mosca_v2.pdf)
+
+![MoSca 论文主图：从单目日常视频重建可渲染动态场景](https://km.sankuai.com/api/file/cdn/2756902383/258922626735?contentType=0&isNewContent=false)
+
+**核心内容**：本文提出 MoSca（4D Motion Scaffolds），一个面向"日常随手拍摄（in-the-wild）单目视频"的全自动 4D 重建系统——输入一段相机位姿、内参均未知的单目视频，即可重建可渲染的动态场景，这是该领域最具挑战性的病态反问题设定。方法基于两个核心洞察：其一，利用预训练 2D 视觉基础模型为逆问题提供强先验——UniDepth 有尺度单目深度、CoTracker 长程 2D 点轨迹、RAFT 光流导出的对极误差图（指示动态前景）、DINOv2 语义特征；其二，真实场景外观几何可以复杂高频，但驱动它们的底层形变是低秩、平滑的，且近似局部刚体（as-rigid-as-possible）。据此提出 Motion Scaffold 表示：一组稀疏的 6-DoF（SE(3)）轨迹图节点（数量约为场景点数的 1/100），以轨迹曲线距离的 KNN 建立拓扑（能正确处理开门等拓扑变化），经径向基函数插值出稠密 SE(3) 形变场，并以 ARAP 等物理启发正则进行几何优化。场景几何与外观由 3D 高斯承载：每个时刻观测到的高斯都被形变场"拖拽"到任意查询时刻，实现跨全时段的全局观测融合，再用 Gaussian Splatting 光度优化。相机焦距与位姿通过 tracklet bundle adjustment 结合光度优化联合求解，无需 COLMAP 等外部位姿估计工具。系统在 DyCheck（iPhone 实拍单目）与 Neu3D 等动态渲染基准上取得 SOTA 性能，并能处理 SORA 生成视频、影视片段等真实野外素材。
+
+**亮点**：
+
+1. **首个"无位姿单目日常视频 → 可渲染 4D 场景"的全栈自动系统**：不依赖任何外部位姿估计器，相机焦距与位姿由 tracklet bundle adjustment + 光度优化自求解；从 iPhone 实拍、互联网视频到 SORA 生成内容均可端到端重建，把动态重建的输入门槛降到"随手拍一段视频"
+2. **衔接经典 Embedded Deformation Graph 与 2D 基础模型先验的 Motion Scaffold 形变表示**：稀疏 6-DoF 轨迹节点（约为场景点数的 1/100）+ 曲线距离拓扑 + RBF 插值 + ARAP 物理正则，把运动与几何/外观解耦；相比全局运动基底方法（如 Shape of Motion）表达力更强，相比逐高斯形变方法自由度更低更不易过拟合，成为后续单目动态重建工作的标准强基线
+3. **高斯锚定形变场实现跨时刻全局观测融合**：所有时刻观测到的高斯均可被形变场变换到任意查询时刻并统一渲染，突破了以往方法仅在小时间窗内融合信息的限制，有效补全遮挡区域、提升时序一致性，在动态渲染基准上取得 SOTA
+
+### 2026-10-14｜UMI: Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots（UMI：通用操作接口——无需野外机器人的野外机器人教学）
+
+**UMI: Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots**
+**UMI：通用操作接口——无需野外机器人的野外机器人教学**
+
+**方向**：机器人（Robotics / 具身智能·数据采集与策略学习）　**来源**：RSS 2024（Best Systems Paper Award Finalist）　**机构**：斯坦福大学 × 哥伦比亚大学 × 丰田研究院（TRI）
+
+- **作者**：Cheng Chi, Zhenjia Xu（共同一作）, Chuer Pan, Eric Cousineau, Benjamin Burchfiel, Siyuan Feng, Russ Tedrake, Shuran Song
+- **链接**：[arXiv:2402.10329](https://arxiv.org/abs/2402.10329) | 项目页：[umi-gripper.github.io](https://umi-gripper.github.io/) | 代码：[GitHub](https://github.com/real-stanford/universal_manipulation_interface) | RSS 页面：[RSS 2024](https://umi-gripper.github.io/umi.pdf)
+
+![UMI 论文主图：手持夹爪人类演示直传机器人策略](https://km.sankuai.com/api/file/cdn/2756902383/259113083881?contentType=0&isNewContent=false)
+
+**核心内容**：机器人操作策略的学习效果高度依赖大规模、高质量的演示数据，但传统遥操作采集成本高昂（专业遥操作每小时仅能采集约 35 条演示），且数据与特定机器人硬件、标定深度绑定，难以规模化。UMI（Universal Manipulation Interface）提出了一套"数据采集接口 + 策略学习接口"的完整框架，实现从野外人类演示到可部署机器人策略的直接技能迁移。数据采集侧，UMI 设计了一个 3D 打印的手持式平行爪夹爪，腕部搭载 GoPro 广角相机与 IMU，人手持夹爪即可在任何真实场景中演示操作，系统离线利用 ORB-SLAM3 结合夹爪表面的 ArUco 标记与视觉-惯性融合，从腕部相机视频反向恢复出每一帧高精度的 6-DoF 夹爪轨迹、夹爪开合度与相机焦距，采集速率达每条演示约 30 秒、相当于人类手速的 48%，比空间鼠标遥操作快 3 倍以上。策略学习侧，UMI 以 Diffusion Policy 为策略骨干，并引入两项关键设计：（1）相对轨迹动作表示——动作预测以腕部相机为参考系（预测相对于相机光心的 SE(3) 相对位姿轨迹），使策略完全免除机器人本体标定，机器人底座移动甚至更换机器人平台都无需重新适配；（2）推理时延迟匹配——在推理时对观测与动作施加与真实控制链路一致的时延对齐，消除策略推理延迟导致的动作-观测错位与抖动。由此训练出的策略与硬件无关，可零改动部署到 UR5e、Franka 等任意平行爪平台。实验展示了动态抛掷分拣、双手叠衣、7 步长程洗碗等高难度任务，且仅更换训练数据（不同家庭、餐厅野外采集的杯子操作数据）即可零样本泛化到全新环境与物体，甚至在饮水机上放置浓缩咖啡杯。
+
+**亮点**：
+
+1. **手持夹爪重新定义机器人演示数据采集，突破"数据必须来自机器人本体"的范式**：免机器人、免标定、开箱即用，2 分钟内可在任意家庭/餐厅开始采集（30 秒/演示，达人类手速 48%，较遥操作快 3 倍以上）；GoPro 腕部相机 + IMU + ArUco + ORB-SLAM3 的离线视觉惯性融合反解出高精度 6-DoF 轨迹与焦距，把"野外人类演示"变成了可规模化、信息丰富的策略训练数据源
+2. **相对轨迹动作表示 + 推理时延迟匹配，实现 100% 免标定的硬件无关策略**：以腕部相机为中心的相对 SE(3) 动作表示使策略天然免疫机器人底座移动与平台更换，同一策略可零样本部署到 UR5e 与 Franka 等任意平行爪（行程大于 85mm）机器人；延迟匹配从系统层面消除了生成式策略推理时延带来的观测-动作错位，显著降低动态任务的动作抖动
+3. **零样本泛化的动态、双手、长程操作，验证野外人类数据规模化的有效性**：动态抛掷分拣、双手叠衣、7 步依赖动作的洗碗等任务全面成功；仅靠野外多环境人类演示训练，策略即可零样本泛化到训练中从未见过的环境与物体（含在饮水机上放浓缩咖啡杯的极端 OOD 场景），证明了"人类演示规模化 + 接口解耦"路线的巨大潜力，直接催生了五指灵巧手 UMI 等大量后续数据采集方案，成为具身智能数据采集的事实标准之一
+
+### 2026-10-15｜RaDe-GS: Rasterizing Depth in Gaussian Splatting（RaDe-GS：高斯泼溅中的深度光栅化）
+
+**RaDe-GS: Rasterizing Depth in Gaussian Splatting**
+**RaDe-GS：高斯泼溅中的深度光栅化**
+
+**方向**：3DGS 表面重建（3DGS Surface Reconstruction）　**来源**：ACM Transactions on Graphics (TOG，图形学顶刊)　**机构**：香港科技大学（HKUST-SAIL）× 西蒙弗雷泽大学
+
+- **作者**：Baowen Zhang, Chuan Fang, Rakesh Shrestha, Yixun Liang, Xiaoxiao Long, Ping Tan
+- **链接**：[arXiv:2406.01467](https://arxiv.org/abs/2406.01467) | 项目页：[baowenz.github.io/radegs](https://baowenz.github.io/radegs/) | 代码：[GitHub](https://github.com/HKUST-SAIL/RaDe-GS) | TOG 录用说明：[官方仓库 News](https://github.com/HKUST-SAIL/RaDe-GS#news)
+
+![RaDe-GS 论文主图：光栅化深度/法线渲染实现高质量表面重建](https://km.sankuai.com/api/file/cdn/2756902383/259310260698?contentType=0&isNewContent=false)
+
+**核心内容**：RaDe-GS 面向"表面重建精度与训练/渲染效率难以兼得"这一 3DGS 生态的核心矛盾。已有路线各有代价：2DGS 等方法将高斯基元重铸为 2D 圆盘，降低了表示维度，复杂场景（如草丛、树桩等细结构）优化困难且牺牲新视角合成质量；GOF 采用光线追踪计算不透明度场以提取高质量表面，但计算开销显著（DTU 单场景约 1 小时，而标准 3DGS 仅约 5.2 分钟）。RaDe-GS 的关键洞察是：无需改动 3D 高斯基元与渲染主干，只需为通用 3D 高斯"外挂"一套可光栅化的深度/法线渲染管线。作者推导出光线与高斯泼溅交点的闭式解——沿每条相机光线评估高斯函数，取高斯值最大处作为交点；在近似仿射投影下，单个高斯与一束光线的交点共面，因此每个高斯在图像平面上的投影深度可按导出的平面方程直接光栅化；最终深度图按不透明度加权取各高斯投影深度的中值，法线图同理光栅化得到。该方法在 DTU 上仅训练约 5 分钟即达 0.69mm Chamfer 距离，媲美需数小时隐式优化的 NeuraLangelo（0.61mm），超越 GOF（0.74mm）与 2DGS（0.80mm），同时保持与原版 3DGS 相当的训练与渲染效率；网格提取采用 Marching Tetrahedra。论文已被 ACM Transactions on Graphics 正式录用，最新代码进一步吸收 PGSR 多视图正则、GOF 致密化等改进，可直接集成到现有 GS 管线。
+
+**亮点**：
+
+1. **不改基元的"外挂式"深度/法线光栅化，几何精度与渲染效率彻底解耦**：保持通用 3D 高斯与渲染主干不变，通过光线-高斯交点闭式解 + 仿射近似下的共面性证明，把深度与法线渲染变成与颜色渲染同等高效的光栅化操作，可即插即用集成到任意现有 GS 方法中
+2. **5 分钟训练媲美 NeuraLangelo 的表面精度，同时超越 2DGS 与 GOF**：DTU 上 0.69mm Chamfer（NeuraLangelo 0.61mm、GOF 0.74mm、2DGS 0.80mm），训练开销与原版 3DGS 相当（GOF 约需 1 小时），且不改动基元避免了 2DGS 类方法的表示退化，渲染质量明显优于改基元的表面重建方案
+3. **顶刊正式录用 + 工程化打磨，成为 3DGS 表面重建主力基线之一**：被 ACM Transactions on Graphics 正式录用；代码吸收 PGSR 多视图正则、GOF 致密化策略与 Mip-Splatting 滤波，配套 DTU / Tanks & Temples / Objaverse 完整评测链路，与 2DGS、GOF 共同构成后续 3DGS 表面重建工作的"三驾马车"基线
+
+### 2026-10-16｜GoMVS: Geometrically Consistent Cost Aggregation for Multi-View Stereo（GoMVS：几何一致代价聚合的多视图立体网络）
+
+**GoMVS: Geometrically Consistent Cost Aggregation for Multi-View Stereo**
+**GoMVS：几何一致代价聚合的多视图立体网络**
+
+**方向**：多视图立体重建（MVS）　**来源**：CVPR 2024　**机构**：西北工业大学（NWPU）× ETH Zürich × 图宾根大学 Tübingen AI Center
+
+- **作者**：Jiang Wu, Rui Li, Haofei Xu, Wenxun Zhao, Yu Zhu, Jinqiu Sun, Yanning Zhang
+- **链接**：[arXiv:2404.07992](https://arxiv.org/abs/2404.07992) | 项目页：[wuuu3511.github.io/gomvs](https://wuuu3511.github.io/gomvs) | 代码：[GitHub](https://github.com/Wuuu3511/GoMVS)
+
+![GoMVS 论文主图：Tanks & Temples 重建结果对比](https://km.sankuai.com/api/file/cdn/2756902383/259494770162?contentType=0&isNewContent=false)
+
+**核心内容**：匹配代价聚合（cost aggregation）是学习型多视图立体网络的基础环节，但直接聚合相邻像素的代价会因局部几何不一致而引入次优结果——当表面朝向变化时，相邻像素各自的深度假设平面并不指向同一物理表面位置。已有改进路线要么做"选择性聚合"（跳过可疑代价），要么在聚合完成后的 2D 深度图空间做精化，均无法在代价体内部有效处理几何不一致。GoMVS 提出"几何一致代价聚合"：利用局部几何平滑假设结合表面法线，显式计算相邻像素深度假设空间到参考像素深度假设空间之间的对应关系（将深度假设反投影到三维空间、由法线确定局部平面朝向），再将相邻代价按该对应关系传播到参考几何上，最后经卷积聚合——即几何一致传播（Geometric Consistent Propagation, GCP）模块。表面法线由现成的单目法线估计模型提供，作者对比了多种法线来源后发现，恰当使用单目法线模型即可在跨数据集上获得平滑稳健的聚合效果，无需联合训练法线分支。GoMVS 在 DTU、Tanks & Temples、ETH3D 三个基准上均取得当时新的 SOTA，并在 Tanks & Temples Advanced 高难度榜单排名第一。
+
+**亮点**：
+
+1. **把代价聚合从 2D 图像空间搬进深度假设空间，从源头消除局部几何不一致**：传统代价聚合（3D 卷积/注意力）默认相邻像素代价可直接叠加，但表面朝向变化时相邻深度假设并不对应相同物理表面；GoMVS 首次显式建立"相邻深度假设空间 ↔ 参考深度假设空间"的几何对应后再聚合，为代价体正则化提供了全新范式，也打通了几何先验注入代价体构建的通路
+2. **表面法线先验驱动深度域代价传播，即插即用且跨域稳健**：法线由现成单目法线模型离线提供、零额外训练成本，配合局部几何平滑假设即可完成代价传播；消融实验系统对比了不同法线来源（几何计算 vs 单目模型），证明单目法线模型在跨数据集聚合稳定性上最优，展示了"单目几何先验 + 多视图匹配几何"互补思路在弱纹理/非朗伯面场景的价值
+3. **DTU / T&T / ETH3D 三大基准新 SOTA，T&T Advanced 高难榜第一**：仅在 DTU 训练、BlendedMVS 微调即可在最具挑战的大规模室外高级榜单登顶，验证了几何一致聚合对弱纹理大场景的鲁棒性；代码与项目页齐全，已成为 MVS 几何先验方向的代表性基线之一
