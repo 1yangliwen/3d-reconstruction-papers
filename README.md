@@ -1,3 +1,4 @@
+
 # 三维重建论文收藏
 
 三维重建论文收藏
@@ -38,6 +39,7 @@
 - **3DGS-DR**（2026-09-08）— 延迟着色框架实现 3DGS 镜面反射高效渲染，每像素反射梯度桥接相邻高斯优化，法线估计自传播覆盖全部反射表面，实时帧率 · [SIGGRAPH 2024](https://arxiv.org/abs/2404.18454)
 - **Taming 3DGS**（2026-09-14）— 预算约束下确定性高斯致密化（纯构建、无剪枝、无峰值）+ 逐 splat 并行反向传播加速，模型大小与训练时间减少 4-5× · [SIGGRAPH Asia 2024](https://arxiv.org/abs/2406.15643)
 - **LightGaussian**（2026-09-23）— 全局显著性剪枝 + SH 蒸馏 + VecTree 量化三步压缩管线，平均 15× 存储缩减、139→215 FPS 加速且质量几乎无损 · [NeurIPS 2024 Spotlight](https://arxiv.org/abs/2311.17245)
+- **HAC**（2026-10-21）— 哈希网格辅助上下文建模 + 自适应量化 + 高斯熵编码，3DGS 存储压缩超 75×、较 Scaffold-GS 再降 11× 且保真度更高 · [ECCV 2024](https://arxiv.org/abs/2403.14530)
 
 ### 🌧️ 三、3DGS 场景鲁棒性（恶劣条件重建）
 
@@ -132,6 +134,7 @@
 - **Dehallu3D**（2026-09-09）— 相邻视图一致性约束消除单图三维生成中的幻觉离群点，即插即用优化模块 + ORM 离群风险度量，CVPR 2026 · [CVPR 2026](https://arxiv.org/abs/2603.01601)
 - **Direct3D-S2**（2026-09-11）— 基于空间稀疏注意力的超大规模三维生成框架，仅 8 卡即可训练 1024³ 分辨率模型，前向 3.9×/反向 9.6× 加速，NeurIPS 2025 · [NeurIPS 2025](https://arxiv.org/abs/2505.17412)
 - **PartCrafter**（2026-09-22）— 首个单图端到端联合生成多个语义可分解三维网格部件的结构化生成模型，组合式隐空间 + 层级注意力，北大 × CMU × ByteDance · [NeurIPS 2025](https://arxiv.org/abs/2506.05573)
+- **CLAY**（2026-10-22）— 3D 原生 1.5B 参数隐空间扩散 Transformer 大模型，多分辨率 VAE 编码神经场几何 + 多视角材质扩散生成 2K PBR 纹理，SIGGRAPH 2024 最佳论文提名 · [SIGGRAPH 2024](https://arxiv.org/abs/2406.13897)
 
 ### 🪟 九、3DGS 透明表面建模（Transparent Surface Modeling）
 
@@ -167,6 +170,7 @@
 - **SVG-IR**（2026-06-19）— 空间变化高斯表示允许每高斯拥有变化材质与法线，物理间接光照模型，重光照 PSNR 超 NeRF 2.5 dB，南京大学 · [CVPR 2025](https://arxiv.org/abs/2504.06815)
 - **NeRF Emitter**（2026-06-29）— NeRF 作为非远距离环境发射器建模空间变化光照，物理逆向渲染精准重建几何与材质，清华大学 × UC Irvine · [SIGGRAPH 2024](https://arxiv.org/abs/2402.04829)
 - **GaussianShader**（2026-07-09）— 简化着色函数赋予 3D 高斯反射表面建模能力，最短轴法线估计 + 球谐着色，PSNR 超 3DGS 1.57 dB，优化快 Ref-NeRF 40 倍 · [CVPR 2024](https://arxiv.org/abs/2311.17977)
+- **Relightable 3D Gaussians**（2026-10-20）— 给 3D 高斯外挂法线/BRDF/入射光属性，BVH 点基光线追踪预计算可见性，真实阴影 + 0.9 小时快速训练，南京大学 · [ECCV 2024](https://arxiv.org/abs/2311.16043)
 
 ### 🏷️ 十二、3DGS 场景理解与语义编码（3DGS Scene Understanding）
 
@@ -174,6 +178,7 @@
 
 - **Chorus**（2026-06-10）— 首个多教师预训练 3DGS 场景编码器，SigLIP2+DINOv3+PE-Spatial 三教师蒸馏统一语义/实例/空间感知，ETH Zürich · [CVPR 2026 Oral](https://arxiv.org/abs/2512.17817)
 - **SceneSplat**（2026-07-10）— 首个原生 3DGS 场景理解大规模预训练框架，视觉语言预训练 + 自监督学习，构建 SceneSplat-7K 数据集（7916 场景），ETH Zürich · [ICCV 2025 Oral](https://arxiv.org/abs/2503.18052)
+- **LangSplat**（2026-10-19）— 首个将开放词汇 3D 语言场从 NeRF 搬到 3DGS，SAM 层级语义 + 场景专属语言自编码器，1440×1080 下查询比 LERF 快 199 倍，清华大学 × 哈佛大学 · [CVPR 2024 Highlight](https://arxiv.org/abs/2312.16084)
 
 ### 📐 十三、3DGS 表面重建（3DGS Surface Reconstruction）
 
@@ -189,6 +194,7 @@
 研究将物理仿真（脆性断裂、碰撞检测等）嵌入 3D Gaussian Splatting 表示，实现具有物理真实感的动态三维场景模拟。
 
 - **GaussianFluent**（2026-08-04）— 首次将脆性断裂物理仿真引入 3DGS，生成模型补全体积内部 + CD-MPM 高速断裂仿真，CVPR 2026 Award Candidate · [CVPR 2026 Award Candidate](https://arxiv.org/abs/2601.09265)
+- **PhysDreamer**（2026-10-23）— 首次将视频扩散模型动力学先验蒸馏进 MPM 物理仿真，优化空间材质场赋予静态 3DGS 物体交互动力学，用户研究真实性超 PhysGaussian，MIT × 斯坦福 · [ECCV 2024 Oral](https://arxiv.org/abs/2404.13026)
 
 ### 🤖 十五、机器人（Robotics）
 
@@ -2520,3 +2526,103 @@
 1. **把代价聚合从 2D 图像空间搬进深度假设空间，从源头消除局部几何不一致**：传统代价聚合（3D 卷积/注意力）默认相邻像素代价可直接叠加，但表面朝向变化时相邻深度假设并不对应相同物理表面；GoMVS 首次显式建立"相邻深度假设空间 ↔ 参考深度假设空间"的几何对应后再聚合，为代价体正则化提供了全新范式，也打通了几何先验注入代价体构建的通路
 2. **表面法线先验驱动深度域代价传播，即插即用且跨域稳健**：法线由现成单目法线模型离线提供、零额外训练成本，配合局部几何平滑假设即可完成代价传播；消融实验系统对比了不同法线来源（几何计算 vs 单目模型），证明单目法线模型在跨数据集聚合稳定性上最优，展示了"单目几何先验 + 多视图匹配几何"互补思路在弱纹理/非朗伯面场景的价值
 3. **DTU / T&T / ETH3D 三大基准新 SOTA，T&T Advanced 高难榜第一**：仅在 DTU 训练、BlendedMVS 微调即可在最具挑战的大规模室外高级榜单登顶，验证了几何一致聚合对弱纹理大场景的鲁棒性；代码与项目页齐全，已成为 MVS 几何先验方向的代表性基线之一
+
+### 2026-10-19｜LangSplat: 3D Language Gaussian Splatting（LangSplat：三维语言高斯泼溅）
+
+**LangSplat: 3D Language Gaussian Splatting**
+**LangSplat：三维语言高斯泼溅**
+
+**方向**：3DGS 场景理解与语义编码（3DGS Scene Understanding）　**来源**：CVPR 2024 Highlight　**机构**：清华大学 × 哈佛大学
+
+- **作者**：Minghan Qin, Wanhua Li, Jiawei Zhou, Haoqian Wang, Hanspeter Pfister
+- **链接**：[arXiv:2312.16084](https://arxiv.org/abs/2312.16084) | 项目页：[langsplat.github.io](https://langsplat.github.io/) | 代码：[GitHub](https://github.com/minghanqin/LangSplat) | CVPR 页面：[IEEE Xplore (DOI: 10.1109/CVPR52733.2024.01895)](https://ieeexplore.ieee.org/document/10655933/)
+
+![LangSplat 论文主图：SAM 层级语义 + 场景专属语言自编码器 + 3D 语言高斯泼溅完整流程](https://km.sankuai.com/api/file/cdn/2756902383/259789536173?contentType=0&isNewContent=false)
+
+**核心内容**：让用户在三维场景中用自然语言直接查询（"找出桌子上的马克杯"）是 3D 视觉与语言交叉的核心任务。此前的 SOTA 方法 LERF 将 CLIP/DINO 语言特征蒸馏进 NeRF，但存在两大痛点：一是体渲染代价高昂，每次查询需沿光线逐点采样并跨大量尺度反复查询，无法实时；二是语言场边界模糊，物体轮廓不清晰，且需要 DINO 特征正则化缓解。LangSplat 的关键动作是把 3D 语言场从 NeRF 整体迁移到 3D Gaussian Splatting：每个 3D 高斯除了外观属性外额外编码从 CLIP 蒸馏的语言特征，利用与原版 3DGS 相同的 tile-based splatting 直接渲染语言特征图，彻底绕开 NeRF 的昂贵体渲染，在 1440×1080 分辨率下查询速度比 LERF 快 199 倍。针对显式建模高维 CLIP 特征（512 维）带来的显存爆炸，作者先为每个场景训练一个场景专属的语言自编码器，将 CLIP 特征压缩到低维场景特定隐空间（512 维 → 3 维），再在该隐空间上学习高斯语言特征，内存开销降低约 35 倍。针对语言场边界模糊问题，作者利用 Segment Anything Model（SAM）对场景多视角图像生成物体/部件/整体三个粒度层级的掩码，进行分层语义蒸馏，查询时按粗到细的三级策略检索，摆脱了 LERF 对多尺度查询枚举与 DINO 正则化的依赖，获得边界清晰、定位精准的 3D 语言场。LangSplat 在开放词汇物体定位与语义分割基准上大幅超越 LERF，是"3DGS + 2D 基础模型蒸馏"范式的代表作，被 CVPR 2024 选为 Highlight 论文。
+
+**亮点**：
+
+1. **首个把开放词汇 3D 语言场从 NeRF 搬进 3DGS，查询提速 199 倍**：语言特征直接编码在 3D 高斯上，用与原版 3DGS 完全相同的 tile-based splatting 光栅化渲染语言特征图，免去 NeRF 逐光线体采样与跨尺度反复查询；1440×1080 分辨率下比 LERF 快 199 倍，首次让 3D 语言查询进入实时可交互范畴，确立了"基础模型特征蒸馏 + 3DGS 显式表示"的场景理解新范式
+2. **场景专属语言自编码器解决显式建模的显存爆炸**：不直接在高斯上优化 512 维 CLIP 嵌入，而是先逐场景训练一个语言自编码器将 CLIP 特征压缩到 3 维场景特定隐空间，再在低维隐空间上学习高斯特征，推理时仅按需解码回 CLIP 空间做相似度匹配；内存开销降低约 35 倍，使大规模场景的语言场建模从"训不动"变为可行
+3. **SAM 层级语义蒸馏消除语言场边界模糊**：针对此前方法语言场"糊成一片、物体边界不清"的通病，利用 SAM 生成物体/部件/整体三级粒度掩码做分层语义学习，查询时执行粗到细三级检索；相比 LERF 需枚举数十个尺度查询并依赖 DINO 正则，LangSplat 的语言场边界清晰、定位精准，在开放词汇定位与 3D 语义分割上均大幅领先
+
+### 2026-10-20｜Relightable 3D Gaussians: Realistic Point Cloud Relighting with BRDF Decomposition and Ray Tracing（可重光照 3D 高斯：基于 BRDF 分解与光线追踪的真实感点云重光照）
+
+**Relightable 3D Gaussians: Realistic Point Cloud Relighting with BRDF Decomposition and Ray Tracing**
+**可重光照 3D 高斯：基于 BRDF 分解与光线追踪的真实感点云重光照**
+
+**方向**：NeRF / 逆向渲染（Inverse Rendering / Relighting）　**来源**：ECCV 2024　**机构**：南京大学 × 复旦大学 × 华为诺亚方舟实验室
+
+- **作者**：Jian Gao, Chun Gu（共同一作）, Youtian Lin, Zhihao Li, Hao Zhu, Xun Cao, Li Zhang, Yao Yao
+- **链接**：[arXiv:2311.16043](https://arxiv.org/abs/2311.16043) | 项目页：[nju-3dv.github.io/projects/Relightable3DGaussian](https://nju-3dv.github.io/projects/Relightable3DGaussian/) | 代码：[GitHub](https://github.com/NJU-3DV/Relightable3DGaussian) | ECCV 收录：[Springer (DOI: 10.1007/978-3-031-72995-9_5)](https://link.springer.com/chapter/10.1007/978-3-031-72995-9_5)
+
+![Relightable 3D Gaussians 论文主图：3D 高斯点云的法线/环境光遮蔽/点光源重光照渲染结果](https://km.sankuai.com/api/file/cdn/2756902383/260009963794?contentType=0&isNewContent=false)
+
+**核心内容**：3DGS 以实时渲染和高质量新视角合成著称，但原版 3DGS 学到的是"烤死"在视角与光照上的外观，无法分解材质与光照，更无法改变光照重新渲染。已有的可重光照方法中，基于 NeRF 的方案（PhySG、NeILF++、InvRender、TensorIR 等）训练动辄十几到几十小时，且隐式表示难以精确捕捉遮挡阴影；基于 mesh 的方案（Nvdiffrec）依赖可微光栅化与 Marching Cubes 提取，拓扑复杂场景容易失败。本文（论文中简称 R3DG）提出首个把物理逆向渲染完整搬进 3DGS 点基管线的框架：给每个 3D 高斯在颜色属性之外外挂法线、BRDF 参数（base color + roughness）与入射光（球谐系数），并把入射光拆分为全局环境光照贴图与间接入射光场两部分，通过基于物理的渲染方程（BRDF × 入射光 × 可见性积分）做可微渲染，从多视图图像联合优化几何、材质与光照。核心创新是点基光线追踪：利用为高斯点云构建的 BVH（层次包围盒）预计算每个高斯在多个入射方向上的可见性，高效获得准确的遮挡与阴影信息，预计算完成后重光照可实时渲染，且天然支持多物体组合场景中复杂遮挡关系的阴影传播。在 Synthetic4Relight 基准上，R3DG 的新视角合成 PSNR 36.80、重光照 PSNR 31.00 均为最优（对比 InvRender 28.67、TensorIR 29.69、Nvdiffrec-MC 24.22），训练仅 0.9 小时（InvRender 14.3 小时、NerFactor 超 48 小时）；在 NeRF synthetic 可重光照设定下 PSNR 31.22，大幅超越 NeILF++（26.37）与 Nvdiffrec（29.05）。该工作展示了以"点"取代 mesh 的完整图形管线雏形——编辑、光线追踪与重光照都直接在点云基元上完成。
+
+**亮点**：
+
+1. **首个把物理逆向渲染完整搬进 3DGS 点基管线，渲染方程直接建在高斯基元上**：为每个 3D 高斯外挂法线、BRDF（base color + roughness）与球谐入射光属性，入射光进一步拆分为全局环境贴图 + 间接入射光场，通过基于物理的可微渲染方程联合优化几何、材质与光照，使"实时显式表示"第一次具备了材质-光照分解与重光照能力
+2. **BVH 点基光线追踪预计算可见性，真实阴影 + 实时重光照兼得**：针对高斯点云（无 mesh 连通性）难以计算遮挡的问题，为点云构建层次包围盒 BVH 并预计算每个高斯在各入射方向上的可见性，既得到了此前 3DGS 逆渲染方法缺失的物理正确阴影（含多物体组合场景的级联遮挡），又保证预计算后重光照实时渲染，兼顾质量与效率
+3. **速度与质量双优，确立点基图形管线的可行性**：Synthetic4Relight 上 NVS PSNR 36.80、重光照 PSNR 31.00 全面领先 InvRender/TensorIR/Nvdiffrec-MC，训练时间仅 0.9 小时（快 InvRender 16 倍、NerFactor 50 倍以上），证明不需要 mesh 提取、不牺牲实时性也能做物理级重光照，为"点云取代 mesh 成为下一代表示"的图形管线（编辑、追踪、重光照一体）提供了早期范本
+
+### 2026-10-21｜HAC: Hash-grid Assisted Context for 3D Gaussian Splatting Compression（HAC：哈希网格辅助上下文的 3D 高斯泼溅压缩）
+
+**HAC: Hash-grid Assisted Context for 3D Gaussian Splatting Compression**
+**HAC：哈希网格辅助上下文的 3D 高斯泼溅压缩**
+
+**方向**：3DGS 压缩（Storage Compression）　**来源**：ECCV 2024　**机构**：上海交通大学 × 莫纳什大学
+
+- **作者**：Yihang Chen, Qianyi Wu, Weiyao Lin, Mehrtash Harandi, Jianfei Cai
+- **链接**：[arXiv:2403.14530](https://arxiv.org/abs/2403.14530) | 代码：[GitHub](https://github.com/YihangChen-ee/HAC) | 录用核实：arXiv Journal reference 字段标注 ECCV 2024
+
+![HAC 论文主图：哈希网格辅助上下文使 3DGS 模型体积缩小 72 倍以上](https://km.sankuai.com/api/file/cdn/2756902383/260229554024?contentType=0&isNewContent=false)
+
+**核心内容**：3DGS 虽以实时渲染与高保真著称，但数百万高斯及其属性（位置、协方差、球谐系数、不透明度）造成严重过参数化，单个无界场景常需数百 MB 存储，制约部署与传输。已有压缩工作大多依赖剪枝或量化等孤立手段，忽视了高斯锚点（anchor）之间的空间组织结构。本文提出首个面向 3DGS 的上下文压缩框架 HAC：观察到非结构化的锚点点云与结构化的二值哈希网格（binary hash grid）之间存在强互信息——哈希网格以极低成本编码空间占用信息，可为每个锚点的属性预测提供可靠的空间连续性先验。具体而言，HAC 基于结构化锚点表示 Scaffold-GS，设计上下文模型从哈希网格特征中挖掘锚点的空间关系并预测其属性分布；在熵编码阶段用高斯似然精确建模每个量化属性的概率分布，并引入自适应量化模块为每个属性估计精确的量化步长，以高精度量化换取解码端保真度恢复；同时结合自适应掩码（adaptive masking）策略在训练中剔除无效高斯与锚点。上述熵约束在优化过程中端到端联合学习，压缩率与保真度可显式权衡，无需额外后处理。在 Mip-NeRF 360、Tanks & Temples、Deep Blending 数据集上，HAC 相比原版 3DGS 实现超过 75× 的体积缩减且渲染保真度不降反升；相比当时最优的结构化表示 Scaffold-GS 再压缩 11× 以上，同时 PSNR/SSIM 更高。该工作开创了"基于上下文的 3DGS 压缩"研究方向，后续 HAC++、ContextGS 等工作沿此脉络持续发展。
+
+**亮点**：
+
+1. **首个基于上下文建模的 3DGS 压缩框架，用"互信息"替代孤立剪枝/量化**：创新性地利用非结构化锚点点云与结构化二值哈希网格之间的互补关系做上下文建模——哈希网格以几乎零成本提供空间连续性先验，上下文模型据此预测锚点属性的概率分布，为熵编码提供精准的率失真支撑，开辟了 3DGS 上下文压缩新范式
+2. **自适应量化 + 高斯熵模型 + 自适应掩码三位一体**：为每个量化属性自适应估计量化步长（高精度量化换取解码保真），以高斯似然精确建模属性概率用于算术熵编码，并以自适应掩码剔除无效高斯与锚点；熵约束在优化中端到端联合学习，无需后处理即可同时获得高压缩率与高保真度
+3. **压缩 75×+ 且质量更高，率失真性能大幅领先**：相比原版 3DGS 体积缩减超 75 倍、较 SOTA 结构化表示 Scaffold-GS 再降 11 倍以上，同时 PSNR/SSIM 不降反升；该框架确立了"结构先验 + 上下文熵模型"作为 3DGS 压缩的主流技术路线，对后续 HAC++、ContextGS 等系列工作产生了深远影响
+
+### 2026-10-22｜CLAY: A Controllable Large-scale Generative Model for Creating High-quality 3D Assets（CLAY：可控高质量三维资产大规模生成模型）
+
+**CLAY: A Controllable Large-scale Generative Model for Creating High-quality 3D Assets**
+**CLAY：可控高质量三维资产大规模生成模型**
+
+**方向**：三维生成（3D Generation）　**来源**：SIGGRAPH 2024（最佳论文提名 / Honorable Mention）　**机构**：上海科技大学 × 影眸科技（Deemos）
+
+- **作者**：Longwen Zhang, Ziyu Wang, Qixuan Zhang, Qiwei Qiu, Anqi Pang, Haoran Jiang, Wei Yang, Lan Xu, Jingyi Yu
+- **链接**：[arXiv:2406.13897](https://arxiv.org/abs/2406.13897) | 项目页：[clay3d.github.io](https://clay3d.github.io/) | 录用核实：SIGGRAPH 2024 收录并获最佳论文提名（Honorable Mention），收录于 ACM TOG
+
+![CLAY 论文主图：文本/图像/3D 控制基元到高保真几何与 PBR 材质的生成结果](https://km.sankuai.com/api/file/cdn/2756902383/260436743452?contentType=0&isNewContent=false)
+
+**核心内容**：当时主流的单图/文本到三维生成走"2D 升维"路线——先用 2D 扩散模型生成图像或多视角图像，再经重建算法升维为三维，几何细节与多视角一致性受限于 2D 先验。CLAY 选择 3D 原生路线：直接从大规模三维模型数据集中学习 3D 先验。几何侧，它用神经场（neural fields）表示连续、完整的三维表面，设计多分辨率 VAE 将其压缩为分层隐空间；生成骨干采用极简的隐空间 Diffusion Transformer（DiT，纯 Transformer 块，1.5B 参数），并通过渐进式训练方案（从低分辨率到高分辨率逐级训练）在经过精心数据处理管线筛选的超大规模 3D 数据集上稳定收敛。条件侧，CLAY 除文本与图像外还支持多种 3D-aware 控制基元——多视角图像、体素、包围盒、点云、隐式表示等，可从草图级概念设计一路生成到生产级精细资产。外观侧，通过多视角材质扩散模型（DETAIL）生成 2K 分辨率的 PBR 纹理（含 diffuse、roughness、metallic 三个通道），输出直接可用于游戏与影视渲染管线。CLAY 是 3D 原生生成大模型的代表性工作，其产业版本即影眸科技的 Rodin 引擎，后续 Rodin Gen-1、腾讯 Hunyuan3D 等工业级 3D 生成模型均沿此技术脉络发展。
+
+**亮点**：
+
+1. **3D 原生大模型路线的奠基之作，摆脱 2D 升维范式**：以多分辨率 VAE 编码神经场几何 + 1.5B 参数隐空间 DiT 直接从三维数据学习先验，配合渐进式训练（低分辨率到高分辨率逐级扩展）在大规模 3D 数据集上稳定收敛；相比 2D 升维路线，生成的几何细节保真度与多视角一致性显著更高，验证了"3D 数据规模化 + 原生扩散大模型"路线的可行性，直接影响了 TRELLIS、Hunyuan3D 等后续工作
+2. **全谱段可控生成 + 2K PBR 材质输出，直通生产管线**：支持文本、图像以及多视角图像、体素、包围盒、点云、隐式表示等 3D-aware 控制基元，覆盖从草图概念到生产级资产的全流程；外观侧的多视角材质扩散模型（DETAIL）生成 2K 分辨率 diffuse/roughness/metallic 三通道 PBR 纹理，生成结果可直接接入游戏引擎与影视渲染管线，而非停留在学术演示级别
+3. **学术与产业双重影响力，孵化 Rodin 商业引擎**：获 SIGGRAPH 2024 最佳论文提名（Honorable Mention）并收录于 ACM TOG；其产业版本 Rodin 引擎由影眸科技上线运营，后续 Rodin Gen-1 持续迭代，是国内 3D AIGC 从学术研究走向商业落地的标志性案例，也使 CLAY 成为评测 3D 生成模型时被广泛引用的代表性基线
+
+### 2026-10-23｜PhysDreamer: Physics-Based Interaction with 3D Objects via Video Generation（基于视频生成的物理交互式3D物体动力学）
+
+**PhysDreamer: Physics-Based Interaction with 3D Objects via Video Generation**
+**PhysDreamer：基于视频生成的物理交互式3D物体动力学**
+
+**方向**：3D Gaussian Splatting（物理仿真与交互）　**来源**：ECCV 2024 Oral　**机构**：MIT × 斯坦福大学 × 哥伦比亚大学 × 康奈尔大学
+
+- **作者**：Tianyuan Zhang, Hong-Xing Yu, Rundi Wu, Brandon Y. Feng, Changxi Zheng, Noah Snavely, Jiajun Wu, William T. Freeman
+- **链接**：[https://arxiv.org/abs/2404.13026](https://arxiv.org/abs/2404.13026) | 项目页：[physdreamer.github.io](https://physdreamer.github.io/) | 录用核实：ECCV 2024 Oral Presentation（Springer LNCS 章节 DOI 10.1007/978-3-031-72627-9_22）
+
+![PhysDreamer：物理仿真+视频扩散先验的交互式3D动力学框架示意图](https://km.sankuai.com/api/file/cdn/2756902383/260662924098?contentType=0&isNewContent=false)
+
+**核心内容**：让静态 3D 物体"动起来且动得合理"是沉浸式虚拟体验的核心需求。与无条件生成或文本条件动态生成不同，动作条件（action-conditioned）的动态合成要求模型感知物体的物理材质属性（如刚度），并将运动预测建立在这些属性之上——但真实物体的材质真值极难测量，缺乏监督数据，材质属性估计一直是开放难题。PhysDreamer 由 MIT、斯坦福、哥伦比亚与康奈尔团队提出（ECCV 2024 Oral），核心思路是：复用视频生成模型从海量真实视频中隐式学到的物体动力学先验，将其蒸馏进物理仿真。具体流程：以 3D Gaussian Splatting 表示静态物体，通过可微物质点法（MPM）仿真器为高斯基元注入物理属性；优化一个空间连续的材质场（如杨氏模量），使给定外力/智能体操纵下仿真的形变渲染成视频后，与视频扩散模型（Stable Video Diffusion）生成的运动保持一致，从而把"视频生成模型知道的物体该怎么动"蒸馏为显式物理参数。训练完成后，材质场与仿真器即可对任意新交互（推、戳、挤压）实时合成物理合理的 3D 动力学响应。论文在花卉、电话、帽子等多种弹性物体上展示结果，用户研究表明其合成互动视频的真实感显著优于 PhysGaussian 等基线方法。
+
+**亮点**：
+
+1. **首次将视频生成模型的动力学先验蒸馏进物理仿真，破解材质真值缺失难题**：真实物体刚度等材质属性缺乏可用的真值数据，监督学习无从下手；PhysDreamer 用 Stable Video Diffusion 的生成结果作为动力学监督信号，通过可微 MPM 反向优化物理材质场，把"数据驱动先验的真实感"与"物理仿真的交互可控性"统一起来——用户施加任意新外力时，仿真器（而非扩散模型）负责生成响应，交互自由度与物理一致性兼得
+2. **空间连续材质场建模力学异质性，仿真与渲染共享同一 3DGS 表示**：不同于给物体赋予单一全局刚度的简化做法，PhysDreamer 优化逐点连续的杨氏模量场，使同一物体内不同部位（如花瓣与花茎）呈现不同的力学响应；由于 MPM 仿真与 3DGS 渲染使用同一组高斯基元作为离散载体，外观与物理状态天然对齐，无需网格划分、cage 包裹等几何嵌入处理，延续了 PhysGaussian"所见即所模拟"的路线并把它推进到交互式场景
+3. **用户研究严格验证真实感，为具身交互与仿真数据合成提供新范式**：论文设计了系统的人体感知实验，将合成视频与真实拍摄、PhysGaussian、DreamGaussian4D 基线并排对比，结果显示 PhysDreamer 的交互视频真实性显著优于基线、接近真实视频；这一"视频扩散先验 + 可微物理仿真"的框架为 VR/AR 实时交互、数字孪生，以及机器人和具身智能所需的交互式仿真数据合成提供了可扩展的技术路径
