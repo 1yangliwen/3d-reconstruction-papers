@@ -1,4 +1,3 @@
-
 # 三维重建论文收藏
 
 三维重建论文收藏
@@ -56,6 +55,7 @@
 
 - **tttLRM**（2026-04-16）— 将测试时训练（TTT）层引入三维重建，线性复杂度支持任意数量视角输入 · [CVPR 2026](https://arxiv.org/abs/2602.20160)
 - **Scal3R**（2026-08-06）— 神经全局上下文 + 测试时训练突破前馈模型长序列记忆瓶颈，公里级场景位姿与重建精度双 SOTA，CVPR 2026 Highlight · [CVPR 2026 Highlight](https://arxiv.org/abs/2604.08542)
+- **LRM**（2026-10-26）— 首个大规模单图到 3D 重建模型：5 亿参数 Transformer 直接回归 Tri-plane NeRF，Objaverse+MVImgNet 约 100 万物体端到端训练，5 秒完成重建 · [ICLR 2024 Oral](https://arxiv.org/abs/2311.04400)
 
 ### 🔬 五、视觉几何基础模型（Visual Geometry Foundation Models）
 
@@ -80,6 +80,7 @@
 - **MonST3R**（2026-09-04）— 几何优先的动态场景方法，为每个时间步直接回归点图，将 DUSt3R 从静态扩展到动态，视频深度/相机位姿 SOTA，前馈 4D 重建，UC Berkeley × Google DeepMind · [ICLR 2025](https://arxiv.org/abs/2410.03825)
 - **π³**（2026-09-10）— 首个完全置换等变的前馈视觉几何模型，彻底消除固定参考视图依赖，预测仿射不变相机位姿 + 尺度不变局部点图，对输入顺序零敏感，多基准 SOTA，上海交大 × 上海AI实验室 · [ICLR 2026](https://arxiv.org/abs/2507.13347)
 - **MoGe-2**（2026-09-16）— 在 MoGe 仿射不变点图上解耦全局尺度因子预测，首次同时实现相对几何精度、度量尺度与清晰细节三重最优，统一数据精炼管线突破真实数据噪声导致的细节退化，单图 60ms 级推理，中科大 × 微软研究院 · [NeurIPS 2025](https://arxiv.org/abs/2507.02546)
+- **FLARE**（2026-10-28）— 从未标定稀疏视图（2-8 张）前馈推断相机位姿与三维几何，级联学习范式以位姿为桥梁条件化几何与外观学习，几何重建与新视角合成联合优化，推理低于 0.5 秒，浙大 × 蚂蚁集团 × 牛津 × 斯坦福 · [CVPR 2025](https://arxiv.org/abs/2502.12138)
 
 ### 🎬 六、4D 动态场景重建（4D Dynamic Scene Reconstruction）
 
@@ -202,12 +203,14 @@
 
 - **OpenVLA**（2026-10-09）— 首个开源通才视觉-语言-动作模型，7B 参数在 970k 真机演示上训练，29 项任务成功率超 RT-2-X (55B) 16.5%，支持消费级 GPU LoRA 微调，斯坦福 × UC Berkeley × Google DeepMind · [CoRL 2024](https://arxiv.org/abs/2406.09246)
 - **UMI**（2026-10-14）— 手持式夹爪的人类演示采集框架，免机器人本体免标定，采集速度达人类手速 48%、比遥操作快 3 倍，相对轨迹动作表示实现策略跨本体零样本部署，斯坦福 × 哥伦比亚大学 × 丰田研究院 · [RSS 2024](https://arxiv.org/abs/2402.10329)
+- **RDT-1B**（2026-10-29）— 全球最大双臂操作扩散基础模型（1.2B 参数），物理可解释统一动作空间统一异构机器人动作表示，可扩展 Transformer 捕捉机器人动作数据的高频非线性，1~5 条演示即可学会新技能，清华 TSAIL · [ICLR 2025](https://arxiv.org/abs/2410.07864)
 
 ### 🌊 十六、Flow Matching 生成（Flow Matching）
 
 研究以流匹配（Flow Matching / Rectified Flow）为核心的生成建模范式，涵盖图像、视频、3D 资产及机器人连续控制策略等任务的高效训练、采样与优化。
 
 - **ReinFlow**（2026-10-12）— 首个能稳定微调一系列流匹配策略的在线 RL 框架，向确定性流注入可学习噪声转为离散马尔可夫过程实现精确似然计算，足式运动奖励平均净增 135.4%、较 DPPO 省 82.6% 墙钟时间，CMU × 清华 × NUS · [NeurIPS 2025](https://arxiv.org/abs/2505.22094)
+- **MeshFlow**（2026-10-30）— MeshVAE 将连续顶点与离散拓扑压缩进无量化连续隐空间（token 向量数较朴素 tokenizer 少 72 倍），Rectified Flow DiT 并行生成全部顶点与连接，较最快自回归网格生成器提速 18 倍，Meta AI × 港科大 · [CVPR 2026 Highlight](https://arxiv.org/abs/2606.04621)
 
 ---
 
@@ -2626,3 +2629,83 @@
 1. **首次将视频生成模型的动力学先验蒸馏进物理仿真，破解材质真值缺失难题**：真实物体刚度等材质属性缺乏可用的真值数据，监督学习无从下手；PhysDreamer 用 Stable Video Diffusion 的生成结果作为动力学监督信号，通过可微 MPM 反向优化物理材质场，把"数据驱动先验的真实感"与"物理仿真的交互可控性"统一起来——用户施加任意新外力时，仿真器（而非扩散模型）负责生成响应，交互自由度与物理一致性兼得
 2. **空间连续材质场建模力学异质性，仿真与渲染共享同一 3DGS 表示**：不同于给物体赋予单一全局刚度的简化做法，PhysDreamer 优化逐点连续的杨氏模量场，使同一物体内不同部位（如花瓣与花茎）呈现不同的力学响应；由于 MPM 仿真与 3DGS 渲染使用同一组高斯基元作为离散载体，外观与物理状态天然对齐，无需网格划分、cage 包裹等几何嵌入处理，延续了 PhysGaussian"所见即所模拟"的路线并把它推进到交互式场景
 3. **用户研究严格验证真实感，为具身交互与仿真数据合成提供新范式**：论文设计了系统的人体感知实验，将合成视频与真实拍摄、PhysGaussian、DreamGaussian4D 基线并排对比，结果显示 PhysDreamer 的交互视频真实性显著优于基线、接近真实视频；这一"视频扩散先验 + 可微物理仿真"的框架为 VR/AR 实时交互、数字孪生，以及机器人和具身智能所需的交互式仿真数据合成提供了可扩展的技术路径
+
+### 2026-10-26｜LRM: Large Reconstruction Model for Single Image to 3D（LRM：从单张图像到三维的大规模重建模型）
+
+**LRM: Large Reconstruction Model for Single Image to 3D**
+**LRM：从单张图像到三维的大规模重建模型**
+
+**方向**：大规模三维重建基础模型（单图到 3D）　**来源**：ICLR 2024 Oral　**机构**：Adobe Research × 澳大利亚国立大学（ANU）
+
+- **作者**：Yicong Hong, Kai Zhang, Jiuxiang Gu, Sai Bi, Yang Zhou, Difan Liu, Feng Liu, Kalyan Sunkavalli, Trung Bui, Hao Tan
+- **链接**：[https://arxiv.org/abs/2311.04400](https://arxiv.org/abs/2311.04400) | 项目页：[yiconghong.me/LRM](https://yiconghong.me/LRM/) | 录用核实：ICLR 2024 Oral Presentation（ICLR 2024 Oral 3D Vision 总结收录论文）
+
+![LRM 论文框架图：Image-to-NeRF 的 Transformer 编码器-解码器架构](https://km.sankuai.com/api/file/cdn/2756902383/260982712881?contentType=0&isNewContent=false)
+
+**核心内容**：LRM 是首个大规模三维重建模型（Large Reconstruction Model），由 Adobe Research 与澳大利亚国立大学合作完成（ICLR 2024 Oral）。它回答了一个基础问题：当 3D 数据与模型容量足够大时，能否像大语言模型一样学到通用的 3D 先验，从单张图像直接前馈重建物体三维？与以往在 ShapeNet 等小规模类别数据集上训练的类别特定方法不同，LRM 采用高度可扩展的 Transformer 架构（5 亿可学习参数），直接从输入图像预测神经辐射场：用自蒸馏预训练的 DINO 模型编码输入图像，图像特征经交叉注意力由大型 Transformer 解码器投影到可学习的三平面（tri-plane）隐式表示，再由 MLP 预测体渲染的颜色与密度；整个网络仅用简单的图像重建损失，在约 100 万物体的大规模多视角数据（Objaverse 合成渲染 + MVImgNet 真实拍摄）上端到端训练。推理时 LRM 约 5 秒即可从单图生成高质量 3D 模型，对真实拍摄、ImageNet 图像、生成模型输出等分布外输入均能产生高质量重建。LRM 开创了"大规模重建基础模型"研究方向，直接催生 GS-LRM、InstantMesh、LGM、TripoSR 等一系列后续工作，本文档收录的 tttLRM、Scal3R 亦属此技术谱系。
+
+**亮点**：
+
+1. **首个 5 亿参数大规模重建模型，验证"3D 大模型 + 大数据"路线**：将单图重建从 ShapeNet 式类别特定范式转向大规模通用 3D 先验学习，Objaverse 合成数据与 MVImgNet 真实数据混合训练赋予模型强泛化能力；论文证明了高容量 Transformer 与海量多视角数据结合可以学到可迁移的 3D 先验，开创了 Large Reconstruction Model 这一研究方向，其"Transformer 直接回归 3D 表示"的范式成为后续 GS-LRM、InstantMesh、TripoSR 等一大批工作的模板
+2. **DINO 编码器 + 交叉注意力 Image-to-Triplane 解码器的精巧设计**：特征选择上有意采用自蒸馏 DINO 而非语义导向的 CLIP/ResNet，因其保留重建所需的精细结构与纹理信息；解码器将图像特征经交叉注意力投射到可学习的三平面空间位置编码上，兼顾 NeRF 式连续隐式表示的表示能力与三平面分解带来的计算效率；全程可微、端到端、纯重建损失训练（无 GAN、无扩散先验），架构简洁且高度可扩展
+3. **5 秒级前馈推理 + 强分布外泛化**：无需逐形状优化，也不依赖 2D 生成模型的 SDS 蒸馏，单次前向传播约 5 秒即输出 NeRF（可导出 mesh）；在真实照片、ImageNet 图像、生成模型输出等多种 wild 输入上均稳健工作，展示了大规模训练数据带来的泛化红利，为后续在速度（TripoSR 数秒级 CPU 推理）、表示（GS-LRM 转向 3DGS）与长上下文（tttLRM、Scal3R）上的持续演进奠定了基础
+
+### 2026-10-28｜FLARE: Feed-forward Geometry, Appearance and Camera Estimation from Uncalibrated Sparse Views（FLARE：从未标定稀疏视图前馈估计几何、外观与相机）
+
+**FLARE: Feed-forward Geometry, Appearance and Camera Estimation from Uncalibrated Sparse Views**
+**FLARE：从未标定稀疏视图前馈估计几何、外观与相机**
+
+**方向**：视觉几何基础模型（前馈式稀疏视图重建）　**来源**：CVPR 2025　**机构**：浙江大学 × 蚂蚁集团 × 牛津大学 × 斯坦福大学
+
+- **作者**：Shangzhan Zhang, Jianyuan Wang, Yinghao Xu, Nan Xue, Christian Rupprecht, Xiaowei Zhou, Yujun Shen, Gordon Wetzstein
+- **链接**：[https://arxiv.org/abs/2502.12138](https://arxiv.org/abs/2502.12138) | 项目页：[zhanghe3z.github.io/FLARE](https://zhanghe3z.github.io/FLARE/) | 代码：[github.com/ant-research/FLARE](https://github.com/ant-research/FLARE) | 录用核实：CVPR 2025（IEEE Xplore 收录，DOI: 10.1109/CVPR52734.2025）
+
+![FLARE teaser 图：从未标定稀疏视图前馈推断位姿、几何与外观](https://km.sankuai.com/api/file/cdn/2756902383/261429459447?contentType=0&isNewContent=false)
+
+**核心内容**：FLARE 面向真实应用中极具挑战又非常实用的设定——从未标定的稀疏视角图像（少至 2-8 张输入）中推断高质量的相机位姿与三维几何。传统 SfM+MVS 管线在稀疏视角下特征匹配严重退化，而 DUSt3R/MASt3R 虽引入数据驱动先验，却依赖耗时的全局配准后处理。FLARE 提出前馈式、完全可微的端到端方案，核心是"以相机位姿为桥梁的级联学习范式"：先由位姿估计模块从无标定图像回归点图并通过解析对齐解出相机位姿，再将位姿作为条件注入后续的几何结构与外观学习模块（基于 3D 高斯泼溅表示），通过几何重建与新视角合成两类目标联合优化。模型在多个大规模公共数据集上训练，在位姿估计、几何重建和新视角合成三项任务上同时达到 SOTA，同时保持极高的推理效率——单次前向传播不到 0.5 秒即可输出完整的相机参数、点云与可渲染的 3DGS 场景，为稀疏视图重建提供了兼顾可扩展性、精度与效率的统一解决方案。
+
+**亮点**：
+
+1. **以相机位姿为桥梁的级联学习范式，化解"位姿-几何"联合估计的耦合难题**：不同于把位姿和几何放在同一网络里端到端硬学（训练不稳定、精度互相拖累），FLARE 先独立估计相机位姿，再把位姿作为条件引导几何与外观学习，认识到位姿在"3D 结构映射到 2D 图像平面"中的桥梁作用；位姿估计通过点图回归加解析式对齐（Umeyama 求解）实现，无需 RANSAC 匹配，训练时进一步用预测位姿逐步替代真值位姿做课程式过渡，缓解训练与推理的曝光偏差
+2. **几何重建与新视角合成双目标联合优化，3DGS 表示贯通几何与渲染**：几何模块以 3D 高斯为载体，使几何监督（点云/深度损失）与渲染监督（NVS 损失）作用于同一组基元，外观估计从"附属任务"变为驱动几何精度的正则信号；相比 DUSt3R/MASt3R 依赖耗时的全局配准后处理，FLARE 全程前馈可微、无需 BA，在位姿、几何、NVS 三项任务上同时 SOTA，且推理时间低于 0.5 秒
+3. **未标定稀疏输入下的强实用性，打通"重建-渲染"一体化交付**：无需相机内参、无需位姿先验，2-8 张随意拍摄的图像即可在 0.5 秒内得到相机参数、稠密几何与可实时渲染的 3DGS 场景；项目页提供在线 demo，代码开源（ant-research/FLARE），为稀疏视图数字化、AR 内容采集等真实落地场景提供了可直接部署的基础模型方案
+
+### 2026-10-29｜RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation（RDT-1B：面向双臂操作的扩散基础模型）
+
+**RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation**
+**RDT-1B：面向双臂操作的扩散基础模型**
+
+**方向**：机器人（Robotics / 具身智能·机器人操作基础模型）　**来源**：ICLR 2025　**机构**：清华大学（TSAIL，清华-博世联合机器学习中心）
+
+- **作者**：Songming Liu*, Lingxuan Wu*, Bangguo Li, Hengkai Tan, Huayu Chen, Zhengyi Wang, Ke Xu, Hang Su, Jun Zhu
+- **链接**：[https://arxiv.org/abs/2410.07864](https://arxiv.org/abs/2410.07864) | 项目页：[rdt-robotics.github.io/rdt-robotics](https://rdt-robotics.github.io/rdt-robotics) | 代码：[github.com/thu-ml/RoboticsDiffusionTransformer](https://github.com/thu-ml/RoboticsDiffusionTransformer) | 录用核实：ICLR 2025（论文 PDF 首页标注 published as a conference paper at ICLR 2025）
+
+![RDT-1B teaser 图：双臂机器人扩散基础模型](https://km.sankuai.com/api/file/cdn/2756902383/261657254026?contentType=0&isNewContent=false)
+
+**核心内容**：双臂操作（bimanual manipulation）是机器人领域的关键能力，但构建操作基础模型面临两大难题：双臂协同导致动作分布高度多模态，且高质量双臂数据极度稀缺。RDT（Robotics Diffusion Transformer）是首个面向双臂操作的扩散基础模型：以扩散模型天然表达多模态动作分布，并提出可扩展的 Transformer 骨干（Scaler），通过 MLP 输入/输出编码器统一处理图像、语言、本体感觉与动作等异构多模态输入，同时捕捉机器人动作数据的非线性与高频特性。为解决数据稀缺，论文设计了物理可解释的统一动作空间——以 128 维统一表示对齐不同机器人的原始动作（位置/速度/关节/末端等），在保留物理含义的前提下实现跨本体的物理知识迁移。RDT 在迄今最大规模的多机器人数据集上预训练，参数量达 1.2B，是目前最大的机器人操作扩散基础模型；再在自建 6k+ 条双臂操作数据上微调。真机实验中，RDT 显著超越 OpenVLA、Octo、Diffusion Policy 等现有方法，可零样本泛化到未见物体与场景、理解并执行语言指令，仅凭 1~5 条演示即可学会新技能，并能完成调酒、整理桌面等复杂灵巧任务。代码、模型权重与数据全部开源。
+
+**亮点**：
+
+1. **物理可解释的统一动作空间，破解跨本体动作表示难题**：不同于简单拼接向量或离散化 token 的做法，RDT 设计 128 维统一动作空间，通过"以物理量通道对齐+原动作可逆映射"的方式统一异构机器人的动作表示——既能融合多本体数据预训练，又保留原始动作的物理意义，使预训练学到的物理知识可迁移到具体本体；这是扩散范式机器人大模型实现跨本体知识迁移的关键设计
+2. **面向机器人数据特性的可扩展扩散 Transformer（Scaler）**：针对机器人动作数据低维高频、多模态异构的特点，RDT 在 Transformer 上做系统性改造——MLP 输入/输出编码器统一编码图像、语言、本体感觉与动作序列，结合注意力层规范化（QK-Norm、RMSNorm）与旋转位置编码，配合扩散模型刻画多模态动作分布；验证了操作基础模型同样服从缩放定律，1.2B 参数成为当时最大的机器人操作扩散基座
+3. **大规模预训练 + 少样本微调的强泛化能力**：在最大规模多机器人数据集上预训练后，仅用 6k+ 条自采双臂 ALOHA 数据微调，即在 7 项真实双臂任务上大幅超越 OpenVLA、Diffusion Policy 等基线；具备零样本泛化（未见物体/场景）、语言指令跟随、1~5 条演示学新技能等能力，代码、权重与数据集全部开源（登顶 HuggingFace 机器人模型热度榜），成为后续双臂/具身操作研究的重要基座
+
+### 2026-10-30｜MeshFlow: Efficient Artistic Mesh Generation via MeshVAE and Flow-based Diffusion Transformer（MeshFlow：基于 MeshVAE 与流式扩散 Transformer 的高效艺术级网格生成）
+
+**MeshFlow: Efficient Artistic Mesh Generation via MeshVAE and Flow-based Diffusion Transformer**
+**MeshFlow：基于 MeshVAE 与流式扩散 Transformer 的高效艺术级网格生成**
+
+**方向**：Flow Matching 生成（流式扩散 / Rectified Flow × 三维生成）　**来源**：CVPR 2026 Highlight　**机构**：Meta AI × 香港科技大学
+
+- **作者**：Weiyu Li, Antoine Toisoul, Tom Monnier, Roman Shapovalov, Rakesh Ranjan, Ping Tan, Andrea Vedaldi
+- **链接**：[https://arxiv.org/abs/2606.04621](https://arxiv.org/abs/2606.04621) | 项目页：[mesh-flow.github.io](https://mesh-flow.github.io/) | 代码：[github.com/facebookresearch/meshflow](https://github.com/facebookresearch/meshflow) | 录用核实：CVPR 2026 Highlight（arXiv 页面标注 CVPR2026 Highlight）
+
+![MeshFlow teaser 图：非自回归并行生成高质量艺术级网格，约 1 秒完成](https://km.sankuai.com/api/file/cdn/2756902383/261889833908?contentType=0&isNewContent=false)
+
+**核心内容**：三维网格是 AR/VR、游戏与影视特效的标准资产表示，但现有网格生成器大多借鉴 LLM 采用自回归（AR）next-token 预测——推理代价随网格规模二次增长，且必须将顶点坐标离散量化（通常仅 128 级），带来顶点坍缩、面片重叠等量化误差。MeshFlow 走出一条完全不同的路径：借鉴图像/视频潜空间扩散的成功经验，将「连续顶点 × 离散拓扑」的网格压缩进一个紧凑、连续的隐空间，再用流匹配并行生成。核心组件 MeshVAE 为每个顶点学习一个由位置、法向与边嵌入组成的连续隐向量——两顶点间是否存在边，由二者隐向量距离是否低于阈值判定（对比学习监督），顶点法向则编码绕顶点的边序从而确定面片拓扑；编码器将网格信息打包进 1/4 顶点子集实现下采样，token 向量数比朴素 tokenizer 少 72 倍、比最高效的现有 tokenizer 少 16 倍，且全程无离散化。在此隐空间上，作者训练 Rectified Flow Diffusion Transformer，一次前向并行生成全部顶点与连接关系，可从点云或图像条件生成网格，推理约 1 秒、比最快的自回归网格生成器快 18 倍，同时在标准艺术级网格生成基准上取得 SOTA 精度。
+
+**亮点**：
+
+1. **MeshVAE：把「离散拓扑」连续化，网格首次进入无量化、可扩散的隐空间**：为每个顶点学习「位置+法向+边嵌入」三元连续隐向量，边连接用特征距离阈值判定并由对比学习监督，顶点法向自然承载边序（winding order）信息，省去复杂的边序编码机制；仅用 1/4 顶点即可高保真重建，token 向量数比朴素方案少 72 倍、比最先进 tokenizer 少 16 倍，且不量化顶点坐标，从根源上规避了 AR 范式的坐标量化误差与顶点坍缩问题
+2. **Rectified Flow 并行生成，18 倍加速、推理代价随网格规模线性增长**：在 MeshVAE 隐空间上训练 DiT 骨干的整流流匹配生成器，所有顶点与连接一次性并行生成，打破 AR next-token 范式「网格越大推理越慢」的二次复杂度瓶颈；生成耗时约 1 秒，比最快的自回归网格生成器快 18 倍，同时在标准艺术级网格基准上达到 SOTA 准确率，验证了「图像式 latent diffusion」路线在网格模态上的可行性与优越性
+3. **为「艺术家级」网格资产生成提供新范式，支持点云/图像多条件扩展**：相比从 SDF 提取的网格（面片过多、棱角被抹平、难以编辑），MeshFlow 直接生成的网格结构规整、顶点数适中、贴合艺术家创作与实时渲染需求；支持点云条件与图像条件生成，代码开源（facebookresearch/meshflow），为游戏、影视、VFX 的生产级网格内容生成提供了可落地的技术底座
